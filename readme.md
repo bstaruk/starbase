@@ -3,7 +3,7 @@ Starbase is a Webpack 2, ES6 & PostCSS boilerplate that utilizes some of the jui
 
 * [Node.js](https://github.com/nodejs/node) & [Yarn](https://github.com/yarnpkg)
 * [Webpack 2](https://github.com/webpack/webpack)
-* [Babel](https://github.com/babel/babel) (ES6) w/ linting by [ESLint](https://github.com/eslint/eslint)
+* [Babel](https://github.com/babel/babel) (ES6) transpiling w/ linting by [ESLint](https://github.com/eslint/eslint)
 * [PostCSS](https://github.com/postcss/postcss) w/ [cssnext](https://github.com/MoOx/postcss-cssnext)
 * ...and more!
 
