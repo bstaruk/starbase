@@ -15,7 +15,7 @@ Starbase is fully open source and public domain, so you are free to do whatever 
 ## getting started
 After completing the steps below, you will be ready to begin using Starbase:
 
-1. Install [Node.js](https://nodejs.org)
+1. Install [Node.js](https://nodejs.org) (latest LTS recommended)
 2. Install [Yarn](https://yarnpkg.com)
 3. Clone Starbase into your project root directory
 4. Install dependencies by running `yarn` in your project root directory
