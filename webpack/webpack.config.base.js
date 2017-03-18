@@ -8,11 +8,11 @@ module.exports = function() {
   return {
     context: paths.src,
     entry: {
-      app: ['./app.js'],
+      app: ['./app.js']
     },
     output: {
       filename: '[name].bundle.js',
-      path: paths.assets,
+      path: paths.assets
     },
     module: {
       rules: [
@@ -41,7 +41,7 @@ module.exports = function() {
               loader: 'url-loader',
               options: {
                 limit: 10000,
-                name: 'images/[name].[ext]',
+                name: 'images/[name].[ext]'
               }
             }
           ]
@@ -53,7 +53,7 @@ module.exports = function() {
               loader: 'url-loader',
               options: {
                 limit: 10000,
-                name: 'fonts/[name].[ext]',
+                name: 'fonts/[name].[ext]'
               }
             }
           ]
@@ -66,7 +66,7 @@ module.exports = function() {
             }
           ]
         }
-      ],
+      ]
     }
   };
 };

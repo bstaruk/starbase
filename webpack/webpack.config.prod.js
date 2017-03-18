@@ -52,7 +52,7 @@ module.exports = function() {
           context: paths.static,
           to: '../',
           from: '**/*.html'
-        },
+        }
       ]),
       new CleanWebpackPlugin(['dist'])
     ]
