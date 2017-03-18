@@ -57,6 +57,6 @@ Removing the cleanup process means that deleted assets in `/src` will not be del
 
 ## features you may want to customize
 
-### js linting
+### javascript linting
 
-Starbase uses [ESLint](http://eslint.org/) for JS code linting. The config (`/.eslintrc`) included by default is very basic and does not contain many rules. I recommend modifying this to your liking. Check out [the official docs](http://eslint.org/docs/2.0.0/rules/) for more information.
+Starbase uses [ESLint](http://eslint.org/) for Javascript (ES6) linting. The config (`/.eslintrc`) included out of the box is very basic and does not contain many rules. I recommend modifying this to your liking. Check out [the official docs](http://eslint.org/docs/2.0.0/rules/) for more information.
