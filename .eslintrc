@@ -1,0 +1,10 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "comma-dangle": [1, "never"], // disallow trailing commas
+    "no-trailing-spaces": 1, // disallow trailing whitespace at the end of lines
+    "no-unused-vars": 1, // disallow declaration of variables that are not used in the code
+    "no-var": 1, // require let or const instead of var
+    "strict": 0 // disable strict mode
+  }
+}
