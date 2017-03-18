@@ -1,0 +1,23 @@
+/**
+  NOTE: :root pseudo-classes are stripped from the compiled css, and this file is imported
+  to almost every component's css, so do not put anything in this file outside of :root
+ */
+
+:root {
+  /** colors */
+  --body-bg-color: #fefefe;
+  --body-font-color: #333;
+  --anchor-font-color: #2475c1;
+  --border-color: #666;
+  --border-margin: 2rem;
+
+  /** typography */
+  --font-sans: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-serif: 'Lora', Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+
+  /** breakpoints (borrowed from bootstrap 4) */
+  @custom-media --small only screen and (min-width: 34em); /* 544px*/
+  @custom-media --medium only screen and (min-width: 48em); /* 768px*/
+  @custom-media --large only screen and (min-width: 62em); /* 992px*/
+  @custom-media --extra-large only screen and (min-width: 75em); /* 1200px*/
+}

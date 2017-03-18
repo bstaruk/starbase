@@ -1,0 +1,19 @@
+@import './fonts.css';
+@import './variables.css';
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--body-bg-color);
+  color: var(--body-font-color);
+  padding: 1em;
+  margin: 0;
+}
+
+a {
+  color: var(--anchor-font-color);
+  transition: color 0.3s ease;
+}
+
+input, button {
+  font-family: var(--font-sans);
+}

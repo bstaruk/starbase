@@ -1,0 +1,52 @@
+{
+  "name": "starbase",
+  "version": "0.0.1",
+  "author": "Brian Staruk <brian@staruk.me>",
+  "description": "a webpack 2 boilerplate w/ babel (es6), eslint, postcss, cssnext & more",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bstaruk/starbase.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bstaruk/starbase/issues",
+    "email": "brian@staruk.me"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack -p --config ./webpack/webpack.config.prod.js",
+    "watch": "webpack-dev-server --config ./webpack/webpack.config.dev.js"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.0",
+    "clean-webpack-plugin": "^0.1.16",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.27.3",
+    "css-mqpacker": "^5.0.1",
+    "cssnano": "^3.10.0",
+    "eslint": "^3.18.0",
+    "eslint-loader": "^1.6.3",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.10.1",
+    "node-sass": "^4.5.0",
+    "postcss": "^5.2.16",
+    "postcss-cssnext": "^2.10.0",
+    "postcss-import": "^9.1.0",
+    "postcss-loader": "^1.3.3",
+    "postcss-remove-root": "^0.0.2",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.14.1",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1",
+    "webpack-merge": "^4.1.0"
+  },
+  "dependencies": {}
+}
