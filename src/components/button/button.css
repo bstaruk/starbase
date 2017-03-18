@@ -1,16 +1,19 @@
 @import '../../styles/variables.css';
 
 .button {
-  background-color: #eee;
+  background-color: #efefef;
   color: var(--body-font-color);
-  border: 0;
+  border: 1px solid #ddd;
   padding: 1em;
   cursor: pointer;
   outline: none;
   border-radius: 3px;
   transition: all 0.3s ease;
   &:hover {
-    background-color: #ddd;
+    background-color: #e5e5e5;
+  }
+  &.hit {
+    transform: rotate(-360deg);
   }
   @media (--medium) {
     padding: 1.2em;

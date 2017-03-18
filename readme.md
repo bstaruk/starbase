@@ -1,4 +1,4 @@
-# npm-starbase
+# starbase
 Starbase was created to be an entry-level, white-label'able Webpack 2 boilerplate that utilizes some of the shiniest open source build tools including:
 
 * [NPM](https://github.com/nodejs/node)

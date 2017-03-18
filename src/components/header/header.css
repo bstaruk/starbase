@@ -2,4 +2,7 @@
 
 .header {
   font-family: var(--font-serif);
+  & h1 {
+    margin-top: 0;
+  }
 }
