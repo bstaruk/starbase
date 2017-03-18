@@ -1,5 +1,5 @@
 # starbase
-Starbase is a Webpack 2, ES6 & PostCSS boilerplate that utilizes some of the most popular open source build tools around such as:
+Starbase is a Webpack 2, ES6 & PostCSS boilerplate that utilizes some of the juiciest open source tools around such as:
 
 * [Node.js](https://github.com/nodejs/node) & [Yarn](https://github.com/yarnpkg)
 * [Webpack 2](https://github.com/webpack/webpack)
