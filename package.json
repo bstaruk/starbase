@@ -2,7 +2,15 @@
   "name": "starbase",
   "version": "0.0.1",
   "author": "Brian Staruk <brian@staruk.me>",
+  "contributors": [
+    {
+      "name": "Brian Staruk",
+      "email": "brian@staruk.me",
+      "url": "https://brian.staruk.me"
+    }
+  ],
   "description": "a webpack 2 boilerplate w/ babel (es6), eslint, postcss, cssnext & more",
+  "homepage": "https://github.com/bstaruk/starbase",
   "repository": {
     "type": "git",
     "url": "https://github.com/bstaruk/starbase.git"
