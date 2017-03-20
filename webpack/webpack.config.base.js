@@ -4,7 +4,7 @@ const paths = {
   'src': path.resolve(__dirname, '../src')
 };
 
-module.exports = function() {
+module.exports = function () {
   return {
     context: paths.src,
     entry: {
@@ -29,7 +29,9 @@ module.exports = function() {
             {
               loader: 'babel-loader',
               options: {
-                presets: ['es2015']
+                presets: [
+                  ['es2015', {'loose': true, 'modules': false}],
+                ]
               }
             }
           ]

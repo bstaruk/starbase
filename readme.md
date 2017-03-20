@@ -25,7 +25,7 @@ _Note: if you hate Yarn for some reason, you can skip Step 2 and use `npm instal
 ## building, watching & developing
 
 ### local development
-Starbase uses `webpack-dev-server` to serve up your project at [http://localhost:8080](http://localhost:8080) for streamlined and convenient development.
+Starbase uses [webpack-dev-server](https://github.com/webpack/webpack-dev-server) to serve up your project at [http://localhost:8080](http://localhost:8080) for streamlined and convenient development.
 
 After running `npm run watch` in the project root, your `/src` code will be served at the url above and watched for changes. As you modify code in `/src`, the project will be recompiled and your browser will refresh to show the latest changes.
 
@@ -51,7 +51,7 @@ Starbase is setup to clear all contents of `/dist` (where compiled assets are pi
 
 1. remove `CleanWebpackPlugin` from the plugins array in `/webpack/webpack.config.prod.js`
 2. remove `CleanWebpackPlugin` as a requirement at the top of `/webpack/webpack.config.prod.js`
-3. remove the `CleanWebpackPlugin` dependency from `package.json`
+3. remove the `CleanWebpackPlugin` dependency from `/package.json`
 
 Removing the cleanup process means that deleted assets in `/src` will not be deleted in `/dist` until you manually do so. I recommend keeping the cleanup process intact unless you have a specific reason not to, such as having un-managed assets in `/dist`.
 
