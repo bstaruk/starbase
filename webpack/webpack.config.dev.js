@@ -26,7 +26,13 @@ module.exports = function() {
                   plugins: function () {
                     return [
                       require('postcss-import'),
-                      require('postcss-cssnext'),
+                      require('postcss-cssnext')({
+                        features: {
+                          autoprefixer: {
+                            grid: false
+                          }
+                        }
+                      }),
                       require('postcss-remove-root'),
                       require('css-mqpacker')({
                         sort: true
