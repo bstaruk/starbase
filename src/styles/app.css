@@ -14,6 +14,7 @@ a {
   transition: color 0.3s ease;
 }
 
-input, button {
+input,
+button {
   font-family: var(--font-sans);
 }

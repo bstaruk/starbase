@@ -9,12 +9,15 @@
   outline: none;
   border-radius: 3px;
   transition: all 0.3s ease;
+
   &:hover {
     background-color: #e5e5e5;
   }
+
   &.hit {
     transform: rotate(-360deg);
   }
+
   @media (--medium) {
     padding: 1.2em;
   }
