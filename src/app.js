@@ -1,14 +1,12 @@
 // base styles
 require('./styles/app.css');
 
-// css components
-require('./components/header/header.css');
-require('./components/footer/footer.css');
+// components styles
+require.context('./components/', true, /\.css$/);
 
-// js components
+// components js
 const Button = require('./components/button/Button');
 
-// initialize js components
 componentSetup();
 function componentSetup() {
   if (document.getElementsByClassName('button')) {
