@@ -6,7 +6,7 @@ const paths = {
   'static': path.resolve(__dirname, '../src/static')
 };
 
-module.exports = function() {
+module.exports = function () {
   return webpackMerge(webpackConfigBase(), {
     output: {
       publicPath: '/assets'
@@ -53,6 +53,9 @@ module.exports = function() {
       port: 8080,
       watchOptions: {
         poll: 1000
+      },
+      stats: {
+        children: false
       }
     },
     plugins: [
