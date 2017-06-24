@@ -25,6 +25,8 @@ module.exports = function() {
                   sourceMap: 'inline',
                   plugins: function () {
                     return [
+                      require('stylelint')(),
+                      require('postcss-reporter')(),
                       require('postcss-import'),
                       require('postcss-cssnext')({
                         features: {
