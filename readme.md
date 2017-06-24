@@ -1,13 +1,13 @@
 # starbase
-Starbase is a Webpack 2, ES6 & PostCSS boilerplate that utilizes some of the juiciest open source tools around such as:
+Starbase is a Webpack 3, ES6 & PostCSS boilerplate that utilizes some of the juiciest open source tools around such as:
 
 * [Node.js](https://github.com/nodejs/node) & [Yarn](https://github.com/yarnpkg)
-* [Webpack 2](https://github.com/webpack/webpack)
+* [Webpack 3](https://github.com/webpack/webpack)
 * [Babel](https://github.com/babel/babel) (ES6) w/ [ESLint](https://github.com/eslint/eslint)
 * [PostCSS](https://github.com/postcss/postcss) w/ [cssnext](https://github.com/MoOx/postcss-cssnext), [cssnano](https://github.com/ben-eb/cssnano) & [MQPacker](https://github.com/hail2u/node-css-mqpacker)
 * ...and more!
 
-This boilerplate is intended to be small in scope so that it can be easily extended and customized, or used as a learning tool for folks who are trying to become familiar with Webpack 2.
+This boilerplate is intended to be small in scope so that it can be easily extended and customized, or used as a learning tool for folks who are trying to become familiar with Webpack 3.
 
 ## license
 Starbase is fully open source and public domain, so you are free to do whatever you wish with it -- commercially or personally. You can buy me a beer next time you're in Boston, give me credit in a [Konami code easter egg](http://konamicodesites.com/), or you can erase all signs of origin and tell your coworkers that you made it yourself. It's all good!
