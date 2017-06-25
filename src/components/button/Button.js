@@ -1,5 +1,3 @@
-require('./button.css');
-
 class Button {
   constructor(props) {
     if (props.el) {
