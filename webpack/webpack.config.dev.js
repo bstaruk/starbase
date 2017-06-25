@@ -25,9 +25,9 @@ module.exports = function () {
                   sourceMap: 'inline',
                   plugins: function () {
                     return [
+                      require('postcss-import'),
                       require('stylelint')(),
                       require('postcss-reporter')(),
-                      require('postcss-import'),
                       require('postcss-cssnext')({
                         features: {
                           autoprefixer: {

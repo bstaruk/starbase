@@ -5,6 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
 const paths = {
+  'base': path.resolve(__dirname, '../'),
   'static': path.resolve(__dirname, '../src/static')
 };
 
@@ -26,9 +27,9 @@ module.exports = function() {
                 options: {
                   plugins: function () {
                     return [
+                      require('postcss-import'),
                       require('stylelint')(),
                       require('postcss-reporter')(),
-                      require('postcss-import'),
                       require('postcss-cssnext')({
                         features: {
                           autoprefixer: {
@@ -62,7 +63,7 @@ module.exports = function() {
           from: '**/**'
         }
       ]),
-      new CleanWebpackPlugin(['dist'])
+      new CleanWebpackPlugin(['dist'], { root: paths.base })
     ]
   })
 };
