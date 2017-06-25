@@ -1,14 +1,14 @@
-require('./button.css');
-
 class Button {
-  constructor() {
-    this.init();
+  constructor(props) {
+    if (props.el) {
+      this.el = props.el;
+      this.init();
+    }
   }
 
   init() {
-    const buttons = document.getElementsByClassName('button');
-    for (let i = 0; i < buttons.length; i++) {
-      buttons[i].addEventListener('click', function (e) {
+    for (let i = 0; i < this.el.length; i++) {
+      this.el[i].addEventListener('click', function (e) {
         e.preventDefault();
         this.classList.toggle('hit');
       });

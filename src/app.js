@@ -6,10 +6,5 @@ require.context('./components/', true, /\.css$/);
 
 // components js
 const Button = require('./components/button/Button');
-
-componentSetup();
-function componentSetup() {
-  if (document.getElementsByClassName('button')) {
-    new Button();
-  }
-}
+const buttonEl = document.getElementsByClassName('button');
+buttonEl && new Button({el: buttonEl});
