@@ -1,6 +1,6 @@
 {
   "name": "starbase",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "author": "Brian Staruk <brian@staruk.me>",
   "contributors": [
     {
@@ -40,6 +40,7 @@
     "css-loader": "^0.28.4",
     "css-mqpacker": "^6.0.1",
     "cssnano": "^3.10.0",
+    "es6-promise": "^4.1.1",
     "eslint": "^4.2.0",
     "eslint-loader": "^1.9.0",
     "extract-text-webpack-plugin": "^2.1.2",
@@ -58,7 +59,8 @@
     "url-loader": "^0.5.9",
     "webpack": "^3.1.0",
     "webpack-dev-server": "^2.5.1",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "whatwg-fetch": "^2.0.3"
   },
   "dependencies": {}
 }
