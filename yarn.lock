@@ -3953,6 +3953,13 @@ postcss-modules-values@^1.1.0:
     icss-replace-symbols "^1.0.2"
     postcss "^5.0.14"
 
+postcss-nested@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/postcss-nested/-/postcss-nested-2.0.4.tgz#f2becb7c67b9a94fc43b59e4ef194c13d4349027"
+  dependencies:
+    postcss "^6.0.6"
+    postcss-selector-parser "^2.2.3"
+
 postcss-nesting@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/postcss-nesting/-/postcss-nesting-4.0.1.tgz#8fc2ce40cbfcfab7ee24e7b68fb6ebe84b641469"

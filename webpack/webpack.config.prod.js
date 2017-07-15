@@ -37,6 +37,7 @@ module.exports = function() {
                           }
                         }
                       }),
+                      require('postcss-nested'),
                       require('postcss-remove-root'),
                       require('css-mqpacker')({
                         sort: true

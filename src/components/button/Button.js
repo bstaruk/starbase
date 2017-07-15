@@ -10,7 +10,7 @@ class Button {
     for (let i = 0; i < this.el.length; i++) {
       this.el[i].addEventListener('click', function (e) {
         e.preventDefault();
-        this.classList.toggle('hit');
+        this.classList.toggle('button--hit');
       });
     }
   }
