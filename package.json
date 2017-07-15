@@ -1,6 +1,6 @@
 {
   "name": "starbase",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "author": "Brian Staruk <brian@staruk.me>",
   "contributors": [
     {
@@ -50,6 +50,7 @@
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^10.0.0",
     "postcss-loader": "^2.0.6",
+    "postcss-nested": "^2.0.4",
     "postcss-remove-root": "^0.0.2",
     "postcss-reporter": "^4.0.0",
     "sass-loader": "^6.0.6",
