@@ -1,5 +1,3 @@
-@import '../../styles/variables.css';
-
 .button {
   background-color: #efefef;
   color: var(--body-font-color);
