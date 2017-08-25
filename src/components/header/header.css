@@ -3,8 +3,8 @@
 
   & img {
     float: left;
-    margin-right: 0.5em;
-    max-height: 2.5em;
+    margin-right: 0.5rem;
+    max-height: 2.5rem;
   }
 
   & h1 {

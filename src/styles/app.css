@@ -1,17 +1,21 @@
-@import './fonts.css';
 @import './variables.css';
+
+/*
+  This file is here to contain some baseline styles
+  but most of your css should live in ../components
+ */
 
 body {
   font-family: var(--font-sans);
   background-color: var(--body-bg-color);
   color: var(--body-font-color);
-  padding: 1em;
+  padding: 1rem;
   margin: 0;
 }
 
 a {
   color: var(--anchor-font-color);
-  transition: color 0.3s ease;
+  transition: color 250ms ease;
 }
 
 input,

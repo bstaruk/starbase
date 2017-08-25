@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'Lora';
+  font-weight: normal;
+  font-style: normal;
+  src:
+    url('./lora-regular-webfont.woff2') format('woff2'),
+    url('./lora-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: normal;
+  font-style: normal;
+  src:
+    url('./opensans-regular-webfont.woff2') format('woff2'),
+    url('./opensans-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-style: normal;
+  src:
+    url('./opensans-semibold-webfont.woff2') format('woff2'),
+    url('./opensans-semibold-webfont.woff') format('woff');
+}
