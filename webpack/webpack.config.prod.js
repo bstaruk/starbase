@@ -3,7 +3,7 @@ const webpackConfigBase = require('./webpack.config.base.js');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const paths = require('./lib/paths-helper');
+const pathsHelper = require('./lib/paths-helper');
 
 module.exports = function() {
   return webpackMerge(webpackConfigBase(), {
@@ -55,12 +55,12 @@ module.exports = function() {
       new ExtractTextPlugin('[name].bundle.css'),
       new CopyWebpackPlugin([
         {
-          context: paths('static'),
+          context: pathsHelper('static'),
           to: '../',
           from: '**/**'
         }
       ]),
-      new CleanWebpackPlugin(['dist'], { root: paths('base') })
+      new CleanWebpackPlugin(['dist'], { root: pathsHelper('base') })
     ]
   })
 };

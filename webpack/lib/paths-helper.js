@@ -1,6 +1,6 @@
 const path = require('path');
 
-module.exports = function (a) {
+module.exports = function pathsHelper(a) {
   const paths = {
     'assets': path.resolve(__dirname, '../../dist/assets'),
     'base': path.resolve(__dirname, '../../'),

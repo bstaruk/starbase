@@ -1,19 +1,19 @@
 const path = require('path');
-const paths = require('./lib/paths-helper');
+const pathsHelper = require('./lib/paths-helper');
 
 module.exports = function () {
   return {
-    context: paths('src'),
+    context: pathsHelper('src'),
     entry: {
       app: ['./app.js']
     },
     output: {
       filename: '[name].bundle.js',
-      path: paths('assets')
+      path: pathsHelper('assets')
     },
     resolveLoader: {
       alias: {
-        'css-prefix-variables': path.resolve(__dirname, './lib/css-prefix-variables')
+        'css-prefix-variables': path.resolve(__dirname, './lib/css-prefix-variables.js')
       }
     },
     module: {
@@ -28,13 +28,13 @@ module.exports = function () {
           enforce: 'pre',
           test: /\.css$/,
           include: [
-            paths('components')
+            pathsHelper('components')
           ],
           use: [
             {
               loader: 'css-prefix-variables',
               options: {
-                path: paths('variables')
+                path: pathsHelper('variables')
               }
             }
           ]
