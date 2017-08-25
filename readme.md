@@ -71,6 +71,8 @@ If you want to remove these for any reason, perform the following steps:
 1. run `yarn remove es6-promise whatwg-fetch` in the project root to remove the dependencies
 2. remove the first few lines of `./src/app.js` (it'll be obvious which ones)
 
+_Note: if you think you might use fetch in the future, comment-out the includes instead of deleting them. Commented-out code is stripped out in production builds._
+
 ## features you may want to customize
 
 ### javascript & css linting
