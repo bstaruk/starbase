@@ -6,8 +6,9 @@
  */
 
 body {
-  font-family: var(--font-sans);
   background-color: var(--body-bg-color);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
   color: var(--body-font-color);
   padding: 1rem;
   margin: 0;
