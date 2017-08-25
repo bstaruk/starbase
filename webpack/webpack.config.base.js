@@ -1,18 +1,20 @@
 const path = require('path');
-const paths = {
-  'assets': path.resolve(__dirname, '../dist/assets'),
-  'src': path.resolve(__dirname, '../src')
-};
+const pathsHelper = require('./lib/paths-helper');
 
 module.exports = function () {
   return {
-    context: paths.src,
+    context: pathsHelper('src'),
     entry: {
       app: ['./app.js']
     },
     output: {
       filename: '[name].bundle.js',
-      path: paths.assets
+      path: pathsHelper('assets')
+    },
+    resolveLoader: {
+      alias: {
+        'css-prefix-variables': path.resolve(__dirname, './lib/css-prefix-variables.js')
+      }
     },
     module: {
       rules: [
@@ -21,6 +23,21 @@ module.exports = function () {
           test: /\.js$/,
           exclude: /node_modules/,
           use: ['eslint-loader']
+        },
+        {
+          enforce: 'pre',
+          test: /\.css$/,
+          include: [
+            pathsHelper('components')
+          ],
+          use: [
+            {
+              loader: 'css-prefix-variables',
+              options: {
+                path: pathsHelper('variables')
+              }
+            }
+          ]
         },
         {
           test: /\.js$/,
