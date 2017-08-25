@@ -76,3 +76,15 @@ If you want to remove these for any reason, perform the following steps:
 ### javascript & css linting
 
 Starbase uses [ESLint](http://eslint.org/) for Javascript (ES6) linting and [stylelint](https://github.com/stylelint/stylelint) for CSS linting. The configs (`/.eslintrc` and `/.stylelintrc` respectively) included out of the box contain some basic common rules. Modify them to your liking to encourage consistent code throughout your project.
+
+## features you may want to know about
+
+### global css variables
+
+Starbase supports global CSS variables via the [:root](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) pseudo-element, which can be found in `src/styles/variables.css`. You can split your variables into multiple files, and just import them into `src/styles/variables.css` if you'd like them to be more granular.
+
+These variables automatically imported into any CSS in the `src/components` directory, so they are always ready to use in your components.
+
+Each component that comes with Starbase uses at least one variable to demonstrate the functionality.
+
+All variables are cleaned up in your production code and only the values will remain, so there is no bloat or downside to using these variables. Go nuts!

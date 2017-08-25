@@ -1,7 +1,4 @@
-/*
-  NOTE: :root pseudo-classes are stripped from the compiled css, and this file is imported
-  to almost every component's css, so do not put anything in this file outside of :root
- */
+/* IMPORTANT: This file is for :root variables only. */
 
 :root {
   /* colors */
