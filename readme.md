@@ -90,7 +90,7 @@ Starbase uses [ESLint](http://eslint.org/) for Javascript (ES6) linting and [sty
 
 Starbase supports global CSS variables via the [:root](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) pseudo-element, which can be found in `/src/variables/variables.css`. You can split your variables into multiple files, and just import them into `/src/variables/variables.css` if you'd like them to be more granular.
 
-These variables automatically injected into any CSS in the `/src/components` and `/src/app` directory, so they are always available for use in your app & component stylesheets.
+These variables automatically injected into any CSS in the `/src/components` and `/src/app` directories, so they are always available for use in your app & component stylesheets.
 
 Each component that comes with Starbase uses at least one variable to demonstrate the functionality.
 
