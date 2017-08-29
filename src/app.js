@@ -2,9 +2,9 @@
 require('es6-promise').polyfill();
 require('whatwg-fetch');
 
-// baseline styles
-require('./styles/fonts/fonts.css');
-require('./styles/app.css');
+// baseline app styles
+require('./app/fonts/fonts.css');
+require('./app/app.css');
 
 // components styles
 require.context('./components/', true, /\.css$/);
