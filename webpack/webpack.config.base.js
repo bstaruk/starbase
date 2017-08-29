@@ -5,10 +5,10 @@ module.exports = function () {
   return {
     context: pathsHelper('src'),
     entry: {
-      app: ['./app.js']
+      app: ['./bundle.js']
     },
     output: {
-      filename: '[name].bundle.js',
+      filename: '[name].js',
       path: pathsHelper('assets')
     },
     resolveLoader: {
