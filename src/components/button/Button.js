@@ -2,17 +2,18 @@ class Button {
   constructor(props) {
     if (props.el) {
       this.el = props.el;
-      this.init();
+      this.el && this.init();
     }
   }
 
   init() {
-    for (let i = 0; i < this.el.length; i++) {
-      this.el[i].addEventListener('click', function (e) {
-        e.preventDefault();
-        this.classList.toggle('button__hit');
-      });
-    }
+    let hitCounter = 0;
+    this.el.addEventListener('click', function (e) {
+      e.preventDefault();
+      hitCounter++;
+      this.title = `you hit me ${hitCounter} times`;
+      this.classList.toggle('button__hit');
+    });
   }
 }
 

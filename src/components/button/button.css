@@ -6,7 +6,9 @@
   cursor: pointer;
   outline: none;
   border-radius: 3px;
-  transition: all 300ms ease;
+  transition:
+    background-color 300ms ease,
+    transform 300ms ease;
 
   &:hover {
     background-color: #e5e5e5;

@@ -9,7 +9,16 @@ require('./app/app.css');
 // components styles
 require.context('./components/', true, /\.css$/);
 
-// button component
+// components js
 const Button = require('./components/button/Button');
-const buttonEl = document.getElementsByClassName('button');
-buttonEl && new Button({el: buttonEl});
+
+// components init
+function componentsInit() {
+  // button
+  const buttonEl = document.getElementsByClassName('button');
+  for (let i = 0; i < buttonEl.length; i++) {
+    new Button({el: buttonEl[i]});
+  }
+}
+
+componentsInit();
