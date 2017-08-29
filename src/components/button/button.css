@@ -12,7 +12,7 @@
     background-color: #e5e5e5;
   }
 
-  &--hit {
+  &__hit {
     transform: rotate(-360deg);
   }
 
