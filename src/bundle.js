@@ -15,9 +15,9 @@ const Button = require('./components/button/Button');
 // components init
 function componentsInit() {
   // button
-  const buttonEl = document.getElementsByClassName('button');
-  for (let i = 0; i < buttonEl.length; i++) {
-    new Button({el: buttonEl[i]});
+  const buttons = document.getElementsByClassName('button');
+  for (let i = 0; i < buttons.length; i++) {
+    new Button({el: buttons[i]});
   }
 }
 
