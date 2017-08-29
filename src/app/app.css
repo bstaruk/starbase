@@ -3,6 +3,10 @@
   but most of your css should live in ../components
  */
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: var(--body-bg-color);
   font-family: var(--font-sans);
