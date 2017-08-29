@@ -5,10 +5,10 @@ module.exports = function () {
   return {
     context: pathsHelper('src'),
     entry: {
-      app: ['./app.js']
+      app: ['./bundle.js']
     },
     output: {
-      filename: '[name].bundle.js',
+      filename: '[name].js',
       path: pathsHelper('assets')
     },
     resolveLoader: {
@@ -28,6 +28,7 @@ module.exports = function () {
           enforce: 'pre',
           test: /\.css$/,
           include: [
+            pathsHelper('app'),
             pathsHelper('components')
           ],
           use: [
@@ -47,7 +48,7 @@ module.exports = function () {
               loader: 'babel-loader',
               options: {
                 presets: [
-                  ['es2015', {'loose': true, 'modules': false}],
+                  ['es2015', {'loose': true, 'modules': false}]
                 ]
               }
             }

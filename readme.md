@@ -1,18 +1,23 @@
 # starbase
 
-Starbase is a Webpack 3, ES6 & PostCSS boilerplate that utilizes some of the juiciest open source tools around such as:
+Starbase is a Webpack 3, ES6 & PostCSS boilerplate that utilizes some of the juiciest open source tools around:
 
 * [Node.js](https://github.com/nodejs/node) & [Yarn](https://github.com/yarnpkg)
 * [Webpack 3](https://github.com/webpack/webpack)
 * [Babel](https://github.com/babel/babel) (ES6) w/ [ESLint](https://github.com/eslint/eslint)
-* [PostCSS](https://github.com/postcss/postcss) w/ [cssnext](https://github.com/MoOx/postcss-cssnext), [PostCSS Nested](https://github.com/postcss/postcss-nested), [stylelint](https://github.com/stylelint/stylelint), [cssnano](https://github.com/ben-eb/cssnano) & [MQPacker](https://github.com/hail2u/node-css-mqpacker)
+* [PostCSS](https://github.com/postcss/postcss) w/
+  * [cssnano](https://github.com/ben-eb/cssnano)
+  * [cssnext](https://github.com/MoOx/postcss-cssnext)
+  * [PostCSS Nested](https://github.com/postcss/postcss-nested)
+  * [stylelint](https://github.com/stylelint/stylelint)
+  * [MQPacker](https://github.com/hail2u/node-css-mqpacker)
 * ...and more!
 
-This boilerplate is intended to be small in scope so that it can be easily extended and customized, or used as a learning tool for folks who are trying to become familiar with Webpack 3.
+This boilerplate is intended to be small in scope so that it may be easily extended and customized, or used as a learning tool for folks who are trying to become familiar with Webpack 3.
 
 ## license
 
-Starbase is fully open source and public domain, so you are free to do whatever you wish with it -- commercially or personally. You can buy me a beer next time you're in Boston, give me credit in a [Konami code easter egg](http://konamicodesites.com/), or you can erase all signs of origin and tell your coworkers that you made it yourself. It's all good!
+Starbase is completely free, open source and public domain, so you are free to do whatever you wish with it -- commercially or personally. You can buy me a beer next time you're in Boston, star the project and tell a friend, or you can erase all signs of origin and tell your coworkers that you made it yourself. It's all good!
 
 ## getting started
 
@@ -69,7 +74,7 @@ Fetch is supported in all modern browsers, but some old dogs still don't support
 If you want to remove these for any reason, perform the following steps:
 
 1. run `yarn remove es6-promise whatwg-fetch` in the project root to remove the dependencies
-2. remove the first few lines of `./src/app.js` (it'll be obvious which ones)
+2. remove the first few lines of `./src/bundle.js` (it'll be obvious which ones)
 
 _Note: if you think you might use fetch in the future, comment-out the includes instead of deleting them. Commented-out code is stripped out in production builds._
 
@@ -83,9 +88,9 @@ Starbase uses [ESLint](http://eslint.org/) for Javascript (ES6) linting and [sty
 
 ### global css variables
 
-Starbase supports global CSS variables via the [:root](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) pseudo-element, which can be found in `/src/styles/variables.css`. You can split your variables into multiple files, and just import them into `/src/styles/variables.css` if you'd like them to be more granular.
+Starbase supports global CSS variables via the [:root](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) pseudo-element, which can be found in `/src/variables/variables.css`. You can split your variables into multiple files, and just import them into `/src/variables/variables.css` if you'd like them to be more granular.
 
-These variables automatically imported into any CSS in the `/src/components` directory, so they are always ready to use in your components.
+These variables automatically injected into any CSS in the `/src/components` and `/src/app` directories, so they are always available for use in your app & component stylesheets.
 
 Each component that comes with Starbase uses at least one variable to demonstrate the functionality.
 

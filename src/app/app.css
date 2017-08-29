@@ -1,9 +1,11 @@
-@import './variables.css';
-
 /*
   This file is here to contain some baseline styles
   but most of your css should live in ../components
  */
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   background-color: var(--body-bg-color);

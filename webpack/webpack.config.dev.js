@@ -57,7 +57,7 @@ module.exports = function () {
       }
     },
     plugins: [
-      new ExtractTextPlugin('[name].bundle.css')
+      new ExtractTextPlugin('[name].css')
     ]
   })
 };

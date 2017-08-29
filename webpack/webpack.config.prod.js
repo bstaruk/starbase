@@ -52,7 +52,7 @@ module.exports = function() {
       ]
     },
     plugins: [
-      new ExtractTextPlugin('[name].bundle.css'),
+      new ExtractTextPlugin('[name].css'),
       new CopyWebpackPlugin([
         {
           context: pathsHelper('static'),
