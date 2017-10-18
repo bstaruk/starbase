@@ -84,6 +84,10 @@ _Note: if you think you might use fetch in the future, comment-out the includes 
 
 Starbase uses [ESLint](http://eslint.org/) for Javascript (ES6) linting and [stylelint](https://github.com/stylelint/stylelint) for CSS linting. The configs (`/.eslintrc` and `/.stylelintrc` respectively) included out of the box contain some basic common rules. Modify them to your liking to encourage consistent code throughout your project.
 
+#### airbnb eslint config
+
+Starbase enforces the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with ESLint via [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb). These rules are basically the industry standard in 2017 so I'd recommend adhering to them, but you can override individual rules via the project `/.eslintrc` file. I've included a couple basic overrides (in `/.eslintrc`) to demonstrate usage.
+
 ## features you may want to know about
 
 ### global css variables
