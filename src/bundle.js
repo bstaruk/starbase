@@ -12,13 +12,8 @@ require('./app/app.css');
 // components styles
 require.context('./components/', true, /\.css$/);
 
-// components init
-function componentsInit() {
-  // button
-  const buttons = document.getElementsByClassName('button');
-  for (let i = 0; i < buttons.length; i++) {
-    new Button({ el: buttons[i] });
-  }
+// button component
+const buttons = document.getElementsByClassName('button');
+for (let i = 0; i < buttons.length; i++) {
+  new Button({ el: buttons[i] });
 }
-
-componentsInit();
