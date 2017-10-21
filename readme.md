@@ -74,7 +74,7 @@ Fetch is supported in all modern browsers, but some old dogs still don't support
 If you want to remove these for any reason, perform the following steps:
 
 1. run `yarn remove es6-promise whatwg-fetch` in the project root to remove the dependencies
-2. remove the first few lines of `./src/bundle.js` (it'll be obvious which ones)
+2. remove the first few lines of `/src/bundle.js` (it'll be obvious which ones)
 
 _Note: if you think you might use fetch in the future, comment-out the includes instead of deleting them. Commented-out code is stripped out in production builds._
 
@@ -83,6 +83,19 @@ _Note: if you think you might use fetch in the future, comment-out the includes 
 ### javascript & css linting
 
 Starbase uses [ESLint](http://eslint.org/) for Javascript (ES6) linting and [stylelint](https://github.com/stylelint/stylelint) for CSS linting. The configs (`/.eslintrc` and `/.stylelintrc` respectively) included out of the box contain some basic common rules. Modify them to your liking to encourage consistent code throughout your project.
+
+#### airbnb eslint config
+
+Starbase enforces the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with ESLint via [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb). These rules are basically the industry standard in 2017 so I'd recommend adhering to them, but you can override individual rules via the project `/.eslintrc` file. I've included a couple basic overrides (in `/.eslintrc`) to demonstrate usage.
+
+##### to remove the airbnb eslint config:
+
+1. in `/.eslintrc`, remove the line that says `extends`
+2. in `/package.json`, remove the `eslint-config-airbnb` dependency
+3. run `yarn` (or `npm update` if you hate yarn)
+
+After completing the steps above, the only rules that eslint will enforce are the ones you define in the `rules` object in `/.eslintrc`.
+
 
 ## features you may want to know about
 

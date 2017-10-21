@@ -2,19 +2,22 @@ class Button {
   constructor(props) {
     if (props.el) {
       this.el = props.el;
-      this.el && this.init();
+      if (this.el) {
+        this.init();
+      }
     }
   }
 
   init() {
+    const self = this.el;
     let hitCounter = 0;
-    this.el.addEventListener('click', function (e) {
+    self.addEventListener('click', (e) => {
       e.preventDefault();
       hitCounter++;
-      this.title = `you hit me ${hitCounter} times`;
-      this.classList.toggle('button__hit');
+      self.title = `you hit me ${hitCounter} times!`;
+      self.classList.toggle('button__hit');
     });
   }
 }
 
-module.exports = Button;
+export default Button;
