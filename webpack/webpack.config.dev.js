@@ -10,7 +10,7 @@ const postcssReporter = require('postcss-reporter');
 const postcssCssnext = require('postcss-cssnext');
 const postcssNested = require('postcss-nested');
 const postcssRemoveRoot = require('postcss-remove-root');
-const postcssMqpacker = require('css-mqpacker');
+const cssMqpacker = require('css-mqpacker');
 
 module.exports = webpackMerge(webpackConfigBase, {
   output: {
@@ -41,7 +41,7 @@ module.exports = webpackMerge(webpackConfigBase, {
                   }),
                   postcssNested,
                   postcssRemoveRoot,
-                  postcssMqpacker({
+                  cssMqpacker({
                     sort: true
                   })
                 ]
