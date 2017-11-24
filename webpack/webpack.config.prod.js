@@ -5,6 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const pathsHelper = require('./lib/paths-helper');
 
+// postcss plugins
 const postcssImport = require('postcss-import');
 const stylelint = require('stylelint');
 const postcssReporter = require('postcss-reporter');
