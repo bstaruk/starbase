@@ -14,7 +14,7 @@
     background-color: #e5e5e5;
   }
 
-  &__hit {
+  &--hit {
     transform: rotate(-360deg);
   }
 
