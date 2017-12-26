@@ -10,6 +10,7 @@ const postcssReporter = require('postcss-reporter');
 const postcssCssnext = require('postcss-cssnext');
 const postcssNested = require('postcss-nested');
 const postcssRemoveRoot = require('postcss-remove-root');
+const postcssResponsiveFont = require('postcss-responsive-font');
 const cssMqpacker = require('css-mqpacker');
 
 module.exports = webpackMerge(webpackConfigBase, {
@@ -39,6 +40,7 @@ module.exports = webpackMerge(webpackConfigBase, {
                       }
                     }
                   }),
+                  postcssResponsiveFont,
                   postcssNested,
                   postcssRemoveRoot,
                   cssMqpacker({
