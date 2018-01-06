@@ -1,4 +1,5 @@
 .footer {
-  font-size: 0.8rem;
+  font-size: responsive 0.8rem 0.95rem;
+  font-range: 30rem 60rem;
   color: #888;
 }
