@@ -3,18 +3,21 @@
   color: var(--body-font-color);
   border: 1px solid #ddd;
   padding: 0.75rem;
+  font-size: responsive 0.8rem 0.95rem;
+  font-range: 30rem 60rem;
   cursor: pointer;
   outline: none;
   border-radius: 3px;
   transition:
     background-color 300ms ease,
+    padding 300ms ease,
     transform 300ms ease;
 
   &:hover {
     background-color: #e5e5e5;
   }
 
-  &__hit {
+  &--hit {
     transform: rotate(-360deg);
   }
 

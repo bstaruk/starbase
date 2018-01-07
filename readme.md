@@ -9,6 +9,7 @@ Starbase is a Webpack 3, ES6 & PostCSS boilerplate that utilizes some of the jui
   * [cssnano](https://github.com/ben-eb/cssnano)
   * [cssnext](https://github.com/MoOx/postcss-cssnext)
   * [PostCSS Nested](https://github.com/postcss/postcss-nested)
+  * [PostCSS Responsive Type](https://github.com/seaneking/postcss-responsive-type)
   * [stylelint](https://github.com/stylelint/stylelint)
   * [MQPacker](https://github.com/hail2u/node-css-mqpacker)
 * ...and more!

@@ -15,7 +15,7 @@ class Button {
       e.preventDefault();
       hitCounter++;
       self.title = `you hit me ${hitCounter} times!`;
-      self.classList.toggle('button__hit');
+      self.classList.toggle('button--hit');
     });
   }
 }

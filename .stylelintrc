@@ -1,3 +1,27 @@
 {
-  "extends": "stylelint-config-standard"
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": [
+          "font-range",
+          "min-font-size",
+          "max-font-size",
+          "lower-font-range",
+          "upper-font-range",
+          "line-height-range",
+          "min-line-height",
+          "max-line-height",
+          "lower-line-height-range",
+          "upper-line-height-range",
+          "letter-spacing-range",
+          "min-letter-spacing",
+          "max-letter-spacing",
+          "lower-letter-spacing-range",
+          "upper-letter-spacing-range"
+        ]
+      }
+    ]
+  }
 }
