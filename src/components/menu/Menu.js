@@ -23,31 +23,34 @@ class Menu {
 
         // only proceed if menu item target is valid
         if (anchorTarget) {
-          // handle menu item active state
-          resetMenuItems(menu);
-          menuItem.classList.add('menu__list--active');
-
-          // handle menu content active state
-          resetContent(menu.id);
-          anchorTarget.classList.add('menu__content--active');
+          handleMenuItems(menu, menuItem); // handle menu item active state
+          handleMenuContent(menu.id, anchorTarget); // handle menu content active state
         }
       });
     }
   }
 }
 
-const resetMenuItems = (menu) => {
+const handleMenuItems = (menu, menuItem) => {
+  // remove any existing active classes
   const activeMenuItems = menu.getElementsByClassName('menu__list--active');
   for (let i = activeMenuItems.length; i--;) {
     activeMenuItems[i].classList.remove('menu__list--active');
   }
+
+  // add new active class
+  menuItem.classList.add('menu__list--active');
 };
 
-const resetContent = (menuId) => {
+const handleMenuContent = (menuId, anchorTarget) => {
+  // remove any existing active classes
   const activeContent = document.querySelectorAll(`.menu__content--active[data-menu-id="${menuId}"]`);
   for (let i = activeContent.length; i--;) {
     activeContent[i].classList.remove('menu__content--active');
   }
+
+  // add new active class
+  anchorTarget.classList.add('menu__content--active');
 };
 
 export default Menu;
