@@ -10,12 +10,13 @@
 body {
   background-color: var(--body-bg-color);
   font-family: var(--font-sans);
-  font-size: responsive var(--font-size-range);
-  font-range: var(--font-range);
+  font-size: responsive var(--body-font-size-range);
+  font-range: var(--body-font-range);
   letter-spacing: 0.02rem;
   color: var(--body-font-color);
   padding: 1rem;
   margin: 0;
+  max-width: var(--body-width-max);
 }
 
 a {
