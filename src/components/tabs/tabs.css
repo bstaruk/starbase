@@ -48,7 +48,7 @@
         &.tabs__list--active,
         &.tabs__list--active:hover {
           &::after {
-            background-color: #888;
+            background-color: #777;
           }
         }
 

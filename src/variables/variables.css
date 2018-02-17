@@ -5,7 +5,8 @@
   --body-bg-color: #fefefe;
   --body-font-color: #333;
   --anchor-font-color: #2475c1;
-  --border-color: #ddd;
+  --anchor-hover-font-color: #2475c1;
+  --border-color: #ccc;
 
   /* typography */
   --font-sans: 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
