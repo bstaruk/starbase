@@ -13,21 +13,21 @@
   <h1>starbase</h1>
   <p>Starbase is a Webpack 3, ES6 & PostCSS boilerplate, but you already know that if you're reading this.</p>
 </header>
-<nav class="menu" id="primary">
-  <ul class="menu__list">
-    <li><a href="#tab1" class="menu__list--active">Tab 1</a></li>
-    <li><a href="#tab2">Tab 2</a></li>
-    <li><a href="#tab3">Tab 3</a></li>
-  </ul>
-</nav>
-<section class="block">
-  <article id="tab1" class="menu__content menu__content--active" data-menu-id="primary">
+<section class="tabs">
+  <nav>
+    <ul class="tabs__list">
+      <li><a href="#tab1" class="tabs__list--active">Tab 1</a></li>
+      <li><a href="#tab2">Tab 2</a></li>
+      <li><a href="#tab3">Tab 3</a></li>
+    </ul>
+  </nav>
+  <article id="tab1" class="tabs__content tabs__content--active">
     Tab 1
   </article>
-  <article id="tab2" class="menu__content" data-menu-id="primary">
+  <article id="tab2" class="tabs__content">
     Tab 2
   </article>
-  <article id="tab3" class="menu__content" data-menu-id="primary">
+  <article id="tab3" class="tabs__content">
     Tab 3
   </article>
 </section>

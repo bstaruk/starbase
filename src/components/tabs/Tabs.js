@@ -1,4 +1,4 @@
-class Menu {
+class Tabs {
   constructor(props) {
     if (props.el) {
       this.el = props.el;
@@ -11,7 +11,7 @@ class Menu {
   init() {
     const menu = this.el;
 
-    const menuItems = menu.querySelectorAll('.menu__list > li > a');
+    const menuItems = menu.querySelectorAll('.tabs__list > li > a');
     for (let i = 0; i < menuItems.length; i++) {
       const menuItem = menuItems[i];
       menuItem.addEventListener('click', (e) => {
@@ -24,7 +24,7 @@ class Menu {
         // only proceed if menu item target is valid
         if (anchorTarget) {
           handleMenuItems(menu, menuItem); // handle menu item active state
-          handleMenuContent(menu.id, anchorTarget); // handle menu content active state
+          handleMenuContent(menu, anchorTarget); // handle menu content active state
         }
       });
     }
@@ -33,24 +33,24 @@ class Menu {
 
 const handleMenuItems = (menu, menuItem) => {
   // remove any existing active classes
-  const activeMenuItems = menu.getElementsByClassName('menu__list--active');
+  const activeMenuItems = menu.getElementsByClassName('tabs__list--active');
   for (let i = activeMenuItems.length; i--;) {
-    activeMenuItems[i].classList.remove('menu__list--active');
+    activeMenuItems[i].classList.remove('tabs__list--active');
   }
 
   // add new active class
-  menuItem.classList.add('menu__list--active');
+  menuItem.classList.add('tabs__list--active');
 };
 
-const handleMenuContent = (menuId, anchorTarget) => {
+const handleMenuContent = (menu, anchorTarget) => {
   // remove any existing active classes
-  const activeContent = document.querySelectorAll(`.menu__content--active[data-menu-id="${menuId}"]`);
+  const activeContent = menu.getElementsByClassName('tabs__content--active');
   for (let i = activeContent.length; i--;) {
-    activeContent[i].classList.remove('menu__content--active');
+    activeContent[i].classList.remove('tabs__content--active');
   }
 
   // add new active class
-  anchorTarget.classList.add('menu__content--active');
+  anchorTarget.classList.add('tabs__content--active');
 };
 
-export default Menu;
+export default Tabs;

@@ -1,5 +1,5 @@
-.menu {
-  /* menu options list */
+.tabs {
+  /* tabs list */
   &__list {
     list-style-type: none;
     margin: 0;
@@ -11,14 +11,14 @@
       & > a {
         text-decoration: none;
 
-        &.menu__list--active {
+        &.tabs__list--active {
           color: red;
         }
       }
     }
   }
 
-  /* menu content wrappers */
+  /* tabs content wrappers */
   &__content {
     display: none;
 

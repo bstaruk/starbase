@@ -1,5 +1,5 @@
 // components js
-import Menu from './components/menu/Menu';
+import Tabs from './components/tabs/Tabs';
 
 // promise & fetch polyfills
 require('es6-promise').polyfill();
@@ -14,9 +14,9 @@ require.context('./components/', true, /\.css$/);
 
 // component js
 const initializeComponents = () => {
-  const menus = document.getElementsByClassName('menu');
-  for (let i = 0; i < menus.length; i++) {
-    new Menu({ el: menus[i] });
+  const tabs = document.getElementsByClassName('tabs');
+  for (let i = 0; i < tabs.length; i++) {
+    new Tabs({ el: tabs[i] });
   }
 };
 
