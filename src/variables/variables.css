@@ -8,8 +8,8 @@
   --border-color: #666;
 
   /* typography */
-  --font-sans: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-serif: 'Lora', Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+  --font-sans: 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-serif: 'PT Serif', Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
 
   /* breakpoints (borrowed from bootstrap 4) */
   @custom-media --small only screen and (min-width: 34em); /* 544px */
