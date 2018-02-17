@@ -1,18 +1,67 @@
+:root {
+  --tabs-list-height-full: 2.5rem;
+}
+
 .tabs {
+  position: relative;
+  padding-top: var(--tabs-list-height-full);
+
   /* tabs list */
   &__list {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: var(--tabs-list-height-full);
     list-style-type: none;
     margin: 0;
     padding: 0;
 
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
     & > li {
-      display: inline-block;
+      float: left;
+      height: var(--tabs-list-height-full);
 
       & > a {
+        position: relative;
+        display: block;
+        height: var(--tabs-list-height-full);
+        line-height: var(--tabs-list-height-full);
         text-decoration: none;
+        padding: 0 1rem;
+        transition: color 300ms ease;
 
-        &.tabs__list--active {
-          color: red;
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          width: 100%;
+          height: 2px;
+          transition: background-color 300ms ease;
+        }
+
+        &.tabs__list--active,
+        &.tabs__list--active:hover {
+          &::after {
+            background-color: #888;
+          }
+        }
+
+        &:hover {
+          &::after {
+            background-color: #aaa;
+          }
+        }
+      }
+
+      &:first-of-type {
+        & > a {
+          padding-left: 0;
         }
       }
     }
@@ -20,10 +69,12 @@
 
   /* tabs content wrappers */
   &__content {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
 
     &--active {
-      display: block;
+      border-top: 2px solid var(--border-color);
+      max-height: none;
     }
   }
 }
