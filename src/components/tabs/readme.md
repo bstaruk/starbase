@@ -3,21 +3,21 @@ Navigation menu component styles (`.menu`) and javascript class (`Menu`).
 
 ## example usage
 ```html
-<nav id="primary">
-  <ul>
-    <li><a href="#tab1">Tab 1</a></li>
-    <li><a href="#tab2">Tab 2</a></li>
-    <li><a href="#tab3">Tab 3</a></li>
-  </ul>
-</nav>
-<section>
-  <article id="tab1" data-menu-id="primary">
+<section class="tabs">
+  <nav>
+    <ul class="tabs__list">
+      <li><a href="#tab1" class="tabs__list--active">Tab 1</a></li>
+      <li><a href="#tab2">Tab 2</a></li>
+      <li><a href="#tab3">Tab 3</a></li>
+    </ul>
+  </nav>
+  <article id="tab1" class="tabs__content tabs__content--active">
     Tab 1
   </article>
-  <article id="tab2" data-menu-id="primary">
+  <article id="tab2" class="tabs__content">
     Tab 2
   </article>
-  <article id="tab3" data-menu-id="primary">
+  <article id="tab3" class="tabs__content">
     Tab 3
   </article>
 </section>
