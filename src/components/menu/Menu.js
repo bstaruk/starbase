@@ -11,19 +11,21 @@ class Menu {
   init() {
     const self = this.el;
 
-    const menuItems = self.querySelectorAll('.menu__list > li > a');
-    for (let i = 0; i < menuItems.length; i++) {
-      const menuItem = menuItems[i];
-      menuItem.addEventListener('click', (e) => {
+    const menuListItems = self.querySelectorAll('.menu__list > li > a');
+    for (let i = 0; i < menuListItems.length; i++) {
+      const menuListItem = menuListItems[i];
+      menuListItem.addEventListener('click', (e) => {
         e.preventDefault();
 
-        // handle menu item active state
-        resetMenuItems(self);
-        menuItem.classList.add('menu__list--active');
-
-        const anchor = menuItem.getAttribute('href');
+        // handle menu list item target
+        const anchor = menuListItem.getAttribute('href');
         const anchorTarget = document.getElementById(anchor.replace('#', ''));
         if (anchorTarget) {
+          // handle menu list item active state
+          resetMenuItems(self);
+          menuListItem.classList.add('menu__list--active');
+
+          // handle menu content active state
           resetContent(self.id);
           anchorTarget.classList.add('menu__content--active');
         }
