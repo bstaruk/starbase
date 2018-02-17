@@ -10,8 +10,9 @@
 body {
   background-color: var(--body-bg-color);
   font-family: var(--font-sans);
-  font-size: responsive 0.9rem 1.1rem;
-  font-range: 600px 1200px;
+  font-size: responsive var(--font-size-range);
+  font-range: var(--font-range);
+  letter-spacing: 0.02rem;
   color: var(--body-font-color);
   padding: 1rem;
   margin: 0;
