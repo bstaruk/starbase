@@ -9,24 +9,26 @@ class Menu {
   }
 
   init() {
-    const self = this.el;
+    const menu = this.el;
 
-    const menuListItems = self.querySelectorAll('.menu__list > li > a');
-    for (let i = 0; i < menuListItems.length; i++) {
-      const menuListItem = menuListItems[i];
-      menuListItem.addEventListener('click', (e) => {
+    const menuItems = menu.querySelectorAll('.menu__list > li > a');
+    for (let i = 0; i < menuItems.length; i++) {
+      const menuItem = menuItems[i];
+      menuItem.addEventListener('click', (e) => {
         e.preventDefault();
 
-        // handle menu list item target
-        const anchor = menuListItem.getAttribute('href');
+        // handle menu item target
+        const anchor = menuItem.getAttribute('href');
         const anchorTarget = document.getElementById(anchor.replace('#', ''));
+
+        // only proceed if menu item target is valid
         if (anchorTarget) {
-          // handle menu list item active state
-          resetMenuItems(self);
-          menuListItem.classList.add('menu__list--active');
+          // handle menu item active state
+          resetMenuItems(menu);
+          menuItem.classList.add('menu__list--active');
 
           // handle menu content active state
-          resetContent(self.id);
+          resetContent(menu.id);
           anchorTarget.classList.add('menu__content--active');
         }
       });
