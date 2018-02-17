@@ -10,7 +10,8 @@
 body {
   background-color: var(--body-bg-color);
   font-family: var(--font-sans);
-  font-size: 0.9rem;
+  font-size: responsive 0.9rem 1.1rem;
+  font-range: 600px 1200px;
   color: var(--body-font-color);
   padding: 1rem;
   margin: 0;
