@@ -11,10 +11,25 @@
 <header class="header">
   <img src="images/starbase.png" alt="starbase - webpack boilerplate w/ babel, eslint, postcss, cssnext, stylelint & more" />
   <h1>starbase</h1>
-</header>
-<section>
   <p>Starbase is a Webpack 3, ES6 & PostCSS boilerplate, but you already know that if you're reading this.</p>
-  <p><button type="button" class="button" title="you know you want to">hit me!</button></p>
+</header>
+<nav class="menu" id="primary">
+  <ul class="menu__list">
+    <li><a href="#tab1" class="menu__list--active">Tab 1</a></li>
+    <li><a href="#tab2">Tab 2</a></li>
+    <li><a href="#tab3">Tab 3</a></li>
+  </ul>
+</nav>
+<section class="block">
+  <article id="tab1" class="menu__content menu__content--active" data-menu-id="primary">
+    Tab 1
+  </article>
+  <article id="tab2" class="menu__content" data-menu-id="primary">
+    Tab 2
+  </article>
+  <article id="tab3" class="menu__content" data-menu-id="primary">
+    Tab 3
+  </article>
 </section>
 <footer class="footer">
   <p>v1 by <a href="https://brian.staruk.me" title="continue to brian.staruk.me">brian staruk</a> | <a href="https://github.com/bstaruk/starbase" title="learn more about starbase on github">check me out!</a></p>

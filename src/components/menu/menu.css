@@ -1,0 +1,29 @@
+.menu {
+  /* menu options list */
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    & > li {
+      display: inline-block;
+
+      & > a {
+        text-decoration: none;
+
+        &.menu__list--active {
+          color: red;
+        }
+      }
+    }
+  }
+
+  /* menu content wrappers */
+  &__content {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+}
