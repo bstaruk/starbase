@@ -1,5 +1,5 @@
 // components js
-import Button from './components/button/Button';
+import Tabs from './components/tabs/Tabs';
 
 // promise & fetch polyfills
 require('es6-promise').polyfill();
@@ -12,8 +12,12 @@ require('./app/app.css');
 // components styles
 require.context('./components/', true, /\.css$/);
 
-// button component
-const buttons = document.getElementsByClassName('button');
-for (let i = 0; i < buttons.length; i++) {
-  new Button({ el: buttons[i] });
-}
+// component js
+const initializeComponents = () => {
+  const tabs = document.getElementsByClassName('tabs');
+  for (let i = 0; i < tabs.length; i++) {
+    new Tabs({ el: tabs[i] });
+  }
+};
+
+initializeComponents(); // let's get this show on the road

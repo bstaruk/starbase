@@ -1,13 +1,42 @@
+:root {
+  --header-height-small: 2rem;
+  --header-font-size-small: 1.5rem;
+  --header-height-full: 2.5rem;
+  --header-font-size-full: 2rem;
+}
+
 .header {
-  font-family: var(--font-serif);
+  position: relative;
 
   & img {
-    float: left;
-    margin-right: 0.5rem;
-    max-height: 2.5rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: var(--header-height-small);
+    transition: height 300ms ease;
+
+    @media (--medium) {
+      height: var(--header-height-full);
+    }
   }
 
   & h1 {
+    font-family: var(--font-serif);
+    font-size: var(--header-font-size-small);
+    font-weight: normal;
+    letter-spacing: normal;
+    line-height: var(--header-height-small);
+    padding-left: calc(var(--header-height-small) + 0.5rem);
     margin-top: 0;
+    transition:
+      font-size 300ms ease,
+      line-height 300ms ease,
+      padding-left 300ms ease;
+
+    @media (--medium) {
+      font-size: var(--header-font-size-full);
+      line-height: var(--header-height-full);
+      padding-left: calc(var(--header-height-full) + 0.5rem);
+    }
   }
 }

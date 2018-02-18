@@ -1,0 +1,119 @@
+:root {
+  --tabs-list-height-small: 2rem;
+  --tabs-list-height-full: 2.5rem;
+}
+
+.tabs {
+  position: relative;
+
+  @media (--medium) {
+    padding-top: var(--tabs-list-height-full);
+  }
+
+  /* tabs list */
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    @media (--medium) {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: var(--tabs-list-height-full);
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    & > li {
+      float: left;
+      margin: 0.5rem 0.5rem 0 0;
+
+      @media (--medium) {
+        margin: 0;
+        height: var(--tabs-list-height-full);
+      }
+
+      & > a {
+        position: relative;
+        display: block;
+        height: var(--tabs-list-height-small);
+        line-height: var(--tabs-list-height-small);
+        text-decoration: none;
+        padding: 0 0.5rem;
+        background-color: #ddd;
+        color: var(--body-font-color);
+        transition:
+          background-color 300ms ease,
+          color 300ms ease;
+
+        @media (--medium) {
+          background-color: transparent;
+          height: var(--tabs-list-height-full);
+          line-height: var(--tabs-list-height-full);
+          padding: 0 1rem;
+        }
+
+        &::after {
+          @media (--medium) {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            transition: background-color 300ms ease;
+          }
+        }
+
+        &.tabs__list--active,
+        &.tabs__list--active:hover {
+          background-color: #de3f14;
+          color: white;
+
+          @media (--medium) {
+            background-color: transparent;
+            color: #de3f14;
+          }
+
+          &::after {
+            background-color: #de3f14;
+          }
+        }
+
+        &:hover {
+          &::after {
+            background-color: #a0a0a0;
+          }
+        }
+      }
+
+      &:first-of-type {
+        & > a {
+          @media (--medium) {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  /* tabs content wrappers */
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 400ms ease;
+
+    &--active {
+      max-height: none;
+      opacity: 1;
+    }
+  }
+}
