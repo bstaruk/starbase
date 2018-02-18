@@ -106,9 +106,12 @@
   &__content {
     max-height: 0;
     overflow: hidden;
+    opacity: 0;
+    transition: opacity 400ms ease;
 
     &--active {
       max-height: none;
+      opacity: 1;
 
       @media (--medium) {
         border-top: 2px solid var(--border-color);
