@@ -20,7 +20,9 @@
       position: absolute;
       left: 0;
       top: 0;
+      width: 100%;
       height: var(--tabs-list-height-full);
+      border-bottom: 2px solid var(--border-color);
     }
 
     &::after {
@@ -63,7 +65,7 @@
             content: "";
             position: absolute;
             left: 0;
-            bottom: -2px;
+            bottom: 0;
             width: 100%;
             height: 2px;
             transition: background-color 300ms ease;
@@ -112,10 +114,6 @@
     &--active {
       max-height: none;
       opacity: 1;
-
-      @media (--medium) {
-        border-top: 2px solid var(--border-color);
-      }
     }
   }
 }
