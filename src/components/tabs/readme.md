@@ -3,24 +3,22 @@ Navigation menu component styles (`.menu`) and javascript class (`Menu`).
 
 ## example usage
 ```html
-<section class="tabs">
+<main role="main" class="tabs">
   <nav>
-    <ul class="tabs__list">
-      <li><a href="#tab1" title="tab 1">tab 1</a></li>
-      <li><a href="#tab2" title="tab 2">tab 2</a></li>
-      <li><a href="#tab3" title="tab 3">tab 3</a></li>
-for?</a></li>
+    <ul role="tablist" class="tabs__list">
+      <li role="tab" id="tab1" aria-controls="panel1" aria-selected="true"><a href="#panel1" title="click to activate panel one" class="tabs__list--active">tab one</a></li>
+      <li role="tab" id="tab2" aria-controls="panel2" aria-selected="false"><a href="#panel2" title="click to activate panel two">tab two</a></li>
+      <li role="tab" id="tab3" aria-controls="panel3" aria-selected="false"><a href="#panel3" title="click to activate panel three">tab three</a></li>
     </ul>
   </nav>
-  <article id="tab1" class="tabs__content tabs__content--active">
-    <p>tab 1</p>
-  </article>
-  <article id="tab2" class="tabs__content">
-    <p>tab 2</p>
-  </article>
-  <article id="tab3" class="tabs__content">
-    <p>tab 3</p>
-  </article>
-</section>
-
+  <div role="tabpanel" aria-labelledby="tab1" id="panel1" class="tabs__content tabs__content--active" aria-hidden="false">
+    <p>panel one</p>
+  </div>
+  <div role="tabpanel" aria-labelledby="tab2" id="panel2" class="tabs__content" aria-hidden="true">
+    <p>panel two</p>
+  </div>
+  <div role="tabpanel" aria-labelledby="tab3" id="panel3" class="tabs__content" aria-hidden="true">
+    <p>panel three</p>
+  </div>
+</main>
 ```
