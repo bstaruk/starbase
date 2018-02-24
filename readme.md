@@ -75,9 +75,9 @@ Fetch is supported in all modern browsers, but some old dogs still don't support
 If you want to remove these for any reason, perform the following steps:
 
 1. run `yarn remove es6-promise whatwg-fetch` in the project root to remove the dependencies
-2. remove the first few lines of `/src/bundle.js` (it'll be obvious which ones)
+2. remove the lines in `/src/bundle.js` that fall under the "fetch & promise polyfills" comment (it'll be obvious which ones)
 
-_Note: if you think you might use fetch in the future, comment-out the includes instead of deleting them. Commented-out code is not included in production builds._
+_Note: if you think you might use fetch in the future, comment-out the requires instead of deleting them. Commented-out code is not included in production builds._
 
 ## features you may want to customize
 
