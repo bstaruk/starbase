@@ -4,6 +4,6 @@ Global footer component styles.
 ## usage
 ```html
 <footer class="footer">
-  <p>hi mom!</p>
+  <p>&copy; 1987 brian.staruk.me</p>
 </footer>
 ```
