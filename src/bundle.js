@@ -1,7 +1,10 @@
 // components js
 import Tabs from './components/tabs/Tabs';
 
-// promise & fetch polyfills
+// remove .no-js from html tag
+document.querySelector('html').classList.remove('no-js');
+
+// fetch & promise polyfills
 require('es6-promise').polyfill();
 require('whatwg-fetch');
 

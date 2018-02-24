@@ -1,41 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js">
 <head>
   <meta charset="UTF-8">
   <title>starbase - a webpack, ES6 & PostCSS boilerplate for web developers</title>
   <meta name="description" content="starbase: webpack 3 boilerplate w/ Babel (ES6), ESLint, PostCSS, cssnext, stylelint & more">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="assets/app.css">
+
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="images/favicon/manifest.json">
+  <meta name="msapplication-config" content="images/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#fefefe">
 </head>
 <body>
-<header class="header">
-  <img src="images/starbase.png" alt="starbase - a webpack, es6 &amp; postcss boilerplate" />
+<header role="banner" id="header">
+  <img src="images/starbase.png" alt="starbase logo" />
   <h1>starbase</h1>
   <p>starbase is an open source webpack 3, Babel (ES6) & PostCSS boilerplate for web developers, with a small footprint and plenty of room for cream and sugar-- make it your own!</p>
 </header>
-<section class="tabs">
+<main role="main" class="tabs">
   <nav>
-    <ul class="tabs__list">
-      <li><a href="#tab1" title="a brief history of starbase-- it's got electrolytes!" class="tabs__list--active">why come?</a></li>
-      <li><a href="#tab2" title="an overview of the starbase commands">what does it do?</a></li>
-      <li><a href="#tab3" title="free software is for you and me">who is it for?</a></li>
+    <ul role="tablist" class="tabs__list">
+      <li role="presentation">
+        <a role="tab" id="tab1" aria-controls="panel1" aria-selected="true" href="#panel1" title="a brief history of starbase-- it's got electrolytes!" class="tabs__list--active" tabindex="1">why come?</a>
+      </li>
+      <li role="presentation">
+        <a role="tab" id="tab2" aria-controls="panel2" aria-selected="false" href="#panel2" title="an overview of the starbase commands" tabindex="2">what does it do?</a>
+      </li>
+      <li role="presentation">
+        <a role="tab" id="tab3" aria-controls="panel3" aria-selected="false" href="#panel3" title="free software is for you and me" tabindex="3">who is it for?</a>
+      </li>
     </ul>
   </nav>
-  <article id="tab1" class="tabs__content tabs__content--active">
+  <div role="tabpanel" aria-labelledby="tab1" id="panel1" class="tabs__content tabs__content--active" aria-hidden="false">
     <p>starbase was created in early 2017, shortly after webpack 2 was released and it became clear that many popular development boilerplates were not being maintained or upgraded to the latest versions of the software they were built to utilize.</p>
     <p>The primary mission of starbase is to provide an elegant but simple baseline development process that generates clean, production-ready assets while being bloat-free and easy to maintain.</p>
-  </article>
-  <article id="tab2" class="tabs__content">
+  </div>
+  <div role="tabpanel" aria-labelledby="tab2" id="panel2" class="tabs__content" aria-hidden="true">
     <p>starbase enables developers to spin up new projects and begin coding within minutes instead of hours. It is ready, right out of the box, to watch your code during development and can handle production builds when you're ready to integrate and/or deploy.</p>
     <p>The <code>watch</code> command uses <a href="https://github.com/webpack/webpack-dev-server" title="webpack-dev-server on github">webpack-dev-server</a> to serve up your project on a development server (localhost) which will recompile and lint as you modify the source. You can even access this web server via LAN for testing your app on multiple devices.</p>
     <p>The <code>build</code> command will compile production-ready (linted, minified, concatenated &amp; optimized) assets that can be integrated into your CMS theme or used as a standalone static website.</p>
-  </article>
-  <article id="tab3" class="tabs__content">
+  </div>
+  <div role="tabpanel" aria-labelledby="tab3" id="panel3" class="tabs__content" aria-hidden="true">
     <p>starbase is open source and completely free for personal or commercial use. It is a personal project-- a living code styleguide and outlet for technical exploration that you can make your own if you dig it. Pick it up, check it out and make something neat with it.</p>
     <p>If you encounter any problems along the way, please be sure to <a href="https://github.com/bstaruk/starbase/issues" title="report an issue with starbase on github">report an issue</a> on GitHub and it'll likely be taken care of faster than you think!</p>
-  </article>
-</section>
-<footer class="footer">
+  </div>
+</main>
+<footer role="contentinfo" id="footer">
   <p>crafted in boston by <a href="https://brian.staruk.me" title="continue to brian.staruk.me">brian staruk</a> | <a href="https://github.com/bstaruk/starbase" title="learn more about starbase on github">starbase on github</a></p>
 </footer>
 <script src="assets/app.js"></script>

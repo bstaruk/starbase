@@ -68,16 +68,16 @@ Removing the cleanup process means that deleted assets in `/src` will not be del
 
 ### fetch & promise polyfills
 
-Because starbase was built to accommodate ES6 & CommonJS (and not JQuery) it is assumed that you'll be using [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) for asynchronous requests.
+Because starbase was built to accommodate ES6 & CommonJS (and not jQuery) it is assumed that you'll be using [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) for asynchronous requests.
 
 Fetch is supported in all modern browsers, but some old dogs still don't support it and that's what we need the [es6-promise](https://github.com/stefanpenner/es6-promise) & [whatwg-fetch](https://github.com/github/fetch) polyfills for.
 
 If you want to remove these for any reason, perform the following steps:
 
 1. run `yarn remove es6-promise whatwg-fetch` in the project root to remove the dependencies
-2. remove the first few lines of `/src/bundle.js` (it'll be obvious which ones)
+2. remove the lines in `/src/bundle.js` that fall under the "fetch & promise polyfills" comment (it'll be obvious which ones)
 
-_Note: if you think you might use fetch in the future, comment-out the includes instead of deleting them. Commented-out code is not included in production builds._
+_Note: if you think you might use fetch in the future, comment-out the requires instead of deleting them. Commented-out code is not included in production builds._
 
 ## features you may want to customize
 
