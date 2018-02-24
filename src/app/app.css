@@ -8,21 +8,21 @@
 }
 
 body {
+  max-width: var(--body-width-max);
   background-color: var(--body-bg-color);
   font-family: var(--font-sans);
   font-size: responsive var(--body-font-size-range);
   font-range: var(--body-font-range);
   letter-spacing: 0.02rem;
-  line-height: 1.3;
+  line-height: 1.25;
   color: var(--body-font-color);
   padding: 1rem;
   margin: 0;
-  max-width: var(--body-width-max);
 }
 
 a {
   color: var(--anchor-font-color);
-  transition: color 250ms ease;
+  transition: color 200ms ease;
 
   &:hover {
     color: var(--anchor-hover-font-color);

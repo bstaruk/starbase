@@ -1,19 +1,18 @@
 /* IMPORTANT: This file is for :root variables only. */
 
 :root {
-  /* colors */
+  /* theme colors */
   --body-bg-color: #fefefe;
   --body-font-color: #333;
-  --anchor-font-color: #2475c1;
-  --anchor-hover-font-color: #2475c1;
-  --border-color: #ccc;
+  --anchor-font-color: #2472be;
+  --anchor-hover-font-color: #23a5f0;
 
   /* typography */
   --font-sans: 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-serif: 'PT Serif', Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
 
   /* dimensions */
-  --body-font-size-range: 0.9rem 1rem;
+  --body-font-size-range: 0.9rem 1.05rem;
   --body-font-range: 34rem 48rem;
   --body-width-max: 48rem;
 
