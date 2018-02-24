@@ -114,9 +114,14 @@
     opacity: 0;
     transition: opacity 400ms ease;
 
-    &--active {
+    &--active,
+    .no-js & {
       max-height: none;
       opacity: 1;
+    }
+
+    .no-js & {
+      border-bottom: 1px solid var(--tabs-border-color);
     }
   }
 }
