@@ -68,7 +68,7 @@ Removing the cleanup process means that deleted assets in `/src` will not be del
 
 ### fetch & promise polyfills
 
-Because starbase was built to accommodate ES6 & CommonJS (and not JQuery) it is assumed that you'll be using [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) for asynchronous requests.
+Because starbase was built to accommodate ES6 & CommonJS (and not jQuery) it is assumed that you'll be using [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) for asynchronous requests.
 
 Fetch is supported in all modern browsers, but some old dogs still don't support it and that's what we need the [es6-promise](https://github.com/stefanpenner/es6-promise) & [whatwg-fetch](https://github.com/github/fetch) polyfills for.
 
