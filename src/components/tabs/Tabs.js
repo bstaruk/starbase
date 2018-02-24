@@ -35,12 +35,12 @@ const handleMenuItems = (menuItems, activeMenuItem) => {
   for (let i = 0; i < menuItems.length; i++) {
     const menuItem = menuItems[i];
     menuItem.classList.remove('tabs__list--active');
-    menuItem.parentElement.setAttribute('aria-selected', 'false');
+    menuItem.setAttribute('aria-selected', 'false');
   }
 
   // add new active class
   activeMenuItem.classList.add('tabs__list--active');
-  activeMenuItem.parentElement.setAttribute('aria-selected', 'true');
+  activeMenuItem.setAttribute('aria-selected', 'true');
 };
 
 const handleMenuContent = (menu, anchorTarget) => {
