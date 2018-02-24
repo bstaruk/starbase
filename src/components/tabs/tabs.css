@@ -122,6 +122,10 @@
 
     .no-js & {
       border-bottom: 1px solid var(--tabs-border-color);
+
+      &:last-of-type {
+        border-bottom: 0;
+      }
     }
   }
 }
