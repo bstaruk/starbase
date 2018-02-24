@@ -1,5 +1,5 @@
 # menu
-Navigation menu component styles (`.menu`) and javascript class (`Menu`).
+Navigation tabs component styles (`.tabs`) and javascript class (`Tabs`).
 
 ## example usage
 ```html
