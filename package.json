@@ -9,7 +9,7 @@
       "url": "https://brian.staruk.me"
     }
   ],
-  "description": "a webpack 3 boilerplate w/ babel (es6), eslint, postcss, cssnext, stylelint & more",
+  "description": "a webpack 4 boilerplate w/ babel (es6), eslint, postcss, cssnext, stylelint & more",
   "homepage": "https://github.com/bstaruk/starbase",
   "repository": {
     "type": "git",
