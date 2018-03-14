@@ -1,4 +1,6 @@
 # starbase
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase?ref=badge_shield)
+
 
 starbase is a webpack 4, ES6 & PostCSS boilerplate that utilizes some of the juiciest open source tools around:
 
@@ -19,6 +21,9 @@ This boilerplate is intended to be small in scope so that it may be easily exten
 ## license
 
 starbase is open source and free software, so you may to do whatever you wish with it -- commercially or personally. You can buy me a beer next time you're in Boston, star the project and tell a friend, or you can erase all signs of origin and tell your coworkers that you made it yourself. It's all good!
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase?ref=badge_large)
 
 ## getting started
 
