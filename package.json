@@ -20,7 +20,7 @@
     "email": "brian@staruk.me"
   },
   "engines": {
-    "node": ">=8.9.3"
+    "node": ">=6.11.5"
   },
   "main": "index.js",
   "scripts": {
