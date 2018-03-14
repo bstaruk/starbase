@@ -40,7 +40,7 @@ _Note: if you hate Yarn for some reason, you can skip Step 2 and use `npm instal
 
 ### local development
 
-starbase uses [webpack-dev-server](https://github.com/webpack/webpack-dev-server) to serve up your project at [http://localhost:8080](http://localhost:8080) for streamlined and convenient development.
+starbase uses [`webpack-dev-server`](https://github.com/webpack/webpack-dev-server) to serve up your project at [http://localhost:8080](http://localhost:8080) for streamlined and convenient development.
 
 After running `npm run watch` in the project root, your `/src` code will be served at the url above and watched for changes. As you modify code in `/src`, the project will be recompiled and your browser will refresh to show the latest changes.
 
@@ -73,9 +73,9 @@ Removing the cleanup process means that deleted assets in `/src` will not be del
 
 ### fetch & promise polyfills
 
-Because starbase was built to accommodate ES6 & CommonJS (and not jQuery) it is assumed that you'll be using [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) for asynchronous requests.
+Because starbase was built to accommodate ES6 & CommonJS (and not jQuery) it is assumed that you'll be using [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) for asynchronous requests.
 
-Fetch is supported in all modern browsers, but some old dogs still don't support it and that's what we need the [es6-promise](https://github.com/stefanpenner/es6-promise) & [whatwg-fetch](https://github.com/github/fetch) polyfills for.
+Fetch is supported in all modern browsers, but some old dogs still don't support it and that's what we need the [`es6-promise`](https://github.com/stefanpenner/es6-promise) & [`whatwg-fetch`](https://github.com/github/fetch) polyfills for.
 
 If you want to remove these for any reason, perform the following steps:
 
@@ -92,7 +92,7 @@ starbase uses [ESLint](http://eslint.org/) for Javascript (ES6) linting and [sty
 
 #### airbnb eslint config
 
-starbase enforces the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with ESLint via [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb). These rules are basically the industry standard in 2017 so I'd recommend adhering to them, but you can override individual rules via the project `/.eslintrc` file. I've included a couple basic overrides (in `/.eslintrc`) to demonstrate usage.
+starbase enforces the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with ESLint via [`eslint-config-airbnb`](https://www.npmjs.com/package/eslint-config-airbnb). These rules are basically the industry standard in 2017 so I'd recommend adhering to them, but you can override individual rules via the project `/.eslintrc` file. I've included a couple basic overrides (in `/.eslintrc`) to demonstrate usage.
 
 ##### to remove the airbnb eslint config:
 
@@ -106,10 +106,14 @@ After completing the steps above, the only rules that eslint will enforce are th
 
 ### global css variables
 
-starbase supports global CSS variables via the [:root](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) pseudo-element, which can be found in `/src/variables/variables.css`. You can split your variables into multiple files, and just import them into `/src/variables/variables.css` if you'd like them to be more granular.
+starbase supports global CSS variables via the [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) pseudo-element, which can be found in `/src/variables/variables.css`. You can split your variables into multiple files, and just import them into `/src/variables/variables.css` if you'd like them to be more granular.
 
 These variables automatically injected into any CSS in the `/src/components` and `/src/app` directories, so they are always available for use in your app & component stylesheets.
 
 Each component that comes with Starbase uses at least one variable to demonstrate the functionality.
 
 All variables are cleaned up in your production code and only the values will remain, so there is no bloat or downside to using these variables. Go nuts!
+
+### html-webpack-plugin
+
+starbase uses [`html-webpack-plugin`](https://github.com/jantimon/html-webpack-plugin) to generate HTML assets. The reason for this is to allow webpack to manage other assets, such as favicons and embedded images, as part of the build process. Adding new templates (pages) is very easy, but you'll need to read the official plugin docs for the latest info.
