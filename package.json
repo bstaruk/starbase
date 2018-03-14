@@ -36,7 +36,6 @@
     "babel-preset-env": "^1.6.1",
     "caniuse-lite": "^1.0.30000814",
     "clean-webpack-plugin": "^0.1.19",
-    "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.10",
     "css-mqpacker": "^6.0.2",
     "cssnano": "^3.10.0",
