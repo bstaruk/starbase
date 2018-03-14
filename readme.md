@@ -113,3 +113,7 @@ These variables automatically injected into any CSS in the `/src/components` and
 Each component that comes with Starbase uses at least one variable to demonstrate the functionality.
 
 All variables are cleaned up in your production code and only the values will remain, so there is no bloat or downside to using these variables. Go nuts!
+
+### html webpack plugin
+
+starbase uses [HTML Webpack Plugin](https://github.com/jantimon/html-webpack-plugin) to generate HTML assets. The reason for this is to allow webpack to manage other assets, such as favicons and embedded images, as part of the build process. Adding new templates (pages) is very easy, but you'll need to read the official plugin docs for the latest info.
