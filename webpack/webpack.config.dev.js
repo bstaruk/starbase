@@ -1,7 +1,7 @@
+const path = require('path');
 const webpackMerge = require('webpack-merge');
 const webpackConfigBase = require('./webpack.config.base.js');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const pathsHelper = require('./lib/paths-helper');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // postcss plugins
 const postcssImport = require('postcss-import');
@@ -14,48 +14,43 @@ const postcssResponsiveType = require('postcss-responsive-type');
 const cssMqpacker = require('css-mqpacker');
 
 module.exports = webpackMerge(webpackConfigBase, {
-  output: {
-    publicPath: '/assets'
-  },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            'css-loader',
-            {
-              loader: 'postcss-loader',
-              options: {
-                sourceMap: 'inline',
-                plugins: () => [
-                  postcssImport,
-                  stylelint(),
-                  postcssReporter(),
-                  postcssCssnext({
-                    features: {
-                      autoprefixer: {
-                        grid: false
-                      }
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: 'inline',
+              plugins: () => [
+                postcssImport,
+                stylelint(),
+                postcssReporter(),
+                postcssCssnext({
+                  features: {
+                    autoprefixer: {
+                      grid: false
                     }
-                  }),
-                  postcssResponsiveType,
-                  postcssNested,
-                  postcssRemoveRoot,
-                  cssMqpacker({
-                    sort: true
-                  })
-                ]
-              }
+                  }
+                }),
+                postcssResponsiveType,
+                postcssNested,
+                postcssRemoveRoot,
+                cssMqpacker({
+                  sort: true
+                })
+              ]
             }
-          ]
-        })
+          }
+        ]
       }
     ]
   },
   devServer: {
-    contentBase: pathsHelper('static'),
+    contentBase: path.resolve(__dirname, '../dist'),
     port: 8080,
     watchOptions: {
       poll: 1000
@@ -65,6 +60,9 @@ module.exports = webpackMerge(webpackConfigBase, {
     }
   },
   plugins: [
-    new ExtractTextPlugin('[name].css')
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css'
+    })
   ]
 });
