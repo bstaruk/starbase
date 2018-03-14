@@ -1,9 +1,8 @@
+const path = require('path');
 const webpackMerge = require('webpack-merge');
 const webpackConfigBase = require('./webpack.config.base.js');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const pathsHelper = require('./lib/paths-helper');
 
 // postcss plugins
 const postcssImport = require('postcss-import');
@@ -17,58 +16,53 @@ const cssMqpacker = require('css-mqpacker');
 const cssnano = require('cssnano');
 
 module.exports = webpackMerge(webpackConfigBase, {
-  output: {
-    publicPath: './'
-  },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            'css-loader',
-            {
-              loader: 'postcss-loader',
-              options: {
-                plugins: () => [
-                  postcssImport,
-                  stylelint(),
-                  postcssReporter(),
-                  postcssCssnext({
-                    features: {
-                      autoprefixer: {
-                        grid: false
-                      }
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [
+                postcssImport,
+                stylelint(),
+                postcssReporter(),
+                postcssCssnext({
+                  features: {
+                    autoprefixer: {
+                      grid: false
                     }
-                  }),
-                  postcssResponsiveType,
-                  postcssNested,
-                  postcssRemoveRoot,
-                  cssMqpacker({
-                    sort: true
-                  }),
-                  cssnano({
-                    autoprefixer: false,
-                    safe: true
-                  })
-                ]
-              }
+                  }
+                }),
+                postcssResponsiveType,
+                postcssNested,
+                postcssRemoveRoot,
+                cssMqpacker({
+                  sort: true
+                }),
+                cssnano({
+                  autoprefixer: false,
+                  safe: true
+                })
+              ]
             }
-          ]
-        })
+          }
+        ]
       }
     ]
   },
   plugins: [
-    new ExtractTextPlugin('[name].css'),
-    new CopyWebpackPlugin([
-      {
-        context: pathsHelper('static'),
-        to: '../',
-        from: '**/**'
-      }
-    ]),
-    new CleanWebpackPlugin(['dist'], { root: pathsHelper('base') })
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css'
+    }),
+    new CleanWebpackPlugin([
+      'dist'
+    ], {
+      root: path.resolve(__dirname, '../')
+    })
   ]
 });

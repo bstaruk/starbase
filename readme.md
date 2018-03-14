@@ -1,5 +1,10 @@
 # starbase
 
+[![npm version](https://badge.fury.io/js/starbase.svg)](https://badge.fury.io/js/starbase)
+[![build status](https://travis-ci.org/bstaruk/starbase.svg?branch=master)](https://travis-ci.org/bstaruk/starbase)
+[![dependencies status](https://david-dm.org/bstaruk/starbase/status.svg)](https://david-dm.org/bstaruk/starbase)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase?ref=badge_shield)
+
 starbase is a webpack 4, ES6 & PostCSS boilerplate that utilizes some of the juiciest open source tools around:
 
 * [Node.js](https://github.com/nodejs/node) & [Yarn](https://github.com/yarnpkg)
@@ -75,7 +80,7 @@ Fetch is supported in all modern browsers, but some old dogs still don't support
 If you want to remove these for any reason, perform the following steps:
 
 1. run `yarn remove es6-promise whatwg-fetch` in the project root to remove the dependencies
-2. remove the lines in `/src/bundle.js` that fall under the "fetch & promise polyfills" comment (it'll be obvious which ones)
+2. remove the lines in `/src/app.js` that fall under the "fetch & promise polyfills" comment (it'll be obvious which ones)
 
 _Note: if you think you might use fetch in the future, comment-out the requires instead of deleting them. Commented-out code is not included in production builds._
 

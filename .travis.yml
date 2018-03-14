@@ -1,0 +1,17 @@
+sudo: false
+dist: trusty
+language: node_js
+
+branches:
+  only:
+    - master
+    - dev
+
+node_js:
+  - "8"
+
+cache:
+  yarn: true
+
+script:
+  npm run build
