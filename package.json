@@ -24,7 +24,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "build": "webpack -p --config ./webpack/webpack.config.prod.js --mode production",
+    "build": "webpack --config ./webpack/webpack.config.prod.js --mode production",
     "watch": "webpack-dev-server --config ./webpack/webpack.config.dev.js --mode development"
   },
   "keywords": [],
