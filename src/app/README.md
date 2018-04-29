@@ -1,4 +1,4 @@
-# `app`
+# App
 
 This is your app folder. Any code that is stored here should affect the entire application.
 
