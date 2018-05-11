@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const OfflinePlugin = require('offline-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, '../src'),
@@ -97,6 +98,9 @@ module.exports = {
       template: path.resolve(__dirname, '../src/templates/index.html'),
       filename: 'index.html',
       favicon: path.resolve(__dirname, '../src/templates/images/favicon.png')
+    }),
+    new OfflinePlugin({
+      AppCache: false
     })
   ]
 };
