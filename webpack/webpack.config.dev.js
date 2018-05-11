@@ -14,6 +14,9 @@ const postcssResponsiveType = require('postcss-responsive-type');
 const cssMqpacker = require('css-mqpacker');
 
 module.exports = webpackMerge(webpackConfigBase, {
+  output: {
+    filename: '[name].js'
+  },
   module: {
     rules: [
       {

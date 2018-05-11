@@ -16,6 +16,9 @@ const cssMqpacker = require('css-mqpacker');
 const cssnano = require('cssnano');
 
 module.exports = webpackMerge(webpackConfigBase, {
+  output: {
+    filename: '[name].[hash].js'
+  },
   module: {
     rules: [
       {
@@ -56,8 +59,8 @@ module.exports = webpackMerge(webpackConfigBase, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css'
+      filename: '[name].[hash].css',
+      chunkFilename: '[id].[hash].css'
     }),
     new CleanWebpackPlugin([
       'dist'

@@ -7,7 +7,6 @@ module.exports = {
     app: ['./app.js']
   },
   output: {
-    filename: '[name].js',
     path: path.resolve(__dirname, '../dist')
   },
   resolveLoader: {
