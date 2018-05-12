@@ -127,7 +127,7 @@ It should be noted that [service workers](https://developer.mozilla.org/en-US/do
 
 _There is no consequence to removing this feature, besides limiting offline access to your project._
 
-#### to disable but not delete offline-plugin:
+#### to disable (but not delete) offline-plugin:
 
 You can disable `offline-plugin` without deleting it from your codebase, so that it's not included in your production code (reduces filesize) but is ready to be re-enabled if you ever want it back.
 
