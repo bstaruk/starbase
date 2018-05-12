@@ -11,7 +11,7 @@ body {
   max-width: var(--body-width-max);
   background-color: var(--body-bg-color);
   font-family: var(--font-sans);
-  font-size: responsive var(--body-font-size-range);
+  font-size: var(--body-font-size);
   font-range: var(--body-font-range);
   letter-spacing: 0.02rem;
   line-height: 1.25;

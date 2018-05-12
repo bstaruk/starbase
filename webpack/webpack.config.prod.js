@@ -3,6 +3,7 @@ const webpackMerge = require('webpack-merge');
 const webpackConfigBase = require('./webpack.config.base.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const OfflinePlugin = require('offline-plugin');
 
 // postcss plugins
 const postcssImport = require('postcss-import');
@@ -68,6 +69,9 @@ module.exports = webpackMerge(webpackConfigBase, {
       'dist'
     ], {
       root: path.resolve(__dirname, '../')
+    }),
+    new OfflinePlugin({
+      AppCache: false
     })
   ]
 });

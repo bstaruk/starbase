@@ -12,11 +12,12 @@
   --font-serif: 'PT Serif', Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
 
   /* dimensions */
-  --body-font-size-range: 0.9rem 1.05rem;
-  --body-font-range: 34rem 48rem;
-  --body-width-max: 48rem;
+  --body-font-size: responsive 0.9375rem 1.0625rem; /* 15/16 & 17/16 */
+  --body-font-size-small: responsive 0.9375rem 1rem; /* 15/16 & 16/16 */
+  --body-font-range: 34rem 48rem;/* 544/16, 768/16 */
+  --body-width-max: 48rem; /* 768/16 */
 
   /* breakpoints */
-  @custom-media --small only screen and (min-width: 34rem); /* 544px */
-  @custom-media --medium only screen and (min-width: 48rem); /* 768px */
+  @custom-media --small only screen and (min-width: 34rem); /* 544/16 */
+  @custom-media --medium only screen and (min-width: 48rem); /* 768/16 */
 }
