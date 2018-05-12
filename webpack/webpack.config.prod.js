@@ -17,7 +17,7 @@ const cssnano = require('cssnano');
 
 module.exports = webpackMerge(webpackConfigBase, {
   output: {
-    filename: '[name].[hash].js'
+    filename: '[name].[hash:8].js'
   },
   module: {
     rules: [
@@ -59,8 +59,8 @@ module.exports = webpackMerge(webpackConfigBase, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].[hash].css',
-      chunkFilename: '[id].[hash].css'
+      filename: '[name].[hash:8].css',
+      chunkFilename: '[id].[hash:8].css'
     }),
     new CleanWebpackPlugin([
       'dist'
