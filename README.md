@@ -116,7 +116,9 @@ starbase uses [offline-plugin](https://github.com/NekR/offline-plugin/) to cache
 
 Out of the box, starbase caches everything, because the project is less than 50kb total. If you will be making a larger app, be considerate of your users and limit what you cache-- perhaps avoid caching large images, custom fonts, etc. Check out the [options docs for offline-plugin](https://github.com/NekR/offline-plugin/blob/master/docs/options.md) to learn more.
 
-It should be noted that [service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers), by design, only function on secure (https) environments. There is no issue with running starbase on an http environment-- the service worker will simply not be utilized.
+[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers), by design, only function on secure (https) environments. There is no issue with running starbase on an http environment-- the service worker will simply not be utilized.
+
+You may see an info log entry in your console from `offline-plugin` while using the `watch` command, feel free to ignore this. `offline-plugin` is not utilized on the dev server because it doesn't always play nice with `webpack-dev-server`. It is intentionally only utilized in production builds.
 
 #### to remove offline-plugin:
 
