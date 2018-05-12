@@ -11,6 +11,7 @@ const postcssCssnext = require('postcss-cssnext');
 const postcssNested = require('postcss-nested');
 const postcssRemoveRoot = require('postcss-remove-root');
 const postcssResponsiveType = require('postcss-responsive-type');
+const postcssExtend = require('postcss-extend');
 const cssMqpacker = require('css-mqpacker');
 
 module.exports = webpackMerge(webpackConfigBase, {
@@ -29,9 +30,10 @@ module.exports = webpackMerge(webpackConfigBase, {
             options: {
               sourceMap: 'inline',
               plugins: () => [
-                postcssImport,
                 stylelint(),
                 postcssReporter(),
+                postcssImport(),
+                postcssNested(),
                 postcssCssnext({
                   features: {
                     autoprefixer: {
@@ -39,9 +41,9 @@ module.exports = webpackMerge(webpackConfigBase, {
                     }
                   }
                 }),
-                postcssResponsiveType,
-                postcssNested,
-                postcssRemoveRoot,
+                postcssResponsiveType(),
+                postcssExtend(),
+                postcssRemoveRoot(),
                 cssMqpacker({
                   sort: true
                 })

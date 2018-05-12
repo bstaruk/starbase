@@ -2,10 +2,14 @@ const loaderUtils = require('loader-utils');
 
 module.exports = function cssPrefixVariables(content) {
   const options = loaderUtils.getOptions(this);
+
   if (options.path) {
     this.cacheable();
-    return `@import url("${options.path}");\n\n${content}`;
-  } else {
-    return content;
+
+    // check if first line of content is another import
+    const lineBreak = content.substr(0, 7) === '@import' ? '\n' : '\n\n';
+    return `@import url("${options.path}");${lineBreak}${content}`;
   }
+
+  return content;
 };
