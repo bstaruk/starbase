@@ -1,4 +1,4 @@
 .footer {
-  font-size: 0.9em;
+  font-size: var(--body-font-size-small);
   color: #888;
 }
