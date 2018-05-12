@@ -5,10 +5,10 @@
   --header-font-size-full: 2rem;
 }
 
-#header {
+.header {
   position: relative;
 
-  & img {
+  &__image {
     position: absolute;
     left: 0;
     top: 0;
@@ -20,7 +20,7 @@
     }
   }
 
-  & h1 {
+  &__title {
     font-family: var(--font-serif);
     font-size: var(--header-font-size-small);
     font-weight: normal;

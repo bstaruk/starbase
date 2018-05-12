@@ -3,9 +3,9 @@ Global header component styles. Requires a square logo (`img`) and level one hea
 
 ## usage
 ```html
-<header id="header">
-  <img src="path/to/logo.png" alt="Required Logo" />
-  <h1>Required Level One Header</h1>
+<header class="header">
+  <img src="path/to/logo.png" alt="Required Logo" class="header__image" />
+  <h1 class="header__title">Required Level One Header</h1>
   <p>Optional intro text.</p>
 </header>
 ```
