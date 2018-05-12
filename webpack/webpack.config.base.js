@@ -7,7 +7,6 @@ module.exports = {
     app: ['./app.js']
   },
   output: {
-    filename: '[name].js',
     path: path.resolve(__dirname, '../dist')
   },
   resolveLoader: {
@@ -62,7 +61,7 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 10000,
-              name: 'images/[name].[ext]'
+              name: 'images/[name].[md5:hash:hex:8].[ext]'
             }
           }
         ]
@@ -74,7 +73,7 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 10000,
-              name: 'fonts/[name].[ext]'
+              name: 'fonts/[name].[md5:hash:hex:8].[ext]'
             }
           }
         ]
@@ -85,7 +84,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'assets/[name].[ext]'
+              name: 'assets/[name].[md5:hash:hex:8].[ext]'
             }
           }
         ]

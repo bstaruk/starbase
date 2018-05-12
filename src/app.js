@@ -1,3 +1,6 @@
+// offline-plugin
+import './app/lib/offline-plugin';
+
 // components js
 import Tabs from './components/tabs/Tabs';
 

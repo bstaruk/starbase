@@ -1,3 +1,5 @@
+@import "../../app/utilities.css";
+
 :root {
   --tabs-list-height-small: 2rem;
   --tabs-list-height-full: 2.5rem;
@@ -15,6 +17,8 @@
 
   /* tabs list */
   &__list {
+    @extend .clearfix; /* postcss-extend, dig it! */
+
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -26,12 +30,6 @@
       width: 100%;
       height: var(--tabs-list-height-full);
       border-bottom: 2px solid var(--tabs-border-color);
-    }
-
-    &::after {
-      content: "";
-      display: table;
-      clear: both;
     }
 
     & > li {
