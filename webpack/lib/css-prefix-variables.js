@@ -7,7 +7,7 @@ module.exports = function cssPrefixVariables(content) {
     this.cacheable();
 
     // check if first line of content is another import
-    const lineBreak = content.substr(0, 1) === '@' ? '\n' : '\n\n';
+    const lineBreak = content.substr(0, 7) === '@import' ? '\n' : '\n\n';
     return `@import url("${options.path}");${lineBreak}${content}`;
   }
 
