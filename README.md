@@ -109,6 +109,23 @@ starbase enforces the [Airbnb JavaScript Style Guide](https://github.com/airbnb/
 
 After completing the steps above, the only rules that eslint will enforce are the ones you define in the `rules` object in `/.eslintrc`.
 
+### service worker caching
+
+starbase uses [offline-plugin](https://github.com/NekR/offline-plugin/) to cache your project assets for offline use. This means that if someone visits your website on [a device that supports service workers](https://caniuse.com/#feat=serviceworkers), they will be able to view your project again, even if their device is offline.
+
+Out of the box, starbase caches everything, because the project is less than 50kb total. If you will be making a larger app, you should be considerate of your users and limit what you cache. Check out the [options docs for offline-plugin](https://github.com/NekR/offline-plugin/blob/master/docs/options.md) to learn more.
+
+It should be noted that [service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers), by design, only function on localhost and https environments. There is no issue with running starbase on an http environment-- the service worker will simply not be utilized.
+
+#### to remove offline-plugin:
+
+1. in `/package.json`, remove the `offline-plugin` dependency
+2. in `/webpack/webpack.config.base.js`, remove all references to `OfflinePlugin` and/or `offline-plugin`
+3. in `/src/app.js`, remove the `import` statement that references `offline-plugin`
+4. delete `/src/app/lib/offline-plugin.js`
+
+_There is no consequence or side-effect to removing this feature, besides limiting offline access to your project._
+
 ## features you may want to know about
 
 ### global css variables
