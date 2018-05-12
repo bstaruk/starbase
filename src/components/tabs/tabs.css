@@ -17,7 +17,7 @@
 
   /* tabs list */
   &__list {
-    @extend .clearfix;
+    @extend .clearfix; /* postcss-extend, dig it! */
 
     list-style-type: none;
     margin: 0;
