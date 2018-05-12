@@ -116,7 +116,7 @@ starbase uses [offline-plugin](https://github.com/NekR/offline-plugin/) to cache
 
 Out of the box, starbase caches everything, because the project is less than 50kb total. If you will be making a larger app, be considerate of your users and limit what you cache-- perhaps avoid caching large images, custom fonts, etc. Check out the [options docs for offline-plugin](https://github.com/NekR/offline-plugin/blob/master/docs/options.md) to learn more.
 
-It should be noted that [service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers), by design, only function on localhost and https environments. There is no issue with running starbase on an http environment-- the service worker will simply not be utilized.
+It should be noted that [service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers), by design, only function on secure (https) environments. There is no issue with running starbase on an http environment-- the service worker will simply not be utilized.
 
 #### to remove offline-plugin:
 
@@ -126,6 +126,12 @@ It should be noted that [service workers](https://developer.mozilla.org/en-US/do
 4. delete `/src/app/lib/offline-plugin.js`
 
 _There is no consequence to removing this feature, besides limiting offline access to your project._
+
+#### to disable but not delete offline-plugin:
+
+You can disable `offline-plugin` without deleting it from your codebase, so that it's not included in your production code (reduces filesize) but is ready to be re-enabled if you ever want it back.
+
+1. in `/src/app.js`, comment-out the `import` statement that references `offline-plugin`
 
 ## features you may want to know about
 
