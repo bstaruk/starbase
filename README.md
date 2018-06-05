@@ -5,7 +5,9 @@
 [![dependencies status](https://david-dm.org/bstaruk/starbase/status.svg)](https://david-dm.org/bstaruk/starbase)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase?ref=badge_shield)
 
-starbase is a webpack 4, ES6 & PostCSS boilerplate that utilizes some of the juiciest open source tools around:
+starbase is an offline-first web app boilerplate that is built with webpack 4, PostCSS & Babel (ES6+).
+
+Get up and running in minutes using some of the most powerful front-end tools available in 2018:
 
 * [Node.js](https://github.com/nodejs/node) & [Yarn](https://github.com/yarnpkg)
 * [webpack 4](https://github.com/webpack/webpack) & [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
@@ -20,7 +22,7 @@ starbase is a webpack 4, ES6 & PostCSS boilerplate that utilizes some of the jui
   * [MQPacker](https://github.com/hail2u/node-css-mqpacker)
 * ...and more!
 
-This boilerplate is intended to be small in scope so that it may be easily extended and customized, or used as a learning tool for folks who are trying to become familiar with webpack 4, PostCSS and/or ES6.
+starbase is intended to be relatively small in scope so that it may be easily extended and customized, or used as a learning tool for folks who are trying to become familiar with webpack 4, PostCSS and/or ES6.
 
 ## license
 
