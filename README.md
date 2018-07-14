@@ -11,12 +11,12 @@ starbase is an offline-first web app boilerplate that is built with webpack 4, P
 * [webpack 4](https://github.com/webpack/webpack) & [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
 * [Babel](https://github.com/babel/babel) (ES6) w/ [ESLint](https://github.com/eslint/eslint)
 * [PostCSS](https://github.com/postcss/postcss) w/
-  * [cssnano](https://github.com/ben-eb/cssnano)
-  * [cssnext](https://github.com/MoOx/postcss-cssnext)
+  * [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env)
   * [PostCSS Nested](https://github.com/postcss/postcss-nested)
   * [PostCSS Responsive Type](https://github.com/seaneking/postcss-responsive-type)
   * [postcss-extend](https://github.com/travco/postcss-extend)
   * [stylelint](https://github.com/stylelint/stylelint)
+  * [cssnano](https://github.com/ben-eb/cssnano)
   * [MQPacker](https://github.com/hail2u/node-css-mqpacker)
 * ...and more!
 
