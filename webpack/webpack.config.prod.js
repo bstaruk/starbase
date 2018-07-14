@@ -9,7 +9,7 @@ const OfflinePlugin = require('offline-plugin');
 const postcssImport = require('postcss-import');
 const stylelint = require('stylelint');
 const postcssReporter = require('postcss-reporter');
-const postcssCssnext = require('postcss-cssnext');
+const postcssPresetEnv = require('postcss-preset-env');
 const postcssNested = require('postcss-nested');
 const postcssRemoveRoot = require('postcss-remove-root');
 const postcssResponsiveType = require('postcss-responsive-type');
@@ -36,10 +36,14 @@ module.exports = webpackMerge(webpackConfigBase, {
                 postcssReporter(),
                 postcssImport(),
                 postcssNested(),
-                postcssCssnext({
+                postcssPresetEnv({
+                  stage: 1,
                   features: {
-                    autoprefixer: {
-                      grid: false
+                    'custom-properties': {
+                      preserve: false
+                    },
+                    'custom-media': {
+                      preserve: false
                     }
                   }
                 }),

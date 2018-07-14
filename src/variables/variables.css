@@ -18,6 +18,6 @@
   --body-width-max: 48rem; /* 768/16 */
 
   /* breakpoints */
-  @custom-media --small only screen and (min-width: 34rem); /* 544/16 */
-  @custom-media --medium only screen and (min-width: 48rem); /* 768/16 */
+  @custom-media --small (min-width: 34em); /* 544/16 */
+  @custom-media --medium (min-width: 48em); /* 768/16 */
 }
