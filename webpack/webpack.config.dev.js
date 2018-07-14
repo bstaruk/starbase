@@ -1,17 +1,18 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const webpackMerge = require('webpack-merge');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // postcss plugins
-const postcssImport = require('postcss-import');
-const stylelint = require('stylelint');
-const postcssReporter = require('postcss-reporter');
-const postcssPresetEnv = require('postcss-preset-env');
-const postcssNested = require('postcss-nested');
-const postcssRemoveRoot = require('postcss-remove-root');
-const postcssResponsiveType = require('postcss-responsive-type');
-const postcssExtend = require('postcss-extend');
 const cssMqpacker = require('css-mqpacker');
+const cssnano = require('cssnano');
+const postcssExtend = require('postcss-extend');
+const postcssImport = require('postcss-import');
+const postcssNested = require('postcss-nested');
+const postcssPresetEnv = require('postcss-preset-env');
+const postcssRemoveRoot = require('postcss-remove-root');
+const postcssReporter = require('postcss-reporter');
+const postcssResponsiveType = require('postcss-responsive-type');
+const stylelint = require('stylelint');
 
 // import base config
 const webpackConfigBase = require('./webpack.config.base.js');
@@ -30,6 +31,7 @@ module.exports = webpackMerge(webpackConfigBase, {
           {
             loader: 'postcss-loader',
             options: {
+              ident: 'postcss',
               sourceMap: 'inline',
               plugins: () => [
                 stylelint(),
@@ -52,6 +54,9 @@ module.exports = webpackMerge(webpackConfigBase, {
                 postcssRemoveRoot(),
                 cssMqpacker({
                   sort: true
+                }),
+                cssnano({
+                  preset: 'default'
                 })
               ]
             }
