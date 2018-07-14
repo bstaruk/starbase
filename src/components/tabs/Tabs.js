@@ -1,11 +1,14 @@
 class Tabs {
   constructor(props) {
-    if (props.el) {
-      this.el = props.el;
-      if (this.el) {
-        this.init();
-      }
+    const { el } = props;
+
+    if (!el) {
+      return;
     }
+
+    this.el = el;
+
+    this.init();
   }
 
   init() {
