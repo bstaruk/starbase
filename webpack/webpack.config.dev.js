@@ -1,6 +1,5 @@
 const path = require('path');
 const webpackMerge = require('webpack-merge');
-const webpackConfigBase = require('./webpack.config.base.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // postcss plugins
@@ -13,6 +12,9 @@ const postcssRemoveRoot = require('postcss-remove-root');
 const postcssResponsiveType = require('postcss-responsive-type');
 const postcssExtend = require('postcss-extend');
 const cssMqpacker = require('css-mqpacker');
+
+// import base config
+const webpackConfigBase = require('./webpack.config.base.js');
 
 module.exports = webpackMerge(webpackConfigBase, {
   output: {
