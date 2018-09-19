@@ -1,6 +1,6 @@
 {
   "name": "starbase",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "author": "Brian Staruk <brian@staruk.me>",
   "contributors": [
     {
@@ -9,7 +9,7 @@
       "url": "https://brian.staruk.me"
     }
   ],
-  "description": "an offline-first web app boilerplate w/ webpack 4, PostCSS, Babel (ES6+) & more",
+  "description": "an offline-first web app boilerplate w/ webpack 4, PostCSS, Babel 7 (ES6+) & more",
   "homepage": "https://github.com/bstaruk/starbase",
   "repository": {
     "type": "git",
