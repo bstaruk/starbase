@@ -18,12 +18,6 @@ module.exports = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: ['eslint-loader']
-      },
-      {
-        enforce: 'pre',
         test: /\.css$/,
         include: [
           path.resolve(__dirname, '../src/app'),
@@ -41,7 +35,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: ['babel-loader', 'eslint-loader']
       },
       {
         test: /\.html$/,
