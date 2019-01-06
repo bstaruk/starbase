@@ -24,47 +24,45 @@ module.exports = webpackMerge(webpackConfigBase, {
     filename: '[name].[hash:8].js'
   },
   module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              ident: 'postcss',
-              plugins: () => [
-                stylelint(),
-                postcssReporter(),
-                postcssImport(),
-                postcssNested(),
-                postcssPresetEnv({
-                  stage: 1,
-                  features: {
-                    'custom-properties': {
-                      preserve: false
-                    },
-                    'custom-media': {
-                      preserve: false
-                    }
+    rules: [{
+      test: /\.css$/,
+      use: [
+        MiniCssExtractPlugin.loader,
+        'css-loader',
+        {
+          loader: 'postcss-loader',
+          options: {
+            ident: 'postcss',
+            plugins: () => [
+              stylelint(),
+              postcssReporter(),
+              postcssImport(),
+              postcssNested(),
+              postcssPresetEnv({
+                stage: 1,
+                features: {
+                  'custom-properties': {
+                    preserve: false
+                  },
+                  'custom-media': {
+                    preserve: false
                   }
-                }),
-                postcssResponsiveType(),
-                postcssExtend(),
-                postcssRemoveRoot(),
-                cssMqpacker({
-                  sort: true
-                }),
-                cssnano({
-                  preset: 'default'
-                })
-              ]
-            }
+                }
+              }),
+              postcssResponsiveType(),
+              postcssExtend(),
+              postcssRemoveRoot(),
+              cssMqpacker({
+                sort: true
+              }),
+              cssnano({
+                preset: 'default'
+              })
+            ]
           }
-        ]
-      }
-    ]
+        }
+      ]
+    }]
   },
   plugins: [
     new MiniCssExtractPlugin({

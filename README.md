@@ -5,7 +5,7 @@
 [![dependencies status](https://david-dm.org/bstaruk/starbase/status.svg)](https://david-dm.org/bstaruk/starbase)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase?ref=badge_shield)
 
-starbase is an offline-first web app boilerplate that is built with webpack 4, PostCSS & Babel 7. Get up and running in minutes using some of the most powerful front-end tools available in 2018:
+starbase is an offline-first web app boilerplate that is built with webpack 4, PostCSS & Babel 7. Get up and running in minutes using some of the most powerful front-end tools available in 2019:
 
 * [Node.js](https://github.com/nodejs/node) & [Yarn](https://github.com/yarnpkg)
 * [webpack 4](https://github.com/webpack/webpack) & [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
@@ -31,11 +31,9 @@ starbase is open source and free software, so you may to do whatever you wish wi
 After completing the steps below, you will be ready to begin using starbase:
 
 1. Install [Node.js](https://nodejs.org) (latest LTS recommended)
-2. Install [Yarn](https://yarnpkg.com)
+2. (Optional) Install [Yarn](https://yarnpkg.com)
 3. Clone starbase into your project root directory
-4. Install dependencies by running `yarn` in your project root directory
-
-_Note: if you hate Yarn for some reason, you can skip Step 2 and use `npm install` instead  of `yarn` in Step 4._
+4. Install dependencies by running `yarn`  in your project root directory (or `npm install` if you skipped Step 2)
 
 ## building, watching & developing
 
@@ -106,7 +104,7 @@ starbase enforces the [Airbnb JavaScript Style Guide](https://github.com/airbnb/
 
 1. in `/.eslintrc`, remove the line that says `extends`
 2. in `/package.json`, remove the `eslint-config-airbnb` dependency
-3. run `yarn` (or `npm update` if you hate yarn)
+3. run `yarn` (or `npm update`)
 
 After completing the steps above, the only rules that eslint will enforce are the ones you define in the `rules` object in `/.eslintrc`.
 
@@ -136,16 +134,6 @@ You can disable `offline-plugin` without deleting it from your codebase, so that
 1. in `/src/app.js`, comment-out the `import` statement that references `offline-plugin`
 
 ## features you may want to know about
-
-### global css variables
-
-starbase supports global CSS variables via the [:root](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) pseudo-element, which can be found in `/src/variables/variables.css`. You can split your variables into multiple files, and just import them into `/src/variables/variables.css` if you'd like them to be more granular.
-
-These variables automatically injected into any CSS in the `/src/components` and `/src/app` directories, so they are always available for use in your app & component stylesheets.
-
-Each component that comes with Starbase uses at least one variable to demonstrate the functionality.
-
-All variables are cleaned up in your production code and only the values will remain, so there is no bloat or downside to using these variables. Go nuts!
 
 ### html webpack plugin
 
