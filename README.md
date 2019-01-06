@@ -5,7 +5,7 @@
 [![dependencies status](https://david-dm.org/bstaruk/starbase/status.svg)](https://david-dm.org/bstaruk/starbase)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase?ref=badge_shield)
 
-starbase is an offline-first web app boilerplate that is built with webpack 4, PostCSS & Babel 7. Get up and running in minutes using some of the most powerful front-end tools available in 2018:
+starbase is an offline-first web app boilerplate that is built with webpack 4, PostCSS & Babel 7. Get up and running in minutes using some of the most powerful front-end tools available in 2019:
 
 * [Node.js](https://github.com/nodejs/node) & [Yarn](https://github.com/yarnpkg)
 * [webpack 4](https://github.com/webpack/webpack) & [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
@@ -31,11 +31,9 @@ starbase is open source and free software, so you may to do whatever you wish wi
 After completing the steps below, you will be ready to begin using starbase:
 
 1. Install [Node.js](https://nodejs.org) (latest LTS recommended)
-2. Install [Yarn](https://yarnpkg.com)
+2. (Optional) Install [Yarn](https://yarnpkg.com)
 3. Clone starbase into your project root directory
-4. Install dependencies by running `yarn` in your project root directory
-
-_Note: if you hate Yarn for some reason, you can skip Step 2 and use `npm install` instead  of `yarn` in Step 4._
+4. Install dependencies by running `yarn`  in your project root directory (or `npm install` if you skipped Step 2)
 
 ## building, watching & developing
 
