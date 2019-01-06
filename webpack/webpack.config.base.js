@@ -9,29 +9,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../dist')
   },
-  resolveLoader: {
-    alias: {
-      'css-prefix-variables': path.resolve(__dirname, './lib/css-prefix-variables.js')
-    }
-  },
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.css$/,
-        include: [
-          path.resolve(__dirname, '../src/app'),
-          path.resolve(__dirname, '../src/components')
-        ],
-        use: [
-          {
-            loader: 'css-prefix-variables',
-            options: {
-              path: path.resolve(__dirname, '../src/variables/variables.css')
-            }
-          }
-        ]
-      },
       {
         test: /\.js$/,
         exclude: /node_modules/,

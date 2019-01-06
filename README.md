@@ -137,16 +137,6 @@ You can disable `offline-plugin` without deleting it from your codebase, so that
 
 ## features you may want to know about
 
-### global css variables
-
-starbase supports global CSS variables via the [:root](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) pseudo-element, which can be found in `/src/variables/variables.css`. You can split your variables into multiple files, and just import them into `/src/variables/variables.css` if you'd like them to be more granular.
-
-These variables automatically injected into any CSS in the `/src/components` and `/src/app` directories, so they are always available for use in your app & component stylesheets.
-
-Each component that comes with Starbase uses at least one variable to demonstrate the functionality.
-
-All variables are cleaned up in your production code and only the values will remain, so there is no bloat or downside to using these variables. Go nuts!
-
 ### html webpack plugin
 
 starbase uses [HTML Webpack Plugin](https://github.com/jantimon/html-webpack-plugin) to generate HTML assets. The reason for this is to allow webpack to manage other assets, such as favicons and embedded images, as part of the build process. Adding new templates (pages) is very easy, but you'll need to read the official plugin docs for the latest info.
