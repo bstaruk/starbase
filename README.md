@@ -104,7 +104,7 @@ starbase enforces the [Airbnb JavaScript Style Guide](https://github.com/airbnb/
 
 1. in `/.eslintrc`, remove the line that says `extends`
 2. in `/package.json`, remove the `eslint-config-airbnb` dependency
-3. run `yarn` (or `npm update` if you hate yarn)
+3. run `yarn` (or `npm update`)
 
 After completing the steps above, the only rules that eslint will enforce are the ones you define in the `rules` object in `/.eslintrc`.
 
