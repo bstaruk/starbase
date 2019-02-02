@@ -22,7 +22,7 @@ require.context('./components/', true, /\.css$/);
 const initializeComponents = () => {
   const tabs = document.getElementsByClassName('tabs');
   for (let i = 0; i < tabs.length; i++) {
-    new Tabs({ el: tabs[i] });
+    new Tabs(tabs[i]);
   }
 };
 
