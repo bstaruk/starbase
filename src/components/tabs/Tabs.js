@@ -2,6 +2,11 @@ const Tabs = (el) => {
   // do nothing if base element not provided
   if (!el) return;
 
+  // required elements
+  const ui = {
+    el
+  };
+
   const handleMenuItems = (menuItems, activeMenuItem) => {
     for (let i = 0; i < menuItems.length; i++) {
       const menuItem = menuItems[i];
@@ -14,9 +19,9 @@ const Tabs = (el) => {
     activeMenuItem.setAttribute('aria-selected', 'true');
   };
 
-  const handleMenuContent = (menu, anchorTarget) => {
+  const handleMenuContent = (anchorTarget) => {
     // remove any existing active classes
-    const contentItems = menu.getElementsByClassName('tabs__content');
+    const contentItems = ui.el.getElementsByClassName('tabs__content');
     for (let i = 0; i < contentItems.length; i++) {
       const contentItem = contentItems[i];
       contentItem.classList.remove('tabs__content--active');
@@ -29,9 +34,7 @@ const Tabs = (el) => {
   };
 
   const init = () => {
-    const menu = el;
-
-    const menuItems = menu.querySelectorAll('.tabs__list > li > a');
+    const menuItems = ui.el.querySelectorAll('.tabs__list > li > a');
     for (let i = 0; i < menuItems.length; i++) {
       const activeMenuItem = menuItems[i];
       activeMenuItem.addEventListener('click', (e) => {
@@ -44,7 +47,7 @@ const Tabs = (el) => {
         // only proceed if menu item target is valid
         if (anchorTarget) {
           handleMenuItems(menuItems, activeMenuItem); // handle menu item active state
-          handleMenuContent(menu, anchorTarget); // handle menu content active state
+          handleMenuContent(anchorTarget); // handle menu content active state
         }
       });
     }
