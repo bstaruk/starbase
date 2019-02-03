@@ -16,6 +16,61 @@
     padding-top: var(--tabs-list-height-full);
   }
 
+  /* tabs list anchor */
+  &__anchor {
+    position: relative;
+    display: block;
+    height: var(--tabs-list-height-small);
+    line-height: var(--tabs-list-height-small);
+    text-decoration: none;
+    padding: 0 0.5rem;
+    background-color: var(--tabs-border-color-hover);
+    color: var(--body-font-color);
+    transition:
+      background-color 300ms ease,
+      color 300ms ease;
+
+    @media (--medium) {
+      background-color: transparent;
+      height: var(--tabs-list-height-full);
+      line-height: var(--tabs-list-height-full);
+      padding: 0 1rem;
+    }
+
+    &::after {
+      @media (--medium) {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        transition: background-color 300ms ease;
+      }
+    }
+
+    &--active,
+    &--active:hover {
+      background-color: var(--tabs-active-color);
+      color: white;
+
+      @media (--medium) {
+        background-color: transparent;
+        color: var(--tabs-active-color);
+      }
+
+      &::after {
+        background-color: var(--tabs-active-color);
+      }
+    }
+
+    &:hover {
+      &::after {
+        background-color: #a0a0a0;
+      }
+    }
+  }
+
   /* tabs list */
   &__list {
     @extend .clearfix; /* postcss-extend, dig it! */
@@ -33,7 +88,8 @@
       border-bottom: 2px solid var(--tabs-border-color);
     }
 
-    & > li {
+    /* tabs list item */
+    &-item {
       float: left;
       margin: 0.5rem 0.5rem 0 0;
 
@@ -42,62 +98,8 @@
         height: var(--tabs-list-height-full);
       }
 
-      & > a {
-        position: relative;
-        display: block;
-        height: var(--tabs-list-height-small);
-        line-height: var(--tabs-list-height-small);
-        text-decoration: none;
-        padding: 0 0.5rem;
-        background-color: var(--tabs-border-color-hover);
-        color: var(--body-font-color);
-        transition:
-          background-color 300ms ease,
-          color 300ms ease;
-
-        @media (--medium) {
-          background-color: transparent;
-          height: var(--tabs-list-height-full);
-          line-height: var(--tabs-list-height-full);
-          padding: 0 1rem;
-        }
-
-        &::after {
-          @media (--medium) {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 2px;
-            transition: background-color 300ms ease;
-          }
-        }
-
-        &.tabs__list--active,
-        &.tabs__list--active:hover {
-          background-color: var(--tabs-active-color);
-          color: white;
-
-          @media (--medium) {
-            background-color: transparent;
-            color: var(--tabs-active-color);
-          }
-
-          &::after {
-            background-color: var(--tabs-active-color);
-          }
-        }
-
-        &:hover {
-          &::after {
-            background-color: #a0a0a0;
-          }
-        }
-      }
-
       &:first-of-type {
-        & > a {
+        & .tabs__anchor {
           @media (--medium) {
             padding-left: 0;
           }

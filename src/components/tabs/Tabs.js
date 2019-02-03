@@ -10,12 +10,12 @@ const Tabs = (el) => {
   const handleMenuItems = (menuItems, activeMenuItem) => {
     for (let i = 0; i < menuItems.length; i++) {
       const menuItem = menuItems[i];
-      menuItem.classList.remove('tabs__list--active');
+      menuItem.classList.remove('tabs__anchor--active');
       menuItem.setAttribute('aria-selected', 'false');
     }
 
     // add new active class
-    activeMenuItem.classList.add('tabs__list--active');
+    activeMenuItem.classList.add('tabs__anchor--active');
     activeMenuItem.setAttribute('aria-selected', 'true');
   };
 
