@@ -16,10 +16,17 @@ const stylelint = require('stylelint');
 const webpackConfigBase = require('./webpack.config.base.js');
 
 module.exports = webpackMerge(webpackConfigBase, {
+  devServer: {
+    contentBase: path.resolve(__dirname, '../dist'),
+    port: 8080,
+    stats: {
+      children: false
+    }
+  },
+  devtool: 'inline-source-map',
   output: {
     filename: '[name].js'
   },
-  devtool: 'inline-source-map',
   module: {
     rules: [{
       test: /\.css$/,
@@ -60,13 +67,6 @@ module.exports = webpackMerge(webpackConfigBase, {
         }
       ]
     }]
-  },
-  devServer: {
-    contentBase: path.resolve(__dirname, '../dist'),
-    port: 8080,
-    stats: {
-      children: false
-    }
   },
   plugins: [
     new MiniCssExtractPlugin({
