@@ -1,39 +1,26 @@
 @import "../variables/variables.css";
 
-:root {
-  --header-height-small: 2rem;
-  --header-font-size-small: 1.75rem;
-  --header-height-full: 2.5rem;
-  --header-font-size-full: 2rem;
-}
-
 .header {
-  position: relative;
+  &__brand {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
 
   &__image {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: var(--header-height-small);
+    height: 2rem;
+    margin-right: 0.75rem;
 
     @media (--medium) {
-      height: var(--header-height-full);
+      height: 2.5rem;
     }
   }
 
   &__title {
     font-family: var(--font-serif);
-    font-size: var(--header-font-size-small);
+    font-size: 2em;
     font-weight: normal;
     letter-spacing: normal;
-    line-height: var(--header-height-small);
-    padding-left: calc(var(--header-height-small) + 0.5rem);
-    margin-top: 0;
-
-    @media (--medium) {
-      font-size: var(--header-font-size-full);
-      line-height: var(--header-height-full);
-      padding-left: calc(var(--header-height-full) + 0.5rem);
-    }
+    margin: 0;
   }
 }
