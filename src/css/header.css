@@ -1,4 +1,4 @@
-@import "../../variables/variables.css";
+@import "../variables/variables.css";
 
 :root {
   --header-height-small: 2rem;
