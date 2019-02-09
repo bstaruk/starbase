@@ -40,21 +40,21 @@ After completing the steps below, you will be ready to begin using starbase:
 
 starbase uses [webpack-dev-server](https://github.com/webpack/webpack-dev-server) to serve up your project at [http://localhost:8080](http://localhost:8080) for streamlined and convenient development.
 
-After running `npm run watch` in the project root, your `/src` code will be served at the url above and watched for changes. As you modify code in `/src`, the project will be recompiled and your browser will refresh to show the latest changes.
+After running `yarn dev` in the project root, your `/src` code will be served at the url above and watched for changes. As you modify code in `/src`, the project will be recompiled and your browser will refresh to show the latest changes.
 
 ```
 cd /path/to/starbase
-npm run watch
+yarn dev
 ```
 
 ### building for production
-Use `npm run build` in your project root to run a production build.
+Use `yarn build` in your project root to run a production build.
 
 Production builds compile & minify your assets into `/dist` for distribution and/or integration into whatever codebase you'll be using these assets in.
 
 ```
 cd /path/to/starbase
-npm run build
+yarn build
 ```
 
 ## features you may want to remove
@@ -68,7 +68,7 @@ Removing hashing for production builds is not recommended.
 
 ### build-time cleanup
 
-starbase is setup to clear all contents of `/dist` (where compiled assets are piped into) during each `npm run build`. If you'd like to remove this part of the build process, perform the following steps:
+starbase is setup to clear all contents of `/dist` (where compiled assets are piped into) during each `yarn build`. If you'd like to remove this part of the build process, perform the following steps:
 
 1. remove `CleanWebpackPlugin` from the plugins array in `/webpack/webpack.config.prod.js`
 2. remove `CleanWebpackPlugin` as a requirement at the top of `/webpack/webpack.config.prod.js`
@@ -115,7 +115,7 @@ Out of the box, starbase caches everything, because the project is less than 50k
 
 [Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers), by design, only function on secure (https) environments. There is no issue with running starbase on an http environment-- the service worker will simply not be utilized.
 
-You may see an info log entry in your console from `offline-plugin` while using the `watch` command, feel free to ignore this. `offline-plugin` is not utilized on the dev server because [it doesn't always play nice with `webpack-dev-server`](https://github.com/NekR/offline-plugin/issues/138). It is intentionally only utilized in production builds.
+You may see an info log entry in your console from `offline-plugin` while using the `dev` command, feel free to ignore this. `offline-plugin` is not utilized on the dev server because [it doesn't always play nice with `webpack-dev-server`](https://github.com/NekR/offline-plugin/issues/138). It is intentionally only utilized in production builds.
 
 #### to remove offline-plugin:
 
