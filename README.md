@@ -31,7 +31,7 @@ After completing the steps below, you will be ready to begin using starbase:
 1. Install [Node.js](https://nodejs.org) (latest LTS recommended)
 2. (Optional) Install [Yarn](https://yarnpkg.com)
 3. Clone starbase into your project root directory
-4. Install dependencies by running `yarn`  in your project root directory (or `npm install` if you skipped Step 2)
+4. Install dependencies by running `npm install` in your project root directory (or `yarn` if you performed Step 2)
 
 ## building, watching & developing
 
@@ -39,21 +39,21 @@ After completing the steps below, you will be ready to begin using starbase:
 
 starbase uses [webpack-dev-server](https://github.com/webpack/webpack-dev-server) to serve up your project at [http://localhost:8080](http://localhost:8080) for streamlined and convenient development.
 
-After running `yarn dev` in the project root, your `/src` code will be served at the url above and watched for changes. As you modify code in `/src`, the project will be recompiled and your browser will refresh to show the latest changes.
+After running `npm run dev` in the project root, your `/src` code will be served at the url above and watched for changes. As you modify code in `/src`, the project will be recompiled and your browser will refresh to show the latest changes.
 
 ```
 cd /path/to/starbase
-yarn dev
+npm run dev
 ```
 
 ### building for production
-Use `yarn build` in your project root to run a production build.
+Use `npm run build` in your project root to run a production build.
 
 Production builds compile & minify your assets into `/dist` for distribution and/or integration into whatever codebase you'll be using these assets in.
 
 ```
 cd /path/to/starbase
-yarn build
+npm run build
 ```
 
 ## features you may want to remove
@@ -67,7 +67,7 @@ Removing hashing for production builds is not recommended.
 
 ### build-time cleanup
 
-starbase is setup to clear all contents of `/dist` (where compiled assets are piped into) during each `yarn build`. If you'd like to remove this part of the build process, perform the following steps:
+starbase is setup to clear all contents of `/dist` (where compiled assets are piped into) during each `npm run build`. If you'd like to remove this part of the build process, perform the following steps:
 
 1. remove `CleanWebpackPlugin` from the plugins array in `/webpack/webpack.config.prod.js`
 2. remove `CleanWebpackPlugin` as a requirement at the top of `/webpack/webpack.config.prod.js`
@@ -85,7 +85,7 @@ These polyfills come commented-out by default in `/src/app.js`, so they won't en
 
 If you want to remove these for any reason, perform the following steps:
 
-1. run `yarn remove es6-promise whatwg-fetch` in the project root to remove the dependencies
+1. remove `es6-promise` & `whatwg-fetch` from `/package.json`
 2. remove the lines in `/src/app.js` that fall under the "fetch & promise polyfills" comment (it'll be obvious which ones)
 
 ## features you may want to customize
@@ -102,7 +102,7 @@ starbase enforces the [Airbnb JavaScript Style Guide](https://github.com/airbnb/
 
 1. in `/.eslintrc`, remove the line that says `extends`
 2. in `/package.json`, remove the `eslint-config-airbnb` dependency
-3. run `yarn` (or `npm update`)
+3. run `npm updated` (or `yarn`)
 
 After completing the steps above, the only rules that eslint will enforce are the ones you define in the `rules` object in `/.eslintrc`.
 
