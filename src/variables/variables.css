@@ -10,14 +10,12 @@
   --font-serif: 'PT Serif', Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
 
   /* dimensions */
-  --body-font-size: 1.0625rem; /* 17/16 */
-  --body-font-size-small: 1rem; /* 16/16 */
   --body-width-max: 48rem; /* 768/16 */
 }
 
 /* breakpoints */
-@custom-media --small (min-width: 34em); /* 544/16 */
-@custom-media --medium (min-width: 48em); /* 768/16 */
+@custom-media --small (min-width: 34rem); /* 544/16 */
+@custom-media --medium (min-width: 48rem); /* 768/16 */
 
 /* fonts */
 @font-face {

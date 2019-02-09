@@ -3,6 +3,9 @@
 .footer {
   margin-top: 2.5rem;
   border-top: 1px solid #ccc;
-  font-size: var(--body-font-size-small);
   color: #888;
+
+  @media (--medium) {
+    font-size: 0.9em;
+  }
 }

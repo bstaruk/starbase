@@ -13,14 +13,14 @@ body {
   max-width: var(--body-width-max);
   background-color: var(--body-bg-color);
   font-family: var(--font-sans);
-  font-size: 0.9375rem; /* 15/16 */
-  line-height: 1.25;
+  font-size: 0.95em;
+  line-height: 1.4;
   color: var(--body-font-color);
   padding: 1rem;
   margin: 0 auto;
 
   @media (--medium) {
-    font-size: 1.0625rem; /* 17/16 */
+    font-size: 1.05em;
     padding-top: 2rem;
   }
 }
