@@ -13,7 +13,6 @@ const postcssNested = require('postcss-nested');
 const postcssPresetEnv = require('postcss-preset-env');
 const postcssRemoveRoot = require('postcss-remove-root');
 const postcssReporter = require('postcss-reporter');
-const postcssResponsiveType = require('postcss-responsive-type');
 const stylelint = require('stylelint');
 
 // import base config
@@ -28,7 +27,10 @@ module.exports = webpackMerge(webpackConfigBase, {
       test: /\.css$/,
       use: [
         MiniCssExtractPlugin.loader,
-        'css-loader',
+        {
+          loader: 'css-loader',
+          options: { importLoaders: 1 }
+        },
         {
           loader: 'postcss-loader',
           options: {
@@ -49,7 +51,6 @@ module.exports = webpackMerge(webpackConfigBase, {
                   }
                 }
               }),
-              postcssResponsiveType(),
               postcssExtend(),
               postcssRemoveRoot(),
               cssMqpacker({

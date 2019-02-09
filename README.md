@@ -1,7 +1,6 @@
 # starbase
 
 [![npm version](https://badge.fury.io/js/starbase.svg)](https://badge.fury.io/js/starbase)
-[![build status](https://travis-ci.org/bstaruk/starbase.svg?branch=master)](https://travis-ci.org/bstaruk/starbase)
 [![dependencies status](https://david-dm.org/bstaruk/starbase/status.svg)](https://david-dm.org/bstaruk/starbase)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase?ref=badge_shield)
 
@@ -13,7 +12,6 @@ starbase is an offline-first web app boilerplate that is built with webpack 4, P
 * [PostCSS](https://github.com/postcss/postcss) w/
   * [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env)
   * [PostCSS Nested](https://github.com/postcss/postcss-nested)
-  * [PostCSS Responsive Type](https://github.com/seaneking/postcss-responsive-type)
   * [postcss-extend](https://github.com/travco/postcss-extend)
   * [stylelint](https://github.com/stylelint/stylelint)
   * [cssnano](https://github.com/ben-eb/cssnano)
@@ -33,7 +31,7 @@ After completing the steps below, you will be ready to begin using starbase:
 1. Install [Node.js](https://nodejs.org) (latest LTS recommended)
 2. (Optional) Install [Yarn](https://yarnpkg.com)
 3. Clone starbase into your project root directory
-4. Install dependencies by running `yarn`  in your project root directory (or `npm install` if you skipped Step 2)
+4. Install dependencies by running `npm install` in your project root directory (or `yarn` if you performed Step 2)
 
 ## building, watching & developing
 
@@ -41,11 +39,11 @@ After completing the steps below, you will be ready to begin using starbase:
 
 starbase uses [webpack-dev-server](https://github.com/webpack/webpack-dev-server) to serve up your project at [http://localhost:8080](http://localhost:8080) for streamlined and convenient development.
 
-After running `npm run watch` in the project root, your `/src` code will be served at the url above and watched for changes. As you modify code in `/src`, the project will be recompiled and your browser will refresh to show the latest changes.
+After running `npm run dev` in the project root, your `/src` code will be served at the url above and watched for changes. As you modify code in `/src`, the project will be recompiled and your browser will refresh to show the latest changes.
 
 ```
 cd /path/to/starbase
-npm run watch
+npm run dev
 ```
 
 ### building for production
@@ -83,12 +81,12 @@ Because starbase was built to accommodate ES6 & CommonJS (and not jQuery) it is 
 
 Fetch is supported in all modern browsers, but some old dogs still don't support it and that's what we need the [es6-promise](https://github.com/stefanpenner/es6-promise) & [whatwg-fetch](https://github.com/github/fetch) polyfills for.
 
+These polyfills come commented-out by default in `/src/app.js`, so they won't end up in your production code until you actually use fetch somewhere, at which time you should un-comment-out the polyfills.
+
 If you want to remove these for any reason, perform the following steps:
 
-1. run `yarn remove es6-promise whatwg-fetch` in the project root to remove the dependencies
+1. remove `es6-promise` & `whatwg-fetch` from `/package.json`
 2. remove the lines in `/src/app.js` that fall under the "fetch & promise polyfills" comment (it'll be obvious which ones)
-
-_Note: if you think you might use fetch in the future, comment-out the requires instead of deleting them. Commented-out code is not included in production builds._
 
 ## features you may want to customize
 
@@ -104,7 +102,7 @@ starbase enforces the [Airbnb JavaScript Style Guide](https://github.com/airbnb/
 
 1. in `/.eslintrc`, remove the line that says `extends`
 2. in `/package.json`, remove the `eslint-config-airbnb` dependency
-3. run `yarn` (or `npm update`)
+3. run `npm updated` (or `yarn`)
 
 After completing the steps above, the only rules that eslint will enforce are the ones you define in the `rules` object in `/.eslintrc`.
 
@@ -116,7 +114,7 @@ Out of the box, starbase caches everything, because the project is less than 50k
 
 [Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers), by design, only function on secure (https) environments. There is no issue with running starbase on an http environment-- the service worker will simply not be utilized.
 
-You may see an info log entry in your console from `offline-plugin` while using the `watch` command, feel free to ignore this. `offline-plugin` is not utilized on the dev server because [it doesn't always play nice with `webpack-dev-server`](https://github.com/NekR/offline-plugin/issues/138). It is intentionally only utilized in production builds.
+You may see an info log entry in your console from `offline-plugin` while using the `dev` command, feel free to ignore this. `offline-plugin` is not utilized on the dev server because [it doesn't always play nice with `webpack-dev-server`](https://github.com/NekR/offline-plugin/issues/138). It is intentionally only utilized in production builds.
 
 #### to remove offline-plugin:
 

@@ -10,51 +10,33 @@
 <body>
 <!-- header -->
 <header role="banner" class="header">
-  <img src="images/starbase.png" alt="starbase logo" class="header__image" />
-  <h1 class="header__title">starbase</h1>
+  <div class="header__brand">
+    <img src="images/starbase.png" alt="starbase logo" class="header__image" />
+    <h1 class="header__title">starbase</h1>
+  </div>
   <p>starbase is an open source webpack 4, Babel (ES6) & PostCSS boilerplate for web developers, with a small footprint and plenty of room for cream and sugar-- make it your own!</p>
 </header>
 
-<!-- tabs -->
-<main role="main" class="tabs">
-  <nav>
-    <ul role="tablist" class="tabs__list">
-      <li role="presentation">
-        <a role="tab" id="tab1" aria-controls="panel1" aria-selected="true" href="#panel1" title="a brief history of starbase-- it's got electrolytes!" class="tabs__list--active" tabindex="1">why come?</a>
-      </li>
-
-      <li role="presentation">
-        <a role="tab" id="tab2" aria-controls="panel2" aria-selected="false" href="#panel2" title="an overview of the starbase commands" tabindex="2">what does it do?</a>
-      </li>
-
-      <li role="presentation">
-        <a role="tab" id="tab3" aria-controls="panel3" aria-selected="false" href="#panel3" title="free software is for you and me" tabindex="3">who is it for?</a>
-      </li>
-    </ul>
-  </nav>
-
-  <!-- tab 1 -->
-  <div role="tabpanel" aria-labelledby="tab1" aria-hidden="false" id="panel1" class="tabs__content tabs__content--active">
+<!-- main content area -->
+<main class="rich-text">
+  <section>
+    <h2>Why it's here</h2>
     <p>starbase was created in early 2017, shortly after webpack 2 was released and it became clear that many popular development boilerplates were not being maintained or upgraded to the latest versions of the software they were built to utilize.</p>
-
     <p>The primary mission of starbase is to provide an elegant but simple baseline development process that generates clean, production-ready assets while being bloat-free and easy to maintain.</p>
-  </div>
+  </section>
 
-  <!-- tab 2 -->
-  <div role="tabpanel" aria-labelledby="tab2" aria-hidden="true" id="panel2" class="tabs__content">
+  <section>
+    <h2>What it does</h2>
     <p>starbase enables developers to spin up new projects and begin coding within minutes instead of hours. It is ready, right out of the box, to watch your code during development and can handle production builds when you're ready to integrate and/or deploy.</p>
-
-    <p>The <code>watch</code> command uses <a href="https://github.com/webpack/webpack-dev-server" title="webpack-dev-server on github">webpack-dev-server</a> to serve up your project on a development server (localhost) which will recompile and lint as you modify the source. You can even access this web server via LAN, with a static IP, for testing your app on multiple devices.</p>
-
+    <p>The <code>dev</code> command uses <a href="https://github.com/webpack/webpack-dev-server" title="webpack-dev-server on github">webpack-dev-server</a> to serve up your project on a development server (localhost) which will recompile and lint as you modify the source. You can even access this web server via LAN, with a static IP, for testing your app on multiple devices.</p>
     <p>The <code>build</code> command will compile production-ready (linted, minified &amp; optimized) assets that can be integrated into your CMS theme or used as a standalone static website.</p>
-  </div>
+  </section>
 
-  <!-- tab 3 -->
-  <div role="tabpanel" aria-labelledby="tab3" aria-hidden="true" id="panel3" class="tabs__content">
+  <section>
+    <h2>Who it's for</h2>
     <p>starbase is open source and completely free for personal or commercial use. It is a personal project-- a living code styleguide and outlet for technical exploration that you can make your own if you dig it. Pick it up, check it out and make it do a barrel roll.</p>
-
     <p>If you encounter any problems along the way, please be sure to <a href="https://github.com/bstaruk/starbase/issues" title="report an issue with starbase on github">report an issue</a> on GitHub and it'll likely be taken care of faster than you think!</p>
-  </div>
+  </section>
 </main>
 
 <!-- footer -->

@@ -1,6 +1,0 @@
-@import "../../variables/variables.css";
-
-.footer {
-  font-size: var(--body-font-size-small);
-  color: #888;
-}

@@ -4,20 +4,26 @@ const webpackMerge = require('webpack-merge');
 
 // postcss plugins
 const cssMqpacker = require('css-mqpacker');
-const cssnano = require('cssnano');
 const postcssExtend = require('postcss-extend');
 const postcssImport = require('postcss-import');
 const postcssNested = require('postcss-nested');
 const postcssPresetEnv = require('postcss-preset-env');
 const postcssRemoveRoot = require('postcss-remove-root');
 const postcssReporter = require('postcss-reporter');
-const postcssResponsiveType = require('postcss-responsive-type');
 const stylelint = require('stylelint');
 
 // import base config
 const webpackConfigBase = require('./webpack.config.base.js');
 
 module.exports = webpackMerge(webpackConfigBase, {
+  devServer: {
+    contentBase: path.resolve(__dirname, '../dist'),
+    port: 8080,
+    stats: {
+      children: false
+    }
+  },
+  devtool: 'inline-source-map',
   output: {
     filename: '[name].js'
   },
@@ -26,7 +32,10 @@ module.exports = webpackMerge(webpackConfigBase, {
       test: /\.css$/,
       use: [
         MiniCssExtractPlugin.loader,
-        'css-loader',
+        {
+          loader: 'css-loader',
+          options: { importLoaders: 1 }
+        },
         {
           loader: 'postcss-loader',
           options: {
@@ -48,30 +57,16 @@ module.exports = webpackMerge(webpackConfigBase, {
                   }
                 }
               }),
-              postcssResponsiveType(),
               postcssExtend(),
               postcssRemoveRoot(),
               cssMqpacker({
                 sort: true
-              }),
-              cssnano({
-                preset: 'default'
               })
             ]
           }
         }
       ]
     }]
-  },
-  devServer: {
-    contentBase: path.resolve(__dirname, '../dist'),
-    port: 8080,
-    watchOptions: {
-      poll: 1000
-    },
-    stats: {
-      children: false
-    }
   },
   plugins: [
     new MiniCssExtractPlugin({

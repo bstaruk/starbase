@@ -1,0 +1,26 @@
+@import "../variables/variables.css";
+
+.header {
+  &__brand {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__image {
+    height: 2rem;
+    margin-right: 0.75rem;
+
+    @media (--medium) {
+      height: 2.5rem;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-serif);
+    font-size: 2em;
+    font-weight: normal;
+    letter-spacing: normal;
+    margin: 0;
+  }
+}

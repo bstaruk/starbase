@@ -10,12 +10,28 @@
   --font-serif: 'PT Serif', Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
 
   /* dimensions */
-  --body-font-size: responsive 0.9375rem 1.0625rem; /* 15/16 & 17/16 */
-  --body-font-size-small: responsive 0.9375rem 1rem; /* 15/16 & 16/16 */
-  --body-font-range: 34rem 48rem;/* 544/16, 768/16 */
   --body-width-max: 48rem; /* 768/16 */
 }
 
 /* breakpoints */
-@custom-media --small (min-width: 34em); /* 544/16 */
-@custom-media --medium (min-width: 48em); /* 768/16 */
+@custom-media --small (min-width: 34rem); /* 544/16 */
+@custom-media --medium (min-width: 48rem); /* 768/16 */
+
+/* fonts */
+@font-face {
+  font-family: 'PT Sans';
+  src:
+    url('../lib/fonts/PTSans-Regular.woff2') format('woff2'),
+    url('../lib/fonts/PTSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PT Serif';
+  src:
+    url('../lib/fonts/PTSerif-Regular.woff2') format('woff2'),
+    url('../lib/fonts/PTSerif-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
