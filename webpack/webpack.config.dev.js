@@ -4,7 +4,6 @@ const webpackMerge = require('webpack-merge');
 
 // postcss plugins
 const cssMqpacker = require('css-mqpacker');
-const cssnano = require('cssnano');
 const postcssExtend = require('postcss-extend');
 const postcssImport = require('postcss-import');
 const postcssNested = require('postcss-nested');
@@ -20,12 +19,16 @@ module.exports = webpackMerge(webpackConfigBase, {
   output: {
     filename: '[name].js'
   },
+  devtool: 'inline-source-map',
   module: {
     rules: [{
       test: /\.css$/,
       use: [
         MiniCssExtractPlugin.loader,
-        'css-loader',
+        {
+          loader: 'css-loader',
+          options: { importLoaders: 1 }
+        },
         {
           loader: 'postcss-loader',
           options: {
@@ -51,9 +54,6 @@ module.exports = webpackMerge(webpackConfigBase, {
               postcssRemoveRoot(),
               cssMqpacker({
                 sort: true
-              }),
-              cssnano({
-                preset: 'default'
               })
             ]
           }

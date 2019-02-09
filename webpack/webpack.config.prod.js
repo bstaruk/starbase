@@ -27,7 +27,10 @@ module.exports = webpackMerge(webpackConfigBase, {
       test: /\.css$/,
       use: [
         MiniCssExtractPlugin.loader,
-        'css-loader',
+        {
+          loader: 'css-loader',
+          options: { importLoaders: 1 }
+        },
         {
           loader: 'postcss-loader',
           options: {
