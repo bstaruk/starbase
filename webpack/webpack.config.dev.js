@@ -11,7 +11,6 @@ const postcssNested = require('postcss-nested');
 const postcssPresetEnv = require('postcss-preset-env');
 const postcssRemoveRoot = require('postcss-remove-root');
 const postcssReporter = require('postcss-reporter');
-const postcssResponsiveType = require('postcss-responsive-type');
 const stylelint = require('stylelint');
 
 // import base config
@@ -48,7 +47,6 @@ module.exports = webpackMerge(webpackConfigBase, {
                   }
                 }
               }),
-              postcssResponsiveType(),
               postcssExtend(),
               postcssRemoveRoot(),
               cssMqpacker({

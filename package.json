@@ -57,7 +57,6 @@
     "postcss-preset-env": "^6.5.0",
     "postcss-remove-root": "0.0.2",
     "postcss-reporter": "^6.0.1",
-    "postcss-responsive-type": "^1.0.0",
     "style-loader": "^0.23.1",
     "stylelint": "^9.9.0",
     "stylelint-config-standard": "^18.2.0",

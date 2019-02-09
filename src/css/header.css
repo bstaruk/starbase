@@ -2,7 +2,7 @@
 
 :root {
   --header-height-small: 2rem;
-  --header-font-size-small: 1.5rem;
+  --header-font-size-small: 1.75rem;
   --header-height-full: 2.5rem;
   --header-font-size-full: 2rem;
 }
@@ -15,7 +15,6 @@
     left: 0;
     top: 0;
     height: var(--header-height-small);
-    transition: height 300ms ease;
 
     @media (--medium) {
       height: var(--header-height-full);
@@ -30,10 +29,6 @@
     line-height: var(--header-height-small);
     padding-left: calc(var(--header-height-small) + 0.5rem);
     margin-top: 0;
-    transition:
-      font-size 300ms ease,
-      line-height 300ms ease,
-      padding-left 300ms ease;
 
     @media (--medium) {
       font-size: var(--header-font-size-full);
