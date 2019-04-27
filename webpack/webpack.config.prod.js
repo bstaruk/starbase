@@ -70,11 +70,7 @@ module.exports = webpackMerge(webpackConfigBase, {
       filename: '[name].[hash:8].css',
       chunkFilename: '[id].[hash:8].css'
     }),
-    new CleanWebpackPlugin([
-      'dist'
-    ], {
-      root: path.resolve(__dirname, '../')
-    }),
+    new CleanWebpackPlugin(),
     new OfflinePlugin({
       AppCache: false
     })
