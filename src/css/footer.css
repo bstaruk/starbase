@@ -1,4 +1,4 @@
-@import "../variables/variables.css";
+@import "./_variables.css";
 
 .footer {
   margin-top: 2.5rem;

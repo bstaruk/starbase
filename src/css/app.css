@@ -1,7 +1,0 @@
-/* ordered imports */
-@import "./root.css";
-
-/* everything else */
-@import "./footer.css";
-@import "./header.css";
-@import "./rich-text.css";
