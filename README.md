@@ -6,7 +6,7 @@
 
 starbase is an offline-first web app boilerplate that is built with webpack 4, PostCSS & Babel 7. Get up and running in minutes using some of the most powerful front-end tools available in 2019:
 
-* [Node.js](https://github.com/nodejs/node) & [Yarn](https://github.com/yarnpkg)
+* [Node.js](https://github.com/nodejs/node)
 * [webpack 4](https://github.com/webpack/webpack) & [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
 * [Babel 7](https://github.com/babel/babel) w/ [ESLint](https://github.com/eslint/eslint)
 * [PostCSS](https://github.com/postcss/postcss) w/
@@ -29,9 +29,8 @@ starbase is open source and free software, so you may to do whatever you wish wi
 After completing the steps below, you will be ready to begin using starbase:
 
 1. Install [Node.js](https://nodejs.org) (latest LTS recommended)
-2. (Optional) Install [Yarn](https://yarnpkg.com)
-3. Clone starbase into your project root directory
-4. Install dependencies by running `npm install` in your project root directory (or `yarn` if you performed Step 2)
+2. Clone starbase into your project root directory
+3. Install dependencies by running `npm install` in your project root directory
 
 ## building, watching & developing
 
@@ -102,7 +101,7 @@ starbase enforces the [Airbnb JavaScript Style Guide](https://github.com/airbnb/
 
 1. in `/.eslintrc`, remove the line that says `extends`
 2. in `/package.json`, remove the `eslint-config-airbnb` dependency
-3. run `npm updated` (or `yarn`)
+3. run `npm update`
 
 After completing the steps above, the only rules that eslint will enforce are the ones you define in the `rules` object in `/.eslintrc`.
 
