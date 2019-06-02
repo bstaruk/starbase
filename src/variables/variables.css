@@ -16,22 +16,3 @@
 /* breakpoints */
 @custom-media --small (min-width: 34rem); /* 544/16 */
 @custom-media --medium (min-width: 48rem); /* 768/16 */
-
-/* fonts */
-@font-face {
-  font-family: 'PT Sans';
-  src:
-    url('../lib/fonts/PTSans-Regular.woff2') format('woff2'),
-    url('../lib/fonts/PTSans-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'PT Serif';
-  src:
-    url('../lib/fonts/PTSerif-Regular.woff2') format('woff2'),
-    url('../lib/fonts/PTSerif-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}

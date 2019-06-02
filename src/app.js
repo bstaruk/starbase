@@ -2,6 +2,7 @@
 import './lib/offline-plugin';
 
 // application css
+import './lib/fonts/fonts.css';
 import './css/app.css';
 
 // remove .no-js from html tag
