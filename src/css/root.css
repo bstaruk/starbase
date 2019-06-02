@@ -1,0 +1,35 @@
+@import "../variables/variables.css";
+
+/*
+  This file is here to contain some baseline styles but
+  most of your styles should be split up by component
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: var(--body-width-max);
+  background-color: var(--body-bg-color);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--body-font-color);
+  padding: 1rem;
+  margin: 0 auto;
+
+  @media (--medium) {
+    font-size: 1rem;
+    padding-top: 2rem;
+  }
+}
+
+a {
+  color: var(--anchor-font-color);
+  transition: color 200ms ease;
+
+  &:hover {
+    color: var(--anchor-hover-font-color);
+  }
+}
