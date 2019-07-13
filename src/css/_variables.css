@@ -1,9 +1,11 @@
 :root {
-  /* theme colors */
-  --body-bg-color: #fefefe;
-  --body-font-color: #333;
-  --anchor-font-color: #2472be;
-  --anchor-hover-font-color: #23a5f0;
+  /* theme colors (http://chir.ag/projects/name-that-color/) */
+  --color-white: #fefefe;
+  --color-silver: #ccc;
+  --color-gray: #888;
+  --color-mine-shaft: #333;
+  --color-mariner: #2472be;
+  --color-picton-blue: #23a5f0;
 
   /* typography */
   --font-sans: 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
