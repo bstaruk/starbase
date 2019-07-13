@@ -11,11 +11,11 @@
 
 body {
   max-width: var(--body-width-max);
-  background-color: var(--body-bg-color);
+  background-color: var(--color-white);
   font-family: var(--font-sans);
   font-size: 0.95rem;
   line-height: 1.4;
-  color: var(--body-font-color);
+  color: var(--color-mine-shaft);
   padding: 1rem;
   margin: 0 auto;
 
@@ -26,10 +26,10 @@ body {
 }
 
 a {
-  color: var(--anchor-font-color);
+  color: var(--color-mariner);
   transition: color 200ms ease;
 
   &:hover {
-    color: var(--anchor-hover-font-color);
+    color: var(--color-picton-blue);
   }
 }
