@@ -1,12 +1,12 @@
 {
   "name": "starbase",
   "version": "2.1.1",
-  "author": "Brian Staruk <brian@staruk.me>",
+  "author": "Brian Staruk <brian@staruk.net>",
   "contributors": [
     {
       "name": "Brian Staruk",
-      "email": "brian@staruk.me",
-      "url": "https://brian.staruk.me"
+      "email": "brian@staruk.net",
+      "url": "https://brian.staruk.net"
     }
   ],
   "description": "an offline-first web app boilerplate w/ webpack 4, PostCSS, Babel 7 (ES6+) & more",
@@ -17,7 +17,7 @@
   },
   "bugs": {
     "url": "https://github.com/bstaruk/starbase/issues",
-    "email": "brian@staruk.me"
+    "email": "brian@staruk.net"
   },
   "engines": {
     "node": ">=8.9"
