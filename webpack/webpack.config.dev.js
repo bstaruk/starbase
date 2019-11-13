@@ -45,7 +45,7 @@ module.exports = webpackMerge(webpackConfigBase, {
               stylelint(),
               postcssReporter(),
               postcssImport({
-                path: [path.resolve(__dirname, '../src')],
+                path: [path.resolve(__dirname, '../src')]
               }),
               postcssNested(),
               postcssPresetEnv({

@@ -1,6 +1,7 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OfflinePlugin = require('offline-plugin');
+const path = require('path');
 const webpackMerge = require('webpack-merge');
 
 // postcss plugins
@@ -38,7 +39,7 @@ module.exports = webpackMerge(webpackConfigBase, {
               stylelint(),
               postcssReporter(),
               postcssImport({
-                path: [path.resolve(__dirname, '../src')],
+                path: [path.resolve(__dirname, '../src')]
               }),
               postcssNested(),
               postcssPresetEnv({
