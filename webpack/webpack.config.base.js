@@ -9,6 +9,14 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../dist')
   },
+  resolve: {
+    alias: {
+      '@css': path.resolve(__dirname, '../src/css'),
+      '@lib': path.resolve(__dirname, '../src/lib'),
+      '@src': path.resolve(__dirname, '../src')
+    },
+    extensions: ['.js', '.json', '.css']
+  },
   module: {
     rules: [
       {

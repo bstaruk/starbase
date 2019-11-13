@@ -1,9 +1,8 @@
 // offline-plugin
-import './lib/offline-plugin';
+import '@lib/offline-plugin';
 
-// application css
-import './lib/fonts/fonts.css';
-import './app.css';
+// styles
+import '@src/app.styles';
 
 // fetch & promise polyfills (comment-out if not needed)
 // require('es6-promise').polyfill();
