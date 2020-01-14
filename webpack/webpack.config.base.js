@@ -39,7 +39,8 @@ module.exports = {
           loader: 'url-loader',
           options: {
             limit: 8192,
-            name: 'images/[name].[md5:hash:hex:8].[ext]'
+            name: 'images/[name].[md5:hash:hex:8].[ext]',
+            esModule: false
           }
         }]
       },
