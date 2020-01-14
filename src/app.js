@@ -2,7 +2,7 @@
 import '@lib/offline-plugin';
 
 // styles
-import '@src/app.styles';
+import '@src/app.css';
 
 // fetch & promise polyfills (comment-out if not needed)
 // require('es6-promise').polyfill();
