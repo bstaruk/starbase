@@ -8,7 +8,7 @@ starbase is an offline-first web app boilerplate that is built with webpack 4, P
 
 * [Node.js](https://github.com/nodejs/node)
 * [webpack 4](https://github.com/webpack/webpack) & [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
-* [Babel 7](https://github.com/babel/babel) w/ [ESLint](https://github.com/eslint/eslint)
+* [Babel 7](https://github.com/babel/babel) w/ [ESLint](https://github.com/eslint/eslint) & [Prettier](https://github.com/prettier/prettier)
 * [PostCSS](https://github.com/postcss/postcss) w/
   * [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env)
   * [PostCSS Nested](https://github.com/postcss/postcss-nested)
@@ -38,11 +38,11 @@ After completing the steps below, you will be ready to begin using starbase:
 
 starbase uses [webpack-dev-server](https://github.com/webpack/webpack-dev-server) to serve up your project at [http://localhost:8080](http://localhost:8080) for streamlined and convenient development.
 
-After running `npm run dev` in the project root, your `/src` code will be served at the url above and watched for changes. As you modify code in `/src`, the project will be recompiled and your browser will refresh to show the latest changes.
+After running `npm run start` in the project root, your `/src` code will be served at the url above and watched for changes. As you modify code in `/src`, the project will be recompiled and your browser will refresh to show the latest changes.
 
 ```
 cd /path/to/starbase
-npm run dev
+npm run start
 ```
 
 ### building for production
@@ -91,19 +91,24 @@ If you want to remove these for any reason, perform the following steps:
 
 ### javascript & css linting
 
-starbase uses [ESLint](http://eslint.org/) for Javascript (ES6) linting and [stylelint](https://github.com/stylelint/stylelint) for CSS linting. The configs (`/.eslintrc` and `/.stylelintrc` respectively) included out of the box contain some basic common rules. Modify them to your liking to encourage consistent code throughout your project.
+starbase uses [ESLint](http://eslint.org/) for Javascript (ES6) linting and [stylelint](https://github.com/stylelint/stylelint) for CSS linting. The configs (`/.eslintrc.js` and `/.stylelintrc.js` respectively) included out of the box contain some basic common rules. Modify them to your liking to encourage consistent code throughout your project.
 
 #### airbnb eslint config
 
-starbase enforces the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with ESLint via [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb). These rules are basically the industry standard in 2017 so I'd recommend adhering to them, but you can override individual rules via the project `/.eslintrc` file. I've included a couple basic overrides (in `/.eslintrc`) to demonstrate usage.
+starbase enforces the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with ESLint via [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb). These rules are basically the industry standard in 2017 so I'd recommend adhering to them, but you can override individual rules via the project `/.eslintrc.js` file. I've included a couple basic overrides (in `/.eslintrc.js`) to demonstrate usage.
 
 ##### to remove the airbnb eslint config:
 
-1. in `/.eslintrc`, remove the line that says `extends`
+1. in `/.eslintrc.js`, remove the line that says `extends`
 2. in `/package.json`, remove the `eslint-config-airbnb` dependency
 3. run `npm update`
 
-After completing the steps above, the only rules that eslint will enforce are the ones you define in the `rules` object in `/.eslintrc`.
+After completing the steps above, the only rules that eslint will enforce are the ones you define in the `rules` object in `/.eslintrc.js`.
+
+
+### prettier js formatting
+
+starbase uses [Prettier](https://github.com/prettier/prettier) to enforce and simplify code consistency. If you use VS Code, check out the [Prettier VS Code extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode).
 
 ### service worker caching
 
