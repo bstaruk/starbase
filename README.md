@@ -8,7 +8,7 @@ starbase is an offline-first web app boilerplate that is built with webpack 4, P
 
 * [Node.js](https://github.com/nodejs/node)
 * [webpack 4](https://github.com/webpack/webpack) & [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
-* [Babel 7](https://github.com/babel/babel) w/ [ESLint](https://github.com/eslint/eslint)
+* [Babel 7](https://github.com/babel/babel) w/ [ESLint](https://github.com/eslint/eslint) & [Prettier](https://github.com/prettier/prettier)
 * [PostCSS](https://github.com/postcss/postcss) w/
   * [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env)
   * [PostCSS Nested](https://github.com/postcss/postcss-nested)
@@ -104,6 +104,11 @@ starbase enforces the [Airbnb JavaScript Style Guide](https://github.com/airbnb/
 3. run `npm update`
 
 After completing the steps above, the only rules that eslint will enforce are the ones you define in the `rules` object in `/.eslintrc.js`.
+
+
+### prettier js formatting
+
+starbase uses [Prettier](https://github.com/prettier/prettier) to enforce and simplify code consistency. If you use VS Code, check out the [Prettier VS Code extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode).
 
 ### service worker caching
 
