@@ -25,7 +25,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config ./webpack/webpack.config.prod.js --mode production",
-    "dev": "webpack-dev-server --config ./webpack/webpack.config.dev.js --mode development"
+    "start": "webpack-dev-server --config ./webpack/webpack.config.dev.js --mode development"
   },
   "keywords": [],
   "license": "MIT",
