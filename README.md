@@ -91,19 +91,19 @@ If you want to remove these for any reason, perform the following steps:
 
 ### javascript & css linting
 
-starbase uses [ESLint](http://eslint.org/) for Javascript (ES6) linting and [stylelint](https://github.com/stylelint/stylelint) for CSS linting. The configs (`/.eslintrc` and `/.stylelintrc` respectively) included out of the box contain some basic common rules. Modify them to your liking to encourage consistent code throughout your project.
+starbase uses [ESLint](http://eslint.org/) for Javascript (ES6) linting and [stylelint](https://github.com/stylelint/stylelint) for CSS linting. The configs (`/.eslintrc.js` and `/.stylelintrc.js` respectively) included out of the box contain some basic common rules. Modify them to your liking to encourage consistent code throughout your project.
 
 #### airbnb eslint config
 
-starbase enforces the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with ESLint via [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb). These rules are basically the industry standard in 2017 so I'd recommend adhering to them, but you can override individual rules via the project `/.eslintrc` file. I've included a couple basic overrides (in `/.eslintrc`) to demonstrate usage.
+starbase enforces the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with ESLint via [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb). These rules are basically the industry standard in 2017 so I'd recommend adhering to them, but you can override individual rules via the project `/.eslintrc.js` file. I've included a couple basic overrides (in `/.eslintrc.js`) to demonstrate usage.
 
 ##### to remove the airbnb eslint config:
 
-1. in `/.eslintrc`, remove the line that says `extends`
+1. in `/.eslintrc.js`, remove the line that says `extends`
 2. in `/package.json`, remove the `eslint-config-airbnb` dependency
 3. run `npm update`
 
-After completing the steps above, the only rules that eslint will enforce are the ones you define in the `rules` object in `/.eslintrc`.
+After completing the steps above, the only rules that eslint will enforce are the ones you define in the `rules` object in `/.eslintrc.js`.
 
 ### service worker caching
 
