@@ -1,6 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
-const webpackMerge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 
 // postcss plugins
 const cssMqpacker = require('css-mqpacker');
@@ -15,7 +15,7 @@ const stylelint = require('stylelint');
 // import base config
 const webpackConfigBase = require('./webpack.config.base.js');
 
-module.exports = webpackMerge(webpackConfigBase, {
+module.exports = merge(webpackConfigBase, {
   devServer: {
     contentBase: path.resolve(__dirname, '../dist'),
     port: 8080,
