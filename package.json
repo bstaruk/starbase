@@ -59,6 +59,7 @@
     "postcss-preset-env": "^6.7.0",
     "postcss-remove-root": "0.0.2",
     "postcss-reporter": "^6.0.1",
+    "prettier": "^2.0.5",
     "style-loader": "^1.2.1",
     "stylelint": "^13.6.1",
     "stylelint-config-standard": "^20.0.0",
