@@ -1,5 +1,4 @@
-// offline-plugin
-import 'lib/offline-plugin';
+import * as OfflinePluginRuntime from 'offline-plugin/runtime';
 
 // styles
 import 'app.css';
@@ -10,3 +9,12 @@ import 'app.css';
 
 // remove .no-js from html tag
 document.querySelector('html').classList.remove('no-js');
+
+// run offline plugin last (skip for dev)
+if (process.env.NODE_ENV === 'production') {
+  OfflinePluginRuntime.install({
+    onUpdateReady: () => {
+      OfflinePluginRuntime.applyUpdate();
+    },
+  });
+}
