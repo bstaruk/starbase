@@ -18,6 +18,7 @@ module.exports = {
     document: true,
     window: true,
     location: true,
+    fetch: true,
   },
   settings: {
     'import/resolver': {
