@@ -1,13 +1,16 @@
 @import 'css/_variables';
 
 .link {
-  transition: color 200ms ease;
+  text-decoration: underline;
 
-  &--blue {
-    color: var(--color-mariner);
-
-    &:hover {
-      color: var(--color-picton-blue);
-    }
+  &:hover {
+    text-decoration: none;
   }
+
+  /* color modifiers */
+  &--red { color: var(--color-red); }
+  &--orange { color: var(--color-orange); }
+  &--green { color: var(--color-green); }
+  &--blue { color: var(--color-blue); }
+  &--purple { color: var(--color-purple); }
 }
