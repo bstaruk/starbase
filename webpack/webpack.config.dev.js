@@ -16,64 +16,67 @@ const stylelint = require('stylelint');
 const webpackConfigBase = require('./webpack.config.base.js');
 
 module.exports = merge(webpackConfigBase, {
+  mode: 'development',
+  output: {
+    filename: '[name].js',
+  },
+  devtool: 'eval-source-map',
   devServer: {
-    contentBase: path.resolve(__dirname, '../dist'),
+    contentBase: path.join(process.cwd(), 'dist'),
     port: 8080,
     stats: {
-      children: false
-    }
-  },
-  devtool: 'inline-source-map',
-  output: {
-    filename: '[name].js'
+      children: false,
+    },
   },
   module: {
-    rules: [{
-      test: /\.css$/,
-      use: [
-        MiniCssExtractPlugin.loader,
-        {
-          loader: 'css-loader',
-          options: { importLoaders: 1 }
-        },
-        {
-          loader: 'postcss-loader',
-          options: {
-            ident: 'postcss',
-            sourceMap: 'inline',
-            plugins: () => [
-              stylelint(),
-              postcssReporter(),
-              postcssImport({
-                path: [path.resolve(__dirname, '../src')]
-              }),
-              postcssNested(),
-              postcssPresetEnv({
-                stage: 1,
-                features: {
-                  'custom-properties': {
-                    preserve: false
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: { importLoaders: 1 },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              sourceMap: 'inline',
+              plugins: () => [
+                stylelint(),
+                postcssReporter(),
+                postcssImport({
+                  path: [path.resolve(__dirname, '../src')],
+                }),
+                postcssNested(),
+                postcssPresetEnv({
+                  stage: 1,
+                  features: {
+                    'custom-properties': {
+                      preserve: false,
+                    },
+                    'custom-media': {
+                      preserve: false,
+                    },
                   },
-                  'custom-media': {
-                    preserve: false
-                  }
-                }
-              }),
-              postcssExtend(),
-              postcssRemoveRoot(),
-              cssMqpacker({
-                sort: true
-              })
-            ]
-          }
-        }
-      ]
-    }]
+                }),
+                postcssExtend(),
+                postcssRemoveRoot(),
+                cssMqpacker({
+                  sort: true,
+                }),
+              ],
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].css',
-      chunkFilename: '[id].css'
-    })
-  ]
+      chunkFilename: '[id].css',
+    }),
+  ],
 });
