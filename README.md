@@ -124,8 +124,7 @@ You may see an info log entry in your console from `offline-plugin` while using 
 
 1. in `/package.json`, remove the `offline-plugin` dependency
 2. in `/webpack/webpack.config.base.js`, remove all references to `OfflinePlugin` and/or `offline-plugin`
-3. in `/src/app.js`, remove the `import` statement that references `offline-plugin`
-4. delete `/src/app/lib/offline-plugin.js`
+3. in `/src/app.js`, remove the `import` statement for `offline-plugin`, and the code at the bottom of the file that references it
 
 _There is no consequence to removing this feature, besides limiting offline access to your project._
 

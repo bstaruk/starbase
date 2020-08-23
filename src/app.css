@@ -1,5 +1,5 @@
 /* ordered css @imports */
-@import 'lib/fonts/fonts';
+@import 'fonts/fonts';
 @import 'css/root';
 
 /* all other (alphabetical) css imports */
