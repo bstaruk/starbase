@@ -8,8 +8,8 @@
   --color-picton-blue: #23a5f0;
 
   /* typography */
-  --font-sans: 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-serif: 'PT Serif', Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+  --font-sans: 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  --font-serif: 'PT Serif', 'Palatino', 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', 'Georgia', serif;
 
   /* dimensions */
   --body-width-max: 48rem; /* 768/16 */
