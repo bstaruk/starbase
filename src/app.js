@@ -1,11 +1,11 @@
 import * as OfflinePluginRuntime from 'offline-plugin/runtime';
 
+// fetch & promise polyfills (comment-out if not needed)
+import 'es6-promise/auto';
+import 'whatwg-fetch';
+
 // styles
 import 'app.css';
-
-// fetch & promise polyfills (comment-out if not needed)
-// require('es6-promise').polyfill();
-// require('whatwg-fetch');
 
 // js components
 import RepoDetails from 'js/RepoDetails';
