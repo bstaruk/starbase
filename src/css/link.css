@@ -1,0 +1,13 @@
+@import 'css/_variables';
+
+.link {
+  transition: color 200ms ease;
+
+  &--blue {
+    color: var(--color-mariner);
+
+    &:hover {
+      color: var(--color-picton-blue);
+    }
+  }
+}

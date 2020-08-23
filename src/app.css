@@ -5,4 +5,5 @@
 /* all other (alphabetical) css imports */
 @import 'css/footer';
 @import 'css/header';
+@import 'css/link';
 @import 'css/rich-text';

@@ -24,12 +24,3 @@ body {
     padding-top: 2rem;
   }
 }
-
-a {
-  color: var(--color-mariner);
-  transition: color 200ms ease;
-
-  &:hover {
-    color: var(--color-picton-blue);
-  }
-}
