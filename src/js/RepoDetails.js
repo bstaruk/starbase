@@ -3,6 +3,11 @@ const RepoDetails = ({ el }) => {
     return;
   }
 
+  // required ui elements
+  const ui = {
+    wrapper: el.querySelector('p'),
+  };
+
   // required properties
   const props = {
     owner: el.getAttribute('data-owner'),
@@ -10,7 +15,7 @@ const RepoDetails = ({ el }) => {
   };
 
   // exit if required elements & properties not present
-  if (!props.owner || !props.repo) {
+  if (!ui.wrapper || !props.owner || !props.repo) {
     return;
   }
 
@@ -24,10 +29,10 @@ const RepoDetails = ({ el }) => {
   const render = () => {
     getRepoDetails()
       .then((data) => {
-        console.log('success', data); // eslint-disable-line no-console
+        ui.wrapper.textContent = `${data.name} has ${data.stargazers_count} stargazers and ${data.forks_count} forks.`;
       })
-      .catch((data) => {
-        console.log('error', data); // eslint-disable-line no-console
+      .catch(() => {
+        ui.wrapper.textContent = `There was an error getting the repo details for ${props.owner}/${props.repo}. Refresh the page to try again.`;
       });
   };
 
