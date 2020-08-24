@@ -13,4 +13,5 @@
   &--green { color: var(--color-green); }
   &--blue { color: var(--color-blue); }
   &--purple { color: var(--color-purple); }
+  &--grey { color: var(--color-grey); }
 }
