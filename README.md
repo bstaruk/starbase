@@ -80,12 +80,10 @@ Because starbase was built to accommodate ES6 & CommonJS (and not jQuery) it is 
 
 Fetch is supported in all modern browsers, but some old dogs still don't support it and that's what we need the [es6-promise](https://github.com/stefanpenner/es6-promise) & [whatwg-fetch](https://github.com/github/fetch) polyfills for.
 
-These polyfills come commented-out by default in `/src/app.js`, so they won't end up in your production code until you actually use fetch somewhere, at which time you should un-comment-out the polyfills.
-
 If you want to remove these for any reason, perform the following steps:
 
 1. remove `es6-promise` & `whatwg-fetch` from `/package.json`
-2. remove the lines in `/src/app.js` that fall under the "fetch & promise polyfills" comment (it'll be obvious which ones)
+2. remove the relevant imports in `/src/app.js`
 
 ## features you may want to customize
 
