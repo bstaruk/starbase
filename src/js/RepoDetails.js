@@ -31,7 +31,7 @@ const RepoDetails = ({ el }) => {
 
     getRepoDetails()
       .then((data) => {
-        ui.wrapper.textContent = `${data.name} has ${data.stargazers_count} stargazers and ${data.forks_count} forks.`;
+        ui.wrapper.textContent = `${data.name} has ${data.stargazers_count} stargazers, ${data.forks_count} forks and ${data.open_issues_count} open issues.`;
         el.classList.add('repo-details--loaded');
       })
       .catch(() => {
