@@ -2,20 +2,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  context: path.resolve(__dirname, '../src'),
+  context: path.resolve(process.cwd(), 'src'),
   entry: {
-    app: ['./app.js'],
+    app: [path.join(process.cwd(), 'src/app.js')],
   },
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(process.cwd(), 'dist'),
+    publicPath: '/',
   },
   resolve: {
-    alias: {
-      '@css': path.resolve(__dirname, '../src/css'),
-      '@lib': path.resolve(__dirname, '../src/lib'),
-      '@src': path.resolve(__dirname, '../src'),
-    },
-    extensions: ['.js', '.json', '.css'],
+    modules: ['node_modules', path.resolve(process.cwd(), 'src')],
+    extensions: ['.js', '.css'],
   },
   module: {
     rules: [
@@ -85,9 +82,9 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../src/templates/index.html'),
+      template: 'templates/index.html',
       filename: 'index.html',
-      favicon: path.resolve(__dirname, '../src/templates/images/favicon.png'),
+      favicon: 'templates/images/favicon.png',
     }),
   ],
 };

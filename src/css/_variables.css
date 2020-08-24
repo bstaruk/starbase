@@ -1,15 +1,18 @@
 :root {
-  /* theme colors (http://chir.ag/projects/name-that-color/) */
+  /* theme colors */
   --color-white: #fefefe;
   --color-silver: #ccc;
-  --color-gray: #888;
-  --color-mine-shaft: #333;
-  --color-mariner: #2472be;
-  --color-picton-blue: #23a5f0;
+  --color-grey: #888;
+  --color-dark-grey: #333;
+  --color-red: #cc283d;
+  --color-orange: #ee763a;
+  --color-green: #2ba667;
+  --color-blue: #2472be;
+  --color-purple: #861bbb;
 
   /* typography */
-  --font-sans: 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-serif: 'PT Serif', Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+  --font-sans: 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  --font-serif: 'PT Serif', 'Palatino', 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', 'Georgia', serif;
 
   /* dimensions */
   --body-width-max: 48rem; /* 768/16 */

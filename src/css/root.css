@@ -15,21 +15,12 @@ body {
   font-family: var(--font-sans);
   font-size: 0.95rem;
   line-height: 1.4;
-  color: var(--color-mine-shaft);
+  color: var(--color-dark-grey);
   padding: 1rem;
   margin: 0 auto;
 
   @media (--medium) {
     font-size: 1rem;
     padding-top: 2rem;
-  }
-}
-
-a {
-  color: var(--color-mariner);
-  transition: color 200ms ease;
-
-  &:hover {
-    color: var(--color-picton-blue);
   }
 }

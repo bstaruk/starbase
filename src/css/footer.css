@@ -1,11 +1,17 @@
 @import "css/_variables";
+@import "css/link";
 
 .footer {
   margin-top: 2.5rem;
   border-top: 1px solid var(--color-silver);
-  color: var(--color-gray);
+  color: var(--color-grey);
 
   @media (--medium) {
     font-size: 0.9em;
+  }
+
+  a {
+    @extend .link;
+    @extend .link--grey;
   }
 }

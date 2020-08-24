@@ -1,6 +1,6 @@
 {
   "name": "starbase",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "author": "Brian Staruk <brian@staruk.net>",
   "contributors": [
     {
@@ -24,21 +24,22 @@
   },
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config ./webpack/webpack.config.prod.js --mode production",
-    "start": "webpack-dev-server --config ./webpack/webpack.config.dev.js --mode development"
+    "build": "cross-env NODE_ENV=production webpack --config ./webpack/webpack.config.prod.js",
+    "start": "cross-env NODE_ENV=develop webpack-dev-server --config ./webpack/webpack.config.dev.js"
   },
   "keywords": [],
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.11.1",
+    "@babel/core": "^7.11.4",
     "@babel/preset-env": "^7.11.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0.2",
     "css-loader": "^4.2.1",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
-    "eslint": "^7.6.0",
+    "eslint": "^7.7.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-import-resolver-webpack": "^0.12.2",
@@ -46,7 +47,7 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-prettier": "^3.1.4",
     "file-loader": "^6.0.0",
-    "html-loader": "^1.1.0",
+    "html-loader": "^1.2.1",
     "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.10.0",
     "offline-plugin": "^5.0.7",
@@ -67,7 +68,7 @@
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^5.1.1"
+    "webpack-merge": "^5.1.2"
   },
   "dependencies": {
     "es6-promise": "^4.2.8",
