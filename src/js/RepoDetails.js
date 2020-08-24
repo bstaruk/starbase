@@ -27,9 +27,12 @@ const RepoDetails = ({ el }) => {
       .then((data) => data);
 
   const render = () => {
+    el.classList.remove('repo-details--loaded');
+
     getRepoDetails()
       .then((data) => {
         ui.wrapper.textContent = `${data.name} has ${data.stargazers_count} stargazers and ${data.forks_count} forks.`;
+        el.classList.add('repo-details--loaded');
       })
       .catch(() => {
         ui.wrapper.textContent = `There was an error getting the repo details for ${props.owner}/${props.repo}. Refresh the page to try again.`;
