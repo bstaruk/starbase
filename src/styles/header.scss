@@ -1,5 +1,3 @@
-@import "css/_variables";
-
 .header {
   &__brand {
     display: flex;
@@ -11,13 +9,13 @@
     height: 2rem;
     margin-right: 0.75rem;
 
-    @media (--medium) {
-      height: 2.5rem;
-    }
+    // @media (--medium) {
+    //   height: 2.5rem;
+    // }
   }
 
   &__title {
-    font-family: var(--font-serif);
+    font-family: $font-serif;
     font-size: 2em;
     font-weight: normal;
     letter-spacing: normal;

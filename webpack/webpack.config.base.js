@@ -1,5 +1,9 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 const path = require('path');
+
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   context: path.resolve(process.cwd(), 'src'),
@@ -8,7 +12,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(process.cwd(), 'dist'),
-    publicPath: '/',
+    // publicPath: '/',
   },
   resolve: {
     modules: ['node_modules', path.resolve(process.cwd(), 'src')],
@@ -22,6 +26,14 @@ module.exports = {
         use: ['babel-loader', 'eslint-loader'],
       },
       {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+      {
         test: /\.html$/,
         use: [
           {
@@ -33,54 +45,27 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpg|gif)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-              name: 'images/[name].[md5:hash:hex:8].[ext]',
-              esModule: false,
-            },
-          },
-        ],
-      },
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'images/[name].[md5:hash:hex:8].[ext]',
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(mp4|ogg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'assets/[name].[md5:hash:hex:8].[ext]',
-            },
-          },
-        ],
+        test: /\.(png|jpg|gif|svg)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name]-[hash:8][ext]',
+        },
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'fonts/[name].[md5:hash:hex:8].[ext]',
-            },
-          },
-        ],
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name]-[hash:8][ext]',
+        },
       },
     ],
   },
   plugins: [
+    new StylelintPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name]-[fullhash:8].css',
+      chunkFilename: '[id]-[fullhash:8].css',
+    }),
     new HtmlWebpackPlugin({
       template: 'templates/index.html',
       filename: 'index.html',
