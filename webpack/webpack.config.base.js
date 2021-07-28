@@ -44,57 +44,25 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpg|gif)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-              name: 'images/[name].[md5:fullhash:hex:8].[ext]',
-              esModule: false,
-            },
-          },
-        ],
-      },
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'images/[name].[md5:fullhash:hex:8].[ext]',
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(mp4|ogg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'assets/[name].[md5:fullhash:hex:8].[ext]',
-            },
-          },
-        ],
+        test: /\.(png|jpg|gif|svg)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name]-[hash:8][ext]',
+        },
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'fonts/[name].[md5:fullhash:hex:8].[ext]',
-            },
-          },
-        ],
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name]-[hash:8][ext]',
+        },
       },
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].[fullhash:8].css',
-      chunkFilename: '[id].[fullhash:8].css',
+      filename: '[name]-[fullhash:8].css',
+      chunkFilename: '[id]-[fullhash:8].css',
     }),
     new HtmlWebpackPlugin({
       template: 'templates/index.html',

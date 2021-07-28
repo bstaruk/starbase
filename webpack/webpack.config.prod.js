@@ -7,7 +7,7 @@ const webpackConfigBase = require('./webpack.config.base');
 module.exports = merge(webpackConfigBase, {
   mode: 'production',
   output: {
-    filename: '[name].[fullhash:8].js',
+    filename: '[name]-[fullhash:8].js',
   },
   plugins: [new CleanWebpackPlugin()],
 });
