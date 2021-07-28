@@ -79,6 +79,12 @@ If you want to remove these for any reason, perform the following steps:
 
 ## features you may want to customize
 
+### root path
+
+starbase is setup to run with assets referenced via relative paths so generated `.html` files can be opened locally. If you plan on deploying to a web server, it'll be a good idea to set the `publicPath` in `/webpack/webpack.config.base.js`.
+
+This variable should be set to `/` if the app will run at the root of a domain or subdomain, or to `/folderName` (example) if it'll be deployed to a subfolder.
+
 ### javascript & css linting
 
 starbase uses [ESLint](http://eslint.org/) for Javascript (ES6) linting and [stylelint](https://github.com/stylelint/stylelint) for CSS linting. The configs (`/.eslintrc.js` and `/.stylelintrc.js` respectively) included out of the box contain some basic common rules. Modify them to your liking to encourage consistent code throughout your project.
