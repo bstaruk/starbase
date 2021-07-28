@@ -1,7 +1,5 @@
-@import "css/_variables";
-
 .heading {
-  font-family: var(--font-serif);
+  font-family: $font-serif;
   font-weight: normal;
 
   &--h1 { font-size: 1.875rem; }
