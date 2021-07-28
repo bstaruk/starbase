@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 const path = require('path');
 
 const devMode = process.env.NODE_ENV !== 'production';
@@ -60,6 +61,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new StylelintPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name]-[fullhash:8].css',
       chunkFilename: '[id]-[fullhash:8].css',
