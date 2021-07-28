@@ -4,7 +4,7 @@
 [![dependencies status](https://david-dm.org/bstaruk/starbase/status.svg)](https://david-dm.org/bstaruk/starbase)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase?ref=badge_shield)
 
-starbase is a Sass & JS web app boilerplate that enables developers to get up and running in minutes using some of the most powerful front-end tools available in 2021:
+starbase is a website boilerplate built with webpack 5, modern JS (via Babel) & Sass that enables developers to get up and running in minutes using some of the most powerful front-end tools available in 2021:
 
 * [Node.js](https://github.com/nodejs/node), [webpack 5](https://github.com/webpack/webpack) & [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
 * [Babel 7](https://github.com/babel/babel) w/ [ESLint](https://github.com/eslint/eslint) & [Prettier](https://github.com/prettier/prettier)
