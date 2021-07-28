@@ -1,12 +1,12 @@
 /* ordered css @imports */
-@import 'css/_variables';
-@import 'fonts/fonts';
-@import 'css/root';
+@import 'styles/fonts/fonts';
+@import 'styles/_variables';
+@import 'styles/root';
 
 /* all other (alphabetical) css imports */
-@import 'css/footer';
-@import 'css/header';
-@import 'css/heading';
-@import 'css/link';
-@import 'css/rich-text';
-@import 'css/repo-details';
+@import 'styles/footer';
+@import 'styles/header';
+@import 'styles/heading';
+@import 'styles/link';
+@import 'styles/rich-text';
+@import 'styles/repo-details';

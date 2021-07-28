@@ -8,7 +8,7 @@ import 'whatwg-fetch';
 import 'app.scss';
 
 // js components
-import RepoDetails from 'js/RepoDetails';
+import RepoDetails from 'scripts/RepoDetails';
 
 // remove .no-js from html tag
 document.querySelector('html').classList.remove('no-js');
