@@ -1,5 +1,8 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   context: path.resolve(process.cwd(), 'src'),
@@ -22,6 +25,14 @@ module.exports = {
         use: ['babel-loader', 'eslint-loader'],
       },
       {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+      {
         test: /\.html$/,
         use: [
           {
@@ -39,7 +50,7 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 8192,
-              name: 'images/[name].[md5:hash:hex:8].[ext]',
+              name: 'images/[name].[md5:fullhash:hex:8].[ext]',
               esModule: false,
             },
           },
@@ -51,7 +62,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'images/[name].[md5:hash:hex:8].[ext]',
+              name: 'images/[name].[md5:fullhash:hex:8].[ext]',
             },
           },
         ],
@@ -62,7 +73,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'assets/[name].[md5:hash:hex:8].[ext]',
+              name: 'assets/[name].[md5:fullhash:hex:8].[ext]',
             },
           },
         ],
@@ -73,7 +84,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'fonts/[name].[md5:hash:hex:8].[ext]',
+              name: 'fonts/[name].[md5:fullhash:hex:8].[ext]',
             },
           },
         ],
@@ -81,6 +92,10 @@ module.exports = {
     ],
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].[fullhash:8].css',
+      chunkFilename: '[id].[fullhash:8].css',
+    }),
     new HtmlWebpackPlugin({
       template: 'templates/index.html',
       filename: 'index.html',

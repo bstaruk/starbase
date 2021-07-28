@@ -4,21 +4,13 @@
 [![dependencies status](https://david-dm.org/bstaruk/starbase/status.svg)](https://david-dm.org/bstaruk/starbase)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase?ref=badge_shield)
 
-starbase is an offline-first web app boilerplate that is built with webpack 4, PostCSS & Babel 7. Get up and running in minutes using some of the most powerful front-end tools available in 2020:
+starbase is a Sass & JS web app boilerplate that enables developers to get up and running in minutes using some of the most powerful front-end tools available in 2021:
 
-* [Node.js](https://github.com/nodejs/node)
-* [webpack 4](https://github.com/webpack/webpack) & [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
+* [Node.js](https://github.com/nodejs/node), [webpack 5](https://github.com/webpack/webpack) & [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
 * [Babel 7](https://github.com/babel/babel) w/ [ESLint](https://github.com/eslint/eslint) & [Prettier](https://github.com/prettier/prettier)
-* [PostCSS](https://github.com/postcss/postcss) w/
-  * [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env)
-  * [PostCSS Nested](https://github.com/postcss/postcss-nested)
-  * [postcss-extend](https://github.com/travco/postcss-extend)
-  * [stylelint](https://github.com/stylelint/stylelint)
-  * [cssnano](https://github.com/ben-eb/cssnano)
-  * [MQPacker](https://github.com/hail2u/node-css-mqpacker)
-* ...and more!
+* [Sass](https://github.com/sass) w/ [stylelint](https://github.com/stylelint/stylelint)
 
-starbase is intended to be relatively small in scope so that it may be easily extended and customized, or used as a learning tool for folks who are trying to become familiar with webpack 4, PostCSS and/or ES6.
+starbase is intended to be small in scope so that it may be easily extended and customized, or used as a learning tool for folks who are trying to become familiar with webpack 5, Sass and/or modern JS.
 
 ## license
 
@@ -103,34 +95,9 @@ starbase enforces the [Airbnb JavaScript Style Guide](https://github.com/airbnb/
 
 After completing the steps above, the only rules that eslint will enforce are the ones you define in the `rules` object in `/.eslintrc.js`.
 
-
 ### prettier js formatting
 
 starbase uses [Prettier](https://github.com/prettier/prettier) to enforce and simplify code consistency. If you use VS Code, check out the [Prettier VS Code extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode).
-
-### service worker caching
-
-starbase uses [offline-plugin](https://github.com/NekR/offline-plugin/) to cache your project assets for offline use. This means that if someone visits your website on [a device that supports service workers](https://caniuse.com/#feat=serviceworkers), they will be able to view your project again, even if their device is offline.
-
-Out of the box, starbase caches everything, because the project is less than 50kb total. If you will be making a larger app, be considerate of your users and limit what you cache-- perhaps avoid caching large images, custom fonts, etc. Check out the [options docs for offline-plugin](https://github.com/NekR/offline-plugin/blob/master/docs/options.md) to learn more.
-
-[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers), by design, only function on secure (https) environments. There is no issue with running starbase on an http environment-- the service worker will simply not be utilized.
-
-You may see an info log entry in your console from `offline-plugin` while using the `dev` command, feel free to ignore this. `offline-plugin` is not utilized on the dev server because [it doesn't always play nice with `webpack-dev-server`](https://github.com/NekR/offline-plugin/issues/138). It is intentionally only utilized in production builds.
-
-#### to remove offline-plugin:
-
-1. in `/package.json`, remove the `offline-plugin` dependency
-2. in `/webpack/webpack.config.base.js`, remove all references to `OfflinePlugin` and/or `offline-plugin`
-3. in `/src/app.js`, remove the `import` statement for `offline-plugin`, and the code at the bottom of the file that references it
-
-_There is no consequence to removing this feature, besides limiting offline access to your project._
-
-#### to disable (but not delete) offline-plugin:
-
-You can disable `offline-plugin` without deleting it from your codebase, so that it's not included in your production code (reduces filesize) but is ready to be re-enabled if you ever want it back.
-
-1. in `/src/app.js`, comment-out the `import` statement that references `offline-plugin`
 
 ## features you may want to know about
 

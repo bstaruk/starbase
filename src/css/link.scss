@@ -1,0 +1,15 @@
+.link {
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  /* color modifiers */
+  &--red { color: $color-red; }
+  &--orange { color: $color-orange; }
+  &--green { color: $color-green; }
+  &--blue { color: $color-blue; }
+  &--purple { color: $color-purple; }
+  &--grey { color: $color-grey; }
+}
