@@ -48,14 +48,16 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'images/[name]-[hash:8][ext]',
+          filename: devMode
+            ? 'images/[name][ext]'
+            : 'images/[name]-[hash:8][ext]',
         },
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'fonts/[name]-[hash:8][ext]',
+          filename: 'fonts/[name][ext]',
         },
       },
     ],
@@ -67,9 +69,9 @@ module.exports = {
       chunkFilename: '[id]-[fullhash:8].css',
     }),
     new HtmlWebpackPlugin({
-      template: 'templates/index.html',
-      filename: 'index.html',
-      favicon: 'templates/images/favicon.png',
+      template: 'index.html', // Input
+      filename: 'index.html', // Output
+      favicon: 'assets/favicon.png',
     }),
   ],
 };
