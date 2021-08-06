@@ -1,5 +1,6 @@
+const ESLintPlugin = require('eslint-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlPlugin = require('html-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const path = require('path');
 
@@ -23,7 +24,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader'],
+        use: ['babel-loader'],
       },
       {
         test: /\.(sa|sc|c)ss$/,
@@ -63,12 +64,13 @@ module.exports = {
     ],
   },
   plugins: [
+    new ESLintPlugin(),
     new StylelintPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name]-[fullhash:8].css',
       chunkFilename: '[id]-[fullhash:8].css',
     }),
-    new HtmlWebpackPlugin({
+    new HtmlPlugin({
       template: 'index.html', // Input
       filename: 'index.html', // Output
       favicon: 'assets/favicon.png',
