@@ -6,9 +6,12 @@ const prettierOptions = JSON.parse(
 );
 
 module.exports = {
-  parser: 'babel-eslint',
   extends: ['airbnb-base', 'prettier'],
   plugins: ['prettier', 'import'],
+  parser: '@babel/eslint-parser',
+  parserOptions: {
+    requireConfigFile: false,
+  },
   rules: {
     'prettier/prettier': ['error', prettierOptions],
     'no-use-before-define': 0,

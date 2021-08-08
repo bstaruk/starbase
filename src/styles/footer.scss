@@ -1,9 +1,9 @@
-@import "styles/link";
+@import 'styles/link';
 
 .footer {
-  margin-top: 2.5rem;
   border-top: 1px solid $color-silver;
   color: $color-grey;
+  margin-top: 2.5rem;
 
   @media (--medium) {
     font-size: 0.9em;

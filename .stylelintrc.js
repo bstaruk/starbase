@@ -1,11 +1,15 @@
 module.exports = {
-  extends: 'stylelint-config-standard',
+  extends: [
+    'stylelint-config-standard',
+    'stylelint-config-recommended',
+    'stylelint-config-sass-guidelines',
+  ],
+  plugins: ['stylelint-scss'],
   rules: {
-    'at-rule-no-unknown': [
-      true,
-      {
-        ignoreAtRules: ['extend'],
-      },
+    'max-nesting-depth': [
+      5,
+      { ignore: ['blockless-at-rules', 'pseudo-classes'] },
     ],
+    'scss/at-extend-no-missing-placeholder': null,
   },
 };

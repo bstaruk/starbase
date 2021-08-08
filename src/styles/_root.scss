@@ -1,24 +1,19 @@
-/*
-  This file is here to contain some baseline styles but
-  most of your styles should be split up by component
- */
-
 * {
   box-sizing: border-box;
 }
 
 body {
-  max-width: $d-body-width-max;
   background-color: $color-white;
+  color: $color-dark-grey;
   font-family: $font-sans;
   font-size: 0.95rem;
   line-height: 1.4;
-  color: $color-dark-grey;
-  padding: 1rem;
   margin: 0 auto;
+  max-width: $d-body-width-max;
+  padding: 1rem;
 
-  // @media (--medium) {
-  //   font-size: 1rem;
-  //   padding-top: 2rem;
-  // }
+  @include for-tablet {
+    font-size: 1rem;
+    padding-top: 2rem;
+  }
 }

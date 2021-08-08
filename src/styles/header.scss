@@ -1,17 +1,17 @@
 .header {
   &__brand {
+    align-items: center;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
   }
 
   &__image {
     height: 2rem;
     margin-right: 0.75rem;
 
-    // @media (--medium) {
-    //   height: 2.5rem;
-    // }
+    @include for-tablet {
+      height: 2.5rem;
+    }
   }
 
   &__title {

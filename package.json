@@ -1,6 +1,6 @@
 {
   "name": "starbase",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "author": "Brian Staruk <brian@staruk.net>",
   "contributors": [
     {
@@ -19,20 +19,16 @@
     "url": "https://github.com/bstaruk/starbase/issues",
     "email": "brian@staruk.net"
   },
-  "engines": {
-    "node": ">=8.9"
-  },
   "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=production npx webpack --config ./webpack/webpack.config.prod.js",
     "start": "NODE_ENV=develop npx webpack serve --config ./webpack/webpack.config.dev.js"
   },
-  "keywords": [],
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.15.0",
+    "@babel/eslint-parser": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
-    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^6.2.0",
@@ -40,9 +36,9 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-webpack": "^0.13.1",
-    "eslint-loader": "^4.0.2",
-    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-import": "^2.24.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "eslint-webpack-plugin": "^3.0.1",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.2.0",
@@ -52,9 +48,12 @@
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
     "stylelint": "^13.13.1",
+    "stylelint-config-recommended": "^5.0.0",
+    "stylelint-config-sass-guidelines": "^8.0.0",
     "stylelint-config-standard": "^22.0.0",
+    "stylelint-scss": "^3.20.1",
     "stylelint-webpack-plugin": "^3.0.1",
-    "webpack": "^5.48.0",
+    "webpack": "^5.49.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.8.0"
