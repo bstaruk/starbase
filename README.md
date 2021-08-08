@@ -50,21 +50,9 @@ npm run build
 
 ## Features & Configurations
 
-### JS & CSS linting
+### JS & Sass linting
 
-starbase uses [ESLint](http://eslint.org/) for Javascript (ES6) linting and [stylelint](https://github.com/stylelint/stylelint) for CSS linting. The configs (`/.eslintrc.js` and `/.stylelintrc.js` respectively) included out of the box contain some basic common rules. Modify them to your liking to encourage consistent code throughout your project.
-
-#### Airbnb ESlint Config
-
-starbase enforces the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with ESLint via [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb). These rules are basically the industry standard baseline, so I'd recommend adhering to them, but you can override individual rules via the project `/.eslintrc.js` file. I've included a couple basic overrides (in `/.eslintrc.js`) to demonstrate usage.
-
-##### To remove the Airbnb ESlint config:
-
-1. in `/.eslintrc.js`, remove the line that says `extends`
-2. in `/package.json`, remove the `eslint-config-airbnb` dependency
-3. run `npm update`
-
-After completing the steps above, the only rules that eslint will enforce are the ones you define in the `rules` object in `/.eslintrc.js`.
+starbase uses [ESLint](http://eslint.org/) for Javascript (ES6) linting and [stylelint](https://github.com/stylelint/stylelint) for Sass linting to encourage consistent code throughout your project. The configs (`/.eslintrc.js` and `/.stylelintrc.js` respectively) include a solid foundation to build upon, utilizing the most popular industry-standardized plugins such as [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb) and [stylelint-config-sass-guidelines](https://github.com/bjankord/stylelint-config-sass-guidelines).
 
 ### Prettier JS Formatting
 
@@ -72,7 +60,7 @@ starbase uses [Prettier](https://github.com/prettier/prettier) to enforce and si
 
 ### HTML Webpack Plugin
 
-starbase uses [HTML Webpack Plugin](https://github.com/jantimon/html-webpack-plugin), which enables webpack to handle assets that are linked from within our HTML templates, such as images and embedded videos. It also makes sure the project JS & CSS are embedded where they need to be.
+starbase uses [HTML Webpack Plugin](https://github.com/jantimon/html-webpack-plugin), which enables webpack to handle assets that are linked from within our HTML templates, such as images and embedded videos. It also makes sure our generated `.js` & `.css` files are included where they need to be.
 
 Open the webpack configs if you need to add more pages -- and be sure to check out the plugin documentation to learn about the more advanced features such as `.ejs` and environment variable support.
 

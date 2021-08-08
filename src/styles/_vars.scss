@@ -11,7 +11,33 @@ $color-purple: #861bbb;
 
 /* Fonts */
 $font-sans: 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-$font-serif: 'PT Serif', 'Palatino', 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', 'Georgia', serif;
+$font-serif: 'PT Serif', 'Palatino', 'Palatino Linotype', 'Palatino LT STD',
+  'Book Antiqua', 'Georgia', serif;
 
 /* Dimensions */
 $d-body-width-max: 48rem; /* 768/16 */
+
+/* Breakpoints */
+@mixin for-mobile {
+  @media (min-width: 420px) {
+    @content;
+  }
+}
+
+@mixin for-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin for-laptop-sm {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin for-desktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
