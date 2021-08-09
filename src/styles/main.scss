@@ -2,14 +2,10 @@
 @import 'styles/heading';
 @import 'styles/list';
 
-.rich-text {
-  h1,
-  h2,
-  h3,
-  h4 {
-    @extend .heading;
-
-    margin: 2rem auto 0;
+.main {
+  section {
+    border-bottom: 1px solid $color-silver;
+    padding-bottom: 0.5em;
   }
 
   h1 {
@@ -26,6 +22,22 @@
 
   h4 {
     @extend .heading--h4;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @extend .heading;
+
+    margin: 2rem auto 0;
+
+    + h1,
+    + h2,
+    + h3,
+    + h4 {
+      margin-top: 1rem;
+    }
   }
 
   code {
