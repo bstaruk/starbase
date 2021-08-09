@@ -35,18 +35,6 @@
     a {
       @extend .link;
       @extend .link--red;
-
-      &:nth-of-type(2n + 2) {
-        @extend .link--orange;
-      }
-
-      &:nth-of-type(3n + 3) {
-        @extend .link--green;
-      }
-
-      &:nth-of-type(4n + 4) {
-        @extend .link--blue;
-      }
     }
   }
 }
