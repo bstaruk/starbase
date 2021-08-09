@@ -1,7 +1,7 @@
 @import './atoms/link';
 
 .footer {
-  color: $color-green;
+  color: $color-comment;
 
   @media (--medium) {
     font-size: 0.9em;
@@ -9,6 +9,6 @@
 
   a {
     @extend %link;
-    @extend %link--green;
+    @extend %link--comment;
   }
 }
