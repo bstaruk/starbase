@@ -4,7 +4,7 @@
 [![dependencies status](https://david-dm.org/bstaruk/starbase/status.svg)](https://david-dm.org/bstaruk/starbase)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase?ref=badge_shield)
 
-starbase is a production-ready website boilerplate built with webpack 5, modern JS (via Babel) & Sass that enables developers to get up and running in minutes using some of the most powerful front-end tools available in 2021:
+starbase is a production-ready website boilerplate built with webpack 5, Babel 7 & Sass that enables developers to get up and running in minutes using some of the most powerful front-end tools available in 2021:
 
 * [Node.js](https://github.com/nodejs/node), [webpack 5](https://github.com/webpack/webpack) & [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
 * [Babel 7](https://github.com/babel/babel) w/ [ESLint](https://github.com/eslint/eslint) & [Prettier](https://github.com/prettier/prettier)
@@ -12,13 +12,7 @@ starbase is a production-ready website boilerplate built with webpack 5, modern 
 
 The primary mission is to be small in scope so that it may be easily extended and customized, or used as a learning tool for developers who are trying to become familiar with webpack 5, Sass and/or modern JS.
 
-## License
-
-starbase is open source and free software, so you may to do whatever you wish with it -- commercially or personally. You can buy me a beer next time you're in Boston, star the project and tell a friend, or you can erase all signs of origin and tell your coworkers that you made it yourself. It's all good!
-
-## Using starbase
-
-### Getting Started
+## Getting Started
 
 After completing the steps below, you will be ready to begin using starbase:
 
@@ -100,3 +94,7 @@ If you want to remove these for any reason, perform the following steps:
 starbase is setup to run with assets referenced via relative paths so generated `.html` files can be opened without needing a deployment. If you plan on deploying to a web server, it'll be a good idea to set the `publicPath` in `/webpack/webpack.config.base.js`.
 
 This variable should be set to `/` if the app will run at the root of a domain or subdomain, or to `/folderName` (example) if it'll be deployed to a subfolder.
+
+## License
+
+starbase is open source and free software, so you may to do whatever you wish with it -- commercially or personally. You can buy me a beer next time you're in Boston, star the project and tell a friend, or you can erase all signs of origin and tell your coworkers that you made it yourself. It's all good!

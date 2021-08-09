@@ -1,16 +1,14 @@
-@import 'styles/link';
+@import './atoms/link';
 
 .footer {
-  border-top: 1px solid $color-silver;
-  color: $color-grey;
-  margin-top: 2.5rem;
+  color: $color-comment;
 
   @media (--medium) {
     font-size: 0.9em;
   }
 
   a {
-    @extend .link;
-    @extend .link--grey;
+    @extend %link;
+    @extend %link--comment;
   }
 }
