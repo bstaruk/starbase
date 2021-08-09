@@ -5,7 +5,7 @@
 
 .main {
   section {
-    border-bottom: 1px solid $color-silver;
+    border-bottom: 0.125rem solid $color-selection;
     padding-bottom: 0.5em;
   }
 
@@ -43,7 +43,7 @@
 
   a {
     @extend .link;
-    @extend .link--red;
+    @extend .link--cyan;
   }
 
   code {

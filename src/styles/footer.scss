@@ -1,7 +1,7 @@
 @import 'styles/link';
 
 .footer {
-  color: $color-grey;
+  color: $color-green;
 
   @media (--medium) {
     font-size: 0.9em;
@@ -9,6 +9,6 @@
 
   a {
     @extend .link;
-    @extend .link--grey;
+    @extend .link--green;
   }
 }
