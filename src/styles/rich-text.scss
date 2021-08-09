@@ -36,8 +36,12 @@
     @extend .pre;
   }
 
+  ol {
+    @extend .list--ordered;
+  }
+
   ul {
-    @extend .list;
+    @extend .list--unordered;
   }
 
   li {

@@ -1,5 +1,11 @@
 .list {
-  list-style-type: disc;
+  &--ordered {
+    list-style-type: decimal;
+  }
+
+  &--unordered {
+    list-style-type: disc;
+  }
 
   &__item {
     margin-bottom: 0.25rem;
