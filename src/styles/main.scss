@@ -9,16 +9,16 @@
     padding-bottom: 0.5em;
   }
 
-  h1 {
-    @extend %heading--h2;
-  }
-
   h2 {
     @extend %heading--h2;
+
+    color: $color-yellow;
   }
 
   h3 {
     @extend %heading--h3;
+
+    color: $color-orange;
   }
 
   h4 {
