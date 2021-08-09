@@ -18,7 +18,7 @@
   h3 {
     @extend %heading--h3;
 
-    color: $color-orange;
+    color: $color-cyan;
   }
 
   h4 {
@@ -43,7 +43,7 @@
 
   a {
     @extend %link;
-    @extend %link--cyan;
+    @extend %link--green;
   }
 
   code {
