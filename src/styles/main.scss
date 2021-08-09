@@ -1,5 +1,6 @@
 @import 'styles/code';
 @import 'styles/heading';
+@import 'styles/link';
 @import 'styles/list';
 
 .main {
@@ -38,6 +39,11 @@
     + h4 {
       margin-top: 1rem;
     }
+  }
+
+  a {
+    @extend .link;
+    @extend .link--red;
   }
 
   code {
