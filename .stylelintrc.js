@@ -10,6 +10,5 @@ module.exports = {
       5,
       { ignore: ['blockless-at-rules', 'pseudo-classes'] },
     ],
-    'scss/at-extend-no-missing-placeholder': null,
   },
 };

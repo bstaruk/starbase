@@ -1,7 +1,7 @@
-@import 'styles/code';
-@import 'styles/heading';
-@import 'styles/link';
-@import 'styles/list';
+@import './atoms/code';
+@import './atoms/heading';
+@import './atoms/link';
+@import './atoms/list';
 
 .main {
   section {
@@ -10,26 +10,26 @@
   }
 
   h1 {
-    @extend .heading--h2;
+    @extend %heading--h2;
   }
 
   h2 {
-    @extend .heading--h2;
+    @extend %heading--h2;
   }
 
   h3 {
-    @extend .heading--h3;
+    @extend %heading--h3;
   }
 
   h4 {
-    @extend .heading--h4;
+    @extend %heading--h4;
   }
 
   h1,
   h2,
   h3,
   h4 {
-    @extend .heading;
+    @extend %heading;
 
     margin: 2rem auto 0;
 
@@ -42,27 +42,23 @@
   }
 
   a {
-    @extend .link;
-    @extend .link--cyan;
+    @extend %link;
+    @extend %link--cyan;
   }
 
   code {
-    @extend .code;
+    @extend %code;
   }
 
   pre {
-    @extend .pre;
+    @extend %pre;
   }
 
   ol {
-    @extend .list--ordered;
+    @extend %list--ordered;
   }
 
   ul {
-    @extend .list--unordered;
-  }
-
-  li {
-    @extend .list__item;
+    @extend %list--unordered;
   }
 }
