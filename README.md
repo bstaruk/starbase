@@ -12,9 +12,7 @@ starbase is a production-ready website boilerplate built with webpack 5, Babel 7
 
 The primary mission is to be small in scope so that it may be easily extended and customized, or used as a learning tool for developers who are trying to become familiar with webpack 5, Sass and/or modern JS.
 
-## Using starbase
-
-### Getting Started
+## Getting Started
 
 After completing the steps below, you will be ready to begin using starbase:
 
