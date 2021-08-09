@@ -1,0 +1,11 @@
+.list {
+  list-style-type: disc;
+
+  &__item {
+    margin-bottom: 0.25rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

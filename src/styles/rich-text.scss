@@ -1,4 +1,6 @@
+@import 'styles/code';
 @import 'styles/heading';
+@import 'styles/list';
 
 .rich-text {
   h1,
@@ -24,5 +26,21 @@
 
   h4 {
     @extend .heading--h4;
+  }
+
+  code {
+    @extend .code;
+  }
+
+  pre {
+    @extend .pre;
+  }
+
+  ul {
+    @extend .list;
+  }
+
+  li {
+    @extend .list__item;
   }
 }
