@@ -1,0 +1,64 @@
+@import './atoms/code';
+@import './atoms/heading';
+@import './atoms/link';
+@import './atoms/list';
+
+.main {
+  section {
+    border-bottom: 0.125rem solid $color-selection;
+    padding-bottom: 0.5em;
+  }
+
+  h2 {
+    @extend %heading--h2;
+
+    color: $color-yellow;
+  }
+
+  h3 {
+    @extend %heading--h3;
+
+    color: $color-cyan;
+  }
+
+  h4 {
+    @extend %heading--h4;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @extend %heading;
+
+    margin: 2rem auto 0;
+
+    + h1,
+    + h2,
+    + h3,
+    + h4 {
+      margin-top: 1rem;
+    }
+  }
+
+  a {
+    @extend %link;
+    @extend %link--green;
+  }
+
+  code {
+    @extend %code;
+  }
+
+  pre {
+    @extend %pre;
+  }
+
+  ol {
+    @extend %list--ordered;
+  }
+
+  ul {
+    @extend %list--unordered;
+  }
+}
