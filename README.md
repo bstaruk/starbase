@@ -12,6 +12,8 @@ starbase is a production-ready website boilerplate built with webpack 5, Babel 7
 
 The primary mission is to be small in scope so that it may be easily extended and customized, or used as a learning tool for developers who are trying to become familiar with webpack 5, Sass and/or modern JS.
 
+---
+
 ## Getting Started
 
 After completing the steps below, you will be ready to begin using starbase:
@@ -42,15 +44,17 @@ cd /path/to/starbase
 npm run build
 ```
 
+---
+
 ## Features & Configurations
 
-### JS & Sass linting
+### JS & Sass Linting
 
 starbase uses [ESLint](http://eslint.org/) for Javascript (ES6) linting and [stylelint](https://github.com/stylelint/stylelint) for Sass linting to encourage consistent code throughout your project. The configs (`/.eslintrc.js` and `/.stylelintrc.js` respectively) include a solid foundation to build upon, utilizing the most popular industry-standardized plugins such as [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb) and [stylelint-config-sass-guidelines](https://github.com/bjankord/stylelint-config-sass-guidelines).
 
 ### Prettier JS Formatting
 
-starbase uses [Prettier](https://github.com/prettier/prettier) to enforce and simplify code consistency. If you use VS Code, check out the [Prettier VS Code extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode).
+starbase uses [Prettier](https://github.com/prettier/prettier) to enforce and simplify code consistency. If you use VS Code, check out the [Prettier VS Code extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode). If you'd rather prettify your code via CLI, run `npm run prettify` at your project root.
 
 ### HTML Webpack Plugin
 
@@ -87,6 +91,8 @@ If you want to remove these for any reason, perform the following steps:
 1. remove `es6-promise` & `whatwg-fetch` from `/package.json`
 2. remove the relevant imports in `/src/app.js`
 
+---
+
 ## Notes & Considerations
 
 ### Root Path
@@ -94,6 +100,8 @@ If you want to remove these for any reason, perform the following steps:
 starbase is setup to run with assets referenced via relative paths so generated `.html` files can be opened without needing a deployment. If you plan on deploying to a web server, it'll be a good idea to set the `publicPath` in `/webpack/webpack.config.base.js`.
 
 This variable should be set to `/` if the app will run at the root of a domain or subdomain, or to `/folderName` (example) if it'll be deployed to a subfolder.
+
+---
 
 ## License
 
