@@ -1,10 +1,12 @@
 /* Ordered Imports */
-@import 'styles/fonts';
-@import 'styles/vars';
-@import 'styles/root';
+@import 'styles/utils/variables';
+@import 'styles/utils/mixins';
+@import 'styles/base/fonts';
+@import 'styles/base/reset';
+@import 'styles/base/root';
 
 /* Unordered Imports */
-@import 'styles/footer';
-@import 'styles/header';
-@import 'styles/main';
-@import 'styles/repo-details';
+@import 'styles/layouts/footer';
+@import 'styles/layouts/header';
+@import 'styles/layouts/main';
+@import 'styles/layouts/repo-details';

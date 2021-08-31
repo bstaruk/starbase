@@ -1,4 +1,3 @@
-const path = require('path');
 const { merge } = require('webpack-merge');
 
 // import base config
@@ -11,10 +10,6 @@ module.exports = merge(webpackConfigBase, {
   },
   devtool: 'eval-source-map',
   devServer: {
-    contentBase: path.join(process.cwd(), 'dist'),
     port: 8080,
-    stats: {
-      children: false,
-    },
   },
 });

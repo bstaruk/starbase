@@ -1,0 +1,24 @@
+/* Breakpoints */
+@mixin for-mobile {
+  @media (min-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin for-tablet {
+  @media (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin for-laptop {
+  @media (min-width: $breakpoint-laptop) {
+    @content;
+  }
+}
+
+@mixin for-desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}

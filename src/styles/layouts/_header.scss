@@ -1,0 +1,35 @@
+@import 'styles/components/link';
+@import 'styles/components/list';
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+
+  &__image {
+    flex-shrink: 0;
+    height: 32px;
+    margin-right: 12px;
+
+    @include for-tablet {
+      height: 40px;
+    }
+  }
+
+  &__title {
+    flex-grow: 1;
+    font-family: $font-serif;
+    font-size: 36px;
+    font-weight: normal;
+    letter-spacing: normal;
+    margin: 0;
+  }
+
+  &__link {
+    @extend %link;
+    @extend %link--comment;
+
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+}

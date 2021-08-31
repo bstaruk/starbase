@@ -1,0 +1,13 @@
+@import 'styles/components/link';
+
+.footer {
+  border-top: 2px solid $color-comment;
+  color: $color-comment;
+  margin-top: 40px;
+  padding: 16px 0 8px;
+
+  a {
+    @extend %link;
+    @extend %link--comment;
+  }
+}
