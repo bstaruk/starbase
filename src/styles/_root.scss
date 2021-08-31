@@ -1,19 +1,21 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   background-color: $color-background;
   color: $color-foreground;
   font-family: $font-sans;
-  font-size: 15px;
-  line-height: 1.4;
+  font-size: 16px;
+  line-height: 1.5;
   margin: 0 auto;
   max-width: $d-body-width-max;
   padding: 16px;
 
   @include for-tablet {
-    font-size: 16px;
+    font-size: 17px;
     padding-top: 32px;
   }
 }

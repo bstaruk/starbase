@@ -26,14 +26,26 @@
   h4 {
     @extend %heading;
 
-    margin: 16px auto 0;
+    margin: 32px auto 0;
 
     + h1,
     + h2,
     + h3,
     + h4 {
-      margin-top: 16px;
+      margin-top: 20px;
     }
+  }
+
+  p,
+  ol,
+  ul,
+  pre {
+    margin: 16px 0 0;
+  }
+
+  ol,
+  ul {
+    padding-left: 32px;
   }
 
   a {
@@ -60,7 +72,11 @@
   hr {
     background-color: $color-selection;
     border: 0;
-    height: 2px;
-    margin: 20px 0;
+    height: 4px;
+    margin: 32px 0;
+
+    + * {
+      margin-top: 0;
+    }
   }
 }
