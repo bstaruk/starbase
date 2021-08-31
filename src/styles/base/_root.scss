@@ -1,7 +1,5 @@
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
@@ -11,7 +9,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   margin: 0 auto;
-  max-width: $d-body-width-max;
+  max-width: $dm-body-max-width;
   padding: 16px;
 
   @include for-tablet {
