@@ -6,14 +6,14 @@ body {
   background-color: $color-background;
   color: $color-foreground;
   font-family: $font-sans;
-  font-size: 0.95rem;
+  font-size: 15px;
   line-height: 1.4;
   margin: 0 auto;
   max-width: $d-body-width-max;
-  padding: 1rem;
+  padding: 16px;
 
   @include for-tablet {
-    font-size: 1rem;
-    padding-top: 2rem;
+    font-size: 16px;
+    padding-top: 32px;
   }
 }

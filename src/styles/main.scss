@@ -4,11 +4,6 @@
 @import './atoms/list';
 
 .main {
-  section {
-    border-bottom: 0.125rem solid $color-selection;
-    padding-bottom: 0.5em;
-  }
-
   h2 {
     @extend %heading--h2;
 
@@ -31,13 +26,13 @@
   h4 {
     @extend %heading;
 
-    margin: 2rem auto 0;
+    margin: 16px auto 0;
 
     + h1,
     + h2,
     + h3,
     + h4 {
-      margin-top: 1rem;
+      margin-top: 16px;
     }
   }
 
@@ -60,5 +55,12 @@
 
   ul {
     @extend %list--unordered;
+  }
+
+  hr {
+    background-color: $color-selection;
+    border: 0;
+    height: 2px;
+    margin: 20px 0;
   }
 }

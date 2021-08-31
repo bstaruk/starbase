@@ -9,17 +9,17 @@
   }
 
   &__image {
-    height: 2rem;
-    margin-right: 0.75rem;
+    height: 32px;
+    margin-right: 12px;
 
     @include for-tablet {
-      height: 2.5rem;
+      height: 40px;
     }
   }
 
   &__title {
     font-family: $font-serif;
-    font-size: 2em;
+    font-size: 32px;
     font-weight: normal;
     letter-spacing: normal;
     margin: 0;
