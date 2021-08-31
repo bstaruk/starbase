@@ -2,13 +2,12 @@
 @import './atoms/list';
 
 .header {
-  &__brand {
-    align-items: center;
-    display: flex;
-    justify-content: flex-start;
-  }
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
 
   &__image {
+    flex-shrink: 0;
     height: 32px;
     margin-right: 12px;
 
@@ -18,19 +17,19 @@
   }
 
   &__title {
+    flex-grow: 1;
     font-family: $font-serif;
-    font-size: 32px;
+    font-size: 36px;
     font-weight: normal;
     letter-spacing: normal;
     margin: 0;
   }
 
-  &__features {
-    @extend %list--unordered;
+  &__link {
+    @extend %link;
+    @extend %link--comment;
 
-    a {
-      @extend %link;
-      @extend %link--green;
-    }
+    flex-shrink: 0;
+    margin-left: 16px;
   }
 }
