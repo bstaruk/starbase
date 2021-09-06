@@ -100,17 +100,6 @@ npm run build</code></pre>
     <p>Removing the cleanup process means that deleted assets in <code>/src</code> will not be deleted in
       <code>/dist</code> until you manually do so. I recommend keeping the cleanup process intact unless you have a
       specific reason not to, such as having un-managed assets in <code>/dist</code>.</p>
-    <h3 id="fetch-promise-polyfills">Fetch &amp; Promise Polyfills</h3>
-    <p>Because starbase was built to accommodate ES6 &amp; CommonJS (and not jQuery) it is assumed that you’ll be using
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">fetch</a> for asynchronous requests.</p>
-    <p>Fetch is supported in all modern browsers, but some old dogs still don’t support it and that’s what we need the
-      <a href="https://github.com/stefanpenner/es6-promise">es6-promise</a> &amp; <a
-        href="https://github.com/github/fetch">whatwg-fetch</a> polyfills for.</p>
-    <p>If you want to remove these for any reason, perform the following steps:</p>
-    <ol type="1">
-      <li>remove <code>es6-promise</code> &amp; <code>whatwg-fetch</code> from <code>/package.json</code></li>
-      <li>remove the relevant imports in <code>/src/app.js</code></li>
-    </ol>
     <hr />
     <h2 id="notes-considerations">Notes &amp; Considerations</h2>
     <h3 id="root-path">Root Path</h3>
