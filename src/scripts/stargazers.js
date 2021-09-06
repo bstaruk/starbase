@@ -1,3 +1,12 @@
+import { hasEmpty } from 'scripts/utils';
+
+const getRepoDetails = (owner, repo) =>
+  fetch(`https://api.github.com/repos/${owner}/${repo}`, {
+    method: 'GET',
+  })
+    .then((r) => r.json())
+    .then((data) => data);
+
 const initStargazers = ({ el }) => {
   const ui = {
     el,
@@ -10,18 +19,11 @@ const initStargazers = ({ el }) => {
   };
 
   // Do nothing if anything required is not present
-  if (!props.owner || !props.repo) {
+  if (hasEmpty(props)) {
     return;
   }
 
-  const getRepoDetails = () =>
-    fetch(`https://api.github.com/repos/${props.owner}/${props.repo}`, {
-      method: 'GET',
-    })
-      .then((r) => r.json())
-      .then((data) => data);
-
-  getRepoDetails()
+  getRepoDetails(props.owner, props.repo)
     .then((data) => {
       ui.el.textContent = `${data.stargazers_count} stargazers on GitHub`;
     })
