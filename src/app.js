@@ -9,4 +9,4 @@ import 'app.scss';
 document.querySelector('html').classList.remove('no-js');
 
 // Runnable (Not Exported) Components
-require('scripts/stargazers');
+require('scripts/components/stargazers');

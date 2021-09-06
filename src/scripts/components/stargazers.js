@@ -1,4 +1,4 @@
-import { hasEmpty } from 'scripts/utils';
+import { hasEmpty } from 'scripts/utils/helpers';
 
 const getRepoDetails = (owner, repo) =>
   fetch(`https://api.github.com/repos/${owner}/${repo}`, {
