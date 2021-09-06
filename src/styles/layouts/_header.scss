@@ -26,9 +26,6 @@
   }
 
   &__link {
-    @extend %link;
-    @extend %link--comment;
-
     flex-shrink: 0;
     margin-left: 16px;
   }

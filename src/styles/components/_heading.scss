@@ -1,20 +1,20 @@
-%heading {
+.heading {
   font-family: $font-serif;
   font-weight: normal;
-}
 
-%heading--h1 {
-  font-size: 32px;
-}
+  &--h1 {
+    font-size: 32px;
+  }
 
-%heading--h2 {
-  font-size: 28px;
-}
+  &--h2 {
+    font-size: 28px;
+  }
 
-%heading--h3 {
-  font-size: 24px;
-}
+  &--h3 {
+    font-size: 24px;
+  }
 
-%heading--h4 {
-  font-size: 20px;
+  &--h4 {
+    font-size: 20px;
+  }
 }

@@ -3,28 +3,30 @@
 @import 'styles/components/link';
 @import 'styles/components/list';
 
+/* Allow extending of classes for WYSIWYG wrapper */
+/* stylelint-disable scss/at-extend-no-missing-placeholder */
 .main {
   h2 {
-    @extend %heading--h2;
+    @extend .heading--h2;
 
     color: $color-yellow;
   }
 
   h3 {
-    @extend %heading--h3;
+    @extend .heading--h3;
 
     color: $color-cyan;
   }
 
   h4 {
-    @extend %heading--h4;
+    @extend .heading--h4;
   }
 
   h1,
   h2,
   h3,
   h4 {
-    @extend %heading;
+    @extend .heading;
 
     margin: 32px auto 0;
 
@@ -49,24 +51,24 @@
   }
 
   a {
-    @extend %link;
-    @extend %link--green;
+    @extend .link;
+    @extend .link--green;
   }
 
   code {
-    @extend %code;
+    @extend .code;
   }
 
   pre {
-    @extend %pre;
+    @extend .pre;
   }
 
   ol {
-    @extend %list--ordered;
+    @extend .list--ordered;
   }
 
   ul {
-    @extend %list--unordered;
+    @extend .list--unordered;
   }
 
   hr {
@@ -80,3 +82,4 @@
     }
   }
 }
+/* stylelint-enable scss/at-extend-no-missing-placeholder */
