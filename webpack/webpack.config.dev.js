@@ -12,4 +12,12 @@ module.exports = merge(webpackConfigBase, {
   devServer: {
     port: 8080,
   },
+  module: {
+    rules: [
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+    ],
+  },
 });
