@@ -9,7 +9,7 @@
       "url": "https://brian.staruk.net"
     }
   ],
-  "description": "open source website boilerplate built with webpack 5, modern JS (via Babel) & Sass",
+  "description": "Production-ready website boilerplate made with webpack 5, modern JS (via Babel) & Sass",
   "homepage": "https://github.com/bstaruk/starbase",
   "repository": {
     "type": "git",
