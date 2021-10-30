@@ -11,7 +11,7 @@
     height: 32px;
     margin-right: 12px;
 
-    @include for-tablet {
+    @include respond-to('medium') {
       height: 40px;
     }
   }

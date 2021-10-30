@@ -1,24 +1,21 @@
-/* Breakpoints */
-@mixin for-mobile {
-  @media (min-width: $breakpoint-mobile) {
-    @content;
+/**
+  Mixin to manage responsive breakpoints
+  @author Kitty Giraudel
+  @param {String} $breakpoint - Breakpoint name
+  @require $breakpoints
+*/
+@mixin respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
   }
-}
 
-@mixin for-tablet {
-  @media (min-width: $breakpoint-tablet) {
-    @content;
-  }
-}
-
-@mixin for-laptop {
-  @media (min-width: $breakpoint-laptop) {
-    @content;
-  }
-}
-
-@mixin for-desktop {
-  @media (min-width: $breakpoint-desktop) {
-    @content;
+  // If the key doesn't exist in the map
+  @else {
+    @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. '
+      + 'Available breakpoints are: #{map-keys($breakpoints)}.';
   }
 }

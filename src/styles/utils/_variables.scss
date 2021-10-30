@@ -20,7 +20,6 @@ $font-serif: 'PT Serif', 'Palatino', 'Palatino Linotype', 'Palatino LT STD',
 $dm-body-max-width: 768px;
 
 /* Breakpoints */
-$breakpoint-mobile: 420px;
-$breakpoint-tablet: 768px;
-$breakpoint-laptop: 1024px;
-$breakpoint-desktop: 1440px;
+$breakpoints: (
+  'medium': ( min-width: 768px ),
+) !default;
