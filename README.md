@@ -80,17 +80,6 @@ starbase is setup to clear all contents of `/dist` (where compiled assets are pi
 
 Removing the cleanup process means that deleted assets in `/src` will not be deleted in `/dist` until you manually do so. I recommend keeping the cleanup process intact unless you have a specific reason not to, such as having un-managed assets in `/dist`.
 
-### Fetch & Promise Polyfills
-
-Because starbase was built to accommodate ES6 & CommonJS (and not jQuery) it is assumed that you'll be using [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) for asynchronous requests.
-
-Fetch is supported in all modern browsers, but some old dogs still don't support it and that's what we need the [es6-promise](https://github.com/stefanpenner/es6-promise) & [whatwg-fetch](https://github.com/github/fetch) polyfills for.
-
-If you want to remove these for any reason, perform the following steps:
-
-1. remove `es6-promise` & `whatwg-fetch` from `/package.json`
-2. remove the relevant imports in `/src/app.js`
-
 ---
 
 ## Notes & Considerations

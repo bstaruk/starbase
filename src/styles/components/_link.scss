@@ -1,15 +1,15 @@
-%link {
+.link {
   text-decoration: underline;
 
   &:hover {
     text-decoration: none;
   }
-}
 
-%link--green {
-  color: $color-green;
-}
+  &--green {
+    color: $color-green;
+  }
 
-%link--comment {
-  color: $color-comment;
+  &--comment {
+    color: $color-comment;
+  }
 }

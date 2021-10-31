@@ -11,7 +11,7 @@
     height: 32px;
     margin-right: 12px;
 
-    @include for-tablet {
+    @include respond-to('medium') {
       height: 40px;
     }
   }
@@ -26,9 +26,6 @@
   }
 
   &__link {
-    @extend %link;
-    @extend %link--comment;
-
     flex-shrink: 0;
     margin-left: 16px;
   }

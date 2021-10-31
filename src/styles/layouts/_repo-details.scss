@@ -1,9 +1,0 @@
-.repo-details {
-  &__description {
-    display: none;
-
-    .repo-details--loaded & {
-      display: block;
-    }
-  }
-}

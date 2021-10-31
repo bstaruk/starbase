@@ -1,7 +1,9 @@
-%list--ordered {
-  list-style-type: decimal;
-}
+.list {
+  &--ordered {
+    list-style-type: decimal;
+  }
 
-%list--unordered {
-  list-style-type: disc;
+  &--unordered {
+    list-style-type: disc;
+  }
 }

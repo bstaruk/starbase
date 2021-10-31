@@ -1,10 +1,7 @@
 const ESLintPlugin = require('eslint-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const path = require('path');
-
-const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   context: path.resolve(process.cwd(), 'src'),
@@ -32,14 +29,6 @@ module.exports = {
         },
       },
       {
-        test: /\.(sa|sc|c)ss$/,
-        use: [
-          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader',
-        ],
-      },
-      {
         test: /\.html$/,
         use: [
           {
@@ -54,9 +43,7 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/,
         type: 'asset/resource',
         generator: {
-          filename: devMode
-            ? 'images/[name][ext]'
-            : 'images/[name]-[hash:8][ext]',
+          filename: 'images/[name]-[hash:8][ext]',
         },
       },
       {
@@ -71,10 +58,6 @@ module.exports = {
   plugins: [
     new ESLintPlugin(),
     new StylelintPlugin(),
-    new MiniCssExtractPlugin({
-      filename: '[name]-[fullhash:8].css',
-      chunkFilename: '[id]-[fullhash:8].css',
-    }),
     new HtmlPlugin({
       template: 'index.html', // Input
       filename: 'index.html', // Output
