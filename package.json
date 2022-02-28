@@ -31,10 +31,10 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{js,jsx}": [
+    "*.js": [
       "eslint --max-warnings=0"
     ],
-    "*.{scss}": [
+    "*.scss": [
       "stylelint"
     ],
     "*.{js,jsx,json,md,scss}": [
