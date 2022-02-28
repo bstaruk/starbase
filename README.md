@@ -52,9 +52,13 @@ npm run build
 
 starbase uses [ESLint](http://eslint.org/) for Javascript (ES6) linting and [stylelint](https://github.com/stylelint/stylelint) for Sass linting to encourage consistent code throughout your project. The configs (`/.eslintrc.js` and `/.stylelintrc` respectively) include a solid foundation to build upon, utilizing the most popular industry-standardized plugins such as [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb) and [stylelint-config-sass-guidelines](https://github.com/bjankord/stylelint-config-sass-guidelines).
 
-### Prettier JS Formatting
+### Prettier Formatting
 
 starbase uses [Prettier](https://github.com/prettier/prettier) to enforce and simplify code consistency. If you use VS Code, check out the [Prettier VS Code extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode). If you'd rather prettify your code via CLI, run `npm run prettify` at your project root.
+
+### Linting & Formatting Pre-Commit Hook
+
+starbase uses [Husky](https://github.com/typicode/husky) & [lint-staged](https://github.com/okonet/lint-staged) to run ESLint, stylelint & Prettier as pre-commit hooks, ensuring only clean code ends up in version control.
 
 ### HTML Webpack Plugin
 
