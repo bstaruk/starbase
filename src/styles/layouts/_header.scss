@@ -1,5 +1,6 @@
-@import 'styles/components/link';
-@import 'styles/components/list';
+@use 'styles/utils' as *;
+@use 'styles/components/link';
+@use 'styles/components/list';
 
 .header {
   align-items: center;
