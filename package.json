@@ -27,7 +27,7 @@
     "lint-staged": "lint-staged",
     "lint:js": "eslint src",
     "lint:css": "stylelint src",
-    "prettify": "prettier --write",
+    "prettify": "prettier --write \"src/**/*.{js,json,md}\"",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -37,7 +37,7 @@
     "*.scss": [
       "stylelint"
     ],
-    "*.{js,jsx,json,md,scss}": [
+    "*.{js,json,md}": [
       "prettier --write"
     ]
   },
