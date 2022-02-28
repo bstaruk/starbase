@@ -4,11 +4,11 @@
 [![dependencies status](https://david-dm.org/bstaruk/starbase/status.svg)](https://david-dm.org/bstaruk/starbase)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase?ref=badge_shield)
 
-starbase is a production-ready website boilerplate built with webpack 5, Babel 7 & Sass that enables developers to get up and running in minutes using some of the most powerful front-end tools available in 2021:
+starbase is a production-ready website boilerplate built with webpack 5, Babel 7 & Sass that enables developers to get up and running in minutes using some of the most powerful front-end tools available in 2022:
 
-* [Node.js](https://github.com/nodejs/node), [webpack 5](https://github.com/webpack/webpack) & [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
-* [Babel 7](https://github.com/babel/babel) w/ [ESLint](https://github.com/eslint/eslint) & [Prettier](https://github.com/prettier/prettier)
-* [Sass](https://github.com/sass) w/ [stylelint](https://github.com/stylelint/stylelint)
+- [Node.js](https://github.com/nodejs/node), [webpack 5](https://github.com/webpack/webpack) & [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
+- [Babel 7](https://github.com/babel/babel) w/ [ESLint](https://github.com/eslint/eslint) & [Prettier](https://github.com/prettier/prettier)
+- [Sass](https://github.com/sass) w/ [stylelint](https://github.com/stylelint/stylelint)
 
 The primary mission is to be small in scope so that it may be easily extended and customized, or used as a learning tool for developers who are trying to become familiar with webpack 5, Sass and/or modern JS.
 
@@ -50,11 +50,15 @@ npm run build
 
 ### JS & Sass Linting
 
-starbase uses [ESLint](http://eslint.org/) for Javascript (ES6) linting and [stylelint](https://github.com/stylelint/stylelint) for Sass linting to encourage consistent code throughout your project. The configs (`/.eslintrc.js` and `/.stylelintrc.js` respectively) include a solid foundation to build upon, utilizing the most popular industry-standardized plugins such as [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb) and [stylelint-config-sass-guidelines](https://github.com/bjankord/stylelint-config-sass-guidelines).
+starbase uses [ESLint](http://eslint.org/) for Javascript (ES6) linting and [stylelint](https://github.com/stylelint/stylelint) for Sass linting to encourage consistent code throughout your project. The configs (`/.eslintrc.js` and `/.stylelintrc` respectively) include a solid foundation to build upon, utilizing the most popular industry-standardized plugins such as [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb) and [stylelint-config-sass-guidelines](https://github.com/bjankord/stylelint-config-sass-guidelines).
 
-### Prettier JS Formatting
+### Prettier Formatting
 
 starbase uses [Prettier](https://github.com/prettier/prettier) to enforce and simplify code consistency. If you use VS Code, check out the [Prettier VS Code extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode). If you'd rather prettify your code via CLI, run `npm run prettify` at your project root.
+
+### Linting & Formatting Pre-Commit Hook
+
+starbase uses [Husky](https://github.com/typicode/husky) & [lint-staged](https://github.com/okonet/lint-staged) to run ESLint, stylelint & Prettier as pre-commit hooks, ensuring only clean code ends up in version control.
 
 ### HTML Webpack Plugin
 
