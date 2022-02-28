@@ -1,6 +1,6 @@
 {
   "name": "starbase",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "author": "Brian Staruk <brian@staruk.net>",
   "contributors": [
     {
@@ -19,13 +19,28 @@
     "url": "https://github.com/bstaruk/starbase/issues",
     "email": "brian@staruk.net"
   },
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
     "build": "npx webpack --config ./webpack/webpack.config.prod.js",
     "start": "npx webpack serve --config ./webpack/webpack.config.dev.js",
-    "prettify": "prettier --write \"{src,__{tests,mocks}__}/**/*.js\""
+    "lint-staged": "lint-staged",
+    "lint:js": "eslint src",
+    "lint:css": "stylelint src",
+    "prettify": "prettier --write",
+    "prepare": "husky install"
   },
-  "license": "MIT",
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --max-warnings=0"
+    ],
+    "*.{scss}": [
+      "stylelint"
+    ],
+    "*.{js,jsx,json,md,scss}": [
+      "prettier --write"
+    ]
+  },
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@babel/eslint-parser": "^7.17.0",
@@ -42,6 +57,8 @@
     "eslint-webpack-plugin": "^3.1.1",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.4",
     "mini-css-extract-plugin": "^2.5.3",
     "path": "^0.12.7",
     "prettier": "^2.5.1",
@@ -58,6 +75,5 @@
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.0",
     "webpack-merge": "^5.8.0"
-  },
-  "dependencies": {}
+  }
 }
