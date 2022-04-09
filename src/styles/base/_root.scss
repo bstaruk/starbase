@@ -14,8 +14,12 @@ body {
   max-width: $dm-body-max-width;
   padding: 16px;
 
-  @include respond-to('medium') {
+  @include respond-to('small') {
     font-size: 17px;
+  }
+
+  @include respond-to('medium') {
+    font-size: 18px;
     padding-top: 32px;
   }
 }

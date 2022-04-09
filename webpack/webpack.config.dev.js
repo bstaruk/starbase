@@ -10,6 +10,7 @@ module.exports = merge(webpackConfigBase, {
   },
   devtool: 'eval-source-map',
   devServer: {
+    open: true,
     port: 8080,
   },
   module: {
