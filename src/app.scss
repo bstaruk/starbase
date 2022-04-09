@@ -1,11 +1,9 @@
 /* Ordered Imports */
-@import 'styles/utils/variables';
-@import 'styles/utils/mixins';
-@import 'styles/base/fonts';
-@import 'styles/base/reset';
-@import 'styles/base/root';
+@use 'styles/base/fonts';
+@use 'styles/base/reset';
+@use 'styles/base/root';
 
 /* Unordered Imports */
-@import 'styles/layouts/footer';
-@import 'styles/layouts/header';
-@import 'styles/layouts/main';
+@use 'styles/layouts/footer';
+@use 'styles/layouts/header';
+@use 'styles/layouts/main';

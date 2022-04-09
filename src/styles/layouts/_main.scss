@@ -1,7 +1,8 @@
-@import 'styles/components/code';
-@import 'styles/components/heading';
-@import 'styles/components/link';
-@import 'styles/components/list';
+@use 'styles/utils' as *;
+@use 'styles/components/code';
+@use 'styles/components/heading';
+@use 'styles/components/link';
+@use 'styles/components/list';
 
 /* Allow extending of classes for WYSIWYG wrapper */
 /* stylelint-disable scss/at-extend-no-missing-placeholder */
