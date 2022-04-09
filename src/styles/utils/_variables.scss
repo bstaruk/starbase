@@ -17,9 +17,11 @@ $font-serif: 'PT Serif', 'Palatino', 'Palatino Linotype', 'Palatino LT STD',
   'Book Antiqua', 'Georgia', serif;
 
 /* Dimensions */
-$dm-body-max-width: 768px;
+$dm-body-max-width: 1024px;
 
 /* Breakpoints */
 $breakpoints: (
+  'small': ( min-width: 420px ),
   'medium': ( min-width: 768px ),
+  'max': ( min-width: $dm-body-max-width ),
 ) !default;
