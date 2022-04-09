@@ -3,31 +3,42 @@
 @use 'styles/components/list';
 
 .header {
-  align-items: center;
-  display: flex;
-  justify-content: flex-start;
-
-  &__image {
-    flex-shrink: 0;
-    height: 32px;
-    margin-right: 12px;
-
-    @include respond-to('medium') {
-      height: 40px;
-    }
+  @include respond-to('small') {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
   }
 
   &__title {
-    flex-grow: 1;
-    font-family: $font-serif;
-    font-size: 2em;
-    font-weight: normal;
-    letter-spacing: normal;
-    margin: 0;
+    align-items: center;
+    display: flex;
+
+    &-image {
+      flex-shrink: 0;
+      height: 32px;
+      margin-right: 12px;
+
+      @include respond-to('medium') {
+        height: 40px;
+      }
+    }
+
+    &-label {
+      font-family: $font-serif;
+      font-size: 2em;
+      font-weight: normal;
+      letter-spacing: normal;
+      margin: 0;
+    }
   }
 
   &__link {
-    flex-shrink: 0;
-    margin-left: 16px;
+    display: block;
+    margin-top: 8px;
+
+    @include respond-to('small') {
+      flex-shrink: 0;
+      margin: 0 0 0 16px;
+    }
   }
 }
