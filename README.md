@@ -18,7 +18,7 @@ The primary mission is to be small in scope so that it may be easily extended an
 
 After completing the steps below, you will be ready to begin using starbase:
 
-1. Install [Node.js](https://nodejs.org) (latest LTS recommended)
+1. Install [Node.js](https://nodejs.org) (refer to `.nvmrc` for tested/preferred version)
 2. Clone starbase into your project root directory
 3. Install dependencies by running `npm install` in your project root directory
 
