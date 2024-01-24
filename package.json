@@ -1,6 +1,6 @@
 {
   "name": "starbase",
-  "version": "3.6.1",
+  "version": "3.6.2",
   "author": "Brian Staruk <brian@staruk.net>",
   "contributors": [
     {
@@ -9,7 +9,7 @@
       "url": "https://brian.staruk.net"
     }
   ],
-  "description": "Production-ready website boilerplate made with webpack 5, modern JS (via Babel) & Sass",
+  "description": "Production-ready static website boilerplate, featuring webpack 5, modern JS (via Babel) & Sass",
   "homepage": "https://github.com/bstaruk/starbase",
   "repository": {
     "type": "git",
