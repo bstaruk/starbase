@@ -24,10 +24,10 @@
   <!-- main content area -->
   <!-- md to html via https://pandoc.org (pandoc README.md -o README.html) -->
   <main class="main">
-    <p>starbase is a production-ready website boilerplate built with webpack
+    <p>starbase is a production-ready static website boilerplate built with webpack
       5, Babel 7 &amp; Sass that enables developers to get up and running in
       minutes using some of the most powerful front-end tools available in
-      2023:</p>
+      2024:</p>
     <ul>
       <li><a href="https://github.com/nodejs/node">Node.js</a>, <a href="https://github.com/webpack/webpack">webpack
           5</a>
@@ -45,11 +45,13 @@
     <p>After completing the steps below, you will be ready to begin using
       starbase:</p>
     <ol type="1">
-      <li>Install <a href="https://nodejs.org">Node.js</a> (refer to
-        <code>.nvmrc</code> for tested/preferred version)</li>
-      <li>Clone starbase into your project root directory</li>
-      <li>Install dependencies by running <code>npm install</code> in your
-        project root directory</li>
+      <li>Copy starbase into your project root directory (don't forget the dot files!)</li>
+      <li>Ensure you are running the version of <a href="https://nodejs.org">Node.js</a> specified in
+        <code>.nvmrc</code> (or run <code>nvm use</code> if you have <a href="https://github.com/nvm-sh/nvm">nvm</a>)
+      </li>
+      <li>Install dependencies by running <code>npm install</code> in your project root directory</li>
+      <li>Start the app with <code>npm run start</code> or create a production build with <code>npm run build</code>
+      </li>
     </ol>
     <h3 id="local-development">Local Development</h3>
     <p>starbase uses <a href="https://github.com/webpack/webpack-dev-server">webpack-dev-server</a>

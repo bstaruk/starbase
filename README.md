@@ -1,6 +1,6 @@
 # starbase
 
-starbase is a production-ready website boilerplate built with webpack 5, Babel 7 & Sass that enables developers to get up and running in minutes using some of the most powerful front-end tools available in 2023:
+starbase is a production-ready static website boilerplate built with webpack 5, Babel 7 & Sass that enables developers to get up and running in minutes using some of the most powerful front-end tools available in 2024:
 
 - [Node.js](https://github.com/nodejs/node), [webpack 5](https://github.com/webpack/webpack) & [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
 - [Babel 7](https://github.com/babel/babel) w/ [ESLint](https://github.com/eslint/eslint) & [Prettier](https://github.com/prettier/prettier)
@@ -14,9 +14,10 @@ The primary mission is to be small in scope so that it may be easily extended an
 
 After completing the steps below, you will be ready to begin using starbase:
 
-1. Install [Node.js](https://nodejs.org) (refer to `.nvmrc` for tested/preferred version)
-2. Clone starbase into your project root directory
+1. Copy starbase into your project root directory (don't forget the dot files!)
+2. Ensure you are running the version of [Node.js](https://nodejs.org) specified in `.nvmrc` (or run `nvm use` if you have [nvm](https://github.com/nvm-sh/nvm))
 3. Install dependencies by running `npm install` in your project root directory
+4. Start the app with `npm run start` or create a production build with `npm run build`
 
 ### Local Development
 
