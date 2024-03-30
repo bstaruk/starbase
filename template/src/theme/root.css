@@ -1,7 +1,0 @@
-* {
-  @apply box-border;
-}
-
-body {
-  @apply font-sans text-lg tracking-wide;
-}

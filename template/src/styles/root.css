@@ -1,0 +1,7 @@
+* {
+  @apply box-border;
+}
+
+body {
+  @apply font-sans text-lg tracking-wide p-4 md:p-8;
+}

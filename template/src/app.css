@@ -1,5 +1,6 @@
-@import './theme/tailwind.css';
+/* Tailwind Comes First */
+@import './styles/tailwind.css';
 
 /* Ordered Imports */
-@import './theme/fonts.css';
-@import './theme/root.css';
+@import './styles/fonts.css';
+@import './styles/root.css';
