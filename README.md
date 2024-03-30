@@ -6,7 +6,7 @@ Begin developing in minutes with some of the most powerful front-end technologie
 
 The primary mission of Starbase is to be simple -- easily configured, extended and integrated. This also happens to make it a great platform for web developers to become more familiar with bare-metal Webpack configs, TypeScript and/or Tailwind CSS.
 
-> Simplicity is the ultimate sophistication.<br>_\- Leonardo da Vinci_
+> "Simplicity is the ultimate sophistication."<br>_\- Leonardo da Vinci_
 
 ---
 
