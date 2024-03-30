@@ -10,10 +10,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const prompts = require('prompts');
+const prompts = require("prompts");
 const picocolors_1 = require("picocolors");
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require("fs-extra");
+const path = require("path");
 (() => __awaiter(void 0, void 0, void 0, function* () {
     const questions = [
         {

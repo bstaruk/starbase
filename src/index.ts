@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-const prompts = require('prompts');
+import prompts = require('prompts');
 import { green, yellow, red } from 'picocolors';
-const fs = require('fs-extra');
-const path = require('path');
+import fs = require('fs-extra');
+import path = require('path');
 
 (async () => {
   const questions = [
