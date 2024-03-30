@@ -1,6 +1,6 @@
 {
   "name": "starbase",
-  "version": "4.0.0-0002",
+  "version": "4.0.0-0003",
   "author": "Brian Staruk <brian@staruk.net>",
   "contributors": [
     {
@@ -9,7 +9,7 @@
       "url": "https://brian.staruk.net"
     }
   ],
-  "description": "Production-ready static website boilerplate, featuring webpack 5, modern JS (via Babel) & Sass.",
+  "description": "Production-ready static website boilerplate, featuring Webpack 5, TypeScript, PostCSS & Tailwind CSS.",
   "homepage": "https://github.com/bstaruk/starbase",
   "repository": {
     "type": "git",
@@ -49,6 +49,6 @@
     "typescript-eslint": "^7.4.0"
   },
   "engines": {
-    "node": ">=18.17.0"
+    "node": ">=20"
   }
 }
