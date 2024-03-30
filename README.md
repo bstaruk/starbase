@@ -2,11 +2,11 @@
 
 Starbase is a production-ready static website boilerplate featuring Webpack 5, TypeScript, PostCSS & Tailwind CSS.
 
-Begin developing in minutes with some of the most powerful front-end technologies available in 2024, powered by a delightfully simple developer experience under the hood.
+Begin developing in minutes with some of the most powerful front-end technologies available in 2024, powered by a delightfully simple and fully featured developer experience.
 
 The primary mission of Starbase is to be simple -- easily configured, extended and integrated. This also happens to make it a great platform for web developers to become more familiar with bare-metal Webpack configs, TypeScript and/or Tailwind CSS.
 
-> Simplicity is the ultimate sophistication.<br> > _\- Leonardo da Vinci_
+> Simplicity is the ultimate sophistication.<br>_\- Leonardo da Vinci_
 
 ---
 
