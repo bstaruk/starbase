@@ -13,4 +13,16 @@ module.exports = merge(webpackConfigBase, {
     open: true,
     port: 8080,
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          "postcss-loader",
+        ],
+      },
+    ]
+  }
 });
