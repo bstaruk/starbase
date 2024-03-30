@@ -55,4 +55,3 @@ const path = require('path');
         });
     }
 }))();
-//# sourceMappingURL=index.js.map

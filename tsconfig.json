@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
     "esModuleInterop": true,
-    "target": "es6",
+    "module": "commonjs",
     "moduleResolution": "node",
-    "sourceMap": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "target": "es6"
   },
-  "lib": ["es2015"],
-  "exclude": ["template"]
+  "files": [
+    "src/index.ts"
+  ],
+  "lib": ["es2015"]
 }
