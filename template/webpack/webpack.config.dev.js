@@ -12,6 +12,7 @@ module.exports = merge(webpackConfigBase, {
   devServer: {
     open: true,
     port: 8080,
+    watchFiles: ['src/**/*'],
   },
   module: {
     rules: [
