@@ -3,5 +3,5 @@
 }
 
 body {
-  @apply font-sans text-lg tracking-wide p-4 md:p-8;
+  @apply w-full min-h-screen flex font-sans text-lg tracking-wide p-4 md:p-8;
 }
