@@ -30,8 +30,7 @@ Starbase utilizes [webpack-dev-server](https://github.com/webpack/webpack-dev-se
 
 After running `npm run dev` in the project root, `src` will be served at [http://localhost:8080](http://localhost:8080). Any changes made to code in `src` will trigger recompilation of the project, refreshing your browser to display the latest updates.
 
-```
-cd /path/to/starbase
+```bash
 npm run dev
 ```
 
@@ -41,8 +40,7 @@ Use `npm run build` in your project root to run a production build.
 
 Production builds compile & minify your assets into `/dist` for distribution and/or integration into whatever codebase you'll be using these assets in.
 
-```
-cd /path/to/starbase
+```bash
 npm run build
 ```
 
