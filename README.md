@@ -8,7 +8,7 @@ The primary mission of Starbase is to be simple -- easily configured, extended a
 
 > "Simplicity is the ultimate sophistication."<br>_\- Leonardo da Vinci_
 
-Starbase has been a work in progress by [Brian Staruk](https://brian.staruk.net) since [March 18, 2017](https://github.com/bstaruk/starbase/pull/1).
+Starbase has been a [work in progress](https://github.com/bstaruk/starbase/releases) by [Brian Staruk](https://brian.staruk.net) since [March 18, 2017](https://github.com/bstaruk/starbase/pull/1).
 
 ---
 
