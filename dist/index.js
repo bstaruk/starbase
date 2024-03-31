@@ -47,12 +47,18 @@ const path = require("path");
     };
     const response = yield prompts(questions, { onCancel });
     if (response.value) {
+        // Copy template files
         const template = path.join(__dirname, '../template');
         fs.copy(template, response.value, (err) => {
             if (err) {
                 return console.error((0, picocolors_1.red)(err));
             }
-            console.log((0, picocolors_1.green)(`Starbase has been installed in "${response.value}"`) + '\n');
+            fs.move(`${response.value}/gitignore.md`, `${response.value}/.gitignore`, (err) => {
+                if (err) {
+                    return console.error((0, picocolors_1.red)(err));
+                }
+                console.log((0, picocolors_1.green)(`Starbase has been installed in "${response.value}"`) + '\n');
+            });
         });
     }
 }))();

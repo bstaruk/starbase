@@ -42,13 +42,24 @@ import path = require('path');
   const response = await prompts(questions, { onCancel });
 
   if (response.value) {
+    // Copy template files
     const template = path.join(__dirname, '../template');
     fs.copy(template, response.value, (err) => {
       if (err) {
         return console.error(red(err));
       }
-      console.log(
-        green(`Starbase has been installed in "${response.value}"`) + '\n',
+
+      fs.move(
+        `${response.value}/gitignore.md`,
+        `${response.value}/.gitignore`,
+        (err) => {
+          if (err) {
+            return console.error(red(err));
+          }
+          console.log(
+            green(`Starbase has been installed in "${response.value}"`) + '\n',
+          );
+        },
       );
     });
   }
