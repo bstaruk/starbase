@@ -1,5 +1,9 @@
 {
   "root": true,
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "browser": true
+  },
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -7,5 +11,8 @@
     "plugin:prettier/recommended"
   ],
   "plugins": ["prettier"],
-  "ignorePatterns": ["**/*.js"]
+  "ignorePatterns": ["**/*.js"],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "error"
+  }
 }
