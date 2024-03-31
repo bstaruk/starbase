@@ -1,4 +1,5 @@
 const ESLintPlugin = require('eslint-webpack-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const path = require('path');
 
@@ -53,6 +54,7 @@ module.exports = {
     new ESLintPlugin({
       extensions: ['.js', '.ts'],
     }),
+    new StylelintPlugin(),
     new HtmlPlugin({
       template: 'index.html', // Input
       filename: 'index.html', // Output

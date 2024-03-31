@@ -9,7 +9,8 @@
     "build": "webpack --config ./webpack/webpack.config.prod.js",
     "dev": "webpack serve --config ./webpack/webpack.config.dev.js",
     "format": "prettier --write \"src/**/*.{ts,json,md,css}\"",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "lint-css": "stylelint src/**/*.css"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
@@ -30,6 +31,10 @@
     "postcss-preset-env": "^9.5.2",
     "prettier": "^3.2.5",
     "style-loader": "^3.3.4",
+    "stylelint": "^16.3.1",
+    "stylelint-config-recommended": "^14.0.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-webpack-plugin": "^5.0.0",
     "tailwindcss": "^3.4.3",
     "ts-loader": "^9.5.1",
     "typescript": "^5.4.3",
