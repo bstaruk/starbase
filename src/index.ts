@@ -17,8 +17,9 @@ import path = require('path');
           // Check if the directory exists
           if (fs.existsSync(value) && fs.lstatSync(value).isDirectory()) {
             const files = fs.readdirSync(value);
-
-            if (files.length > 0) {
+            if (
+              files?.filter((f: string) => !['.git'].includes(f))?.length > 0
+            ) {
               return 'This folder is not empty.';
             }
 

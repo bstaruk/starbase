@@ -21,13 +21,14 @@ const path = require("path");
             name: 'value',
             message: 'What folder would you like to install Starbase in?',
             validate: (value) => {
+                var _a;
                 if (!value)
                     return 'This is not a valid folder name.';
                 try {
                     // Check if the directory exists
                     if (fs.existsSync(value) && fs.lstatSync(value).isDirectory()) {
                         const files = fs.readdirSync(value);
-                        if (files.length > 0) {
+                        if (((_a = files === null || files === void 0 ? void 0 : files.filter((f) => !['.git'].includes(f))) === null || _a === void 0 ? void 0 : _a.length) > 0) {
                             return 'This folder is not empty.';
                         }
                         return true;
