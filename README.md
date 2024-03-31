@@ -1,6 +1,6 @@
 # Starbase v4
 
-Starbase is a production-ready static website boilerplate featuring Webpack 5, TypeScript, PostCSS & Tailwind CSS. It has been steadily maintained since March 20, 2017 by [Brian Staruk](https://brian.staruk.net).
+Starbase is a production-ready static website boilerplate featuring Webpack 5, TypeScript, PostCSS & Tailwind CSS. It has been steadily maintained since [March 18, 2017](https://github.com/bstaruk/starbase/pull/1) by [Brian Staruk](https://brian.staruk.net).
 
 Begin developing in minutes with some of the most powerful front-end technologies available in 2024, powered by a delightfully simple and fully featured developer experience.
 
