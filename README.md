@@ -6,8 +6,6 @@ Begin developing in minutes with some of the most powerful front-end technologie
 
 The primary mission of Starbase is to be simple -- easy to configure, extend and integrate. This also happens to make it a great platform for web developers to become more familiar with bare-metal Webpack configs, TypeScript and/or Tailwind CSS.
 
-
-
 > "Simplicity is the ultimate sophistication."<br>_\- Leonardo da Vinci_
 
 Starbase has been a [work in progress](https://github.com/bstaruk/starbase/releases) by [Brian Staruk](https://brian.staruk.net) since [March 18, 2017](https://github.com/bstaruk/starbase/pull/1).
