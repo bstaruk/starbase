@@ -10,10 +10,24 @@
 </head>
 
 <body>
-  <main class="w-full flex flex-col md:justify-center gap-2 md:gap-4">
-    <h1 class="text-center font-serif text-3xl md:text-5xl font-bold tracking-wider">Hello World</h1>
-    <p class="text-center font-sans text-lg md:text-xl tracking-wide italic">It's good to be back.</p>
-  </main>
+  <div class="w-full flex flex-col justify-center gap-4 sm:gap-8">
+    <header class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+      <img src="assets/starbase.png" alt="starbase logo" class="flex-shrink-0 w-auto h-10 sm:h-14" />
+      <h1 class="text-center font-serif text-3xl sm:text-5xl font-bold tracking-wider">Starbase</h1>
+    </header>
+
+    <main>
+      <p class="text-center font-sans text-lg sm:text-xl">Hello World!</p>
+    </main>
+
+    <footer class="w-full max-w-[80ch] mx-auto border-t border-gray-300 pt-4">
+      <ul class="flex items-center justify-center gap-4">
+        <li>crafted by <a href="https://brian.staruk.net" class="link">brian staruk</a></li>
+        <li role="presentation">|</li>
+        <li><a href="https://github.com/bstaruk/starbase" class="link">view on github</a></li>
+      </ul>
+    </footer>
+  </div>
 </body>
 
 </html>

@@ -1,0 +1,5 @@
+@layer components {
+  .link {
+    @apply underline hover:no-underline;
+  }
+}
