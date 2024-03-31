@@ -52,7 +52,7 @@ npm run build
 
 ### Root Path
 
-Starbase is setup to run with assets referenced via relative paths, so generated `.html` files can be opened without needing a deployment. If you would like to switch to absolute paths, you can set the `publicPath` in `/webpack/webpack.config.base.js`.
+Starbase is setup to run with assets referenced via relative paths, so compiled `.html` files can be distributed and opened without needing a deployment. If you would like to switch to absolute paths, you can set the `publicPath` in `/webpack/webpack.config.base.js`.
 
 This variable should be set to `/` if the app will run at the root of a (sub)domain, or to `/folder-name` if it'll be deployed to a subfolder.
 
@@ -60,4 +60,4 @@ This variable should be set to `/` if the app will run at the root of a (sub)dom
 
 ## License
 
-Starbase is open source and free software. Please build awesome things with it -- commercially or personally. You can buy me a beer next time you're in Boston, star the project and tell a friend, or you can erase all signs of origin and tell your coworkers that you made it yourself. It's all good!
+Starbase is free, open source software. Please build awesome things with it. You can buy me a beer next time you're in Boston, star the project and tell a friend, or you can erase all signs of origin and tell your coworkers that you made it yourself. It's all good!
