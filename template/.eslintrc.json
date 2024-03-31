@@ -7,5 +7,5 @@
     "plugin:prettier/recommended"
   ],
   "plugins": ["prettier"],
-  "ignorePatterns": ["**/*.js", "template"]
+  "ignorePatterns": ["**/*.js"]
 }
