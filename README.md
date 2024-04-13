@@ -6,9 +6,9 @@ Starbase is a production-ready static website boilerplate featuring Webpack 5, T
 
 Starbase was created by [Brian Staruk](https://brian.staruk.net) as a personal code styleguide and flexible project boilerplate. It is a perpetual work in progress that has been consistently maintained [since early 2017](https://github.com/bstaruk/starbase/pull/1) with a focus on implementing the latest industry standards and keeping all dependencies up to date.
 
-The primary mission of Starbase is to be sophisticatedly simple; easy to configure, extend and integrate. This also happens to make it a great platform for web developers to enhance their knowledge of bare-metal Webpack configs, TypeScript and/or Tailwind CSS.
-
 > "Simplicity is the ultimate sophistication."<br>_\- Leonardo da Vinci_
+
+The primary mission of Starbase is to be sophisticatedly simple; easy to configure, extend and integrate. This also happens to make it a great platform for web developers to enhance their knowledge of bare-metal Webpack configs, TypeScript and/or Tailwind CSS.
 
 ---
 
