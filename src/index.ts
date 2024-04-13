@@ -54,7 +54,10 @@ import path = require('path');
       installPath,
       {
         filter: (src) => {
-          if (src.includes('node_modules') || src.includes('dist')) {
+          if (
+            src.includes('starbase/template/node_modules') ||
+            src.includes('starbase/template/dist')
+          ) {
             console.log('src', src);
           }
 
