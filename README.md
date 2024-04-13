@@ -24,7 +24,7 @@ npx starbase@latest
 
 ## Usage
 
-It is recommended to use [nvm](https://github.com/nvm-sh/nvm) (or [nvm-windows](https://github.com/coreybutler/nvm-windows)) to manage your Node version installations. If won't use nvm, you'll need to refer to the `/.nvmrc` file to verify your version of Node is compatible with the recommended version.
+It is recommended to use [nvm](https://github.com/nvm-sh/nvm) (or [nvm-windows](https://github.com/coreybutler/nvm-windows)) to manage your Node version installations. If you won't use nvm, you'll need to refer to the `/.nvmrc` file to verify your version of Node is compatible with the recommended version.
 
 ### Getting Started
 
