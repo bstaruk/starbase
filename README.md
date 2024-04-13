@@ -1,20 +1,24 @@
 # Starbase v4
 
-Starbase is a production-ready static website boilerplate featuring Webpack 5, TypeScript, PostCSS & Tailwind CSS that has been designed to integrate with modern Jamstack hosting providers including Vercel, Netlify and AWS Amplify.
+Starbase is a production-ready static website boilerplate featuring Webpack 5, TypeScript, PostCSS & Tailwind CSS that was designed to integrate with modern Jamstack hosting providers including Vercel, Netlify and AWS Amplify.
 
 Begin developing in minutes with some of the most powerful front-end technologies available in 2024, powered by a delightfully simple and fully featured developer experience.
 
-The primary mission of Starbase is to be simple -- easy to configure, extend and integrate. This also happens to make it a great platform for web developers to become more familiar with bare-metal Webpack configs, TypeScript and/or Tailwind CSS.
+## History & Use Case
+
+Starbase was created by [Brian Staruk](https://brian.staruk.net) as a personal code styleguide and flexible project boilerplate. It is a perpetual work in progress that has been consistently maintained [since early 2017](https://github.com/bstaruk/starbase/pull/1) with a focus on implementing the latest industry standards and keeping all dependencies up to date.
+
+The primary mission of Starbase is to be sophisticatedly simple; easy to configure, extend and integrate. This also happens to make it a great platform for web developers to enhance their knowledge of bare-metal Webpack configs, TypeScript and/or Tailwind CSS.
 
 > "Simplicity is the ultimate sophistication."<br>_\- Leonardo da Vinci_
-
-Created by [Brian Staruk](https://brian.staruk.net). A constant [work in progress](https://github.com/bstaruk/starbase/releases) since [March 18, 2017](https://github.com/bstaruk/starbase/pull/1).
 
 ---
 
 ## Installation
 
-This project was built and tested on [Node.js](https://nodejs.org) v20 LTS. It will most likely work with earlier versions as well, but I always stick to the latest LTS whenever possible and suggest you do as well!
+If you use [nvm](https://github.com/nvm-sh/nvm) (or [nvm-windows](https://github.com/coreybutler/nvm-windows)), you can run `nvm use` in the project root to use the correct version of Node.js.
+
+If you do
 
 To get started, run the command below, which will guide you through the installation process:
 
@@ -24,23 +28,29 @@ npx starbase@next
 
 ## Usage
 
+If you use [nvm](https://github.com/nvm-sh/nvm) (or [nvm-windows](https://github.com/coreybutler/nvm-windows)), run `nvm use` in the project root to detect and use the recommended version of [Node.js](https://nodejs.org).
+
+If you do not have nvm installed, you'll need to refer to the `.nvmrc` file to verify your version of Node is compatible with the recommended version.
+
+---
+
 ### Developing Locally
 
-Starbase utilizes [webpack-dev-server](https://github.com/webpack/webpack-dev-server) to monitor changes and serve your project locally.
-
-After running `npm run dev` in the project root, `src` will be served at [http://localhost:3000](http://localhost:3000). Any changes made to code in `src` will trigger recompilation of the project, refreshing your browser to display the latest updates.
+After running `npm run dev` in the project root, `src` will be served at [http://localhost:3000](http://localhost:3000). Any changes made to code in `src` will trigger recompilation of the project and refresh the page in your browser.
 
 ```bash
+nvm use
 npm run dev
 ```
 
 ### Building for Production
 
-Use `npm run build` in your project root to run a production build.
+Run `npm run build` in the project root to run a production build.
 
 Production builds compile & minify your assets into `/dist` for distribution and/or integration into whatever codebase you'll be using these assets in.
 
 ```bash
+nvm use
 npm run build
 ```
 
@@ -50,11 +60,11 @@ npm run build
 
 ### Deploying to Hosting Environment
 
-Starbase is setup to run with assets referenced via relative paths, so compiled `.html` files can be distributed and opened in a web browser without requiring a deployment to a hosting environment.
+Starbase is setup to be deployed to the root of a web server on a hosting environment like Vercel, Netlify, etc. As such, all assets (js, css, fonts, images, etc) are referenced with absolute paths.
 
-If you will be deploying your project to a hosting environment (Netlify, Vercel, etc), you will likely want to switch to absolute paths. To do this, you can set the `publicPath` in `webpack/webpack.config.base.js`.
+If you would like to reference assets via relative paths, so compiled `.html` files can be distributed and opened in a web browser without requiring a deployment to a hosting environment, you will need to remove (or comment-out) the `publicPath` in `webpack/webpack.config.base.ts`.
 
-This variable should be set to `/` if the app will run at the root of a (sub)domain, or to `/folder-name` if it'll be deployed to a subfolder.
+If you would like to keep the absolute paths, but set it to a subdirectory instead of the root, you can change the value instead of removing it.
 
 ---
 

@@ -19,9 +19,7 @@ Reference `.nvmrc` (used by [nvm](https://github.com/nvm-sh/nvm)) for the sugges
 
 ### Developing Locally
 
-We use [webpack-dev-server](https://github.com/webpack/webpack-dev-server) to monitor changes and serve the project locally.
-
-After running `npm run dev` in the project root, `src` will be served at [http://localhost:3000](http://localhost:3000). Any changes made to code in `src` will trigger recompilation of the project, refreshing your browser to display the latest updates.
+After running `npm run dev` in the project root, `src` will be served at [http://localhost:3000](http://localhost:3000). Any changes made to code in `src` will trigger recompilation of the project and refresh the page in your browser.
 
 ```bash
 npm run dev
@@ -29,11 +27,10 @@ npm run dev
 
 ### Building for Production
 
-Use `npm run build` in the project root to run a production build.
+Run `npm run build` in the project root to run a production build.
 
-Production builds compile & minify project assets into `/dist` for deployment.
+Production builds compile & minify your assets into `/dist` for distribution and/or integration into whatever codebase you'll be using these assets in.
 
 ```bash
 npm run build
 ```
-
