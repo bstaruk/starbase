@@ -17,7 +17,7 @@ The primary mission of Starbase is to be sophisticatedly simple; easy to configu
 To get started, run the command below, which will guide you through the installation process:
 
 ```bash
-npx starbase@next
+npx starbase@latest
 ```
 
 ---
