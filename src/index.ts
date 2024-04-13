@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import prompts = require('prompts');
+import prompts from 'prompts';
 import { green, yellow, red } from 'picocolors';
-import fs = require('fs-extra');
-import path = require('path');
+import fs from 'fs-extra';
+import path from 'path';
 
 (async () => {
   let isCancelled = false;

@@ -9,11 +9,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const prompts = require("prompts");
+const prompts_1 = __importDefault(require("prompts"));
 const picocolors_1 = require("picocolors");
-const fs = require("fs-extra");
-const path = require("path");
+const fs_extra_1 = __importDefault(require("fs-extra"));
+const path_1 = __importDefault(require("path"));
 (() => __awaiter(void 0, void 0, void 0, function* () {
     let isCancelled = false;
     const questions = [
@@ -27,9 +30,9 @@ const path = require("path");
                     return 'This is not a valid folder name.';
                 try {
                     // Check if the directory exists
-                    if (fs.existsSync(installPath) &&
-                        fs.lstatSync(installPath).isDirectory()) {
-                        const files = fs.readdirSync(installPath);
+                    if (fs_extra_1.default.existsSync(installPath) &&
+                        fs_extra_1.default.lstatSync(installPath).isDirectory()) {
+                        const files = fs_extra_1.default.readdirSync(installPath);
                         if (((_a = files === null || files === void 0 ? void 0 : files.filter((f) => !['.git'].includes(f))) === null || _a === void 0 ? void 0 : _a.length) > 0) {
                             return 'This folder is not empty.';
                         }
@@ -47,7 +50,7 @@ const path = require("path");
         isCancelled = true;
         return console.log((0, picocolors_1.yellow)('Starbase initialization cancelled!') + '\n');
     };
-    const answers = yield prompts(questions, { onCancel });
+    const answers = yield (0, prompts_1.default)(questions, { onCancel });
     // Exit if valid installPath is not provided
     if (!answers.installPath) {
         // Display error when not an intentional cancellation
@@ -57,10 +60,10 @@ const path = require("path");
         return true; // Exit
     }
     // Create proper paths
-    const templatePath = path.join(__dirname, '../template');
-    const installPath = path.resolve(process.cwd(), answers.installPath);
+    const templatePath = path_1.default.join(__dirname, '../template');
+    const installPath = path_1.default.resolve(process.cwd(), answers.installPath);
     // Copy template files
-    yield fs
+    yield fs_extra_1.default
         .copy(templatePath, installPath, {
         filter: (src) => {
             // Do not copy node_modules or dist
@@ -76,8 +79,8 @@ const path = require("path");
         return console.error((0, picocolors_1.red)(err));
     });
     // Rename gitignore.md to .gitignore (npmjs.com removes .gitignore files)
-    yield fs
-        .move(path.join(installPath, 'gitignore.md'), path.join(installPath, '.gitignore'))
+    yield fs_extra_1.default
+        .move(path_1.default.join(installPath, 'gitignore.md'), path_1.default.join(installPath, '.gitignore'))
         .catch((err) => {
         return console.error((0, picocolors_1.red)(err));
     });
