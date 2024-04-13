@@ -24,19 +24,22 @@ npx starbase@latest
 
 ## Usage
 
-If you have [nvm](https://github.com/nvm-sh/nvm) (or [nvm-windows](https://github.com/coreybutler/nvm-windows)) installed, run `nvm use` in the project root to detect and use the recommended version of [Node.js](https://nodejs.org).
-
-If you do not have nvm installed, you'll need to refer to the `.nvmrc` file to verify your version of Node is compatible with the recommended version.
+It is recommended to use [nvm](https://github.com/nvm-sh/nvm) (or [nvm-windows](https://github.com/coreybutler/nvm-windows)) to manage your Node version installations. If won't use nvm, you'll need to refer to the `/.nvmrc` file to verify your version of Node is compatible with the recommended version.
 
 ### Getting Started
 
-Start by running `npm install` in the project root to install dependencies.
+Start by ensuring you are running the recommended version of Node, and installing the project dependencies:
+
+```bash
+nvm use
+npm install
+```
 
 ---
 
 ### Developing Locally
 
-After running `npm run dev` in the project root, `src` will be served at [http://localhost:3000](http://localhost:3000). Any changes made within `src` will trigger the source to recompile and refresh the page in your web browser.
+The `dev` command will serve the project source at [http://localhost:3000](http://localhost:3000). Any changes made within `/src` will recompile the source and refresh your web browser.
 
 ```bash
 npm run dev
@@ -44,7 +47,7 @@ npm run dev
 
 ### Building for Production
 
-Run `npm run build` in the project root to compile and minify the source into `/dist` for integration or deployment.
+The `build` command will compile and minify the project source into `/dist` for integration or deployment.
 
 ```bash
 npm run build
@@ -58,7 +61,7 @@ npm run build
 
 Starbase is setup to be deployed to the root of a web server on a hosting environment like Vercel, Netlify, etc. As such, all assets (js, css, fonts, images, etc) are referenced with absolute paths.
 
-If you would like to instead reference assets via relative paths, so compiled `.html` files can be distributed and opened in a web browser without requiring a deployment to a hosting environment, you will need to remove (or comment-out) the `publicPath` in `webpack/webpack.config.base.ts`.
+If you would like to instead reference assets via relative paths, so compiled `.html` files can be distributed and opened in a web browser without requiring a deployment to a hosting environment, you will need to remove (or comment-out) the `publicPath` in `/webpack/webpack.config.base.ts`.
 
 If you would like to keep the absolute paths, but set it to a subdirectory instead of the root, you can change the value instead of removing it.
 
