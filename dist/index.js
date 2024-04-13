@@ -51,7 +51,14 @@ const path = require("path");
         // Copy template files
         const templatePath = path.join(__dirname, '../template');
         const installPath = path.resolve(process.cwd(), answers.installPath);
-        fs.copy(templatePath, installPath, (err) => {
+        fs.copy(templatePath, installPath, {
+            filter: (src) => {
+                if (src.includes('node_modules') || src.includes('dist')) {
+                    console.log('src', src);
+                }
+                return true;
+            },
+        }, (err) => {
             if (err) {
                 return console.error((0, picocolors_1.red)(err));
             }
