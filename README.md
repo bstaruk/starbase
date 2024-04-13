@@ -22,6 +22,8 @@ npx starbase@next
 
 _Built and tested with Node.js 20 LTS._
 
+---
+
 ## Usage
 
 If you have [nvm](https://github.com/nvm-sh/nvm) (or [nvm-windows](https://github.com/coreybutler/nvm-windows)) installed, run `nvm use` in the project root to detect and use the recommended version of [Node.js](https://nodejs.org).
