@@ -1,9 +1,13 @@
 import { Configuration } from 'webpack';
+import { Configuration as DevServerConfiguration } from 'webpack-dev-server';
 import { merge } from 'webpack-merge';
-import 'webpack-dev-server';
-
-// import base config
 import webpackConfigBase from './webpack.config.base';
+
+const devServer: DevServerConfiguration = {
+  open: true,
+  port: 3000,
+  watchFiles: ['src/**/*'],
+};
 
 const config = merge<Configuration>(webpackConfigBase, {
   mode: 'development',
@@ -11,11 +15,7 @@ const config = merge<Configuration>(webpackConfigBase, {
     filename: '[name].js',
   },
   devtool: 'source-map',
-  devServer: {
-    open: true,
-    port: 3000,
-    watchFiles: ['src/**/*'],
-  },
+  devServer,
   module: {
     rules: [
       {
