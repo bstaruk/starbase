@@ -20,8 +20,6 @@ To get started, run the command below, which will guide you through the installa
 npx starbase@next
 ```
 
-_Built and tested with Node.js 20 LTS._
-
 ---
 
 ## Usage
