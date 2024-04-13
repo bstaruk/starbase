@@ -1,0 +1,7 @@
+* {
+  @apply box-border;
+}
+
+body {
+  @apply w-full min-h-screen flex p-4 md:p-8;
+}
