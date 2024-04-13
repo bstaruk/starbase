@@ -30,7 +30,7 @@ import path from 'path';
             return true;
           }
         } catch (err) {
-          return 'Error checking directory existence -- this is usually a permissions issue.';
+          return 'Error checking if folder exists -- this is usually a permissions issue.';
         }
 
         return true;
@@ -40,7 +40,7 @@ import path from 'path';
 
   const onCancel = () => {
     isCancelled = true;
-    return console.log(yellow('Starbase initialization cancelled!') + '\n');
+    return console.log(yellow('Starbase initialization cancelled.') + '\n');
   };
 
   const answers = await prompts(questions, { onCancel });
@@ -49,7 +49,7 @@ import path from 'path';
   if (!answers.installPath) {
     // Display error when not an intentional cancellation
     if (!isCancelled) {
-      console.log(red('Install path is required to proceed.') + '\n');
+      console.log(red('Installation path is required to proceed.') + '\n');
     }
 
     return true; // Exit
@@ -91,6 +91,8 @@ import path from 'path';
 
   // Success!
   return console.log(
-    green(`Starbase has been installed in "${answers.installPath}"`) + '\n',
+    green(
+      `Starbase has been installed in ${answers.installPath} -- happy developing!`,
+    ) + '\n',
   );
 })();

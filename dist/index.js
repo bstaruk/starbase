@@ -40,7 +40,7 @@ const path_1 = __importDefault(require("path"));
                     }
                 }
                 catch (err) {
-                    return 'Error checking directory existence -- this is usually a permissions issue.';
+                    return 'Error checking if folder exists -- this is usually a permissions issue.';
                 }
                 return true;
             },
@@ -48,14 +48,14 @@ const path_1 = __importDefault(require("path"));
     ];
     const onCancel = () => {
         isCancelled = true;
-        return console.log((0, picocolors_1.yellow)('Starbase initialization cancelled!') + '\n');
+        return console.log((0, picocolors_1.yellow)('Starbase initialization cancelled.') + '\n');
     };
     const answers = yield (0, prompts_1.default)(questions, { onCancel });
     // Exit if valid installPath is not provided
     if (!answers.installPath) {
         // Display error when not an intentional cancellation
         if (!isCancelled) {
-            console.log((0, picocolors_1.red)('Install path is required to proceed.') + '\n');
+            console.log((0, picocolors_1.red)('Installation path is required to proceed.') + '\n');
         }
         return true; // Exit
     }
@@ -85,5 +85,5 @@ const path_1 = __importDefault(require("path"));
         return console.error((0, picocolors_1.red)(err));
     });
     // Success!
-    return console.log((0, picocolors_1.green)(`Starbase has been installed in "${answers.installPath}"`) + '\n');
+    return console.log((0, picocolors_1.green)(`Starbase has been installed in ${answers.installPath} -- happy developing!`) + '\n');
 }))();
