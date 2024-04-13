@@ -4,22 +4,21 @@ This project was bootstrapped by [Starbase v4](https://github.com/bstaruk/starba
 
 ---
 
-## Installation
-
-To get started, ensure you are using a compatible version of Node, then install the project dependencies:
-
-```bash
-nvm use
-npm install
-```
-
-Reference `.nvmrc` (used by [nvm](https://github.com/nvm-sh/nvm)) for the suggested version of Node.
-
 ## Usage
+
+If you have [nvm](https://github.com/nvm-sh/nvm) (or [nvm-windows](https://github.com/coreybutler/nvm-windows)) installed, run `nvm use` in the project root to detect and use the recommended version of [Node.js](https://nodejs.org).
+
+If you do not have nvm installed, you'll need to refer to the `.nvmrc` file to verify your version of Node is compatible with the recommended version.
+
+### Getting Started
+
+Start by running `npm install` in the project root to install dependencies.
+
+---
 
 ### Developing Locally
 
-After running `npm run dev` in the project root, `src` will be served at [http://localhost:3000](http://localhost:3000). Any changes made to code in `src` will trigger recompilation of the project and refresh the page in your browser.
+After running `npm run dev` in the project root, `src` will be served at [http://localhost:3000](http://localhost:3000). Any changes made within `src` will trigger the source to recompile and refresh the page in your web browser.
 
 ```bash
 npm run dev
@@ -27,9 +26,7 @@ npm run dev
 
 ### Building for Production
 
-Run `npm run build` in the project root to run a production build.
-
-Production builds compile & minify your assets into `/dist` for distribution and/or integration into whatever codebase you'll be using these assets in.
+Run `npm run build` in the project root to compile and minify the source into `/dist` for integration or deployment.
 
 ```bash
 npm run build

@@ -28,6 +28,10 @@ If you have [nvm](https://github.com/nvm-sh/nvm) (or [nvm-windows](https://githu
 
 If you do not have nvm installed, you'll need to refer to the `.nvmrc` file to verify your version of Node is compatible with the recommended version.
 
+### Getting Started
+
+Start by running `npm install` in the project root to install dependencies.
+
 ---
 
 ### Developing Locally
@@ -40,9 +44,7 @@ npm run dev
 
 ### Building for Production
 
-Run `npm run build` in the project root to run a production build.
-
-Production builds compile & minify the source into `/dist` for integration or deployment.
+Run `npm run build` in the project root to compile and minify the source into `/dist` for integration or deployment.
 
 ```bash
 npm run build
