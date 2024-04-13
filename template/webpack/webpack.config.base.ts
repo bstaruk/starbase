@@ -11,7 +11,7 @@ const config: Configuration = {
   },
   output: {
     path: path.resolve(process.cwd(), 'dist'),
-    // publicPath: '/',
+    publicPath: '/',
   },
   resolve: {
     modules: ['node_modules', path.resolve(process.cwd(), 'src')],
