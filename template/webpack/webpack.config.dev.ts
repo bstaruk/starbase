@@ -13,7 +13,7 @@ const config = merge<Configuration>(webpackConfigBase, {
   devtool: 'source-map',
   devServer: {
     open: true,
-    port: 8080,
+    port: 3000,
     watchFiles: ['src/**/*'],
   },
   module: {

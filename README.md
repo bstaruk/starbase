@@ -28,7 +28,7 @@ npx starbase@next
 
 Starbase utilizes [webpack-dev-server](https://github.com/webpack/webpack-dev-server) to monitor changes and serve your project locally.
 
-After running `npm run dev` in the project root, `src` will be served at [http://localhost:8080](http://localhost:8080). Any changes made to code in `src` will trigger recompilation of the project, refreshing your browser to display the latest updates.
+After running `npm run dev` in the project root, `src` will be served at [http://localhost:3000](http://localhost:3000). Any changes made to code in `src` will trigger recompilation of the project, refreshing your browser to display the latest updates.
 
 ```bash
 npm run dev
