@@ -1,8 +1,6 @@
 # Starbase v4
 
-Starbase is a production-ready static website boilerplate featuring Webpack 5, TypeScript, PostCSS & Tailwind CSS that was designed to integrate with modern Jamstack hosting providers including Vercel, Netlify and AWS Amplify.
-
-Begin developing in minutes with some of the most powerful front-end technologies available in 2024, powered by a delightfully simple and fully featured developer experience.
+Starbase is a production-ready static website boilerplate featuring Webpack 5, TypeScript, PostCSS & Tailwind CSS that was designed to integrate with modern Jamstack hosting providers such as Vercel, Netlify and AWS Amplify. Start building in minutes with some of the most powerful front-end technologies available in 2024, powered by a delightfully simple and fully featured developer experience.
 
 ## History & Use Case
 
@@ -16,19 +14,17 @@ The primary mission of Starbase is to be sophisticatedly simple; easy to configu
 
 ## Installation
 
-If you use [nvm](https://github.com/nvm-sh/nvm) (or [nvm-windows](https://github.com/coreybutler/nvm-windows)), you can run `nvm use` in the project root to use the correct version of Node.js.
-
-If you do
-
 To get started, run the command below, which will guide you through the installation process:
 
 ```bash
 npx starbase@next
 ```
 
+_Built and tested with Node.js 20 LTS._
+
 ## Usage
 
-If you use [nvm](https://github.com/nvm-sh/nvm) (or [nvm-windows](https://github.com/coreybutler/nvm-windows)), run `nvm use` in the project root to detect and use the recommended version of [Node.js](https://nodejs.org).
+If you have [nvm](https://github.com/nvm-sh/nvm) (or [nvm-windows](https://github.com/coreybutler/nvm-windows)) installed, run `nvm use` in the project root to detect and use the recommended version of [Node.js](https://nodejs.org).
 
 If you do not have nvm installed, you'll need to refer to the `.nvmrc` file to verify your version of Node is compatible with the recommended version.
 
@@ -36,10 +32,9 @@ If you do not have nvm installed, you'll need to refer to the `.nvmrc` file to v
 
 ### Developing Locally
 
-After running `npm run dev` in the project root, `src` will be served at [http://localhost:3000](http://localhost:3000). Any changes made to code in `src` will trigger recompilation of the project and refresh the page in your browser.
+After running `npm run dev` in the project root, `src` will be served at [http://localhost:3000](http://localhost:3000). Any changes made within `src` will trigger the source to recompile and refresh the page in your web browser.
 
 ```bash
-nvm use
 npm run dev
 ```
 
@@ -47,10 +42,9 @@ npm run dev
 
 Run `npm run build` in the project root to run a production build.
 
-Production builds compile & minify your assets into `/dist` for distribution and/or integration into whatever codebase you'll be using these assets in.
+Production builds compile & minify the source into `/dist` for integration or deployment.
 
 ```bash
-nvm use
 npm run build
 ```
 
@@ -62,7 +56,7 @@ npm run build
 
 Starbase is setup to be deployed to the root of a web server on a hosting environment like Vercel, Netlify, etc. As such, all assets (js, css, fonts, images, etc) are referenced with absolute paths.
 
-If you would like to reference assets via relative paths, so compiled `.html` files can be distributed and opened in a web browser without requiring a deployment to a hosting environment, you will need to remove (or comment-out) the `publicPath` in `webpack/webpack.config.base.ts`.
+If you would like to instead reference assets via relative paths, so compiled `.html` files can be distributed and opened in a web browser without requiring a deployment to a hosting environment, you will need to remove (or comment-out) the `publicPath` in `webpack/webpack.config.base.ts`.
 
 If you would like to keep the absolute paths, but set it to a subdirectory instead of the root, you can change the value instead of removing it.
 
