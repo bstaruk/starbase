@@ -3,28 +3,29 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Hello World | Starbase</title>
+  <title>Hello World</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#fefefe">
 </head>
 
 <body>
-  <div class="w-full flex flex-col justify-center gap-4 sm:gap-8">
-    <header class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
-      <img src="assets/starbase.png" alt="starbase logo" class="flex-shrink-0 w-auto h-10 sm:h-14" />
-      <h1 class="text-center font-serif text-3xl sm:text-5xl font-bold tracking-wider">Starbase</h1>
+  <div class="w-full flex flex-col justify-center gap-6 sm:gap-8">
+    <header class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+      <img src="assets/starbase.png" alt="starbase logo" class="flex-shrink-0 w-auto h-14" />
+      <h1 class="text-center font-serif text-4xl sm:text-6xl font-bold tracking-wider">Starbase</h1>
     </header>
 
-    <main>
-      <p class="text-center font-sans text-lg sm:text-xl">Hello World!</p>
+    <main class="flex flex-col gap-4 text-center font-sans">
+      <p class="text-lg sm:text-xl">Hello World!</p>
+      <p class="text-base italic">&lt;!-- TODO: Something cool. --&gt;</p>
     </main>
 
-    <footer class="sm:w-full sm:max-w-[80ch] mx-auto border-t border-gray-300 p-4">
-      <ul class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-base text-gray-600 [&_a]:text-gray-600">
-        <li>crafted by <a href="https://brian.staruk.net" class="link">brian staruk</a></li>
+    <footer class="mx-auto border-t border-gray-300 p-6 sm:px-8">
+      <ul class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-base text-gray-600 text-center">
+        <li>crafted by <a href="https://brian.staruk.net" class="hover:underline text-red-600">brian staruk</a></li>
         <li class="hidden sm:block" role="presentation">|</li>
-        <li><a href="https://github.com/bstaruk/starbase" class="link">view on github</a></li>
+        <li><a href="https://github.com/bstaruk/starbase" class="hover:underline text-red-600">view on github</a></li>
       </ul>
     </footer>
   </div>
