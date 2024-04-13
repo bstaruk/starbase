@@ -53,15 +53,14 @@ const path = require("path");
         const installPath = path.resolve(process.cwd(), answers.installPath);
         fs.copy(templatePath, installPath, {
             filter: (src) => {
-                if (src.includes('node_modules') || src.includes('dist')) {
-                    console.log('src', src);
+                if (src.includes('template/node_modules') ||
+                    src.includes('template/dist')) {
+                    return false;
                 }
                 return true;
             },
-        }, (err) => {
-            if (err) {
-                return console.error((0, picocolors_1.red)(err));
-            }
+        })
+            .then(() => {
             fs.move(path.join(installPath, './gitignore.md'), path.join(installPath, './.gitignore'), (err) => {
                 if (err) {
                     return console.error((0, picocolors_1.red)(err));
@@ -69,6 +68,9 @@ const path = require("path");
                 console.log((0, picocolors_1.green)(`Starbase has been installed in "${answers.installPath}"`) +
                     '\n');
             });
+        })
+            .catch((err) => {
+            console.error((0, picocolors_1.red)(err));
         });
     }
 }))();

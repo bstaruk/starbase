@@ -49,26 +49,19 @@ import path = require('path');
     const templatePath = path.join(__dirname, '../template');
     const installPath = path.resolve(process.cwd(), answers.installPath);
 
-    fs.copy(
-      templatePath,
-      installPath,
-      {
-        filter: (src) => {
-          if (
-            src.includes('starbase/template/node_modules') ||
-            src.includes('starbase/template/dist')
-          ) {
-            console.log('src', src);
-          }
-
-          return true;
-        },
-      },
-      (err) => {
-        if (err) {
-          return console.error(red(err));
+    fs.copy(templatePath, installPath, {
+      filter: (src) => {
+        if (
+          src.includes('template/node_modules') ||
+          src.includes('template/dist')
+        ) {
+          return false;
         }
 
+        return true;
+      },
+    })
+      .then(() => {
         fs.move(
           path.join(installPath, './gitignore.md'),
           path.join(installPath, './.gitignore'),
@@ -82,7 +75,9 @@ import path = require('path');
             );
           },
         );
-      },
-    );
+      })
+      .catch((err) => {
+        console.error(red(err));
+      });
   }
 })();
