@@ -8,15 +8,18 @@ import path = require('path');
   const questions = [
     {
       type: 'text',
-      name: 'value',
+      name: 'installPath',
       message: 'What folder would you like to install Starbase in?',
-      validate: (value: string) => {
-        if (!value) return 'This is not a valid folder name.';
+      validate: (installPath: string) => {
+        if (!installPath) return 'This is not a valid folder name.';
 
         try {
           // Check if the directory exists
-          if (fs.existsSync(value) && fs.lstatSync(value).isDirectory()) {
-            const files = fs.readdirSync(value);
+          if (
+            fs.existsSync(installPath) &&
+            fs.lstatSync(installPath).isDirectory()
+          ) {
+            const files = fs.readdirSync(installPath);
             if (
               files?.filter((f: string) => !['.git'].includes(f))?.length > 0
             ) {
@@ -39,28 +42,42 @@ import path = require('path');
     return true;
   };
 
-  const response = await prompts(questions, { onCancel });
+  const answers = await prompts(questions, { onCancel });
 
-  if (response.value) {
+  if (answers.installPath) {
     // Copy template files
     const template = path.join(__dirname, '../template');
-    fs.copy(template, response.value, (err) => {
-      if (err) {
-        return console.error(red(err));
-      }
-
-      fs.move(
-        `${response.value}/gitignore.md`,
-        `${response.value}/.gitignore`,
-        (err) => {
-          if (err) {
-            return console.error(red(err));
+    fs.copy(
+      template,
+      answers.installPath,
+      {
+        filter: (src) => {
+          if (src.includes('node_modules') || src.includes('dist')) {
+            return false;
           }
-          console.log(
-            green(`Starbase has been installed in "${response.value}"`) + '\n',
-          );
+
+          return true;
         },
-      );
-    });
+      },
+      (err) => {
+        if (err) {
+          return console.error(red(err));
+        }
+
+        fs.move(
+          `${answers.installPath}/gitignore.md`,
+          `${answers.installPath}/.gitignore`,
+          (err) => {
+            if (err) {
+              return console.error(red(err));
+            }
+            console.log(
+              green(`Starbase has been installed in "${answers.installPath}"`) +
+                '\n',
+            );
+          },
+        );
+      },
+    );
   }
 })();
