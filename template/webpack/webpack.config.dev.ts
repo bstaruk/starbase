@@ -1,9 +1,11 @@
-const { merge } = require('webpack-merge');
+import { Configuration } from 'webpack';
+import { merge } from 'webpack-merge';
+import 'webpack-dev-server';
 
 // import base config
-const webpackConfigBase = require('./webpack.config.base');
+import webpackConfigBase from './webpack.config.base';
 
-module.exports = merge(webpackConfigBase, {
+const config = merge<Configuration>(webpackConfigBase, {
   mode: 'development',
   output: {
     filename: '[name].js',
@@ -23,3 +25,5 @@ module.exports = merge(webpackConfigBase, {
     ],
   },
 });
+
+export default config;

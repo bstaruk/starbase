@@ -1,11 +1,12 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { merge } = require('webpack-merge');
+import { Configuration } from 'webpack';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { merge } from 'webpack-merge';
 
 // import base config
-const webpackConfigBase = require('./webpack.config.base');
+import webpackConfigBase from './webpack.config.base';
 
-module.exports = merge(webpackConfigBase, {
+const config = merge<Configuration>(webpackConfigBase, {
   mode: 'production',
   output: {
     filename: '[name]-[fullhash:8].js',
@@ -41,3 +42,5 @@ module.exports = merge(webpackConfigBase, {
     }),
   ],
 });
+
+export default config;

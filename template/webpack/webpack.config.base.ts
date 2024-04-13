@@ -1,9 +1,10 @@
-const ESLintPlugin = require('eslint-webpack-plugin');
-const StylelintPlugin = require('stylelint-webpack-plugin');
-const HtmlPlugin = require('html-webpack-plugin');
-const path = require('path');
+import { Configuration } from 'webpack';
+import ESLintPlugin from 'eslint-webpack-plugin';
+import StylelintPlugin from 'stylelint-webpack-plugin';
+import HtmlPlugin from 'html-webpack-plugin';
+import path from 'path';
 
-module.exports = {
+const config: Configuration = {
   context: path.resolve(process.cwd(), 'src'),
   entry: {
     app: [path.join(process.cwd(), 'src/app.ts')],
@@ -62,3 +63,5 @@ module.exports = {
     }),
   ],
 };
+
+export default config;
