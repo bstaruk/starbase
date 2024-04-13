@@ -1,98 +1,72 @@
-# starbase
+# Starbase v4
 
-starbase is a production-ready static website boilerplate built with webpack 5, Babel 7 & Sass that enables developers to get up and running in minutes using some of the most powerful front-end tools available in 2024:
+Starbase is a production-ready static website boilerplate featuring Webpack 5, TypeScript, PostCSS & Tailwind CSS that was designed to integrate with modern Jamstack hosting providers such as Vercel, Netlify and AWS Amplify. Start building in minutes with some of the most powerful front-end technologies available in 2024, powered by a delightfully simple and fully featured developer experience.
 
-- [Node.js](https://github.com/nodejs/node), [webpack 5](https://github.com/webpack/webpack) & [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
-- [Babel 7](https://github.com/babel/babel) w/ [ESLint](https://github.com/eslint/eslint) & [Prettier](https://github.com/prettier/prettier)
-- [Sass](https://github.com/sass) w/ [stylelint](https://github.com/stylelint/stylelint)
+## History & Use Case
 
-The primary mission is to be small in scope so that it may be easily extended and customized, or used as a learning tool for developers who are trying to become familiar with webpack 5, Sass and/or modern JS.
+Starbase was created by [Brian Staruk](https://brian.staruk.net) as a personal code styleguide and flexible project boilerplate. It is a perpetual work in progress that has been consistently maintained [since early 2017](https://github.com/bstaruk/starbase/pull/1) with a focus on implementing the latest industry standards and keeping all dependencies up to date.
+
+> "Simplicity is the ultimate sophistication."<br>_\- Leonardo da Vinci_
+
+The primary mission of Starbase is to be sophisticatedly simple; easy to configure, extend and integrate. This also happens to make it a great platform for web developers to enhance their knowledge of bare-metal Webpack configs, TypeScript and/or Tailwind CSS.
 
 ---
 
-## Getting Started
+## Installation
 
-After completing the steps below, you will be ready to begin using starbase:
+To get started, run the command below, which will guide you through the installation process:
 
-1. Copy starbase into your project root directory (don't forget the dot files!)
-2. Ensure you are running the version of [Node.js](https://nodejs.org) specified in `.nvmrc` (or run `nvm use` if you have [nvm](https://github.com/nvm-sh/nvm))
-3. Install dependencies by running `npm install` in your project root directory
-4. Start the app with `npm run start` or create a production build with `npm run build`
-
-### Local Development
-
-starbase uses [webpack-dev-server](https://github.com/webpack/webpack-dev-server) to serve up your project at [http://localhost:8080](http://localhost:8080) for streamlined and convenient development.
-
-After running `npm run start` in the project root, your `/src` code will be served at the url above and watched for changes. As you modify code in `/src`, the project will be recompiled and your browser will refresh to show the latest changes.
-
+```bash
+npx starbase@latest
 ```
-cd /path/to/starbase
-npm run start
+
+---
+
+## Usage
+
+It is recommended to use [nvm](https://github.com/nvm-sh/nvm) (or [nvm-windows](https://github.com/coreybutler/nvm-windows)) to manage your Node version installations. If you won't use nvm, you'll need to refer to the `/.nvmrc` file to verify your version of Node is compatible with the recommended version.
+
+### Getting Started
+
+Start by ensuring you are running the recommended version of Node, and installing the project dependencies:
+
+```bash
+nvm use
+npm install
+```
+
+---
+
+### Developing Locally
+
+The `dev` command will serve the project source at [http://localhost:3000](http://localhost:3000). Any changes made within `/src` will recompile the source and refresh your web browser.
+
+```bash
+npm run dev
 ```
 
 ### Building for Production
 
-Use `npm run build` in your project root to run a production build.
+The `build` command will compile and minify the project source into `/dist` for integration or deployment.
 
-Production builds compile & minify your assets into `/dist` for distribution and/or integration into whatever codebase you'll be using these assets in.
-
-```
-cd /path/to/starbase
+```bash
 npm run build
 ```
 
 ---
 
-## Features & Configurations
-
-### JS & Sass Linting
-
-starbase uses [ESLint](http://eslint.org/) for Javascript (ES6) linting and [stylelint](https://github.com/stylelint/stylelint) for Sass linting to encourage consistent code throughout your project. The configs (`/.eslintrc.js` and `/.stylelintrc` respectively) include a solid foundation to build upon, utilizing the most popular industry-standardized plugins such as [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb) and [stylelint-config-sass-guidelines](https://github.com/bjankord/stylelint-config-sass-guidelines).
-
-### Prettier Formatting
-
-starbase uses [Prettier](https://github.com/prettier/prettier) to enforce and simplify code consistency. If you use VS Code, check out the [Prettier VS Code extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode). If you'd rather prettify your code via CLI, run `npm run prettify` at your project root.
-
-### Linting & Formatting Pre-Commit Hook
-
-starbase uses [Husky](https://github.com/typicode/husky) & [lint-staged](https://github.com/okonet/lint-staged) to run ESLint, stylelint & Prettier as pre-commit hooks, ensuring only clean code ends up in version control.
-
-### HTML Webpack Plugin
-
-starbase uses [HTML Webpack Plugin](https://github.com/jantimon/html-webpack-plugin), which enables webpack to handle assets that are linked from within our HTML templates, such as images and embedded videos. It also makes sure our generated `.js` & `.css` files are included where they need to be.
-
-Open the webpack configs if you need to add more pages -- and be sure to check out the plugin documentation to learn about the more advanced features such as `.ejs` and environment variable support.
-
-### Asset Hashing (Cache Busting)
-
-The assets generated by starbase are [hashed](https://webpack.js.org/guides/caching/) as a cache-busting mechanism. Hashes are generated via file contents so they will only change when the files themselves have changed.
-
-This feature ships with webpack (and the loaders we use), so removing it is pretty straightforward. Open the webpack configs and remove the hashes from the filenames, which should look something like this: `.[hash:8]`.
-
-Removing hashing for production builds is not recommended.
-
-### Build-Time Cleanup
-
-starbase is setup to clear all contents of `/dist` (where compiled assets are piped into) during each `npm run build`. If you'd like to remove this part of the build process, perform the following steps:
-
-1. remove `CleanWebpackPlugin` from the plugins array in `/webpack/webpack.config.prod.js`
-2. remove `CleanWebpackPlugin` as a requirement at the top of `/webpack/webpack.config.prod.js`
-3. remove the `CleanWebpackPlugin` dependency from `/package.json`
-
-Removing the cleanup process means that deleted assets in `/src` will not be deleted in `/dist` until you manually do so. I recommend keeping the cleanup process intact unless you have a specific reason not to, such as having un-managed assets in `/dist`.
-
----
-
 ## Notes & Considerations
 
-### Root Path
+### Deploying to Hosting Environment
 
-starbase is setup to run with assets referenced via relative paths so generated `.html` files can be opened without needing a deployment. If you plan on deploying to a web server, it'll be a good idea to set the `publicPath` in `/webpack/webpack.config.base.js`.
+Starbase is setup to be deployed to the root of a web server on a hosting environment like Vercel, Netlify, etc. As such, all assets (js, css, fonts, images, etc) are referenced with absolute paths.
 
-This variable should be set to `/` if the app will run at the root of a domain or subdomain, or to `/folderName` (example) if it'll be deployed to a subfolder.
+If you would like to instead reference assets via relative paths, so compiled `.html` files can be distributed and opened in a web browser without requiring a deployment to a hosting environment, you will need to remove (or comment-out) the `publicPath` in `/webpack/webpack.config.base.ts`.
+
+If you would like to keep the absolute paths, but set it to a subdirectory instead of the root, you can change the value instead of removing it.
 
 ---
 
 ## License
 
-starbase is open source and free software, so you may to do whatever you wish with it -- commercially or personally. You can buy me a beer next time you're in Boston, star the project and tell a friend, or you can erase all signs of origin and tell your coworkers that you made it yourself. It's all good!
+Starbase is free, open source software. Please build awesome things with it. You can buy me a beer next time you're in Boston, star the project and tell a friend, or you can erase all signs of origin and tell your coworkers that you made it yourself. It's all good!

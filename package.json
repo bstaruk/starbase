@@ -1,6 +1,6 @@
 {
   "name": "starbase",
-  "version": "3.6.3",
+  "version": "4.0.0-0021",
   "author": "Brian Staruk <brian@staruk.net>",
   "contributors": [
     {
@@ -9,7 +9,7 @@
       "url": "https://brian.staruk.net"
     }
   ],
-  "description": "Production-ready static website boilerplate, featuring webpack 5, modern JS (via Babel) & Sass",
+  "description": "Production-ready static website boilerplate, featuring Webpack 5, TypeScript, PostCSS & Tailwind CSS.",
   "homepage": "https://github.com/bstaruk/starbase",
   "repository": {
     "type": "git",
@@ -20,49 +20,33 @@
     "email": "brian@staruk.net"
   },
   "license": "MIT",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "bin": "./dist/index.js",
+  "files": [
+    "dist",
+    "template"
+  ],
   "scripts": {
-    "build": "npx webpack --config ./webpack/webpack.config.prod.js",
-    "start": "npx webpack serve --config ./webpack/webpack.config.dev.js",
-    "lint-staged": "lint-staged",
-    "lint:js": "eslint src",
-    "lint:css": "stylelint src",
-    "prettify": "prettier --write \"src/**/*.{js,json,md}\"",
-    "prepare": "husky install"
+    "build": "tsc",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}'",
+    "lint": "eslint .",
+    "start": "tsc && node ./dist/index.js"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "picocolors": "^1.0.0",
+    "prompts": "^2.4.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.3",
-    "@babel/eslint-parser": "^7.24.1",
-    "@babel/preset-env": "^7.24.3",
-    "babel-loader": "^9.1.3",
-    "clean-webpack-plugin": "^4.0.0",
-    "css-loader": "^6.10.0",
     "eslint": "^8.57.0",
-    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-import-resolver-webpack": "^0.13.8",
-    "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-prettier": "^5.1.3",
-    "eslint-webpack-plugin": "^4.1.0",
-    "html-loader": "^5.0.0",
-    "html-webpack-plugin": "^5.6.0",
-    "husky": "^9.0.11",
-    "lint-staged": "^15.2.2",
-    "mini-css-extract-plugin": "^2.8.1",
-    "path": "^0.12.7",
     "prettier": "^3.2.5",
-    "sass": "^1.72.0",
-    "sass-loader": "^14.1.1",
-    "style-loader": "^3.3.4",
-    "stylelint": "^16.3.1",
-    "stylelint-config-recommended": "^14.0.0",
-    "stylelint-config-sass-guidelines": "^11.1.0",
-    "stylelint-config-standard": "^36.0.0",
-    "stylelint-scss": "^6.2.1",
-    "stylelint-webpack-plugin": "^5.0.0",
-    "webpack": "^5.91.0",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.0.4",
-    "webpack-merge": "^5.10.0"
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.3",
+    "typescript-eslint": "^7.4.0"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }
