@@ -15,6 +15,7 @@ const picocolors_1 = require("picocolors");
 const fs = require("fs-extra");
 const path = require("path");
 (() => __awaiter(void 0, void 0, void 0, function* () {
+    let isCancelled = false;
     const questions = [
         {
             type: 'text',
@@ -43,34 +44,43 @@ const path = require("path");
         },
     ];
     const onCancel = () => {
-        console.log((0, picocolors_1.yellow)('Starbase initialization cancelled!') + '\n');
-        return true;
+        isCancelled = true;
+        return console.log((0, picocolors_1.yellow)('Starbase initialization cancelled!') + '\n');
     };
     const answers = yield prompts(questions, { onCancel });
-    if (answers.installPath) {
-        // Copy template files
-        const templatePath = path.join(__dirname, '../template');
-        const installPath = path.resolve(process.cwd(), answers.installPath);
-        fs.copy(templatePath, installPath, {
-            filter: (src) => {
-                if (src.includes('template/node_modules') ||
-                    src.includes('template/dist')) {
-                    return false;
-                }
-                return true;
-            },
-        })
-            .then(() => {
-            fs.move(path.join(installPath, './gitignore.md'), path.join(installPath, './.gitignore'), (err) => {
-                if (err) {
-                    return console.error((0, picocolors_1.red)(err));
-                }
-                console.log((0, picocolors_1.green)(`Starbase has been installed in "${answers.installPath}"`) +
-                    '\n');
-            });
-        })
-            .catch((err) => {
-            console.error((0, picocolors_1.red)(err));
-        });
+    // Exit if valid installPath is not provided
+    if (!answers.installPath) {
+        // Display error when not an intentional cancellation
+        if (!isCancelled) {
+            console.log((0, picocolors_1.red)('Install path is required to proceed.') + '\n');
+        }
+        return true; // Exit
     }
+    // Create proper paths
+    const templatePath = path.join(__dirname, '../template');
+    const installPath = path.resolve(process.cwd(), answers.installPath);
+    // Copy template files
+    yield fs
+        .copy(templatePath, installPath, {
+        filter: (src) => {
+            // Do not copy node_modules or dist
+            if (src.includes('template/node_modules') ||
+                src.includes('template/dist')) {
+                return false;
+            }
+            // Copy everything else
+            return true;
+        },
+    })
+        .catch((err) => {
+        return console.error((0, picocolors_1.red)(err));
+    });
+    // Rename gitignore.md to .gitignore (npmjs.com removes .gitignore files)
+    yield fs
+        .move(path.join(installPath, 'gitignore.md'), path.join(installPath, '.gitignore'))
+        .catch((err) => {
+        return console.error((0, picocolors_1.red)(err));
+    });
+    // Success!
+    return console.log((0, picocolors_1.green)(`Starbase has been installed in "${answers.installPath}"`) + '\n');
 }))();

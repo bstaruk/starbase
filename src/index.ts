@@ -5,6 +5,7 @@ import fs = require('fs-extra');
 import path = require('path');
 
 (async () => {
+  let isCancelled = false;
   const questions = [
     {
       type: 'text',
@@ -38,19 +39,31 @@ import path = require('path');
   ];
 
   const onCancel = () => {
-    console.log(yellow('Starbase initialization cancelled!') + '\n');
-    return true;
+    isCancelled = true;
+    return console.log(yellow('Starbase initialization cancelled!') + '\n');
   };
 
   const answers = await prompts(questions, { onCancel });
 
-  if (answers.installPath) {
-    // Copy template files
-    const templatePath = path.join(__dirname, '../template');
-    const installPath = path.resolve(process.cwd(), answers.installPath);
+  // Exit if valid installPath is not provided
+  if (!answers.installPath) {
+    // Display error when not an intentional cancellation
+    if (!isCancelled) {
+      console.log(red('Install path is required to proceed.') + '\n');
+    }
 
-    fs.copy(templatePath, installPath, {
+    return true; // Exit
+  }
+
+  // Create proper paths
+  const templatePath = path.join(__dirname, '../template');
+  const installPath = path.resolve(process.cwd(), answers.installPath);
+
+  // Copy template files
+  await fs
+    .copy(templatePath, installPath, {
       filter: (src) => {
+        // Do not copy node_modules or dist
         if (
           src.includes('template/node_modules') ||
           src.includes('template/dist')
@@ -58,26 +71,26 @@ import path = require('path');
           return false;
         }
 
+        // Copy everything else
         return true;
       },
     })
-      .then(() => {
-        fs.move(
-          path.join(installPath, './gitignore.md'),
-          path.join(installPath, './.gitignore'),
-          (err) => {
-            if (err) {
-              return console.error(red(err));
-            }
-            console.log(
-              green(`Starbase has been installed in "${answers.installPath}"`) +
-                '\n',
-            );
-          },
-        );
-      })
-      .catch((err) => {
-        console.error(red(err));
-      });
-  }
+    .catch((err) => {
+      return console.error(red(err));
+    });
+
+  // Rename gitignore.md to .gitignore (npmjs.com removes .gitignore files)
+  await fs
+    .move(
+      path.join(installPath, 'gitignore.md'),
+      path.join(installPath, '.gitignore'),
+    )
+    .catch((err) => {
+      return console.error(red(err));
+    });
+
+  // Success!
+  return console.log(
+    green(`Starbase has been installed in "${answers.installPath}"`) + '\n',
+  );
 })();
