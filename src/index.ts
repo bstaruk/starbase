@@ -46,13 +46,15 @@ import path = require('path');
 
   if (answers.installPath) {
     // Copy template files
-    const template = path.join(__dirname, '../template');
+    const templatePath = path.join(__dirname, '../template');
+    const installPath = path.resolve(process.cwd(), answers.installPath);
+
     fs.copy(
-      template,
-      answers.installPath,
+      templatePath,
+      installPath,
       {
         filter: (src) => {
-          if (src.includes('node_modules') || src.includes('dist')) {
+          if (src.includes('/node_modules') || src.includes('/dist')) {
             return false;
           }
 
@@ -65,8 +67,8 @@ import path = require('path');
         }
 
         fs.move(
-          `${answers.installPath}/gitignore.md`,
-          `${answers.installPath}/.gitignore`,
+          path.join(installPath, './gitignore.md'),
+          path.join(installPath, './.gitignore'),
           (err) => {
             if (err) {
               return console.error(red(err));

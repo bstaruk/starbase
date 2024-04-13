@@ -49,10 +49,11 @@ const path = require("path");
     const answers = yield prompts(questions, { onCancel });
     if (answers.installPath) {
         // Copy template files
-        const template = path.join(__dirname, '../template');
-        fs.copy(template, answers.installPath, {
+        const templatePath = path.join(__dirname, '../template');
+        const installPath = path.resolve(process.cwd(), answers.installPath);
+        fs.copy(templatePath, installPath, {
             filter: (src) => {
-                if (src.includes('node_modules') || src.includes('dist')) {
+                if (src.includes('/node_modules') || src.includes('/dist')) {
                     return false;
                 }
                 return true;
@@ -61,7 +62,7 @@ const path = require("path");
             if (err) {
                 return console.error((0, picocolors_1.red)(err));
             }
-            fs.move(`${answers.installPath}/gitignore.md`, `${answers.installPath}/.gitignore`, (err) => {
+            fs.move(path.join(installPath, './gitignore.md'), path.join(installPath, './.gitignore'), (err) => {
                 if (err) {
                     return console.error((0, picocolors_1.red)(err));
                 }
