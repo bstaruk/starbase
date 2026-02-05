@@ -1,2 +1,12 @@
-.DS_Store
+# dependencies
 node_modules
+
+# system
+.DS_Store
+
+# environment-specific env files
+.env.*
+!.env.example
+
+# build outputs
+dist

@@ -1,0 +1,42 @@
+{
+  "name": "starbase",
+  "version": "5.0.0",
+  "author": "Brian Staruk <brian@staruk.net>",
+  "contributors": [
+    {
+      "name": "Brian Staruk",
+      "email": "brian@staruk.net",
+      "url": "https://brian.staruk.net"
+    }
+  ],
+  "description": "Production-ready website boilerplate, featuring Vite, TypeScript, React, Tanstack Router, Tanstack Query and Tailwind CSS.",
+  "homepage": "https://github.com/bstaruk/starbase",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bstaruk/starbase.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bstaruk/starbase/issues",
+    "email": "brian@staruk.net"
+  },
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "bin": "./dist/index.js",
+  "files": [
+    "dist",
+    "template"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}'",
+    "lint": "eslint .",
+    "start": "tsc && node ./dist/index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "prettier": "^3.8.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

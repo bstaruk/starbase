@@ -1,0 +1,47 @@
+{
+  // Format w/ prettier on save
+  "editor.formatOnSave": true,
+
+  // Defer JS linting to ESLint Extension
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact"
+  ],
+
+  // Defer CSS linting to Stylelint Extension
+  "stylelint.validate": ["css"],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+
+  // Fix-all ESLint on save
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+
+  // Tailwind CSS IntelliSense settings
+  "tailwindCSS.experimental.classRegex": [
+    ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"]
+  ],
+
+  // Replace "index.tsx" with "Component" for "Component/index.tsx" in editor tabs
+  "workbench.editor.customLabels.enabled": true,
+  "workbench.editor.customLabels.patterns": {
+    "**/index.ts": "${dirname}",
+    "**/index.tsx": "${dirname}"
+  },
+
+  // Tanstack Router Autogen Files
+  "files.readonlyInclude": {
+    "**/routeTree.gen.ts": true
+  },
+  "files.watcherExclude": {
+    "**/routeTree.gen.ts": true
+  },
+  "search.exclude": {
+    "**/routeTree.gen.ts": true
+  }
+}

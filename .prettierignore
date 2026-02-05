@@ -1,0 +1,12 @@
+# Build outputs
+dist/
+build/
+
+# Generated files
+# etc/src/routeTree.gen.ts
+
+# Dependencies
+node_modules/
+
+# Package manager
+package-lock.json
