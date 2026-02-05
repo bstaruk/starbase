@@ -7,3 +7,6 @@ node_modules/
 
 # Package manager
 package-lock.json
+
+# Generated
+src/routeTree.gen.ts

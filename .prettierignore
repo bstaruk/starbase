@@ -3,7 +3,7 @@ dist/
 build/
 
 # Generated files
-# etc/src/routeTree.gen.ts
+template/src/routeTree.gen.ts
 
 # Dependencies
 node_modules/

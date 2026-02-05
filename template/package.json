@@ -14,6 +14,8 @@
     "@fontsource/bricolage-grotesque": "^5.2.10",
     "@fontsource/nunito": "^5.2.7",
     "@fontsource/roboto-mono": "^5.2.8",
+    "@tanstack/react-router": "^1.158.1",
+    "@tanstack/react-router-devtools": "^1.158.1",
     "clsx": "^2.1.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
@@ -23,6 +25,7 @@
   "devDependencies": {
     "@eslint/js": "^9.39.1",
     "@tailwindcss/vite": "^4.1.18",
+    "@tanstack/router-plugin": "^1.158.1",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
