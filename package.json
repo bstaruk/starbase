@@ -1,6 +1,7 @@
 {
-  "name": "starbase",
-  "version": "5.0.0",
+  "name": "create-starbase",
+  "version": "0.0.1",
+  "type": "module",
   "author": "Brian Staruk <brian@staruk.net>",
   "contributors": [
     {
@@ -9,7 +10,7 @@
       "url": "https://brian.staruk.net"
     }
   ],
-  "description": "Production-ready website boilerplate, featuring Vite, TypeScript, React, Tanstack Router, Tanstack Query and Tailwind CSS.",
+  "description": "Create a new Starbase project with Vite, TypeScript, and React.",
   "homepage": "https://github.com/bstaruk/starbase",
   "repository": {
     "type": "git",
@@ -21,7 +22,9 @@
   },
   "license": "MIT",
   "main": "./dist/index.js",
-  "bin": "./dist/index.js",
+  "bin": {
+    "create-starbase": "./dist/index.js"
+  },
   "files": [
     "dist",
     "template"
@@ -30,11 +33,13 @@
     "build": "tsc",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}'",
     "lint": "eslint .",
-    "start": "tsc && node ./dist/index.js"
+    "start": "npm run build && node ./dist/index.js"
   },
   "dependencies": {},
   "devDependencies": {
-    "prettier": "^3.8.1"
+    "@types/node": "^20.11.0",
+    "prettier": "^3.8.1",
+    "typescript": "^5.3.0"
   },
   "engines": {
     "node": ">=20"
