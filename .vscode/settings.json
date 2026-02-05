@@ -2,6 +2,10 @@
   // Format w/ prettier on save
   "editor.formatOnSave": true,
 
+  // Prefer path aliases over relative imports
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+
   // Defer JS linting to ESLint Extension
   "eslint.validate": [
     "javascript",

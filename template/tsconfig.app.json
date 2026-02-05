@@ -22,7 +22,17 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    /* Path Aliases */
+    "baseUrl": ".",
+    "paths": {
+      "utils": ["src/lib/utils/index.ts"],
+      "atoms/*": ["src/ui/atoms/*"],
+      "molecules/*": ["src/ui/molecules/*"],
+      "organisms/*": ["src/ui/organisms/*"],
+      "templates/*": ["src/ui/templates/*"]
+    }
   },
   "include": ["src"]
 }
