@@ -1,0 +1,9 @@
+# Build outputs
+dist/
+build/
+
+# Dependencies
+node_modules/
+
+# Package manager
+package-lock.json
