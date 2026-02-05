@@ -33,11 +33,14 @@
     "build": "tsc",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}'",
     "lint": "eslint .",
-    "start": "npm run build && node ./dist/index.js"
+    "start": "npm run build && node ./dist/index.js",
+    "prepare": "husky"
   },
-  "dependencies": {},
   "devDependencies": {
+    "@commitlint/cli": "^20.4.1",
+    "@commitlint/config-conventional": "^20.4.1",
     "@types/node": "^20.11.0",
+    "husky": "^9.1.7",
     "prettier": "^3.8.1",
     "typescript": "^5.3.0"
   },
