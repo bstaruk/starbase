@@ -31,7 +31,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}'",
+    "format": "prettier --write .",
     "lint": "eslint .",
     "start": "npm run build && node ./dist/index.js",
     "prepare": "husky"
