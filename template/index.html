@@ -1,13 +1,49 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>template</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<html lang="en" style="background-color: #f1f5f9">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>template</title>
+  <script>
+    // Inline script to prevent dark mode flash
+    (function () {
+      const COOKIE_NAME = 'theme-preference';
+      const DARK_CLASS = 'dark';
+
+      // Get theme preference from cookie
+      const getCookie = (name) => {
+        const cookie = document.cookie
+          .split('; ')
+          .find((row) => row.startsWith(name + '='));
+        return cookie ? cookie.split('=')[1] : null;
+      };
+
+      const preference = getCookie(COOKIE_NAME) || 'system';
+
+      // Determine effective theme (default is light)
+      let theme = 'light';
+      if (preference === 'dark') {
+        theme = 'dark';
+      } else if (preference === 'system') {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light';
+      }
+
+      // Apply dark class only if dark mode
+      if (theme === 'dark') {
+        document.documentElement.classList.add(DARK_CLASS);
+        document.documentElement.style.backgroundColor = '#0f172a';
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>
