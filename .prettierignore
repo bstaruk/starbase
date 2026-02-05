@@ -1,5 +1,0 @@
-dist/
-node_modules/
-template/
-package-lock.json
-yarn.lock
