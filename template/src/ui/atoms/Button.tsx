@@ -44,15 +44,15 @@ const makeButtonClasses = (
       'text-lg px-5 py-2.5': !iconOnly && size === 'lg',
 
       /* Variant: anchor */
-      'bg-ss-anchor border-ss-anchor text-ss-surface-raised shadow-sm is-active:bg-ss-anchor-active is-active:border-ss-anchor-active is-active:shadow-md':
+      'bg-sb-anchor border-sb-anchor text-sb-surface-raised shadow-sm is-active:bg-sb-anchor-active is-active:border-sb-anchor-active is-active:shadow-md':
         variant === 'anchor',
 
       /* Variant: outline */
-      'bg-transparent border-ss-divider text-ss-fg is-active:bg-ss-canvas is-active:border-ss-fg-subtle/30':
+      'bg-transparent border-sb-divider text-sb-fg is-active:bg-sb-canvas is-active:border-sb-fg-subtle/30':
         variant === 'outline',
 
       /* Variant: ghost */
-      'bg-transparent text-ss-fg is-active:bg-ss-fg/5': variant === 'ghost',
+      'bg-transparent text-sb-fg is-active:bg-sb-fg/5': variant === 'ghost',
     },
     className,
   );
