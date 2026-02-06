@@ -6,6 +6,19 @@ Starbase is a personal, opinionated boilerplate — it reflects deliberately cho
 
 This file captures conventions, patterns, and lessons learned from working on this project. It is meant to evolve — when we discover a useful pattern or convention worth preserving, suggest adding it here.
 
+## Accessibility
+
+Inclusivity and accessibility are more important than any other aspect of the user experience. Unstyled, semantic HTML that works for everyone is better than a polished UI that excludes people.
+
+- Target **WCAG 2.2 AA** compliance as the baseline for all work
+- Use semantic HTML elements — prefer native behavior over custom JS (e.g., `<button>` over `<div onClick>`, `<nav>` over `<div class="nav">`)
+- All interactive elements must be keyboard-accessible and have visible focus indicators
+- Images need meaningful `alt` text (or `alt=""` for purely decorative images)
+- Color alone must never be the only way to convey information — pair it with text, icons, or patterns
+- Ensure sufficient color contrast ratios (4.5:1 for normal text, 3:1 for large text)
+- Test with screen readers when building new interactive patterns
+- When in doubt between a flashy feature and an accessible one, choose accessible
+
 ## Import Conventions
 
 - **Always use aliased paths** — never relative imports

@@ -6,6 +6,7 @@ export function StarbaseLogo({ className, ...props }: SVGProps<SVGSVGElement>) {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 576 512"
+      aria-hidden="true"
       className={cn('fill-red-500 stroke-black', className)}
       {...props}
     >

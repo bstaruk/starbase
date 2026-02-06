@@ -89,8 +89,8 @@
     --sb-canvas: var(--color-stone-200);
 
     /* Text */
-    --sb-fg: var(--color-stone-600);
-    --sb-fg-subtle: var(--color-stone-500);
+    --sb-fg: var(--color-stone-700);
+    --sb-fg-subtle: var(--color-stone-600);
     --sb-fg-title: var(--color-stone-800);
 
     /* Borders */
@@ -120,7 +120,7 @@
 
     /* Text */
     --sb-fg: var(--color-zinc-300);
-    --sb-fg-subtle: var(--color-zinc-500);
+    --sb-fg-subtle: var(--color-zinc-400);
     --sb-fg-title: var(--color-zinc-200);
 
     /* Borders */

@@ -38,8 +38,8 @@ export const Code = forwardRef<HTMLElement, CodeProps>(
           onClick={handleCopy}
           aria-label={copied ? 'Copied' : 'Copy to clipboard'}
           className={cn(
-            'shrink-0 cursor-pointer text-sb-fg-subtle transition-colors duration-150',
-            'hover:text-sb-fg',
+            'shrink-0 p-1 rounded cursor-pointer text-sb-fg-subtle transition-colors duration-150',
+            'outline-none focus-visible:outline-sb-action hover:text-sb-fg',
           )}
         >
           {copied ? (

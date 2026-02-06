@@ -4,6 +4,9 @@ import { PageHeader } from 'molecules/PageHeader';
 
 export const Route = createFileRoute('/liftoff')({
   component: Liftoff,
+  head: () => ({
+    meta: [{ title: 'Liftoff — Starbase' }],
+  }),
 });
 
 function Liftoff() {

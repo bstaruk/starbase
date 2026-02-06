@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion, useReducedMotion } from 'motion/react';
 import { useLocation } from '@tanstack/react-router';
 import { StarbaseLogo } from 'atoms/StarbaseLogo';
 
@@ -8,15 +8,24 @@ interface PageHeaderProps {
 
 export function PageHeader({ title }: PageHeaderProps) {
   const { pathname } = useLocation();
+  const prefersReducedMotion = useReducedMotion();
 
   return (
     <div className="flex flex-col items-center gap-4">
       <motion.div
         key={pathname}
-        initial={{ y: -20, rotate: 12 }}
-        animate={{ y: [-20, 4, -2, 0], rotate: 12 }}
-        transition={{ duration: 0.4, ease: 'easeOut' }}
-        whileHover={{ rotate: [12, 4, 20, 6, 18, 9, 15, 12] }}
+        initial={prefersReducedMotion ? false : { y: -20, rotate: 12 }}
+        animate={{ y: 0, rotate: 12 }}
+        transition={
+          prefersReducedMotion
+            ? { duration: 0 }
+            : { duration: 0.4, ease: 'easeOut' }
+        }
+        whileHover={
+          prefersReducedMotion
+            ? undefined
+            : { rotate: [12, 4, 20, 6, 18, 9, 15, 12] }
+        }
       >
         <StarbaseLogo className="size-12" />
       </motion.div>

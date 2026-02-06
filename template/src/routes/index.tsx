@@ -5,6 +5,9 @@ import { PageHeader } from 'molecules/PageHeader';
 
 export const Route = createFileRoute('/')({
   component: Index,
+  head: () => ({
+    meta: [{ title: 'Starbase' }],
+  }),
 });
 
 function Index() {
