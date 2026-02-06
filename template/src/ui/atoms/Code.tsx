@@ -25,7 +25,7 @@ export const Code = ({ children, className, ref, ...rest }: CodeProps) => {
   return (
     <code
       {...rest}
-      {...{ ref }}
+      ref={ref}
       className={cn(
         'inline-flex items-center gap-2 font-mono',
         'bg-sb-canvas text-sb-fg px-4 py-2 rounded-lg',

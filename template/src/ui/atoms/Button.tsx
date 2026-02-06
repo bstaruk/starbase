@@ -69,7 +69,7 @@ export const ButtonLink = ({
   return (
     <a
       {...rest}
-      {...{ ref }}
+      ref={ref}
       className={makeButtonClasses(variant, iconOnly, size, className)}
     >
       {children}
@@ -90,7 +90,8 @@ export const Button = ({
   return (
     <button
       {...rest}
-      {...{ ref, type }}
+      ref={ref}
+      type={type}
       className={makeButtonClasses(variant, iconOnly, size, className)}
     >
       {children}

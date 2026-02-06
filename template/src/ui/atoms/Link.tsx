@@ -40,7 +40,7 @@ export const Link = ({
   ...rest
 }: LinkProps) => {
   return (
-    <a {...rest} {...{ ref }} className={makeLinkClasses(variant, className)}>
+    <a {...rest} ref={ref} className={makeLinkClasses(variant, className)}>
       {children}
     </a>
   );
@@ -70,7 +70,9 @@ export const LinkButton = ({
   return (
     <button
       {...rest}
-      {...{ ref, type, disabled }}
+      ref={ref}
+      type={type}
+      disabled={disabled}
       className={cn(
         makeLinkClasses(variant, className),
         disabled ? 'cursor-not-allowed' : 'cursor-pointer',
