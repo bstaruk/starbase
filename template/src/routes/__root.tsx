@@ -1,6 +1,7 @@
 import React from 'react';
 import type { QueryClient } from '@tanstack/react-query';
 import { createRootRouteWithContext, Outlet } from '@tanstack/react-router';
+import { DarkModeToggle } from 'atoms/DarkModeToggle';
 import { Stargazers } from 'atoms/Stargazers';
 
 export interface RouterContext {
@@ -27,8 +28,9 @@ export const Route = createRootRouteWithContext<RouterContext>()({
   component: () => (
     <>
       <Outlet />
-      <footer className="fixed bottom-0 inset-x-0 flex justify-center p-4">
+      <footer className="fixed bottom-0 inset-x-0 flex items-center justify-center gap-3 p-4">
         <Stargazers />
+        <DarkModeToggle />
       </footer>
       <TanStackRouterDevtools />
       <ReactQueryDevtools />
