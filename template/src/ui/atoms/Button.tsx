@@ -2,16 +2,14 @@ import * as React from 'react';
 import { createLink, type LinkComponent } from '@tanstack/react-router';
 import { cn } from 'utils';
 
-export type ButtonVariant = 'anchor' | 'outline' | 'ghost';
+export type ButtonVariant = 'primary' | 'outline' | 'ghost';
 
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   variant?: ButtonVariant;
-  /** Render as a square icon-only button (no text padding). */
   iconOnly?: boolean;
-  /** Button size. Defaults to 'md'. */
   size?: ButtonSize;
 }
 
@@ -29,8 +27,7 @@ const makeButtonClasses = (
   className?: string,
 ) =>
   cn(
-    // Base styles: refined, modern look
-    // Border is always present (transparent when not visible) to prevent layout shift on variant change
+    // Base styles
     'inline-flex items-center justify-center',
     'font-sans font-semibold rounded-md border border-transparent outline-none cursor-pointer',
     'transition-all duration-150 ease-out',
@@ -46,23 +43,23 @@ const makeButtonClasses = (
       'text-base px-4 py-2': !iconOnly && size === 'md',
       'text-lg px-5 py-2.5': !iconOnly && size === 'lg',
 
-      /* Variant: anchor - Primary navigation/link actions */
-      'bg-sb-anchor border-sb-anchor text-sb-surface-raised shadow-sm is-active:bg-sb-anchor-active is-active:border-sb-anchor-active is-active:shadow-md':
-        variant === 'anchor',
+      /* Variant: primary */
+      'bg-ss-anchor border-ss-anchor text-ss-surface-raised shadow-sm is-active:bg-ss-anchor-active is-active:border-ss-anchor-active is-active:shadow-md':
+        variant === 'primary',
 
-      /* Variant: outline - Secondary actions */
-      'bg-transparent border-sb-divider text-sb-fg is-active:bg-sb-canvas is-active:border-sb-fg-subtle/30':
+      /* Variant: outline */
+      'bg-transparent border-ss-divider text-ss-fg is-active:bg-ss-canvas is-active:border-ss-fg-subtle/30':
         variant === 'outline',
 
-      /* Variant: ghost - Minimal, transparent */
-      'bg-transparent text-sb-fg is-active:bg-sb-fg/5': variant === 'ghost',
+      /* Variant: ghost */
+      'bg-transparent text-ss-fg is-active:bg-ss-fg/5': variant === 'ghost',
     },
     className,
   );
 
 export const ButtonLink = React.forwardRef<HTMLAnchorElement, ButtonLinkProps>(
   (
-    { children, className, variant = 'anchor', iconOnly, size, ...rest },
+    { children, className, variant = 'primary', iconOnly, size, ...rest },
     ref,
   ) => {
     return (
@@ -82,7 +79,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     {
       children,
       className,
-      variant = 'anchor',
+      variant = 'primary',
       iconOnly,
       size,
       type = 'button',
