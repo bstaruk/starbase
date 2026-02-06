@@ -35,7 +35,7 @@ export const Route = createRootRouteWithContext<RouterContext>()({
   component: () => (
     <>
       <HeadContent />
-      <main>
+      <main className="pb-16">
         <Outlet />
       </main>
       <footer className="fixed bottom-0 inset-x-0 flex items-center justify-center gap-3 p-4">
