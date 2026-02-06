@@ -11,7 +11,7 @@ export function PageHeader({ title }: PageHeaderProps) {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <div className="flex flex-col items-center gap-4">
+    <header className="flex flex-col items-center gap-4">
       <motion.div
         key={pathname}
         initial={prefersReducedMotion ? false : { y: -20, rotate: 12 }}
@@ -30,6 +30,6 @@ export function PageHeader({ title }: PageHeaderProps) {
         <StarbaseLogo className="size-12" />
       </motion.div>
       <h1 className="text-sb-fg-title">{title}</h1>
-    </div>
+    </header>
   );
 }
