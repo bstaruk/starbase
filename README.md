@@ -1,72 +1,94 @@
-# Starbase v4
+# Starbase v5
 
-Starbase is a production-ready static website boilerplate featuring Webpack 5, TypeScript, PostCSS & Tailwind CSS that was designed to integrate with modern Jamstack hosting providers such as Vercel, Netlify and AWS Amplify. Start building in minutes with some of the most powerful front-end technologies available in 2024, powered by a delightfully simple and fully featured developer experience.
+Starbase is a personal, opinionated front-end starter kit built on Vite, TypeScript, React and Tailwind CSS. It's been one of my favorite passion projects for over 8 years now, and v5 is its most ambitious launch yet.
 
-## History & Use Case
+For most of its life, Starbase solved a very specific problem: you don't have to write Webpack configs from scratch. That problem doesn't really exist anymore. Vite handles bundling beautifully, and the value of a boilerplate that just wires up a build tool has dropped to near zero.
 
-Starbase was created by [Brian Staruk](https://brian.staruk.net) as a personal code styleguide and flexible project boilerplate. It is a perpetual work in progress that has been consistently maintained [since early 2017](https://github.com/bstaruk/starbase/pull/1) with a focus on implementing the latest industry standards and keeping all dependencies up to date.
+So v5 asks a different question: what if the boilerplate encoded _how you build_, not just _what you build with_?
 
-> "Simplicity is the ultimate sophistication."<br>_\- Leonardo da Vinci_
+## The mission
 
-The primary mission of Starbase is to be sophisticatedly simple; easy to configure, extend and integrate. This also happens to make it a great platform for web developers to enhance their knowledge of bare-metal Webpack configs, TypeScript and/or Tailwind CSS.
+The hard part of modern front-end development isn't getting a dev server running. It's maintaining consistency -- naming conventions, component architecture, accessibility standards, file organization -- across a codebase that grows over time, especially when AI tooling is doing a lot of the heavy lifting.
 
----
+Starbase v5 is built around [Claude Code](https://docs.anthropic.com/en/docs/claude-code). The baseline components aren't throwaway demos. They're reference implementations that Claude pattern-matches against when generating new code. Every atom, molecule, and organism is a teaching artifact. The result is an AI-assisted workflow where generated code actually looks like _your_ code.
 
-## Installation
+## Stack
 
-To get started, run the command below, which will guide you through the installation process:
+| Tool                                               | Role                                                           |
+| -------------------------------------------------- | -------------------------------------------------------------- |
+| [Vite](https://vite.dev/)                          | Build tooling and dev server                                   |
+| [TypeScript](https://www.typescriptlang.org/)      | Type safety                                                    |
+| [React](https://react.dev/)                        | UI library                                                     |
+| [Tailwind CSS](https://tailwindcss.com/)           | Utility-first styling with a semantic `sb-` color token system |
+| [TanStack Router](https://tanstack.com/router)     | File-based routing                                             |
+| [TanStack React Query](https://tanstack.com/query) | Server state and data fetching                                 |
+| [Motion](https://motion.dev/)                      | Animation                                                      |
+| [ESLint](https://eslint.org/)                      | Linting (with react-x and react-dom plugins)                   |
+| [Prettier](https://prettier.io/)                   | Formatting                                                     |
 
-```bash
-npx starbase@latest
+See [`template/package.json`](template/package.json) for the full dependency list.
+
+## Architecture
+
+Components follow [Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/):
+
+- **Atoms** -- Smallest building blocks. HTML-level primitives like buttons, inputs, links, and icons.
+- **Molecules** -- Small groups of atoms functioning together as a unit. A dark mode toggle, a page header.
+- **Organisms** -- Larger sections composed of molecules and atoms. Full-width layouts, distinct page sections.
+- **Templates** -- Page-level layout structures that define where things go and how they relate.
+
+Everything else is organized by concern:
+
+```
+src/
+  lib/
+    queries/    # React Query options, organized by API domain
+    theme/      # Tailwind CSS and theme config
+    utils/      # Utility functions (cn, darkMode, etc.)
+  ui/
+    atoms/      # Button, Link, Code, StarbaseLogo
+    molecules/  # DarkModeToggle, PageHeader, Stargazers
+    organisms/
+    templates/
+  routes/       # TanStack Router file-based routes
 ```
 
----
+Imports use path aliases everywhere -- `from 'atoms/Button'` instead of `from '../../ui/atoms/Button'`. If you find yourself reaching for a relative path, that's a sign a new alias is needed.
 
-## Usage
+## `CLAUDE.md`
 
-It is recommended to use [nvm](https://github.com/nvm-sh/nvm) (or [nvm-windows](https://github.com/coreybutler/nvm-windows)) to manage your Node version installations. If you won't use nvm, you'll need to refer to the `/.nvmrc` file to verify your version of Node is compatible with the recommended version.
+This is the north star of the project. It's a living document that maps development preferences directly to codebase patterns -- accessibility standards, import conventions, component architecture, color tokens, writing style, and more.
 
-### Getting Started
+It's not a personality dump. It's a working contract between you and Claude that says: here's how I like things done, and here are the reference implementations to prove it. When Claude generates code in a Starbase project, it builds on these conventions instead of guessing.
 
-Start by ensuring you are running the recommended version of Node, and installing the project dependencies:
+Read it. Evolve it. It's designed to grow with the project.
+
+## Claude Code commands
+
+Starbase ships with custom [Claude Code commands](https://docs.anthropic.com/en/docs/claude-code/tutorials#create-custom-slash-commands) that go beyond what a linter can catch:
+
+- **`/audit`** -- Scans the codebase for drift against CLAUDE.md conventions. Raw color values bypassing the token system, components at the wrong atomic level, accessibility regressions, import violations. Architecture enforcement, automated.
+- **`/review`** -- Reviews the current branch's changes against CLAUDE.md. Like a PR review from someone who actually read the style guide.
+
+More commands are on the launchpad. The goal is a suite of tools that handle the mechanical parts of maintaining consistency so you can focus on building.
+
+## Liftoff
+
+Scaffold a new project, install dependencies, and you're in orbit:
 
 ```bash
-nvm use
+npm create starbase@latest my-project
+cd my-project
 npm install
-```
-
----
-
-### Developing Locally
-
-The `dev` command will serve the project source at [http://localhost:3000](http://localhost:3000). Any changes made within `/src` will recompile the source and refresh your web browser.
-
-```bash
 npm run dev
 ```
 
-### Building for Production
+## History
 
-The `build` command will compile and minify the project source into `/dist` for integration or deployment.
+Starbase is built and maintained by [Brian Staruk](https://brian.staruk.net), a Boston-based web developer with 20+ years of experience who's never quite gotten over the urge to nerd out in public. Go Sox. That impulse is the main reason this project has been actively maintained since 2017 -- through four major versions, each one reflecting whatever felt like the right way to build for the web at the time. PostCSS, Webpack, TypeScript, Tailwind -- it picked up tools as they matured and dropped them when something better came along.
 
-```bash
-npm run build
-```
-
----
-
-## Notes & Considerations
-
-### Deploying to Hosting Environment
-
-Starbase is setup to be deployed to the root of a web server on a hosting environment like Vercel, Netlify, etc. As such, all assets (js, css, fonts, images, etc) are referenced with absolute paths.
-
-If you would like to instead reference assets via relative paths, so compiled `.html` files can be distributed and opened in a web browser without requiring a deployment to a hosting environment, you will need to remove (or comment-out) the `publicPath` in `/webpack/webpack.config.base.ts`.
-
-If you would like to keep the absolute paths, but set it to a subdirectory instead of the root, you can change the value instead of removing it.
-
----
+v5 is the biggest shift yet. The build tool problem is solved. The new problem is encoding taste and standards so that AI tooling can extend your work faithfully. That's the mission now.
 
 ## License
 
-Starbase is free, open source software. Please build awesome things with it. You can buy me a beer next time you're in Boston, star the project and tell a friend, or you can erase all signs of origin and tell your coworkers that you made it yourself. It's all good!
+MIT

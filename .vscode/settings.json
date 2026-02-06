@@ -35,7 +35,7 @@
     "**/index.tsx": "${dirname}"
   },
 
-  // TanStack Router autogen files
+  // Tanstack Router Autogen Files
   "files.readonlyInclude": {
     "**/routeTree.gen.ts": true
   },

@@ -1,9 +1,0 @@
-/* Tailwind Comes First */
-@import './styles/tailwind.css';
-
-/* Ordered Imports */
-@import './styles/fonts.css';
-@import './styles/root.css';
-
-/* Unordered Imports */
-@import './styles/components/link.css';

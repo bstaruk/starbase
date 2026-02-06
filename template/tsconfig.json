@@ -1,18 +1,7 @@
 {
-  "compilerOptions": {
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "noImplicitAny": true,
-    "outDir": "./dist/",
-    "sourceMap": true,
-    "target": "es6"
-  },
-  "ts-node": {
-    "compilerOptions": {
-      "module": "CommonJS"
-    }
-  },
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
 }
