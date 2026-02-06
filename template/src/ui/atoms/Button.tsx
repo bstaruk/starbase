@@ -11,6 +11,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   variant?: ButtonVariant;
   iconOnly?: boolean;
   size?: ButtonSize;
+  ref?: React.Ref<HTMLButtonElement>;
 }
 
 interface ButtonLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
@@ -18,6 +19,7 @@ interface ButtonLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> 
   variant?: ButtonVariant;
   iconOnly?: boolean;
   size?: ButtonSize;
+  ref?: React.Ref<HTMLAnchorElement>;
 }
 
 const makeButtonClasses = (
@@ -57,47 +59,46 @@ const makeButtonClasses = (
     className,
   );
 
-export const ButtonLink = React.forwardRef<HTMLAnchorElement, ButtonLinkProps>(
-  (
-    { children, className, variant = 'anchor', iconOnly, size, ...rest },
-    ref,
-  ) => {
-    return (
-      <a
-        {...rest}
-        {...{ ref }}
-        className={makeButtonClasses(variant, iconOnly, size, className)}
-      >
-        {children}
-      </a>
-    );
-  },
-);
+export const ButtonLink = ({
+  children,
+  className,
+  variant = 'anchor',
+  iconOnly,
+  size,
+  ref,
+  ...rest
+}: ButtonLinkProps) => {
+  return (
+    <a
+      {...rest}
+      {...{ ref }}
+      className={makeButtonClasses(variant, iconOnly, size, className)}
+    >
+      {children}
+    </a>
+  );
+};
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      children,
-      className,
-      variant = 'anchor',
-      iconOnly,
-      size,
-      type = 'button',
-      ...rest
-    },
-    ref,
-  ) => {
-    return (
-      <button
-        {...rest}
-        {...{ ref, type }}
-        className={makeButtonClasses(variant, iconOnly, size, className)}
-      >
-        {children}
-      </button>
-    );
-  },
-);
+export const Button = ({
+  children,
+  className,
+  variant = 'anchor',
+  iconOnly,
+  size,
+  type = 'button',
+  ref,
+  ...rest
+}: ButtonProps) => {
+  return (
+    <button
+      {...rest}
+      {...{ ref, type }}
+      className={makeButtonClasses(variant, iconOnly, size, className)}
+    >
+      {children}
+    </button>
+  );
+};
 
 const CreatedLinkComponent = createLink(ButtonLink);
 

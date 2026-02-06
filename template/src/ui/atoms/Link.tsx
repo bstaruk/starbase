@@ -1,7 +1,7 @@
 import {
-  forwardRef,
   type AnchorHTMLAttributes,
   type ButtonHTMLAttributes,
+  type Ref,
 } from 'react';
 import { createLink, type LinkComponent } from '@tanstack/react-router';
 import { cn } from 'utils';
@@ -10,10 +10,12 @@ type LinkVariant = 'anchor' | 'fg' | 'fg-subtle';
 
 type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   variant?: LinkVariant;
+  ref?: Ref<HTMLAnchorElement>;
 };
 
 type LinkButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: LinkVariant;
+  ref?: Ref<HTMLButtonElement>;
 };
 
 const makeLinkClasses = (variant?: LinkVariant, className?: string) => {
@@ -30,15 +32,19 @@ const makeLinkClasses = (variant?: LinkVariant, className?: string) => {
   );
 };
 
-export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
-  ({ children, className, variant = 'anchor', ...rest }, ref) => {
-    return (
-      <a {...rest} {...{ ref }} className={makeLinkClasses(variant, className)}>
-        {children}
-      </a>
-    );
-  },
-);
+export const Link = ({
+  children,
+  className,
+  variant = 'anchor',
+  ref,
+  ...rest
+}: LinkProps) => {
+  return (
+    <a {...rest} {...{ ref }} className={makeLinkClasses(variant, className)}>
+      {children}
+    </a>
+  );
+};
 
 const CreatedLinkComponent = createLink(Link);
 
@@ -52,29 +58,25 @@ export const RouterLink: LinkComponent<typeof Link> = (props) => {
   );
 };
 
-export const LinkButton = forwardRef<HTMLButtonElement, LinkButtonProps>(
-  (
-    {
-      children,
-      className,
-      type = 'button',
-      variant = 'anchor',
-      disabled,
-      ...rest
-    },
-    ref,
-  ) => {
-    return (
-      <button
-        {...rest}
-        {...{ ref, type, disabled }}
-        className={cn(
-          makeLinkClasses(variant, className),
-          disabled ? 'cursor-not-allowed' : 'cursor-pointer',
-        )}
-      >
-        {children}
-      </button>
-    );
-  },
-);
+export const LinkButton = ({
+  children,
+  className,
+  type = 'button',
+  variant = 'anchor',
+  disabled,
+  ref,
+  ...rest
+}: LinkButtonProps) => {
+  return (
+    <button
+      {...rest}
+      {...{ ref, type, disabled }}
+      className={cn(
+        makeLinkClasses(variant, className),
+        disabled ? 'cursor-not-allowed' : 'cursor-pointer',
+      )}
+    >
+      {children}
+    </button>
+  );
+};
