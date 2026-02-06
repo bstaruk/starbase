@@ -1,73 +1,98 @@
-# React + TypeScript + Vite
+# Starbase v5
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Starbase is a personal, opinionated front-end starter kit built on Vite, TypeScript, React and Tailwind CSS. It's been one of my favorite passion projects for over 8 years now, and v5 is its most ambitious launch yet.
 
-Currently, two official plugins are available:
+For most of its life, Starbase solved a very specific problem: you don't have to write Webpack configs from scratch. That problem doesn't really exist anymore. Vite handles bundling beautifully, and the value of a boilerplate that just wires up a build tool has dropped to near zero.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+So v5 asks a different question: what if the boilerplate encoded _how you build_, not just _what you build with_?
 
-## React Compiler
+## The mission
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The hard part of modern front-end development isn't getting a dev server running. It's maintaining consistency -- naming conventions, component architecture, accessibility standards, file organization -- across a codebase that grows over time, especially when AI tooling is doing a lot of the heavy lifting.
 
-## Expanding the ESLint configuration
+Starbase v5 is built around [Claude Code](https://docs.anthropic.com/en/docs/claude-code). The baseline components aren't throwaway demos. They're reference implementations that Claude pattern-matches against when generating new code. Every atom, molecule, and organism is a teaching artifact. The result is an AI-assisted workflow where generated code actually looks like _your_ code.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+| Tool                                               | Role                                                           |
+| -------------------------------------------------- | -------------------------------------------------------------- |
+| [Vite](https://vite.dev/)                          | Build tooling and dev server                                   |
+| [TypeScript](https://www.typescriptlang.org/)      | Type safety                                                    |
+| [React](https://react.dev/)                        | UI library                                                     |
+| [Tailwind CSS](https://tailwindcss.com/)           | Utility-first styling with a semantic `sb-` color token system |
+| [TanStack Router](https://tanstack.com/router)     | File-based routing                                             |
+| [TanStack React Query](https://tanstack.com/query) | Server state and data fetching                                 |
+| [Motion](https://motion.dev/)                      | Animation                                                      |
+| [ESLint](https://eslint.org/)                      | Linting (with react-x and react-dom plugins)                   |
+| [Prettier](https://prettier.io/)                   | Formatting                                                     |
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+See `package.json` for the full dependency list.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+## Architecture
+
+Components follow [Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/):
+
+- **Atoms** -- Smallest building blocks. HTML-level primitives like buttons, inputs, links, and icons.
+- **Molecules** -- Small groups of atoms functioning together as a unit. A dark mode toggle, a page header.
+- **Organisms** -- Larger sections composed of molecules and atoms. Full-width layouts, distinct page sections.
+- **Templates** -- Page-level layout structures that define where things go and how they relate.
+
+Everything else is organized by concern:
+
+```
+src/
+  lib/
+    queries/    # React Query options, organized by API domain
+    theme/      # Tailwind CSS and theme config
+    utils/      # Utility functions (cn, darkMode, etc.)
+  ui/
+    atoms/      # Button, Link, Code, StarbaseLogo
+    molecules/  # DarkModeToggle, PageHeader, Stargazers
+    organisms/
+    templates/
+  routes/       # TanStack Router file-based routes
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Imports use path aliases everywhere -- `from 'atoms/Button'` instead of `from '../../ui/atoms/Button'`. If you find yourself reaching for a relative path, that's a sign a new alias is needed.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+## `CLAUDE.md`
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+This is the north star of the project. It's a living document that maps development preferences directly to codebase patterns -- accessibility standards, import conventions, component architecture, color tokens, writing style, and more.
+
+It's not a personality dump. It's a working contract between you and Claude that says: here's how I like things done, and here are the reference implementations to prove it. When Claude generates code in a Starbase project, it builds on these conventions instead of guessing.
+
+Read it. Evolve it. It's designed to grow with the project.
+
+## Claude Code commands
+
+Starbase ships with custom [Claude Code commands](https://docs.anthropic.com/en/docs/claude-code/tutorials#create-custom-slash-commands) that go beyond what a linter can catch:
+
+- **`/audit`** -- Scans the codebase for drift against CLAUDE.md conventions. Raw color values bypassing the token system, components at the wrong atomic level, accessibility regressions, import violations. Architecture enforcement, automated.
+- **`/review`** -- Reviews the current branch's changes against CLAUDE.md. Like a PR review from someone who actually read the style guide.
+
+More commands are on the launchpad. The goal is a suite of tools that handle the mechanical parts of maintaining consistency so you can focus on building.
+
+## Liftoff
+
+```bash
+npm install
+npm run dev
 ```
+
+| Command           | Description                          |
+| ----------------- | ------------------------------------ |
+| `npm run dev`     | Start the Vite dev server            |
+| `npm run build`   | Type-check and build for production  |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint`    | Run ESLint                           |
+| `npm run format`  | Run Prettier                         |
+
+## History
+
+Starbase started in early 2017 as a personal code styleguide and project boilerplate. It went through four major versions -- each one reflecting whatever I thought was the right way to build for the web at the time. PostCSS, Webpack, TypeScript, Tailwind -- it picked up tools as they matured and dropped them when something better came along.
+
+v5 is the biggest shift yet. The build tool problem is solved. The new problem is encoding taste and standards so that AI tooling can extend your work faithfully. That's the mission now.
+
+## License
+
+MIT
