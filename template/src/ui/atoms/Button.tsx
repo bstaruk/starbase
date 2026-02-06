@@ -2,7 +2,7 @@ import * as React from 'react';
 import { createLink, type LinkComponent } from '@tanstack/react-router';
 import { cn } from 'utils';
 
-export type ButtonVariant = 'primary' | 'outline' | 'ghost';
+export type ButtonVariant = 'anchor' | 'outline' | 'ghost';
 
 type ButtonSize = 'sm' | 'md' | 'lg';
 
@@ -43,9 +43,9 @@ const makeButtonClasses = (
       'text-base px-4 py-2': !iconOnly && size === 'md',
       'text-lg px-5 py-2.5': !iconOnly && size === 'lg',
 
-      /* Variant: primary */
+      /* Variant: anchor */
       'bg-ss-anchor border-ss-anchor text-ss-surface-raised shadow-sm is-active:bg-ss-anchor-active is-active:border-ss-anchor-active is-active:shadow-md':
-        variant === 'primary',
+        variant === 'anchor',
 
       /* Variant: outline */
       'bg-transparent border-ss-divider text-ss-fg is-active:bg-ss-canvas is-active:border-ss-fg-subtle/30':
@@ -59,7 +59,7 @@ const makeButtonClasses = (
 
 export const ButtonLink = React.forwardRef<HTMLAnchorElement, ButtonLinkProps>(
   (
-    { children, className, variant = 'primary', iconOnly, size, ...rest },
+    { children, className, variant = 'anchor', iconOnly, size, ...rest },
     ref,
   ) => {
     return (
@@ -79,7 +79,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     {
       children,
       className,
-      variant = 'primary',
+      variant = 'anchor',
       iconOnly,
       size,
       type = 'button',

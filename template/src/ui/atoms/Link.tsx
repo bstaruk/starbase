@@ -6,7 +6,7 @@ import {
 import { createLink, type LinkComponent } from '@tanstack/react-router';
 import { cn } from 'utils';
 
-type LinkVariant = 'anchor' | 'action' | 'fg' | 'fg-subtle';
+type LinkVariant = 'anchor' | 'fg' | 'fg-subtle';
 
 type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   variant?: LinkVariant;
@@ -23,7 +23,6 @@ const makeLinkClasses = (variant?: LinkVariant, className?: string) => {
     'hover:decoration-current focus-visible:decoration-current',
     {
       'text-sb-anchor hover:text-sb-anchor-active': variant === 'anchor',
-      'text-sb-action hover:text-sb-action-active': variant === 'action',
       'text-sb-fg hover:text-sb-anchor': variant === 'fg',
       'text-sb-fg-subtle hover:text-sb-fg': variant === 'fg-subtle',
     },
