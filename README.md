@@ -77,7 +77,7 @@ More commands are on the launchpad. The goal is a suite of tools that handle the
 Scaffold a new project, install dependencies, and you're in orbit:
 
 ```bash
-npm create starbase my-project
+npm create starbase@latest my-project
 cd my-project
 npm install
 npm run dev
