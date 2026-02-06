@@ -12,7 +12,7 @@ export const Route = createFileRoute('/')({
 
 function Index() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center gap-6 p-8">
+    <div className="flex flex-col items-center gap-6">
       <PageHeader title="Starbase" />
       <p className="text-sb-fg-subtle max-w-md text-center text-balance">
         A launchpad for modern React apps, built on Vite, TypeScript, Tailwind

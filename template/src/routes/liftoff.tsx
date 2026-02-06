@@ -11,7 +11,7 @@ export const Route = createFileRoute('/liftoff')({
 
 function Liftoff() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center gap-6 p-8">
+    <div className="flex flex-col items-center gap-6">
       <PageHeader title="Liftoff" />
       <p className="text-sb-fg-subtle">More details coming soon.</p>
       <RouterLink to="/" className="text-sm">

@@ -35,13 +35,13 @@ export const Route = createRootRouteWithContext<RouterContext>()({
   component: () => (
     <>
       <HeadContent />
-      <main className="pb-16">
+      <main className="flex min-h-screen flex-col items-center justify-center gap-6 p-8">
         <Outlet />
+        <footer className="flex items-center gap-3">
+          <Stargazers />
+          <DarkModeToggle />
+        </footer>
       </main>
-      <footer className="fixed bottom-0 inset-x-0 flex items-center justify-center gap-3 p-4">
-        <Stargazers />
-        <DarkModeToggle />
-      </footer>
       <TanStackRouterDevtools />
       <ReactQueryDevtools />
     </>
