@@ -1,11 +1,16 @@
 {
   "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
     "esModuleInterop": true,
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "outDir": "dist",
-    "target": "es6"
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true
   },
-  "files": ["src/index.ts"],
-  "lib": ["es2015"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "template"]
 }

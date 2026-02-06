@@ -1,36 +1,46 @@
-# starbase
+# Starbase
 
-This project was bootstrapped by [Starbase v4](https://github.com/bstaruk/starbase). The details below are unbranded so you can quickly swap out the title & intro.
+Welcome aboard. Here's what you need to know.
 
----
+## Commands
 
-## Usage
+| Command           | Description                          |
+| ----------------- | ------------------------------------ |
+| `npm run dev`     | Start the Vite dev server            |
+| `npm run build`   | Type-check and build for production  |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint`    | Run ESLint                           |
+| `npm run format`  | Run Prettier                         |
 
-It is recommended to use [nvm](https://github.com/nvm-sh/nvm) (or [nvm-windows](https://github.com/coreybutler/nvm-windows)) to manage your Node version installations. If you won't use nvm, you'll need to refer to the `/.nvmrc` file to verify your version of Node is compatible with the recommended version.
+## Project structure
 
-### Getting Started
-
-Start by ensuring you are running the recommended version of Node, and installing the project dependencies:
-
-```bash
-nvm use
-npm install
+```
+src/
+  lib/
+    queries/    # React Query options, organized by API domain
+    theme/      # Tailwind CSS and theme config
+    utils/      # Utility functions (cn, darkMode, etc.)
+  ui/
+    atoms/      # Smallest building blocks (Button, Link, Code)
+    molecules/  # Functional groups of atoms (DarkModeToggle, PageHeader)
+    organisms/  # Larger composed sections
+    templates/  # Page-level layout structures
+  routes/       # TanStack Router file-based routes
 ```
 
----
+Components follow [Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/). Imports use path aliases -- `from 'atoms/Button'`, not relative paths.
 
-### Developing Locally
+## CLAUDE.md
 
-The `dev` command will serve the project source at [http://localhost:3000](http://localhost:3000). Any changes made within `/src` will recompile the source and refresh your web browser.
+Start here. It's the source of truth for all conventions, patterns, and architectural decisions. It's also what makes [Claude Code](https://docs.anthropic.com/en/docs/claude-code) work well with this project -- read it, build on it, evolve it.
 
-```bash
-npm run dev
-```
+## Claude Code commands
 
-### Building for Production
+- **`/audit`** -- Scan the codebase for drift against CLAUDE.md conventions
+- **`/review`** -- Review current branch changes against CLAUDE.md
 
-The `build` command will compile and minify the project source into `/dist` for integration or deployment.
+## Learn more
 
-```bash
-npm run build
-```
+- [Starbase on GitHub](https://github.com/bstaruk/starbase) -- full docs, history, and mission
+- [Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/) -- the component methodology
+- [Claude Code docs](https://docs.anthropic.com/en/docs/claude-code) -- getting the most out of the AI workflow

@@ -1,5 +1,12 @@
+# Build outputs
 dist/
+build/
+
+# Generated files
+template/src/routeTree.gen.ts
+
+# Dependencies
 node_modules/
-template/
+
+# Package manager
 package-lock.json
-yarn.lock
