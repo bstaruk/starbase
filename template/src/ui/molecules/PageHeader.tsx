@@ -15,11 +15,11 @@ export function PageHeader({ title }: PageHeaderProps) {
       <motion.div
         key={pathname}
         initial={prefersReducedMotion ? false : { y: -20, rotate: 12 }}
-        animate={{ y: 0, rotate: 12 }}
+        animate={{ y: 0, rotate: [16, 8, 14, 10, 12] }}
         transition={
           prefersReducedMotion
             ? { duration: 0 }
-            : { duration: 0.4, ease: 'easeOut' }
+            : { duration: 0.5, ease: 'easeOut' }
         }
         whileHover={
           prefersReducedMotion
