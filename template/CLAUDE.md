@@ -1,5 +1,9 @@
 # CLAUDE.md
 
+> _"Simplicity is the ultimate sophistication."_
+
+Starbase is a personal, opinionated boilerplate — it reflects deliberately chosen tools, patterns, and workflows. Decisions should favor informed preference over broad appeal. When in doubt, optimize for productivity and consistency with the existing stack, not generality. That said, preference never trumps code quality — clean, correct, well-structured code wins every time. Opinion only applies when the choice is genuinely a matter of taste.
+
 This file captures conventions, patterns, and lessons learned from working on this project. It is meant to evolve — when we discover a useful pattern or convention worth preserving, suggest adding it here.
 
 ## Import Conventions
