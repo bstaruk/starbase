@@ -1,10 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
-import { starbaseRepoQueryOptions } from '../../lib/queries/github';
+import { github } from 'queries';
 import { Link } from 'atoms/Link';
 
 export function Stargazers() {
   const { data } = useQuery({
-    ...starbaseRepoQueryOptions(),
+    ...github.starbaseRepoQueryOptions(),
     retry: false,
   });
 

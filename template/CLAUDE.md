@@ -18,6 +18,25 @@ This file captures conventions, patterns, and lessons learned from working on th
 - Multi-function utils use `export * as darkMode from './darkMode'` (namespaced import: `import { darkMode } from 'utils'`, then `darkMode.applyTheme()`)
 - Pattern: create the file, add the re-export to `index.ts`, import via `'utils'`
 
+## Queries Organization
+
+All query/mutation options live in `src/lib/queries/`, organized by API domain — one file per domain (e.g., `github.ts`, `users.ts`, `products.ts`).
+
+- Every domain file must be re-exported from `src/lib/queries/index.ts` as a namespace: `export * as github from './github'`
+- Consumers import via the `'queries'` alias: `import { github } from 'queries'`, then `github.repoQueryOptions()`
+- Domain files group all related concerns: query options, mutation options, and associated types
+- One file per API domain/data source, not one file per query — this is what keeps the structure scalable
+- Pattern: create the domain file, add the namespaced re-export to `index.ts`, import via `'queries'`
+
+### Barrel Export Rules (applies to both utils and queries)
+
+The re-export pattern depends on the content of the file:
+
+- **Single-export files** → flat: `export * from './cn'` (import as `{ cn }`)
+- **Multi-export domain files** → namespaced: `export * as github from './github'` (import as `{ github }`, then `github.thing()`)
+
+Query domain files are always multi-export, so they always use namespaced re-exports.
+
 ## Component Patterns
 
 Components follow [Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/) and live in `src/ui/`:

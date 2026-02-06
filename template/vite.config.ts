@@ -13,6 +13,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
+      queries: path.resolve(__dirname, 'src/lib/queries'),
       utils: path.resolve(__dirname, 'src/lib/utils'),
       atoms: path.resolve(__dirname, 'src/ui/atoms'),
       molecules: path.resolve(__dirname, 'src/ui/molecules'),

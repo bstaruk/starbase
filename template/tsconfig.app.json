@@ -27,6 +27,7 @@
     /* Path Aliases */
     "baseUrl": ".",
     "paths": {
+      "queries": ["src/lib/queries/index.ts"],
       "utils": ["src/lib/utils/index.ts"],
       "atoms/*": ["src/ui/atoms/*"],
       "molecules/*": ["src/ui/molecules/*"],
