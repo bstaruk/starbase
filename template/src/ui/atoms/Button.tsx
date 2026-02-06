@@ -7,7 +7,6 @@ export type ButtonVariant = 'anchor' | 'outline' | 'ghost';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
   variant?: ButtonVariant;
   iconOnly?: boolean;
   size?: ButtonSize;
@@ -15,7 +14,6 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 }
 
 interface ButtonLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  children: React.ReactNode;
   variant?: ButtonVariant;
   iconOnly?: boolean;
   size?: ButtonSize;
