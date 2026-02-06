@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { RouterLink } from 'atoms/Link';
+import { PageHeader } from 'molecules/PageHeader';
 
 export const Route = createFileRoute('/liftoff')({
   component: Liftoff,
@@ -8,7 +9,7 @@ export const Route = createFileRoute('/liftoff')({
 function Liftoff() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center gap-6 p-8">
-      <h1 className="text-sb-fg-title">Liftoff</h1>
+      <PageHeader title="Liftoff" />
       <p className="text-sb-fg-subtle">More details coming soon.</p>
       <RouterLink to="/" className="text-sm">
         Back to home

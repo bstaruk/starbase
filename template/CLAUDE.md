@@ -64,6 +64,7 @@ Preferred libraries already in the project — reach for these before writing cu
 - **react-icons** — Icon sets (currently using `react-icons/lu` for Lucide icons)
 - **@tanstack/react-query** — Server state / data fetching
 - **@tanstack/react-router** — Routing
+- **motion** — Animation (import from `motion/react`)
 
 See `package.json` for the full dependency list.
 
