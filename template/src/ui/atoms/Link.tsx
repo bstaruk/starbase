@@ -49,13 +49,7 @@ export const Link = ({
 const CreatedLinkComponent = createLink(Link);
 
 export const RouterLink: LinkComponent<typeof Link> = (props) => {
-  return (
-    <CreatedLinkComponent
-      // activeProps={{ 'data-active': true }}
-      preload={'intent'}
-      {...props}
-    />
-  );
+  return <CreatedLinkComponent preload={'intent'} {...props} />;
 };
 
 export const LinkButton = ({
