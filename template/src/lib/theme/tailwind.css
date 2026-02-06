@@ -88,12 +88,6 @@
     --sb-surface-raised: var(--color-slate-50);
     --sb-canvas: var(--color-slate-200);
 
-    /* Form inputs */
-    --sb-input-bg: white;
-    --sb-input-border: var(--color-slate-300);
-    --sb-input-border-focus: var(--color-indigo-500);
-    --sb-input-ring: var(--color-indigo-200);
-
     /* Text */
     --sb-fg: var(--color-slate-700);
     --sb-fg-subtle: var(--color-slate-500);
@@ -106,19 +100,9 @@
     --sb-action: var(--color-indigo-600);
     --sb-action-active: var(--color-indigo-700);
 
-    /* Accent */
-    --sb-accent: var(--color-indigo-500);
-
     /* Navigation */
     --sb-anchor: var(--color-indigo-600);
     --sb-anchor-active: var(--color-indigo-700);
-
-    /* Status */
-    --sb-success: var(--color-green-600);
-    --sb-warning: var(--color-amber-600);
-    --sb-error: var(--color-red-600);
-    --sb-error-active: var(--color-red-700);
-    --sb-info: var(--color-blue-600);
   }
 
   ::selection {
@@ -134,12 +118,6 @@
     --sb-surface-raised: var(--color-slate-800);
     --sb-canvas: var(--color-slate-950);
 
-    /* Form inputs */
-    --sb-input-bg: var(--color-slate-800);
-    --sb-input-border: var(--color-slate-600);
-    --sb-input-border-focus: var(--color-indigo-400);
-    --sb-input-ring: var(--color-indigo-500);
-
     /* Text */
     --sb-fg: var(--color-slate-200);
     --sb-fg-subtle: var(--color-slate-400);
@@ -152,19 +130,9 @@
     --sb-action: var(--color-indigo-400);
     --sb-action-active: var(--color-indigo-300);
 
-    /* Accent */
-    --sb-accent: var(--color-indigo-400);
-
     /* Navigation */
     --sb-anchor: var(--color-indigo-400);
     --sb-anchor-active: var(--color-indigo-300);
-
-    /* Status */
-    --sb-success: var(--color-green-400);
-    --sb-warning: var(--color-amber-400);
-    --sb-error: var(--color-red-400);
-    --sb-error-active: var(--color-red-300);
-    --sb-info: var(--color-blue-400);
   }
 
   .dark ::selection {
@@ -183,12 +151,6 @@
   --color-sb-surface-raised: var(--sb-surface-raised);
   --color-sb-canvas: var(--sb-canvas);
 
-  /* Form Inputs */
-  --color-sb-input-bg: var(--sb-input-bg);
-  --color-sb-input-border: var(--sb-input-border);
-  --color-sb-input-border-focus: var(--sb-input-border-focus);
-  --color-sb-input-ring: var(--sb-input-ring);
-
   /* Text / Foreground */
   --color-sb-fg: var(--sb-fg);
   --color-sb-fg-subtle: var(--sb-fg-subtle);
@@ -200,14 +162,6 @@
   /* UI Elements */
   --color-sb-action: var(--sb-action);
   --color-sb-action-active: var(--sb-action-active);
-  --color-sb-accent: var(--sb-accent);
   --color-sb-anchor: var(--sb-anchor);
   --color-sb-anchor-active: var(--sb-anchor-active);
-
-  /* Status Indicators */
-  --color-sb-success: var(--sb-success);
-  --color-sb-warning: var(--sb-warning);
-  --color-sb-error: var(--sb-error);
-  --color-sb-error-active: var(--sb-error-active);
-  --color-sb-info: var(--sb-info);
 }
