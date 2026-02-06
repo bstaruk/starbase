@@ -84,60 +84,60 @@
     /* Light Mode Mappings */
 
     /* Surfaces */
-    --sb-surface: var(--color-slate-100);
-    --sb-surface-raised: var(--color-slate-50);
-    --sb-canvas: var(--color-slate-200);
+    --sb-surface: var(--color-stone-100);
+    --sb-surface-raised: var(--color-stone-50);
+    --sb-canvas: var(--color-stone-200);
 
     /* Text */
-    --sb-fg: var(--color-slate-700);
-    --sb-fg-subtle: var(--color-slate-500);
-    --sb-fg-title: var(--color-slate-900);
+    --sb-fg: var(--color-stone-600);
+    --sb-fg-subtle: var(--color-stone-500);
+    --sb-fg-title: var(--color-stone-800);
 
     /* Borders */
-    --sb-divider: var(--color-slate-200);
+    --sb-divider: var(--color-stone-300);
 
     /* Action */
-    --sb-action: var(--color-indigo-600);
-    --sb-action-active: var(--color-indigo-700);
+    --sb-action: var(--color-red-700);
+    --sb-action-active: var(--color-red-800);
 
     /* Navigation */
-    --sb-anchor: var(--color-indigo-600);
-    --sb-anchor-active: var(--color-indigo-700);
+    --sb-anchor: var(--color-red-700);
+    --sb-anchor-active: var(--color-red-800);
   }
 
   ::selection {
-    background-color: var(--color-indigo-200);
-    color: var(--color-indigo-900);
+    background-color: var(--color-stone-300);
+    color: var(--color-stone-900);
   }
 
   .dark {
     /* Dark Mode Mappings */
 
     /* Surfaces */
-    --sb-surface: var(--color-slate-900);
-    --sb-surface-raised: var(--color-slate-800);
-    --sb-canvas: var(--color-slate-950);
+    --sb-surface: var(--color-zinc-900);
+    --sb-surface-raised: var(--color-zinc-800);
+    --sb-canvas: var(--color-zinc-950);
 
     /* Text */
-    --sb-fg: var(--color-slate-200);
-    --sb-fg-subtle: var(--color-slate-400);
-    --sb-fg-title: var(--color-slate-100);
+    --sb-fg: var(--color-zinc-300);
+    --sb-fg-subtle: var(--color-zinc-500);
+    --sb-fg-title: var(--color-zinc-200);
 
     /* Borders */
-    --sb-divider: var(--color-slate-700);
+    --sb-divider: var(--color-zinc-800);
 
     /* Action */
-    --sb-action: var(--color-indigo-400);
-    --sb-action-active: var(--color-indigo-300);
+    --sb-action: var(--color-red-500);
+    --sb-action-active: var(--color-red-400);
 
     /* Navigation */
-    --sb-anchor: var(--color-indigo-400);
-    --sb-anchor-active: var(--color-indigo-300);
+    --sb-anchor: var(--color-red-400);
+    --sb-anchor-active: var(--color-red-300);
   }
 
   .dark ::selection {
-    background-color: var(--color-indigo-700);
-    color: var(--color-indigo-100);
+    background-color: var(--color-zinc-700);
+    color: var(--color-zinc-100);
   }
 }
 
