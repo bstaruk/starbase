@@ -12,21 +12,24 @@ export interface RouterContext {
   queryClient: QueryClient;
 }
 
-const TanStackRouterDevtools = import.meta.env.PROD
-  ? () => null
-  : React.lazy(() =>
+const devtools =
+  !import.meta.env.PROD && import.meta.env.VITE_DEVTOOLS === 'true';
+
+const TanStackRouterDevtools = devtools
+  ? React.lazy(() =>
       import('@tanstack/react-router-devtools').then((res) => ({
         default: res.TanStackRouterDevtools,
       })),
-    );
+    )
+  : () => null;
 
-const ReactQueryDevtools = import.meta.env.PROD
-  ? () => null
-  : React.lazy(() =>
+const ReactQueryDevtools = devtools
+  ? React.lazy(() =>
       import('@tanstack/react-query-devtools').then((res) => ({
         default: res.ReactQueryDevtools,
       })),
-    );
+    )
+  : () => null;
 
 export const Route = createRootRouteWithContext<RouterContext>()({
   component: () => (
