@@ -36,9 +36,9 @@ export function getEffectiveTheme(
 export function applyTheme(theme: 'light' | 'dark'): void {
   if (theme === 'dark') {
     document.documentElement.classList.add(DARK_CLASS);
-    document.documentElement.style.backgroundColor = '#0f172a';
+    document.documentElement.style.backgroundColor = 'var(--sb-canvas)';
   } else {
     document.documentElement.classList.remove(DARK_CLASS);
-    document.documentElement.style.backgroundColor = '#f1f5f9';
+    document.documentElement.style.backgroundColor = 'var(--sb-surface)';
   }
 }

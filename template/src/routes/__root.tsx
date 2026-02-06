@@ -1,8 +1,8 @@
 import React from 'react';
 import type { QueryClient } from '@tanstack/react-query';
 import { createRootRouteWithContext, Outlet } from '@tanstack/react-router';
-import { DarkModeToggle } from 'atoms/DarkModeToggle';
-import { Stargazers } from 'atoms/Stargazers';
+import { DarkModeToggle } from 'molecules/DarkModeToggle';
+import { Stargazers } from 'molecules/Stargazers';
 
 export interface RouterContext {
   queryClient: QueryClient;
