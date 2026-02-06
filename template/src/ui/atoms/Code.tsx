@@ -1,6 +1,7 @@
 import { type HTMLAttributes, type Ref, useEffect, useState } from 'react';
 import { useCopyToClipboard } from 'usehooks-ts';
 import { LuCopy, LuCheck } from 'react-icons/lu';
+import { Button } from 'atoms/Button';
 import { cn } from 'utils';
 
 export interface CodeProps extends HTMLAttributes<HTMLElement> {
@@ -33,21 +34,19 @@ export const Code = ({ children, className, ref, ...rest }: CodeProps) => {
       )}
     >
       {children}
-      <button
-        type="button"
+      <Button
+        variant="ghost"
+        iconOnly
+        size="sm"
         onClick={handleCopy}
         aria-label={copied ? 'Copied' : 'Copy to clipboard'}
-        className={cn(
-          'shrink-0 p-1 rounded cursor-pointer text-sb-fg-subtle transition-colors duration-150',
-          'outline-none focus-visible:outline-sb-action hover:text-sb-fg',
-        )}
       >
         {copied ? (
           <LuCheck className="size-4" />
         ) : (
           <LuCopy className="size-4" />
         )}
-      </button>
+      </Button>
     </code>
   );
 };
