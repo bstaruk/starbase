@@ -33,5 +33,16 @@
   "workbench.editor.customLabels.patterns": {
     "**/index.ts": "${dirname}",
     "**/index.tsx": "${dirname}"
+  },
+
+  // TanStack Router autogen files
+  "files.readonlyInclude": {
+    "**/routeTree.gen.ts": true
+  },
+  "files.watcherExclude": {
+    "**/routeTree.gen.ts": true
+  },
+  "search.exclude": {
+    "**/routeTree.gen.ts": true
   }
 }
