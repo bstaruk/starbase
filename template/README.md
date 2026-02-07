@@ -38,6 +38,7 @@ Start here. It's the source of truth for all conventions, patterns, and architec
 
 - **`/audit`** -- Scan the codebase for drift against CLAUDE.md conventions
 - **`/review`** -- Review current branch changes against CLAUDE.md
+- **`/update-deps`** -- Update dependencies safely with Vite-alignment awareness
 
 ## Learn more
 
