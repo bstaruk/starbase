@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Code, RouterLink } from 'atoms';
+import { Code } from 'atoms';
 import { PageHeader } from 'molecules';
 
 export const Route = createFileRoute('/')({
@@ -19,10 +19,6 @@ function Index() {
       </p>
 
       <Code>npm create starbase@latest</Code>
-
-      <RouterLink to="/liftoff" className="text-sm">
-        Ready for liftoff?
-      </RouterLink>
     </div>
   );
 }

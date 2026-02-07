@@ -61,14 +61,9 @@
   --text-sm--line-height: 1.5;
   --text-sm--letter-spacing: 0.005em;
 
-  /* Text Variant: xs - 14px to 15px */
-  --text-xs: clamp(0.875rem, 0.849rem + 0.098vw, 0.9375rem);
-  --text-xs--font-weight: 400;
-  --text-xs--line-height: 1.45;
-  --text-xs--letter-spacing: 0.01em;
-
   /* Spacing (padding, margins, height, width, etc) */
-  --spacing-wrapper-page-full-x: clamp(0.75rem, 0.25rem + 1.5vw, 1rem);
+  --spacing-page: 64rem;
+  --spacing-page-x: clamp(0.75rem, 0.25rem + 1.5vw, 1rem);
 
   /* List Style Types */
   --list-style-type-circle: circle;

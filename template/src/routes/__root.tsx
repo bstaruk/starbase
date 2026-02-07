@@ -5,7 +5,7 @@ import {
   createRootRouteWithContext,
   Outlet,
 } from '@tanstack/react-router';
-import { DarkModeToggle, Stargazers } from 'molecules';
+import { SiteLayout } from 'templates';
 
 export interface RouterContext {
   queryClient: QueryClient;
@@ -34,13 +34,9 @@ export const Route = createRootRouteWithContext<RouterContext>()({
   component: () => (
     <>
       <HeadContent />
-      <main className="flex min-h-screen flex-col items-center justify-center gap-6 p-8">
+      <SiteLayout>
         <Outlet />
-        <footer className="flex items-center gap-3">
-          <Stargazers />
-          <DarkModeToggle />
-        </footer>
-      </main>
+      </SiteLayout>
       <TanStackRouterDevtools />
       <ReactQueryDevtools />
     </>

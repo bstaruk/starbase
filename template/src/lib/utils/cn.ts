@@ -4,8 +4,8 @@ import { extendTailwindMerge } from 'tailwind-merge';
 const twMerge = extendTailwindMerge({
   extend: {
     theme: {
-      spacing: ['wrapper-page-full-x'],
-      text: ['h1', 'h2', 'h3', 'h4', 'h5', 'base', 'sm', 'xs'],
+      spacing: ['page', 'page-x'],
+      text: ['h1', 'h2', 'h3', 'h4', 'h5', 'base', 'sm'],
     },
     classGroups: {
       'list-style-type': [{ list: ['circle', 'roman'] }],
