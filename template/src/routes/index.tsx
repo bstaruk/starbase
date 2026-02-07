@@ -1,7 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Code } from 'atoms/Code';
-import { RouterLink } from 'atoms/Link';
-import { PageHeader } from 'molecules/PageHeader';
+import { Code, RouterLink } from 'atoms';
+import { PageHeader } from 'molecules';
 
 export const Route = createFileRoute('/')({
   component: Index,

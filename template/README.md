@@ -28,7 +28,7 @@ src/
   routes/       # TanStack Router file-based routes
 ```
 
-Components follow [Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/). Imports use path aliases -- `from 'atoms/Button'`, not relative paths.
+Components follow [Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/). Imports use path aliases and barrel files -- `from 'atoms'`, not relative paths. See CLAUDE.md for the full convention.
 
 ## CLAUDE.md
 

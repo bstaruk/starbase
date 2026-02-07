@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { RouterLink } from 'atoms/Link';
-import { PageHeader } from 'molecules/PageHeader';
+import { RouterLink } from 'atoms';
+import { PageHeader } from 'molecules';
 
 export const Route = createFileRoute('/liftoff')({
   component: Liftoff,

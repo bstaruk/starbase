@@ -23,7 +23,7 @@ Inclusivity and accessibility are more important than any other aspect of the us
 
 - **Always use aliased paths** — never relative imports
   - `from 'utils'` not `from '../../lib/utils/darkMode'`
-  - `from 'atoms/Button'` not `from '../ui/atoms/Button'`
+  - `from 'atoms'` not `from '../ui/atoms/Button'`
 - If a relative path seems necessary, that means a new alias is needed — update both `tsconfig.app.json` `paths` and `vite.config.ts` `resolve.alias`
 - See `tsconfig.app.json` `paths` for the current list of aliases
 
@@ -65,7 +65,25 @@ Components follow [Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/)
 
 Reference: [Atomic Design by Brad Frost](https://atomicdesign.bradfrost.com/table-of-contents/)
 
-- Theme prefix: `sb-` (starbase) for all color tokens
+### Component Barrel Exports
+
+Each component level has a barrel file (`index.ts`) that re-exports all components. Every new component must be added to its level's barrel.
+
+Components import from **lower-level barrels** for cross-level dependencies. For same-level siblings, use **direct paths**. This avoids circular dependencies.
+
+```tsx
+// Molecule importing atoms (lower level barrel — safe)
+import { Button, Input, Label } from 'atoms';
+
+// Atom importing a sibling atom (same level — use direct path)
+import { Button } from 'atoms/Button';
+
+// Route file importing from atoms and molecules (barrel — safe)
+import { Code, RouterLink } from 'atoms';
+import { PageHeader } from 'molecules';
+```
+
+The rule: **never import from your own level's barrel** — it re-exports you, creating a circular dependency.
 
 ## Libraries
 
@@ -85,6 +103,7 @@ When adding a new library, always do a fresh web search for the latest docs, cha
 
 ## Color Token System
 
+- Theme prefix: `sb-` (starbase) for all color tokens
 - CSS variables defined in `src/lib/theme/tailwind.css`
 - Dark mode: `.dark` class on `<html>`, with flash-prevention script in `index.html`
 - Cookie: `theme-preference` with values `light`, `dark`, or absent (system default)

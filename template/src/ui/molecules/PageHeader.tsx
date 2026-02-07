@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from 'motion/react';
 import { useLocation } from '@tanstack/react-router';
-import { StarbaseLogo } from 'atoms/StarbaseLogo';
+import { StarbaseLogo } from 'atoms';
 
 interface PageHeaderProps {
   title: string;

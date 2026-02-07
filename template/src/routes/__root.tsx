@@ -5,8 +5,7 @@ import {
   createRootRouteWithContext,
   Outlet,
 } from '@tanstack/react-router';
-import { DarkModeToggle } from 'molecules/DarkModeToggle';
-import { Stargazers } from 'molecules/Stargazers';
+import { DarkModeToggle, Stargazers } from 'molecules';
 
 export interface RouterContext {
   queryClient: QueryClient;

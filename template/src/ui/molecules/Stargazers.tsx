@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { github } from 'queries';
-import { Link } from 'atoms/Link';
+import { Link } from 'atoms';
 
 export function Stargazers() {
   const { data } = useQuery({
