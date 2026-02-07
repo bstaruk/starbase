@@ -17,8 +17,8 @@ export function Stargazers() {
       target="_blank"
       rel="noopener noreferrer"
       variant="ghost"
-      iconOnly={!data}
       size="sm"
+      className="p-2"
       aria-label={
         data
           ? `${data.stargazers_count.toLocaleString()} stargazers on GitHub (opens in new tab)`
