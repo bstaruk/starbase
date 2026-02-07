@@ -44,7 +44,7 @@ export function Stargazers() {
           </motion.span>
         )}
       </AnimatePresence>
-      <LuGithub size={16} />
+      <LuGithub size={16} aria-hidden="true" />
     </ButtonLink>
   );
 }

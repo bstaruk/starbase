@@ -41,9 +41,9 @@ export const Code = ({ children, className, ref, ...rest }: CodeProps) => {
         aria-label={copied ? 'Copied' : 'Copy to clipboard'}
       >
         {copied ? (
-          <LuCheck className="size-4" />
+          <LuCheck className="size-4" aria-hidden="true" />
         ) : (
-          <LuCopy className="size-4" />
+          <LuCopy className="size-4" aria-hidden="true" />
         )}
       </Button>
     </code>

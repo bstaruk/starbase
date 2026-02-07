@@ -95,6 +95,7 @@ function Liftoff() {
         </p>
       </div>
 
+      <h2 className="sr-only">Features</h2>
       <ul className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
         {features.map((feature, i) => (
           <FeatureCard key={feature.title} index={i} {...feature} />
@@ -109,6 +110,7 @@ function Liftoff() {
           rel="noopener noreferrer"
         >
           GitHub
+          <span className="sr-only"> (opens in new tab)</span>
         </Link>
       </p>
     </div>

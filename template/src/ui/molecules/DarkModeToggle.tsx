@@ -23,7 +23,11 @@ export function DarkModeToggle() {
       onClick={toggle}
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
     >
-      {isDark ? <LuSun size={16} /> : <LuMoon size={16} />}
+      {isDark ? (
+        <LuSun size={16} aria-hidden="true" />
+      ) : (
+        <LuMoon size={16} aria-hidden="true" />
+      )}
     </Button>
   );
 }
