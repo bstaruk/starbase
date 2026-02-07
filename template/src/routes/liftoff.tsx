@@ -1,10 +1,13 @@
 import { createFileRoute } from '@tanstack/react-router';
 import {
   LuAtom,
+  LuRocket,
   LuContrast,
   LuLayers,
+  LuPaintbrush,
   LuRoute,
   LuSearch,
+  LuSparkles,
   LuSquareActivity,
 } from 'react-icons/lu';
 import { Link } from 'atoms';
@@ -18,6 +21,12 @@ export const Route = createFileRoute('/liftoff')({
 });
 
 const features = [
+  {
+    icon: LuSparkles,
+    title: 'Claude Integration',
+    description:
+      'Ships with CLAUDE.md conventions, project memory, and custom commands — ready for AI-assisted development from the start.',
+  },
   {
     icon: LuAtom,
     title: 'React 19 + Vite',
@@ -37,16 +46,22 @@ const features = [
       'Declarative data fetching with caching, background updates, and stale-while-revalidate — like the stargazer count above.',
   },
   {
-    icon: LuLayers,
-    title: 'Atomic Design',
+    icon: LuPaintbrush,
+    title: 'Tailwind CSS',
     description:
-      'Components organized as atoms, molecules, organisms, and templates — scaling from buttons to full page layouts.',
+      'Utility-first styling with custom theme tokens, responsive typography, and a semantic color system.',
   },
   {
     icon: LuContrast,
     title: 'Theming',
     description:
       'Dark and light modes with semantic color tokens, system preference detection, and zero-flash on load.',
+  },
+  {
+    icon: LuLayers,
+    title: 'Atomic Design',
+    description:
+      'Components organized as atoms, molecules, organisms, and templates — scaling from buttons to full page layouts.',
   },
   {
     icon: LuSearch,
@@ -58,12 +73,18 @@ const features = [
 
 function Liftoff() {
   return (
-    <div className="flex w-full max-w-2xl flex-col items-center gap-10 sm:gap-14">
+    <div className="flex w-full max-w-3xl flex-col items-center gap-10 sm:gap-14">
       <header className="flex flex-col items-center gap-4">
-        <h1 className="text-sb-fg-title">Liftoff</h1>
-        <p className="max-w-md text-center text-balance text-sb-fg-subtle">
-          An opinionated React starter — just enough structure to ship fast
-          without starting from scratch.
+        <h1 className="text-sb-fg-title">
+          Ready for liftoff!{' '}
+          <LuRocket
+            className="inline size-[1em] align-middle"
+            aria-hidden="true"
+          />
+        </h1>
+        <p className="max-w-lg text-center text-balance text-sb-fg-subtle">
+          An opinionated, Claude-ready React starter — just enough structure to
+          ship fast without starting from scratch.
         </p>
       </header>
 
