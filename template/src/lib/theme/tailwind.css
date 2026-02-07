@@ -22,32 +22,25 @@
   --text-h1--letter-spacing: -0.01em;
 
   /* Text Variant: h2 */
-  /* 20px → 24px */
-  --text-h2: clamp(1.25rem, 1.1rem + 0.45vw, 1.5rem);
+  /* 18px → 20px */
+  --text-h2: clamp(1.125rem, 1.075rem + 0.15vw, 1.25rem);
   --text-h2--font-weight: 600;
-  --text-h2--line-height: 1.2;
+  --text-h2--line-height: 1.25;
   --text-h2--letter-spacing: -0.005em;
 
   /* Text Variant: h3 */
-  /* 18px → 22px */
-  --text-h3: clamp(1.125rem, 1rem + 0.4vw, 1.375rem);
+  /* 17px → 18px */
+  --text-h3: clamp(1.0625rem, 1.037rem + 0.098vw, 1.125rem);
   --text-h3--font-weight: 600;
-  --text-h3--line-height: 1.25;
-  --text-h3--letter-spacing: -0.005em;
+  --text-h3--line-height: 1.3;
+  --text-h3--letter-spacing: 0;
 
   /* Text Variant: h4 */
-  /* 17px → 20px */
-  --text-h4: clamp(1.0625rem, 0.975rem + 0.275vw, 1.25rem);
+  /* 16px → 17px */
+  --text-h4: clamp(1rem, 0.974rem + 0.098vw, 1.0625rem);
   --text-h4--font-weight: 600;
-  --text-h4--line-height: 1.3;
+  --text-h4--line-height: 1.35;
   --text-h4--letter-spacing: 0;
-
-  /* Text Variant: h5 */
-  /* 16px → 18px */
-  --text-h5: clamp(1rem, 0.95rem + 0.15vw, 1.125rem);
-  --text-h5--font-weight: 500;
-  --text-h5--line-height: 1.35;
-  --text-h5--letter-spacing: 0;
 
   /* Text Variant: base - 16px to 17px */
   --text-base: clamp(1rem, 0.974rem + 0.098vw, 1.063rem);

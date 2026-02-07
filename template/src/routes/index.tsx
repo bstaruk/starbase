@@ -48,9 +48,7 @@ function Index() {
       </div>
 
       <div className="flex flex-col items-center gap-3">
-        <p className="font-display text-h5 font-medium text-sb-fg">
-          Start your mission today:
-        </p>
+        <h2 className="text-sb-fg">Start your mission today:</h2>
         <Code>npm create starbase@latest</Code>
       </div>
     </div>
