@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import { LuMoon, LuSun } from 'react-icons/lu';
-import { Button } from 'atoms';
 import { darkMode } from 'utils';
+import { Button } from 'atoms';
 
 export function DarkModeToggle() {
   const [isDark, setIsDark] = useState(

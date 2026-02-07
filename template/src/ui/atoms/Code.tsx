@@ -1,8 +1,8 @@
 import { type HTMLAttributes, type Ref, useEffect, useState } from 'react';
+import { LuCheck, LuCopy } from 'react-icons/lu';
 import { useCopyToClipboard } from 'usehooks-ts';
-import { LuCopy, LuCheck } from 'react-icons/lu';
-import { Button } from 'atoms/Button';
 import { cn } from 'utils';
+import { Button } from 'atoms/Button';
 
 export interface CodeProps extends HTMLAttributes<HTMLElement> {
   children: string;
