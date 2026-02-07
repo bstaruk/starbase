@@ -16,16 +16,23 @@ import { FeatureCard } from 'molecules';
 export const Route = createFileRoute('/liftoff')({
   component: Liftoff,
   head: () => ({
-    meta: [{ title: 'Liftoff — Starbase' }],
+    meta: [
+      { title: "What's On Board | starbase.dev" },
+      {
+        name: 'description',
+        content:
+          "What's included in Starbase: Claude Code integration, React 19, TanStack Router & Query, Tailwind CSS, dark mode theming, atomic design, and AA 2.2 a11y.",
+      },
+    ],
   }),
 });
 
 const features = [
   {
     icon: LuSparkles,
-    title: 'Claude Integration',
+    title: 'Claude Code',
     description:
-      'Ships with CLAUDE.md conventions, project memory, and custom commands — ready for AI-assisted development from the start.',
+      'Ships with CLAUDE.md conventions, project memory, and custom commands. Ready for AI-assisted development from the start.',
   },
   {
     icon: LuAtom,
@@ -43,7 +50,7 @@ const features = [
     icon: LuSquareActivity,
     title: 'TanStack Query',
     description:
-      'Declarative data fetching with caching, background updates, and stale-while-revalidate — like the stargazer count above.',
+      'Declarative data fetching with caching, background updates, and stale-while-revalidate. See the stargazer count above for a live example.',
   },
   {
     icon: LuPaintbrush,
@@ -61,7 +68,7 @@ const features = [
     icon: LuLayers,
     title: 'Atomic Design',
     description:
-      'Components organized as atoms, molecules, organisms, and templates — scaling from buttons to full page layouts.',
+      'Components organized as atoms, molecules, organisms, and templates, scaling from buttons to full page layouts.',
   },
   {
     icon: LuSearch,
@@ -83,8 +90,8 @@ function Liftoff() {
           />
         </h1>
         <p className="max-w-lg text-center text-balance text-sb-fg-subtle">
-          An opinionated, Claude-ready React starter — just enough structure to
-          ship fast without starting from scratch.
+          An opinionated React starter, built with Claude Code in mind. Just
+          enough structure to ship fast without starting from scratch.
         </p>
       </header>
 

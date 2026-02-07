@@ -5,7 +5,14 @@ import { Code, StarbaseLogo } from 'atoms';
 export const Route = createFileRoute('/')({
   component: Index,
   head: () => ({
-    meta: [{ title: 'Starbase' }],
+    meta: [
+      { title: 'Opinionated React Starter for Claude Code | starbase.dev' },
+      {
+        name: 'description',
+        content:
+          'A launchpad for modern React apps, optimized for Claude Code. Built on Vite, TypeScript, Tailwind CSS, TanStack, and atomic design.',
+      },
+    ],
   }),
 });
 
@@ -35,8 +42,8 @@ function Index() {
           <h1 className="text-sb-fg-title">Starbase</h1>
         </div>
         <p className="text-sb-fg-subtle max-w-md text-center text-balance">
-          A Claude-ready launchpad for modern React apps, built on Vite,
-          TypeScript, Tailwind CSS, and TanStack.
+          A launchpad for modern React apps, optimized for Claude Code. Built on
+          Vite, TypeScript, Tailwind CSS, and TanStack.
         </p>
       </div>
 
