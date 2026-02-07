@@ -24,7 +24,7 @@ Major version bumps requiring investigation. Do a quick web search for the chang
 
 ### Special case: `@types/node`
 
-The root `@types/node` follows a different constraint than template. Check the root `engines` field and ensure `@types/node` major matches accordingly. The root currently uses `@types/node` at a lower major than the template — this is intentional if the root tooling (the `create-starbase` CLI) targets a different Node range.
+`@types/node` should match the major version in the root `engines` field, same rule as the template. Do not bump it to a higher major just because one exists.
 
 ### Apply safe updates
 
