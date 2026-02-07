@@ -4,9 +4,9 @@ import { useCopyToClipboard } from 'usehooks-ts';
 import { cn } from 'utils';
 import { Button } from 'atoms/Button';
 
-export interface CodeProps extends HTMLAttributes<HTMLElement> {
+export interface CodeProps extends HTMLAttributes<HTMLDivElement> {
   children: string;
-  ref?: Ref<HTMLElement>;
+  ref?: Ref<HTMLDivElement>;
 }
 
 export const Code = ({ children, className, ref, ...rest }: CodeProps) => {
@@ -24,21 +24,21 @@ export const Code = ({ children, className, ref, ...rest }: CodeProps) => {
   };
 
   return (
-    <code
+    <div
       {...rest}
       ref={ref}
       className={cn(
-        'inline-flex items-center gap-2 font-mono',
+        'inline-flex items-center gap-2',
         'bg-sb-canvas text-sb-fg px-4 py-2 rounded-lg',
         className,
       )}
     >
-      {children}
+      <code className="font-mono">{children}</code>
       <Button
         variant="ghost"
         size="sm"
         onClick={handleCopy}
-        aria-label={copied ? 'Copied' : 'Copy to clipboard'}
+        aria-label="Copy to clipboard"
       >
         {copied ? (
           <LuCheck className="size-4" aria-hidden="true" />
@@ -46,6 +46,9 @@ export const Code = ({ children, className, ref, ...rest }: CodeProps) => {
           <LuCopy className="size-4" aria-hidden="true" />
         )}
       </Button>
-    </code>
+      <span role="status" className="sr-only">
+        {copied ? 'Copied to clipboard' : ''}
+      </span>
+    </div>
   );
 };
