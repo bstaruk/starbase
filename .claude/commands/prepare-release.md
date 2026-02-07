@@ -67,6 +67,6 @@ If there is only one commit, skip the Changelog section entirely and just write 
 ## Output Rules
 
 - Output **only** the release-notes markdown — no preamble, no review commentary, no trailing explanation
-- Do not wrap the result in code fences — output raw markdown so it renders in the terminal
-- The very first line of output must be `## Version`
+- Wrap the entire result in a markdown code fence (` ```markdown `) so the user can copy the raw markdown from the terminal
+- The first line inside the fence must be `## Version`
 - The result should be ready to paste directly into a GitHub PR description
