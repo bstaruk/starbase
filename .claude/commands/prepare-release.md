@@ -4,7 +4,19 @@ Base branch: $ARGUMENTS
 
 If a base branch was provided, use it. Otherwise, default to `main`.
 
-Start by reading the current version from the root `package.json`. Then run `git log --oneline <base>...HEAD` to get all commits on this branch, and `git diff <base>...HEAD` to understand what actually changed.
+## Step 1: Review
+
+First, review the branch for merge readiness. Read and follow the instructions in `.claude/commands/review.md`, using the base branch from above.
+
+If there are findings, report them and stop — do not generate release notes until the issues are resolved.
+
+If the review passes clean, say so briefly and continue to Step 2.
+
+## Step 2: Release Notes
+
+Read the current version from the root `package.json`. Run `git log --oneline <base>...HEAD` to get all commits on this branch.
+
+Only the `template/` and `dist/` directories ship to end users (see `files` in `package.json`). Exclude commits that only touch root-level tooling (e.g., `.claude/`, root config files, husky, CI) from both the changelog and the version bump calculation. If the only commits are root-only, report that there are no user-facing changes to release.
 
 Output clean, copy-paste-ready markdown in this exact structure:
 
