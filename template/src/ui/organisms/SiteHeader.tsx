@@ -10,20 +10,20 @@ const activeProps = {
 
 export function SiteHeader() {
   return (
-    <header className="flex items-center gap-4 py-3 sm:gap-5">
-      <RouterLink
-        to="/"
-        variant="fg-subtle"
-        className={`${navLinkClasses} flex items-center gap-2 font-semibold tracking-tight`}
-        activeProps={activeProps}
-      >
-        <StarbaseLogo className="size-5 shrink-0" />
-        Starbase
-      </RouterLink>
-
-      <span aria-hidden="true" className="h-4 w-px bg-sb-divider" />
-
+    <header className="flex items-center py-3">
       <nav aria-label="Main" className="flex items-center gap-4 sm:gap-5">
+        <RouterLink
+          to="/"
+          variant="fg-subtle"
+          className={`${navLinkClasses} flex items-center gap-2 font-semibold tracking-tight`}
+          activeProps={activeProps}
+        >
+          <StarbaseLogo className="size-5 shrink-0" />
+          Starbase
+        </RouterLink>
+
+        <span aria-hidden="true" className="h-4 w-px bg-sb-divider" />
+
         <RouterLink
           to="/liftoff"
           variant="fg-subtle"
