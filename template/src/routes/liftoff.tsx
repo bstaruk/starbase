@@ -81,7 +81,7 @@ const features = [
 function Liftoff() {
   return (
     <div className="flex w-full max-w-3xl flex-col items-center gap-10 sm:gap-14">
-      <header className="flex flex-col items-center gap-4">
+      <div className="flex flex-col items-center gap-4">
         <h1 className="text-sb-fg-title">
           Ready for liftoff!{' '}
           <LuRocket
@@ -93,7 +93,7 @@ function Liftoff() {
           An opinionated React starter, built with Claude Code in mind. Just
           enough structure to ship fast without starting from scratch.
         </p>
-      </header>
+      </div>
 
       <ul className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
         {features.map((feature, i) => (
@@ -101,7 +101,7 @@ function Liftoff() {
         ))}
       </ul>
 
-      <footer className="pb-4 text-center text-sm text-sb-fg-subtle">
+      <p className="pb-4 text-center text-sm text-sb-fg-subtle">
         Full documentation and source on{' '}
         <Link
           href="https://github.com/bstaruk/starbase"
@@ -110,7 +110,7 @@ function Liftoff() {
         >
           GitHub
         </Link>
-      </footer>
+      </p>
     </div>
   );
 }
