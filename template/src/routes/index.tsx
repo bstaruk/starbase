@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Code } from 'atoms';
-import { PageHeader } from 'molecules';
+import { motion, useReducedMotion } from 'motion/react';
+import { Code, StarbaseLogo } from 'atoms';
 
 export const Route = createFileRoute('/')({
   component: Index,
@@ -10,9 +10,29 @@ export const Route = createFileRoute('/')({
 });
 
 function Index() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <div className="flex flex-col items-center gap-6">
-      <PageHeader title="Starbase" />
+    <div className="flex flex-1 flex-col items-center justify-center gap-6">
+      <div className="flex flex-col items-center gap-4">
+        <motion.div
+          initial={prefersReducedMotion ? false : { y: -20, rotate: 12 }}
+          animate={{ y: 0, rotate: [16, 8, 14, 10, 12] }}
+          transition={
+            prefersReducedMotion
+              ? { duration: 0 }
+              : { duration: 0.5, ease: 'easeOut' }
+          }
+          whileHover={
+            prefersReducedMotion
+              ? undefined
+              : { rotate: [12, 4, 20, 6, 18, 9, 15, 12] }
+          }
+        >
+          <StarbaseLogo className="size-12" />
+        </motion.div>
+        <h1 className="text-sb-fg-title">Starbase</h1>
+      </div>
       <p className="text-sb-fg-subtle max-w-md text-center text-balance">
         A launchpad for modern React apps, built on Vite, TypeScript, Tailwind
         CSS, TanStack Router, and TanStack Query. Start your mission today:

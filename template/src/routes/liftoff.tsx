@@ -1,5 +1,14 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { PageHeader } from 'molecules';
+import {
+  LuAtom,
+  LuContrast,
+  LuLayers,
+  LuRoute,
+  LuSearch,
+  LuSquareActivity,
+} from 'react-icons/lu';
+import { Link } from 'atoms';
+import { FeatureCard } from 'molecules';
 
 export const Route = createFileRoute('/liftoff')({
   component: Liftoff,
@@ -8,11 +17,72 @@ export const Route = createFileRoute('/liftoff')({
   }),
 });
 
+const features = [
+  {
+    icon: LuAtom,
+    title: 'React 19 + Vite',
+    description:
+      'Latest React with Vite for instant HMR, fast builds, and a modern developer experience.',
+  },
+  {
+    icon: LuRoute,
+    title: 'TanStack Router',
+    description:
+      'File-based routing with type-safe navigation, preloading on intent, and automatic code splitting.',
+  },
+  {
+    icon: LuSquareActivity,
+    title: 'TanStack Query',
+    description:
+      'Declarative data fetching with caching, background updates, and stale-while-revalidate — like the stargazer count above.',
+  },
+  {
+    icon: LuLayers,
+    title: 'Atomic Design',
+    description:
+      'Components organized as atoms, molecules, organisms, and templates — scaling from buttons to full page layouts.',
+  },
+  {
+    icon: LuContrast,
+    title: 'Theming',
+    description:
+      'Dark and light modes with semantic color tokens, system preference detection, and zero-flash on load.',
+  },
+  {
+    icon: LuSearch,
+    title: 'Accessibility',
+    description:
+      'WCAG 2.2 AA baseline with semantic HTML, keyboard navigation, focus indicators, and skip-to-content.',
+  },
+] as const;
+
 function Liftoff() {
   return (
-    <div className="flex flex-col items-center gap-6">
-      <PageHeader title="Liftoff" />
-      <p className="text-sb-fg-subtle">More details coming soon.</p>
+    <div className="flex w-full max-w-2xl flex-col items-center gap-10 sm:gap-14">
+      <header className="flex flex-col items-center gap-4">
+        <h1 className="text-sb-fg-title">Liftoff</h1>
+        <p className="max-w-md text-center text-balance text-sb-fg-subtle">
+          An opinionated React starter — just enough structure to ship fast
+          without starting from scratch.
+        </p>
+      </header>
+
+      <ul className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
+        {features.map((feature, i) => (
+          <FeatureCard key={feature.title} index={i} {...feature} />
+        ))}
+      </ul>
+
+      <footer className="pb-4 text-center text-sm text-sb-fg-subtle">
+        Full documentation and source on{' '}
+        <Link
+          href="https://github.com/bstaruk/starbase"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </Link>
+      </footer>
     </div>
   );
 }

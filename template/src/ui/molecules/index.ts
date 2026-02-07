@@ -1,3 +1,3 @@
 export * from './DarkModeToggle';
-export * from './PageHeader';
+export * from './FeatureCard';
 export * from './Stargazers';
