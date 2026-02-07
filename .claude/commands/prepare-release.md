@@ -8,9 +8,9 @@ If a base branch was provided, use it. Otherwise, default to `main`.
 
 First, review the branch for merge readiness. Read and follow the instructions in `.claude/commands/review.md`, using the base branch from above.
 
-If there are findings, report them and stop — do not generate release notes until the issues are resolved.
+If there are findings, report them and **stop** — do not generate release notes until the issues are resolved.
 
-If the review passes clean, say so briefly and continue to Step 2.
+If the review passes clean, proceed silently to Step 2. Do not output any review commentary.
 
 ## Step 2: Release Notes
 
@@ -64,4 +64,9 @@ If a commit has no scope, omit the bold prefix and just list the description. Us
 
 If there is only one commit, skip the Changelog section entirely and just write the summary.
 
-Output only the markdown — no preamble, no explanation, no code fences wrapping the result. The output should be ready to paste directly into a GitHub PR description.
+## Output Rules
+
+- Output **only** the release-notes markdown — no preamble, no review commentary, no trailing explanation
+- Do not wrap the result in code fences — output raw markdown so it renders in the terminal
+- The very first line of output must be `## Version`
+- The result should be ready to paste directly into a GitHub PR description
