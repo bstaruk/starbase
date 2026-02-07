@@ -36,7 +36,6 @@ export const Code = ({ children, className, ref, ...rest }: CodeProps) => {
       {children}
       <Button
         variant="ghost"
-        iconOnly
         size="sm"
         onClick={handleCopy}
         aria-label={copied ? 'Copied' : 'Copy to clipboard'}
