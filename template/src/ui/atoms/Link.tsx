@@ -20,7 +20,7 @@ type LinkButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 
 const makeLinkClasses = (variant?: LinkVariant, className?: string) => {
   return cn(
-    'outline-none focus-visible:outline-sb-action transition-colors duration-100',
+    'outline-none focus-visible:outline-sb-action motion-safe:transition-colors motion-safe:duration-100',
     'underline decoration-current/30 underline-offset-4',
     'hover:decoration-current focus-visible:decoration-current',
     {

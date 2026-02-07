@@ -27,7 +27,7 @@ const makeButtonClasses = (
     // Base styles
     'inline-flex items-center justify-center',
     'font-sans font-semibold rounded-md border border-transparent outline-none focus-visible:outline-sb-action cursor-pointer',
-    'transition-all duration-150 ease-out',
+    'motion-safe:transition-all motion-safe:duration-150 ease-out',
     'disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none',
     {
       /* Size variants */

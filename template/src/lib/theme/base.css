@@ -3,15 +3,6 @@
     scrollbar-gutter: stable;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-      transition-duration: 0.01ms !important;
-      animation-duration: 0.01ms !important;
-    }
-  }
-
   body {
     @apply font-sans text-base underline-offset-4 bg-sb-surface text-sb-fg;
   }
