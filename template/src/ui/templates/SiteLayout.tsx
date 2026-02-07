@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { SiteHeader, SiteFooter } from 'organisms';
+import { SiteHeader } from 'organisms';
 
 interface SiteLayoutProps {
   children: ReactNode;
@@ -21,7 +21,6 @@ export function SiteLayout({ children }: SiteLayoutProps) {
       >
         {children}
       </main>
-      <SiteFooter />
     </div>
   );
 }

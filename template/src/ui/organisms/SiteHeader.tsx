@@ -1,5 +1,5 @@
 import { RouterLink, StarbaseLogo } from 'atoms';
-import { DarkModeToggle } from 'molecules';
+import { DarkModeToggle, Stargazers } from 'molecules';
 
 const navLinkClasses = 'font-display text-sm font-medium px-0.5';
 
@@ -34,7 +34,8 @@ export function SiteHeader() {
         </RouterLink>
       </nav>
 
-      <div className="ml-auto">
+      <div className="ml-auto flex items-center gap-1">
+        <Stargazers />
         <DarkModeToggle />
       </div>
     </header>
