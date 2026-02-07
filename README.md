@@ -69,8 +69,9 @@ Starbase ships with custom [Claude Code commands](https://docs.anthropic.com/en/
 
 - **`/audit`** -- Scans the codebase for drift against CLAUDE.md conventions. Raw color values bypassing the token system, components at the wrong atomic level, accessibility regressions, import violations. Architecture enforcement, automated.
 - **`/review`** -- Reviews the current branch's changes against CLAUDE.md. Like a PR review from someone who actually read the style guide.
+- **`/update-deps`** -- Runs `npm outdated`, categorizes updates into safe / Vite-aligned / major-breaking tiers, bumps what's safe, holds what isn't, and verifies with build + lint. Scaffolds a fresh `create-vite` template to check alignment -- no hardcoded version lists to maintain.
 
-More commands are on the launchpad. The goal is a suite of tools that handle the mechanical parts of maintaining consistency so you can focus on building.
+The goal is a suite of tools that handle the mechanical parts of maintaining consistency so you can focus on building.
 
 ## Liftoff
 

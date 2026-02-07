@@ -36,7 +36,7 @@ export function getEffectiveTheme(
 export function applyTheme(theme: 'light' | 'dark'): void {
   if (theme === 'dark') {
     document.documentElement.classList.add(DARK_CLASS);
-    document.documentElement.style.backgroundColor = 'var(--sb-canvas)';
+    document.documentElement.style.backgroundColor = 'var(--sb-surface)';
   } else {
     document.documentElement.classList.remove(DARK_CLASS);
     document.documentElement.style.backgroundColor = 'var(--sb-surface)';

@@ -1,29 +1,56 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Code } from 'atoms/Code';
-import { RouterLink } from 'atoms/Link';
-import { PageHeader } from 'molecules/PageHeader';
+import { motion, useReducedMotion } from 'motion/react';
+import { Code, StarbaseLogo } from 'atoms';
 
 export const Route = createFileRoute('/')({
   component: Index,
   head: () => ({
-    meta: [{ title: 'Starbase' }],
+    meta: [
+      { title: 'Opinionated React Starter for Claude Code | starbase.dev' },
+      {
+        name: 'description',
+        content:
+          'A launchpad for modern React apps, optimized for Claude Code. Built on Vite, TypeScript, Tailwind CSS, TanStack, and atomic design.',
+      },
+    ],
   }),
 });
 
 function Index() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <div className="flex flex-col items-center gap-6">
-      <PageHeader title="Starbase" />
-      <p className="text-sb-fg-subtle max-w-md text-center text-balance">
-        A launchpad for modern React apps, built on Vite, TypeScript, Tailwind
-        CSS, TanStack Router, and TanStack Query. Start your mission today:
-      </p>
+    <div className="flex flex-1 flex-col items-center justify-center gap-10">
+      <div className="flex flex-col items-center gap-3">
+        <div className="flex flex-col items-center gap-4">
+          <motion.div
+            initial={prefersReducedMotion ? false : { y: -20, rotate: 12 }}
+            animate={{ y: 0, rotate: [16, 8, 14, 10, 12] }}
+            transition={
+              prefersReducedMotion
+                ? { duration: 0 }
+                : { duration: 0.5, ease: 'easeOut' }
+            }
+            whileHover={
+              prefersReducedMotion
+                ? undefined
+                : { rotate: [12, 4, 20, 6, 18, 9, 15, 12] }
+            }
+          >
+            <StarbaseLogo className="size-12" />
+          </motion.div>
+          <h1 className="text-sb-fg-title">Starbase</h1>
+        </div>
+        <p className="text-sb-fg-subtle max-w-md text-center text-balance">
+          A launchpad for modern React apps, optimized for Claude Code. Built on
+          Vite, TypeScript, Tailwind CSS, and TanStack.
+        </p>
+      </div>
 
-      <Code>npm create starbase@latest</Code>
-
-      <RouterLink to="/liftoff" className="text-sm">
-        Ready for liftoff?
-      </RouterLink>
+      <div className="flex flex-col items-center gap-3">
+        <h2 className="text-sb-fg">Start your mission today:</h2>
+        <Code>npm create starbase@latest</Code>
+      </div>
     </div>
   );
 }

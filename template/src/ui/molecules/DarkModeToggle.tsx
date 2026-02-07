@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import { LuMoon, LuSun } from 'react-icons/lu';
-import { Button } from 'atoms/Button';
 import { darkMode } from 'utils';
+import { Button } from 'atoms';
 
 export function DarkModeToggle() {
   const [isDark, setIsDark] = useState(
@@ -18,12 +18,16 @@ export function DarkModeToggle() {
   return (
     <Button
       variant="ghost"
-      iconOnly
       size="sm"
+      className="p-2"
       onClick={toggle}
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
     >
-      {isDark ? <LuSun size={16} /> : <LuMoon size={16} />}
+      {isDark ? (
+        <LuSun size={16} aria-hidden="true" />
+      ) : (
+        <LuMoon size={16} aria-hidden="true" />
+      )}
     </Button>
   );
 }

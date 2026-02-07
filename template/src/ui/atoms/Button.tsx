@@ -8,21 +8,18 @@ type ButtonSize = 'sm' | 'md' | 'lg';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
-  iconOnly?: boolean;
   size?: ButtonSize;
   ref?: React.Ref<HTMLButtonElement>;
 }
 
 interface ButtonLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   variant?: ButtonVariant;
-  iconOnly?: boolean;
   size?: ButtonSize;
   ref?: React.Ref<HTMLAnchorElement>;
 }
 
 const makeButtonClasses = (
   variant?: ButtonVariant,
-  iconOnly?: boolean,
   size: ButtonSize = 'md',
   className?: string,
 ) =>
@@ -30,18 +27,13 @@ const makeButtonClasses = (
     // Base styles
     'inline-flex items-center justify-center',
     'font-sans font-semibold rounded-md border border-transparent outline-none focus-visible:outline-sb-action cursor-pointer',
-    'transition-all duration-150 ease-out',
+    'motion-safe:transition-all motion-safe:duration-150 ease-out',
     'disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none',
     {
-      /* iconOnly sizes (square buttons) */
-      'shrink-0 p-0 size-8': iconOnly && size === 'sm',
-      'shrink-0 p-0 size-9': iconOnly && size === 'md',
-      'shrink-0 p-0 size-11 rounded-lg': iconOnly && size === 'lg',
-
-      /* text button sizes */
-      'text-sm px-3 py-1.5': !iconOnly && size === 'sm',
-      'text-base px-4 py-2': !iconOnly && size === 'md',
-      'text-lg px-5 py-2.5': !iconOnly && size === 'lg',
+      /* Size variants */
+      'text-sm px-3 py-1.5': size === 'sm',
+      'text-base px-4 py-2': size === 'md',
+      'text-lg px-5 py-2.5': size === 'lg',
 
       /* Variant: anchor */
       'bg-sb-anchor border-sb-anchor text-sb-surface-raised shadow-sm is-active:bg-sb-anchor-active is-active:border-sb-anchor-active is-active:shadow-md':
@@ -61,7 +53,6 @@ export const ButtonLink = ({
   children,
   className,
   variant = 'anchor',
-  iconOnly,
   size,
   ref,
   ...rest
@@ -70,7 +61,7 @@ export const ButtonLink = ({
     <a
       {...rest}
       ref={ref}
-      className={makeButtonClasses(variant, iconOnly, size, className)}
+      className={makeButtonClasses(variant, size, className)}
     >
       {children}
     </a>
@@ -81,7 +72,6 @@ export const Button = ({
   children,
   className,
   variant = 'anchor',
-  iconOnly,
   size,
   type = 'button',
   ref,
@@ -92,7 +82,7 @@ export const Button = ({
       {...rest}
       ref={ref}
       type={type}
-      className={makeButtonClasses(variant, iconOnly, size, className)}
+      className={makeButtonClasses(variant, size, className)}
     >
       {children}
     </button>

@@ -29,9 +29,13 @@
     "paths": {
       "queries": ["src/lib/queries/index.ts"],
       "utils": ["src/lib/utils/index.ts"],
+      "atoms": ["src/ui/atoms/index.ts"],
       "atoms/*": ["src/ui/atoms/*"],
+      "molecules": ["src/ui/molecules/index.ts"],
       "molecules/*": ["src/ui/molecules/*"],
+      "organisms": ["src/ui/organisms/index.ts"],
       "organisms/*": ["src/ui/organisms/*"],
+      "templates": ["src/ui/templates/index.ts"],
       "templates/*": ["src/ui/templates/*"]
     }
   },
