@@ -29,7 +29,7 @@ export function FeatureCard({
               ease: 'easeOut',
             }
       }
-      className="rounded-xl border border-sb-divider bg-sb-surface-raised p-5"
+      className="rounded-xl border border-sb-divider bg-sb-surface-raised p-5 shadow-card"
     >
       <div className="mb-3 flex items-center gap-3">
         <Icon className="size-5 shrink-0 text-sb-action" aria-hidden="true" />

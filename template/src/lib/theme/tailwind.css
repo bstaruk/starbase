@@ -82,7 +82,12 @@
     --sb-fg-title: var(--color-stone-800);
 
     /* Borders */
-    --sb-divider: var(--color-stone-300);
+    --sb-divider: var(--color-stone-200);
+
+    /* Shadows */
+    --sb-shadow-card:
+      0 1px 3px 0 rgb(0 0 0 / 0.04), 0 4px 12px -2px rgb(0 0 0 / 0.06),
+      inset 0 1px 0 0 rgb(255 255 255 / 0.6);
 
     /* Action */
     --sb-action: var(--color-red-700);
@@ -113,6 +118,11 @@
 
     /* Borders */
     --sb-divider: var(--color-zinc-800);
+
+    /* Shadows */
+    --sb-shadow-card:
+      0 1px 3px 0 rgb(0 0 0 / 0.2), 0 4px 12px -2px rgb(0 0 0 / 0.3),
+      inset 0 1px 0 0 rgb(255 255 255 / 0.04);
 
     /* Action */
     --sb-action: var(--color-red-500);
@@ -152,4 +162,7 @@
   --color-sb-action-active: var(--sb-action-active);
   --color-sb-anchor: var(--sb-anchor);
   --color-sb-anchor-active: var(--sb-anchor-active);
+
+  /* Shadows */
+  --shadow-card: var(--sb-shadow-card);
 }
