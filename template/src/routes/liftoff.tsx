@@ -85,7 +85,7 @@ function Liftoff() {
         <h1 className="text-sb-fg-title">
           Ready for liftoff!{' '}
           <LuRocket
-            className="inline size-[1em] align-middle"
+            className="inline size-[1em] align-middle text-sb-action"
             aria-hidden="true"
           />
         </h1>
