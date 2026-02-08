@@ -1,5 +1,7 @@
 import js from '@eslint/js';
 import tanstackQuery from '@tanstack/eslint-plugin-query';
+import tanstackRouter from '@tanstack/eslint-plugin-router';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
 import importPlugin from 'eslint-plugin-import';
 import reactDom from 'eslint-plugin-react-dom';
 import reactHooks from 'eslint-plugin-react-hooks';
@@ -21,12 +23,14 @@ export default defineConfig([
       reactHooks.configs.flat.recommended,
       reactRefresh.configs.vite,
       tanstackQuery.configs['flat/recommended'],
+      tanstackRouter.configs['flat/recommended'],
+      jsxA11y.flatConfigs.recommended,
     ],
     plugins: {
       import: importPlugin,
     },
     languageOptions: {
-      ecmaVersion: 2020,
+      ecmaVersion: 2024,
       globals: globals.browser,
     },
     settings: {
