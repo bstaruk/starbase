@@ -1,18 +1,29 @@
-# Starbase v5
+# Starbase
 
-Starbase is a personal, opinionated front-end starter kit built on Vite, TypeScript, React and Tailwind CSS. It's been one of my favorite passion projects for over 8 years now, and v5 is its most ambitious launch yet.
+**A Claude-first front-end launchpad.**
 
-For most of its life, Starbase solved a very specific problem: you don't have to write Webpack configs from scratch. That problem doesn't really exist anymore. Vite handles bundling beautifully, and the value of a boilerplate that just wires up a build tool has dropped to near zero.
+Starbase is an opinionated front-end starter kit built on Vite, TypeScript, React, and Tailwind CSS. Claude Code sits in the co-pilot seat by design. Every convention, component, and architectural decision is shaped to make Claude generate code that actually looks like yours.
 
-So v5 asks a different question: what if the boilerplate encoded _how you build_, not just _what you build with_?
+## Liftoff
 
-## The mission
+```bash
+npm create starbase@latest my-project
+cd my-project
+npm install
+npm run dev
+```
 
-The hard part of modern front-end development isn't getting a dev server running. It's maintaining consistency -- naming conventions, component architecture, accessibility standards, file organization -- across a codebase that grows over time, especially when AI tooling is doing a lot of the heavy lifting.
+Open [http://localhost:3000](http://localhost:3000). You're in orbit.
 
-Starbase v5 is built around [Claude Code](https://docs.anthropic.com/en/docs/claude-code). The baseline components aren't throwaway demos. They're reference implementations that Claude pattern-matches against when generating new code. Every atom, molecule, and organism is a teaching artifact. The result is an AI-assisted workflow where generated code actually looks like _your_ code.
+## The Mission
 
-## Stack
+Getting a dev server running is the easy part. Maintaining consistency as your codebase grows? That's where things get interesting, especially when AI tooling is writing a significant chunk of your code.
+
+Starbase puts `CLAUDE.md` at the center of everything. It encodes your preferences, conventions, and architectural decisions into a format that Claude Code can pattern-match against. The baseline components double as reference implementations. Teaching artifacts. When Claude generates new code in a Starbase project, it reads the flight manual and follows the plan.
+
+The result: an accelerator, not an autopilot. AI-assisted development where the output actually feels like _your_ codebase, not a generic suggestion from the void of space.
+
+## Payload
 
 | Tool                                               | Role                                                           |
 | -------------------------------------------------- | -------------------------------------------------------------- |
@@ -23,19 +34,23 @@ Starbase v5 is built around [Claude Code](https://docs.anthropic.com/en/docs/cla
 | [TanStack Router](https://tanstack.com/router)     | File-based routing                                             |
 | [TanStack React Query](https://tanstack.com/query) | Server state and data fetching                                 |
 | [Motion](https://motion.dev/)                      | Animation                                                      |
-| [ESLint](https://eslint.org/)                      | Linting (with react-x and react-dom plugins)                   |
+| [ESLint](https://eslint.org/)                      | Linting (with react-x, react-dom, and jsx-a11y plugins)        |
 | [Prettier](https://prettier.io/)                   | Formatting                                                     |
 
-See [`template/package.json`](template/package.json) for the full dependency list.
+See [`template/package.json`](template/package.json) for the full manifest.
 
-## Architecture
+The value lives in how these tools are wired together. `CLAUDE.md` documents the conventions. The reference components demonstrate them. ESLint enforces them mechanically. The `/audit` and `/review` skills catch the architectural stuff a linter can't reach. It's a closed loop: Claude reads the conventions, generates code that follows them, and the toolchain validates the output.
+
+The ESLint setup is a good example of this philosophy in action. The config goes well beyond recommended defaults, pulling in nine plugins: React best practices ([react-x](https://github.com/niconiahi/eslint-plugin-react-x), [react-dom](https://github.com/niconiahi/eslint-plugin-react-dom), [react-hooks](https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks)), accessibility ([jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)), TanStack [Router](https://tanstack.com/router) and [Query](https://tanstack.com/query) patterns, [Vite-aware refresh](https://github.com/ArnaudBarre/eslint-plugin-react-refresh) boundaries, and [import ordering](https://github.com/import-js/eslint-plugin-import) that understands the project's path alias structure. Atoms sort before molecules. External deps sort before internal ones. React always floats to the top. The linter knows the architecture, so it can enforce it without you thinking about it.
+
+## Star Chart
 
 Components follow [Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/):
 
-- **Atoms** -- Smallest building blocks. HTML-level primitives like buttons, inputs, links, and icons.
-- **Molecules** -- Small groups of atoms functioning together as a unit. A dark mode toggle, a page header.
-- **Organisms** -- Larger sections composed of molecules and atoms. Full-width layouts, distinct page sections.
-- **Templates** -- Page-level layout structures that define where things go and how they relate.
+- **Atoms**: The smallest building blocks. Buttons, inputs, links, icons.
+- **Molecules**: Small groups of atoms functioning as a unit. A dark mode toggle, a page header.
+- **Organisms**: Larger sections composed of molecules and atoms. Full-width layouts, distinct page sections.
+- **Templates**: Page-level layout structures that define where things go and how they relate.
 
 Everything else is organized by concern:
 
@@ -53,42 +68,41 @@ src/
   routes/       # TanStack Router file-based routes
 ```
 
-Imports use path aliases everywhere -- `from 'atoms/Button'` instead of `from '../../ui/atoms/Button'`. If you find yourself reaching for a relative path, that's a sign a new alias is needed.
+Imports use path aliases everywhere: `from 'atoms/Button'` instead of `from '../../ui/atoms/Button'`. If you're reaching for a relative path, that's a sign a new alias is needed.
 
-## `CLAUDE.md`
+## Mission Control
 
-This is the north star of the project. It's a living document that maps development preferences directly to codebase patterns -- accessibility standards, import conventions, component architecture, color tokens, writing style, and more.
+`CLAUDE.md` is the north star of this project. It's a living document that maps your development preferences directly to codebase patterns: accessibility standards, import conventions, component architecture, color tokens, writing style, and more.
 
-It's not a personality dump. It's a working contract between you and Claude that says: here's how I like things done, and here are the reference implementations to prove it. When Claude generates code in a Starbase project, it builds on these conventions instead of guessing.
+Think of it as a working contract between you and Claude. Here's how I like things done, and here are the reference implementations to prove it. When Claude generates code in a Starbase project, it builds on these conventions instead of guessing.
 
-Read it. Evolve it. It's designed to grow with the project.
+Read it. Evolve it. It's designed to grow with your project.
 
-## Claude Code commands
+## Comms
 
-Starbase ships with custom [Claude Code commands](https://docs.anthropic.com/en/docs/claude-code/tutorials#create-custom-slash-commands) that go beyond what a linter can catch:
+Starbase ships with custom [Claude Code skills](https://docs.anthropic.com/en/docs/claude-code/tutorials#create-custom-slash-commands) that go beyond what a linter can catch:
 
-- **`/audit`** -- Scans the codebase for drift against CLAUDE.md conventions. Raw color values bypassing the token system, components at the wrong atomic level, accessibility regressions, import violations. Architecture enforcement, automated.
-- **`/review`** -- Reviews the current branch's changes against CLAUDE.md. Like a PR review from someone who actually read the style guide.
-- **`/update-deps`** -- Runs `npm outdated`, categorizes updates into safe / Vite-aligned / major-breaking tiers, bumps what's safe, holds what isn't, and verifies with build + lint. Scaffolds a fresh `create-vite` template to check alignment -- no hardcoded version lists to maintain.
+- **`/audit`**: Scans the codebase for drift against CLAUDE.md conventions. Raw color values, misleveled components, accessibility gaps, import violations. Architecture enforcement, automated.
+- **`/review`**: Reviews the current branch's changes against CLAUDE.md. Like a code review from someone who actually read the style guide.
+- **`/update-deps`**: Categorizes dependency updates into safe, Vite-aligned, and major-breaking tiers. Bumps what's safe, holds what isn't, and verifies with build + lint.
 
-The goal is a suite of tools that handle the mechanical parts of maintaining consistency so you can focus on building.
+The goal: a suite of tools that handle the mechanical parts of consistency so you can focus on building cool stuff.
 
-## Liftoff
+## Learn More
 
-Scaffold a new project, install dependencies, and you're in orbit:
-
-```bash
-npm create starbase@latest my-project
-cd my-project
-npm install
-npm run dev
-```
+- [Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/): the component methodology
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code): your AI co-pilot
+- [Vite](https://vite.dev/guide/): the build engine
+- [TanStack Router](https://tanstack.com/router/latest/docs/framework/react/overview): file-based routing
+- [TanStack React Query](https://tanstack.com/query/latest/docs/framework/react/overview): server state management
 
 ## History
 
-Starbase is built and maintained by [Brian Staruk](https://brian.staruk.net), a Boston-based web developer with 20+ years of experience who's never quite gotten over the urge to nerd out in public. Go Sox. That impulse is the main reason this project has been actively maintained since 2017 -- through four major versions, each one reflecting whatever felt like the right way to build for the web at the time. PostCSS, Webpack, TypeScript, Tailwind -- it picked up tools as they matured and dropped them when something better came along.
+Starbase is built and maintained by [Brian Staruk](https://brian.staruk.net), a Boston-based web developer who's been nerding out in public for over 20 years. Go Sox.
 
-v5 is the biggest shift yet. The build tool problem is solved. The new problem is encoding taste and standards so that AI tooling can extend your work faithfully. That's the mission now.
+This project has been actively maintained since 2017, through four major versions. Each one reflected whatever felt like the right way to build for the web at the time. PostCSS, Webpack, TypeScript, Tailwind: tools got picked up as they matured and dropped when something better came along.
+
+v5 is the biggest shift yet. The build tool era is over. The new frontier is encoding taste and standards so that AI tooling can extend your work faithfully. That's the mission now.
 
 ## License
 

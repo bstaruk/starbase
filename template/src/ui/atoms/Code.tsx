@@ -29,7 +29,7 @@ export const Code = ({ children, className, ref, ...rest }: CodeProps) => {
       ref={ref}
       className={cn(
         'inline-flex items-center gap-2',
-        'bg-sb-canvas text-sb-fg px-4 py-2 rounded-lg',
+        'rounded-xl border border-sb-divider bg-sb-surface-raised text-sb-fg px-4 py-2 shadow-card',
         className,
       )}
     >
@@ -37,6 +37,7 @@ export const Code = ({ children, className, ref, ...rest }: CodeProps) => {
       <Button
         variant="ghost"
         size="sm"
+        className="px-1.5"
         onClick={handleCopy}
         aria-label="Copy to clipboard"
       >
