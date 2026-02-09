@@ -1,8 +1,10 @@
 # Starbase
 
-Welcome aboard. Here's what you need to know.
+**A Claude-first front-end launchpad.**
 
-## Commands
+Welcome aboard. Here's everything you need to fly.
+
+## Liftoff
 
 | Command           | Description                          |
 | ----------------- | ------------------------------------ |
@@ -12,7 +14,9 @@ Welcome aboard. Here's what you need to know.
 | `npm run lint`    | Run ESLint                           |
 | `npm run format`  | Run Prettier                         |
 
-## Project structure
+Open [http://localhost:3000](http://localhost:3000) and start building.
+
+## Star Chart
 
 ```
 src/
@@ -28,20 +32,24 @@ src/
   routes/       # TanStack Router file-based routes
 ```
 
-Components follow [Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/). Imports use path aliases and barrel files -- `from 'atoms'`, not relative paths. See CLAUDE.md for the full convention.
+Components follow [Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/). Imports use path aliases and barrel files (`from 'atoms'`, not relative paths). See `CLAUDE.md` for the full convention guide.
 
-## CLAUDE.md
+## Mission Control
 
-Start here. It's the source of truth for all conventions, patterns, and architectural decisions. It's also what makes [Claude Code](https://docs.anthropic.com/en/docs/claude-code) work well with this project -- read it, build on it, evolve it.
+`CLAUDE.md` is the source of truth for all conventions, patterns, and architectural decisions. It's also what makes this a Claude-first project: [Claude Code](https://docs.anthropic.com/en/docs/claude-code) reads it, learns your preferences, and generates code that matches your style.
 
-## Claude Code commands
+Start here. Read it. Build on it. Evolve it.
 
-- **`/audit`** -- Scan the codebase for drift against CLAUDE.md conventions
-- **`/review`** -- Review current branch changes against CLAUDE.md
-- **`/update-deps`** -- Update dependencies safely with Vite-alignment awareness
+## Comms
 
-## Learn more
+Starbase ships with custom [Claude Code skills](https://docs.anthropic.com/en/docs/claude-code/tutorials#create-custom-slash-commands):
 
-- [Starbase on GitHub](https://github.com/bstaruk/starbase) -- full docs, history, and mission
-- [Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/) -- the component methodology
-- [Claude Code docs](https://docs.anthropic.com/en/docs/claude-code) -- getting the most out of the AI workflow
+- **`/audit`**: Scan the codebase for drift against CLAUDE.md conventions
+- **`/review`**: Review current branch changes against CLAUDE.md
+- **`/update-deps`**: Update dependencies safely with Vite-alignment awareness
+
+## Learn More
+
+- [Starbase on GitHub](https://github.com/bstaruk/starbase): full docs, architecture, and mission briefing
+- [Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/): the component methodology
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code): your AI co-pilot
