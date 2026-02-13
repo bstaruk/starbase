@@ -41,8 +41,14 @@ function main(): void {
   const targetDir = path.resolve(process.cwd(), projectName);
 
   if (fs.existsSync(targetDir)) {
-    console.error(`Error: Directory "${projectName}" already exists.`);
-    process.exit(1);
+    const existing = fs.readdirSync(targetDir);
+    const allowedFiles = new Set(['.git', '.gitignore', '.gitattributes']);
+    const conflicts = existing.filter((f) => !allowedFiles.has(f));
+
+    if (conflicts.length > 0) {
+      console.error(`Error: Directory "${projectName}" is not empty.`);
+      process.exit(1);
+    }
   }
 
   const templateDir = path.resolve(__dirname, '..', 'template');
