@@ -31,6 +31,8 @@
   ],
   "scripts": {
     "build": "tsc",
+    "prepack": "cp template/.gitignore template/_gitignore",
+    "postpack": "rm template/_gitignore",
     "format": "prettier --write .",
     "lint": "eslint .",
     "start": "npm run build && node ./dist/index.js",
