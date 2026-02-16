@@ -1,12 +1,10 @@
-import Cookies from 'js-cookie';
-
-const DARK_MODE_COOKIE = 'theme-preference';
+const STORAGE_KEY = 'theme-preference';
 const DARK_CLASS = 'dark';
 
 export type ThemePreference = 'light' | 'dark' | 'system';
 
 export function getThemePreference(): ThemePreference {
-  const value = Cookies.get(DARK_MODE_COOKIE);
+  const value = localStorage.getItem(STORAGE_KEY);
 
   if (value === 'light' || value === 'dark') {
     return value;
@@ -16,10 +14,7 @@ export function getThemePreference(): ThemePreference {
 }
 
 export function setThemePreference(preference: ThemePreference): void {
-  Cookies.set(DARK_MODE_COOKIE, preference, {
-    expires: 365,
-    sameSite: 'lax',
-  });
+  localStorage.setItem(STORAGE_KEY, preference);
 }
 
 export function getEffectiveTheme(

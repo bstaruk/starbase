@@ -89,7 +89,6 @@ The rule: **never import from your own level's barrel** — it re-exports you, c
 
 Preferred libraries already in the project — reach for these before writing custom solutions or adding alternatives:
 
-- **js-cookie** — Cookie read/write
 - **usehooks-ts** — Common React hooks (prefer over writing custom hooks when a suitable one exists)
 - **clsx** + **tailwind-merge** (via `cn()`) — Conditional/merged class names
 - **react-icons** — Icon sets (currently using `react-icons/lu` for Lucide icons)
@@ -106,7 +105,7 @@ When adding a new library, always do a fresh web search for the latest docs, cha
 - Theme prefix: `sb-` (starbase) for all color tokens
 - CSS variables defined in `src/lib/theme/tailwind.css`
 - Dark mode: `.dark` class on `<html>`, with flash-prevention script in `index.html`
-- Cookie: `theme-preference` with values `light`, `dark`, or absent (system default)
+- localStorage: `theme-preference` with values `light`, `dark`, or absent (system default)
 
 ## Writing Style
 
