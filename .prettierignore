@@ -10,3 +10,6 @@ node_modules/
 
 # Package manager
 package-lock.json
+
+# Binary/unparseable assets
+*.svg

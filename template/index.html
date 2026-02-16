@@ -8,18 +8,8 @@
     <script>
       // Prevent dark mode flash — keep colors in sync with --sb-surface in tailwind.css
       (function () {
-        const COOKIE_NAME = 'theme-preference';
         const DARK_CLASS = 'dark';
-
-        // Get theme preference from cookie
-        const getCookie = (name) => {
-          const cookie = document.cookie
-            .split('; ')
-            .find((row) => row.startsWith(name + '='));
-          return cookie ? cookie.split('=')[1] : null;
-        };
-
-        const preference = getCookie(COOKIE_NAME) || 'system';
+        const preference = localStorage.getItem('theme-preference') || 'system';
 
         // Determine effective theme (default is light)
         let theme = 'light';

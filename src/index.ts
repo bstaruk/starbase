@@ -8,13 +8,15 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const SKIP_FILES = ['node_modules', '.npmignore'];
+const RENAME_FILES: Record<string, string> = { _gitignore: '.gitignore' };
 
 function copyDir(src: string, dest: string): void {
   fs.mkdirSync(dest, { recursive: true });
 
   for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
     const srcPath = path.join(src, entry.name);
-    const destPath = path.join(dest, entry.name);
+    const destName = RENAME_FILES[entry.name] ?? entry.name;
+    const destPath = path.join(dest, destName);
 
     if (SKIP_FILES.includes(entry.name)) {
       continue;

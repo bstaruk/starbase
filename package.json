@@ -1,6 +1,6 @@
 {
   "name": "create-starbase",
-  "version": "5.1.2",
+  "version": "5.1.3",
   "type": "module",
   "author": "Brian Staruk <brian@staruk.net>",
   "contributors": [
@@ -31,6 +31,9 @@
   ],
   "scripts": {
     "build": "tsc",
+    "prepack": "cp template/.gitignore template/_gitignore",
+    "postpack": "rm template/_gitignore",
+    "dev": "npm run dev --prefix template",
     "format": "prettier --write .",
     "lint": "eslint .",
     "start": "npm run build && node ./dist/index.js",
