@@ -2,7 +2,7 @@ import * as React from 'react';
 import { createLink, type LinkComponent } from '@tanstack/react-router';
 import { cn } from 'utils';
 
-export type ButtonVariant = 'anchor' | 'outline' | 'ghost';
+export type ButtonVariant = 'primary' | 'outline' | 'ghost';
 
 type ButtonSize = 'sm' | 'md' | 'lg';
 
@@ -26,7 +26,7 @@ const makeButtonClasses = (
   cn(
     // Base styles
     'inline-flex items-center justify-center',
-    'font-sans font-semibold rounded-md border border-transparent outline-none focus-visible:outline-sb-action cursor-pointer',
+    'font-sans font-semibold rounded-md border border-transparent outline-none focus-visible:outline-sb-accent cursor-pointer',
     'motion-safe:transition-all motion-safe:duration-150 ease-out',
     'disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none',
     {
@@ -35,9 +35,9 @@ const makeButtonClasses = (
       'text-base px-4 py-2': size === 'md',
       'text-lg px-5 py-2.5': size === 'lg',
 
-      /* Variant: anchor */
-      'bg-sb-anchor border-sb-anchor text-sb-surface-raised shadow-sm is-active:bg-sb-anchor-active is-active:border-sb-anchor-active is-active:shadow-md':
-        variant === 'anchor',
+      /* Variant: primary */
+      'bg-sb-link border-sb-link text-sb-surface-raised shadow-sm is-active:bg-sb-link-active is-active:border-sb-link-active is-active:shadow-md':
+        variant === 'primary',
 
       /* Variant: outline */
       'bg-transparent border-sb-divider text-sb-fg is-active:bg-sb-canvas is-active:border-sb-fg-subtle/30':
@@ -52,7 +52,7 @@ const makeButtonClasses = (
 export const ButtonLink = ({
   children,
   className,
-  variant = 'anchor',
+  variant = 'primary',
   size,
   ref,
   ...rest
@@ -71,7 +71,7 @@ export const ButtonLink = ({
 export const Button = ({
   children,
   className,
-  variant = 'anchor',
+  variant = 'primary',
   size,
   type = 'button',
   ref,

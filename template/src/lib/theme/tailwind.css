@@ -89,13 +89,13 @@
       0 1px 3px 0 rgb(0 0 0 / 0.04), 0 4px 12px -2px rgb(0 0 0 / 0.06),
       inset 0 1px 0 0 rgb(255 255 255 / 0.6);
 
-    /* Action */
-    --sb-action: var(--color-red-700);
-    --sb-action-active: var(--color-red-800);
+    /* Accent (focus rings, decorative icons) */
+    --sb-accent: var(--color-red-700);
+    --sb-accent-active: var(--color-red-800);
 
-    /* Navigation */
-    --sb-anchor: var(--color-red-700);
-    --sb-anchor-active: var(--color-red-800);
+    /* Links */
+    --sb-link: var(--color-red-800);
+    --sb-link-active: var(--color-red-900);
   }
 
   ::selection {
@@ -117,20 +117,20 @@
     --sb-fg-title: var(--color-zinc-200);
 
     /* Borders */
-    --sb-divider: var(--color-zinc-800);
+    --sb-divider: var(--color-zinc-700);
 
     /* Shadows */
     --sb-shadow-card:
       0 1px 3px 0 rgb(0 0 0 / 0.2), 0 4px 12px -2px rgb(0 0 0 / 0.3),
       inset 0 1px 0 0 rgb(255 255 255 / 0.04);
 
-    /* Action */
-    --sb-action: var(--color-red-500);
-    --sb-action-active: var(--color-red-400);
+    /* Accent (focus rings, decorative icons) */
+    --sb-accent: var(--color-red-400);
+    --sb-accent-active: var(--color-red-300);
 
-    /* Navigation */
-    --sb-anchor: var(--color-red-400);
-    --sb-anchor-active: var(--color-red-300);
+    /* Links */
+    --sb-link: var(--color-red-300);
+    --sb-link-active: var(--color-red-200);
   }
 
   .dark ::selection {
@@ -158,10 +158,10 @@
   --color-sb-divider: var(--sb-divider);
 
   /* UI Elements */
-  --color-sb-action: var(--sb-action);
-  --color-sb-action-active: var(--sb-action-active);
-  --color-sb-anchor: var(--sb-anchor);
-  --color-sb-anchor-active: var(--sb-anchor-active);
+  --color-sb-accent: var(--sb-accent);
+  --color-sb-accent-active: var(--sb-accent-active);
+  --color-sb-link: var(--sb-link);
+  --color-sb-link-active: var(--sb-link-active);
 
   /* Shadows */
   --shadow-card: var(--sb-shadow-card);

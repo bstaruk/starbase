@@ -32,7 +32,7 @@ export function FeatureCard({
       className="rounded-xl border border-sb-divider bg-sb-surface-raised p-5 shadow-card"
     >
       <div className="mb-3 flex items-center gap-3">
-        <Icon className="size-5 shrink-0 text-sb-action" aria-hidden="true" />
+        <Icon className="size-5 shrink-0 text-sb-accent" aria-hidden="true" />
         <h3 className="text-sb-fg-title">{title}</h3>
       </div>
       <p className="text-sm text-sb-fg-subtle">{description}</p>
