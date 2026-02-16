@@ -8,5 +8,8 @@ node_modules/
 # Package manager
 package-lock.json
 
+# Binary/unparseable assets
+*.svg
+
 # Generated
 src/routeTree.gen.ts
