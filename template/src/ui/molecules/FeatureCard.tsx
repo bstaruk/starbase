@@ -17,7 +17,7 @@ export function FeatureCard({
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <motion.li
+    <motion.div
       initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={
@@ -36,6 +36,6 @@ export function FeatureCard({
         <h3 className="text-sb-fg-title">{title}</h3>
       </div>
       <p className="text-sm text-sb-fg-subtle">{description}</p>
-    </motion.li>
+    </motion.div>
   );
 }
