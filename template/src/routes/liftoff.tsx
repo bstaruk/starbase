@@ -98,7 +98,7 @@ function Liftoff() {
       <h2 className="sr-only">Features</h2>
       <ul className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
         {features.map((feature, i) => (
-          <li key={feature.title}>
+          <li key={feature.title} className="h-full">
             <FeatureCard index={i} {...feature} />
           </li>
         ))}
