@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import * as clack from '@clack/prompts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -30,17 +31,35 @@ function copyDir(src: string, dest: string): void {
   }
 }
 
-function main(): void {
-  const args = process.argv.slice(2);
-  const projectName = args[0];
+async function main(): Promise<void> {
+  clack.intro('create-starbase');
 
-  if (!projectName) {
-    console.error('Error: Please specify a project name.');
-    console.error('  npm create starbase <project-name>');
-    process.exit(1);
+  const arg = process.argv[2];
+
+  let projectName: string;
+
+  if (arg) {
+    projectName = arg;
+  } else {
+    const response = await clack.text({
+      message: 'Mission name',
+      placeholder: 'starbase',
+      defaultValue: 'starbase',
+    });
+
+    if (clack.isCancel(response)) {
+      clack.cancel('Mission aborted.');
+      process.exit(0);
+    }
+
+    projectName = response;
   }
 
-  const targetDir = path.resolve(process.cwd(), projectName);
+  const isDot = projectName === '.';
+  const targetDir = isDot
+    ? process.cwd()
+    : path.resolve(process.cwd(), projectName);
+  const packageName = isDot ? path.basename(process.cwd()) : projectName;
 
   if (fs.existsSync(targetDir)) {
     const existing = fs.readdirSync(targetDir);
@@ -48,37 +67,45 @@ function main(): void {
     const conflicts = existing.filter((f) => !allowedFiles.has(f));
 
     if (conflicts.length > 0) {
-      console.error(`Error: Directory "${projectName}" is not empty.`);
-      process.exit(1);
+      const overwrite = await clack.confirm({
+        message: `Launch pad "${isDot ? '.' : projectName}" is not clear. Overwrite existing files?`,
+      });
+
+      if (clack.isCancel(overwrite) || !overwrite) {
+        clack.cancel('Mission aborted.');
+        process.exit(0);
+      }
     }
   }
 
   const templateDir = path.resolve(__dirname, '..', 'template');
 
   if (!fs.existsSync(templateDir)) {
-    console.error('Error: Template directory not found.');
+    clack.cancel('Payload not found. Template directory is missing.');
     process.exit(1);
   }
 
-  console.log(`Creating project in ${targetDir}...`);
+  clack.log.step(`Systems online at ${targetDir}`);
 
   copyDir(templateDir, targetDir);
 
   const packageJsonPath = path.join(targetDir, 'package.json');
   if (fs.existsSync(packageJsonPath)) {
     const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
-    packageJson.name = projectName;
+    packageJson.name = packageName;
     fs.writeFileSync(
       packageJsonPath,
       JSON.stringify(packageJson, null, 2) + '\n',
     );
   }
 
-  console.log('\nDone! Next steps:\n');
-  console.log(`  cd ${projectName}`);
-  console.log('  npm install');
-  console.log('  npm run dev');
-  console.log();
+  const nextSteps = isDot
+    ? 'npm install\nnpm run dev'
+    : `cd ${projectName}\nnpm install\nnpm run dev`;
+
+  clack.note(nextSteps, 'Flight plan');
+
+  clack.outro('You are go for launch.');
 }
 
 main();

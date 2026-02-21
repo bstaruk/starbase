@@ -1,3 +1,5 @@
+import { useQuery } from '@tanstack/react-query';
+import { github } from 'queries';
 import { RouterLink, StarbaseLogo } from 'atoms';
 import { DarkModeToggle, Stargazers } from 'molecules';
 
@@ -9,6 +11,11 @@ const activeProps = {
 };
 
 export function SiteHeader() {
+  const { data } = useQuery({
+    ...github.starbaseRepoQueryOptions(),
+    retry: false,
+  });
+
   return (
     <header className="flex items-center py-3">
       <nav aria-label="Main" className="flex items-center gap-4 sm:gap-5">
@@ -35,7 +42,7 @@ export function SiteHeader() {
       </nav>
 
       <div className="ml-auto flex items-center gap-1">
-        <Stargazers />
+        <Stargazers count={data?.stargazers_count} />
         <DarkModeToggle />
       </div>
     </header>

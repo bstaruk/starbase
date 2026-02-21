@@ -7,27 +7,38 @@ export function DarkModeToggle() {
   const [isDark, setIsDark] = useState(
     () => darkMode.getEffectiveTheme(darkMode.getThemePreference()) === 'dark',
   );
+  const [hasToggled, setHasToggled] = useState(false);
 
   const toggle = useCallback(() => {
     const next = isDark ? 'light' : 'dark';
     darkMode.setThemePreference(next);
     darkMode.applyTheme(next);
     setIsDark(next === 'dark');
+    setHasToggled(true);
   }, [isDark]);
 
   return (
-    <Button
-      variant="ghost"
-      size="sm"
-      className="p-2"
-      onClick={toggle}
-      aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-    >
-      {isDark ? (
-        <LuSun size={16} aria-hidden="true" />
-      ) : (
-        <LuMoon size={16} aria-hidden="true" />
-      )}
-    </Button>
+    <>
+      <Button
+        variant="ghost"
+        size="sm"
+        className="p-2"
+        onClick={toggle}
+        aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+      >
+        {isDark ? (
+          <LuSun size={16} aria-hidden="true" />
+        ) : (
+          <LuMoon size={16} aria-hidden="true" />
+        )}
+      </Button>
+      <span role="status" className="sr-only">
+        {hasToggled
+          ? isDark
+            ? 'Dark mode enabled'
+            : 'Light mode enabled'
+          : ''}
+      </span>
+    </>
   );
 }
