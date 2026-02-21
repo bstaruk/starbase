@@ -38,7 +38,17 @@ Write 1-3 sentences describing the overall theme of this release. What does it a
 
 ## Changelog
 
-Group commits by conventional commit type using these sections (omit any section with no entries):
+The changelog describes what changed **from the perspective of the base branch**, not the development history within the working branch. Commit messages are a starting point, but the actual diff against the base branch is the source of truth.
+
+To build the changelog:
+
+1. Run `git log --oneline <base>...HEAD` for the raw commit list
+2. Run `git diff <base>...HEAD` to see the actual code changes landing on the base branch
+3. Reconcile the two: some commit messages describe intermediate fixes to bugs introduced earlier in the same branch (e.g., "fix: restore X" after a refactor broke X). These are not meaningful changes from the base branch's perspective and should be folded into the parent change or dropped entirely.
+
+The goal is one bullet per user-visible change, not one bullet per commit.
+
+Group entries by conventional commit type using these sections (omit any section with no entries):
 
 ### Breaking Changes
 
@@ -56,11 +66,11 @@ Group commits by conventional commit type using these sections (omit any section
 
 ### Tests
 
-Within each section, list one bullet per commit:
+Within each section, list one bullet per logical change:
 
 - **scope:** description
 
-If a commit has no scope, omit the bold prefix and just list the description. Use the commit message as-is — do not editorialize or rewrite. Drop merge commits and any commits that are just version bumps unless they carry meaningful context.
+If an entry has no scope, omit the bold prefix and just list the description. Use commit messages as a starting point, but rewrite when the message describes an intermediate branch fix rather than a change relative to the base. Drop merge commits and version bumps unless they carry meaningful context.
 
 If there is only one commit, skip the Changelog section entirely and just write the summary.
 
