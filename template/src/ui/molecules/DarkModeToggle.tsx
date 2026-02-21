@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { LuMoon, LuSun } from 'react-icons/lu';
 import { darkMode } from 'utils';
 import { Button } from 'atoms';
@@ -7,14 +7,14 @@ export function DarkModeToggle() {
   const [isDark, setIsDark] = useState(
     () => darkMode.getEffectiveTheme(darkMode.getThemePreference()) === 'dark',
   );
-  const hasToggled = useRef(false);
+  const [hasToggled, setHasToggled] = useState(false);
 
   const toggle = useCallback(() => {
     const next = isDark ? 'light' : 'dark';
     darkMode.setThemePreference(next);
     darkMode.applyTheme(next);
     setIsDark(next === 'dark');
-    hasToggled.current = true;
+    setHasToggled(true);
   }, [isDark]);
 
   return (
@@ -33,7 +33,7 @@ export function DarkModeToggle() {
         )}
       </Button>
       <span role="status" className="sr-only">
-        {hasToggled.current
+        {hasToggled
           ? isDark
             ? 'Dark mode enabled'
             : 'Light mode enabled'
