@@ -11,7 +11,7 @@
   h2,
   h3,
   h4 {
-    @apply font-display font-medium;
+    @apply font-display;
   }
 
   h1 {
