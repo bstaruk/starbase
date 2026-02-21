@@ -1,14 +1,12 @@
-import { useQuery } from '@tanstack/react-query';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { LuGithub } from 'react-icons/lu';
-import { github } from 'queries';
 import { ButtonLink } from 'atoms';
 
-export function Stargazers() {
-  const { data } = useQuery({
-    ...github.starbaseRepoQueryOptions(),
-    retry: false,
-  });
+interface StargazersProps {
+  count?: number;
+}
+
+export function Stargazers({ count }: StargazersProps) {
   const prefersReducedMotion = useReducedMotion();
 
   return (
@@ -20,13 +18,13 @@ export function Stargazers() {
       size="sm"
       className="p-2"
       aria-label={
-        data
-          ? `${data.stargazers_count.toLocaleString()} stargazers on GitHub (opens in new tab)`
+        count != null
+          ? `${count.toLocaleString()} stargazers on GitHub (opens in new tab)`
           : 'Starbase on GitHub (opens in new tab)'
       }
     >
       <AnimatePresence mode="popLayout">
-        {data && (
+        {count != null && (
           <motion.span
             key="count"
             initial={
@@ -40,7 +38,7 @@ export function Stargazers() {
             }
             className="mr-1 text-xs font-semibold tabular-nums"
           >
-            {data.stargazers_count.toLocaleString()}
+            {count.toLocaleString()}
           </motion.span>
         )}
       </AnimatePresence>
