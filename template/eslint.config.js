@@ -2,7 +2,6 @@ import js from '@eslint/js';
 import tanstackQuery from '@tanstack/eslint-plugin-query';
 import tanstackRouter from '@tanstack/eslint-plugin-router';
 import importX from 'eslint-plugin-import-x';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
 import reactDom from 'eslint-plugin-react-dom';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
@@ -24,7 +23,6 @@ export default defineConfig([
       reactRefresh.configs.vite,
       tanstackQuery.configs['flat/recommended'],
       tanstackRouter.configs['flat/recommended'],
-      jsxA11y.flatConfigs.recommended,
     ],
     plugins: {
       'import-x': importX,
