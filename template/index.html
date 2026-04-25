@@ -1,35 +1,11 @@
 <!doctype html>
-<html lang="en" style="background-color: #f5f5f4">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>starbase.dev</title>
-    <script>
-      // Prevent dark mode flash — keep colors in sync with --sb-surface in tailwind.css
-      (function () {
-        const DARK_CLASS = 'dark';
-        const preference = localStorage.getItem('theme-preference') || 'system';
-
-        // Determine effective theme (default is light)
-        let theme = 'light';
-        if (preference === 'dark') {
-          theme = 'dark';
-        } else if (preference === 'system') {
-          theme = window.matchMedia('(prefers-color-scheme: dark)').matches
-            ? 'dark'
-            : 'light';
-        }
-
-        // Apply dark class only if dark mode
-        if (theme === 'dark') {
-          document.documentElement.classList.add(DARK_CLASS);
-          document.documentElement.style.backgroundColor = '#18181b';
-        }
-      })();
-    </script>
+    <title>template</title>
   </head>
-
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>

@@ -1,4 +1,0 @@
-/** Ordered Imports (be careful when modifying) */
-@import './fonts.css'; /* @fontsource font-face declarations */
-@import './tailwind.css'; /* Tailwind package imports */
-@import './base.css'; /* Base styles (h1-h6, etc) */

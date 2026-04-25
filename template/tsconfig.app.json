@@ -1,10 +1,9 @@
 {
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "target": "ES2022",
-    "useDefineForClassFields": true,
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
+    "target": "es2023",
+    "lib": ["ES2023", "DOM"],
+    "module": "esnext",
     "types": ["vite/client"],
     "skipLibCheck": true,
 
@@ -17,27 +16,10 @@
     "jsx": "react-jsx",
 
     /* Linting */
-    "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
-
-    /* Path Aliases */
-    "baseUrl": ".",
-    "paths": {
-      "queries": ["src/lib/queries/index.ts"],
-      "utils": ["src/lib/utils/index.ts"],
-      "atoms": ["src/ui/atoms/index.ts"],
-      "atoms/*": ["src/ui/atoms/*"],
-      "molecules": ["src/ui/molecules/index.ts"],
-      "molecules/*": ["src/ui/molecules/*"],
-      "organisms": ["src/ui/organisms/index.ts"],
-      "organisms/*": ["src/ui/organisms/*"],
-      "templates": ["src/ui/templates/index.ts"],
-      "templates/*": ["src/ui/templates/*"]
-    }
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["src"]
 }
