@@ -1,0 +1,168 @@
+/*
+  Theme Prefix: "sb-" (starbase)
+  To customize for your project, find/replace "sb-" with your own prefix.
+*/
+
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant is-active (&:not(:disabled):hover, &:not(:disabled):focus-visible);
+
+@theme {
+  /* Fonts */
+  --font-sans: 'Nunito', sans-serif;
+  --font-display: 'Bricolage Grotesque', serif;
+  --font-mono: 'Roboto Mono', monospace;
+
+  /* Text Variant: h1 - Bold display headings */
+  /* 22px → 30px */
+  --text-h1: clamp(1.375rem, 1.125rem + 0.75vw, 1.875rem);
+  --text-h1--font-weight: 600;
+  --text-h1--line-height: 1.15;
+  --text-h1--letter-spacing: -0.01em;
+
+  /* Text Variant: h2 */
+  /* 18px → 20px */
+  --text-h2: clamp(1.125rem, 1.075rem + 0.15vw, 1.25rem);
+  --text-h2--font-weight: 600;
+  --text-h2--line-height: 1.25;
+  --text-h2--letter-spacing: -0.005em;
+
+  /* Text Variant: h3 */
+  /* 17px → 18px */
+  --text-h3: clamp(1.0625rem, 1.037rem + 0.098vw, 1.125rem);
+  --text-h3--font-weight: 600;
+  --text-h3--line-height: 1.3;
+  --text-h3--letter-spacing: 0;
+
+  /* Text Variant: h4 */
+  /* 16px → 17px */
+  --text-h4: clamp(1rem, 0.974rem + 0.098vw, 1.0625rem);
+  --text-h4--font-weight: 600;
+  --text-h4--line-height: 1.35;
+  --text-h4--letter-spacing: 0;
+
+  /* Text Variant: base - 16px to 17px */
+  --text-base: clamp(1rem, 0.974rem + 0.098vw, 1.063rem);
+  --text-base--font-weight: 400;
+  --text-base--line-height: 1.55;
+  --text-base--letter-spacing: 0.005em;
+
+  /* Text Variant: sm - 15px to 16px */
+  --text-sm: clamp(0.9375rem, 0.912rem + 0.098vw, 1rem);
+  --text-sm--font-weight: 400;
+  --text-sm--line-height: 1.5;
+  --text-sm--letter-spacing: 0.005em;
+
+  /* Spacing (padding, margins, height, width, etc) */
+  --spacing-page: 64rem;
+  --spacing-page-x: clamp(0.75rem, 0.25rem + 1.5vw, 1rem);
+
+  /* List Style Types */
+  --list-style-type-circle: circle;
+  --list-style-type-roman: lower-roman;
+}
+
+/*
+  Theme Color Semantics
+  Mapping primitives to functional roles.
+*/
+@layer base {
+  :root {
+    /* Light Mode Mappings */
+
+    /* Surfaces */
+    --sb-surface: var(--color-stone-100);
+    --sb-surface-raised: var(--color-stone-50);
+    --sb-canvas: var(--color-stone-200);
+
+    /* Text */
+    --sb-fg: var(--color-stone-700);
+    --sb-fg-subtle: var(--color-stone-600);
+    --sb-fg-title: var(--color-stone-800);
+
+    /* Borders */
+    --sb-divider: var(--color-stone-200);
+
+    /* Shadows */
+    --sb-shadow-card:
+      0 1px 3px 0 rgb(0 0 0 / 0.04), 0 4px 12px -2px rgb(0 0 0 / 0.06),
+      inset 0 1px 0 0 rgb(255 255 255 / 0.6);
+
+    /* Accent (focus rings, decorative icons) */
+    --sb-accent: var(--color-red-700);
+    --sb-accent-active: var(--color-red-800);
+
+    /* Links */
+    --sb-link: var(--color-red-800);
+    --sb-link-active: var(--color-red-900);
+  }
+
+  ::selection {
+    background-color: var(--color-stone-300);
+    color: var(--color-stone-900);
+  }
+
+  .dark {
+    /* Dark Mode Mappings */
+
+    /* Surfaces */
+    --sb-surface: var(--color-zinc-900);
+    --sb-surface-raised: var(--color-zinc-800);
+    --sb-canvas: var(--color-zinc-950);
+
+    /* Text */
+    --sb-fg: var(--color-zinc-300);
+    --sb-fg-subtle: var(--color-zinc-400);
+    --sb-fg-title: var(--color-zinc-200);
+
+    /* Borders */
+    --sb-divider: var(--color-zinc-700);
+
+    /* Shadows */
+    --sb-shadow-card:
+      0 1px 3px 0 rgb(0 0 0 / 0.2), 0 4px 12px -2px rgb(0 0 0 / 0.3),
+      inset 0 1px 0 0 rgb(255 255 255 / 0.04);
+
+    /* Accent (focus rings, decorative icons) */
+    --sb-accent: var(--color-red-400);
+    --sb-accent-active: var(--color-red-300);
+
+    /* Links */
+    --sb-link: var(--color-red-300);
+    --sb-link-active: var(--color-red-200);
+  }
+
+  .dark ::selection {
+    background-color: var(--color-zinc-700);
+    color: var(--color-zinc-100);
+  }
+}
+
+/*
+  Color Tokens
+  Exposing semantic variables as Tailwind utilities.
+*/
+@theme {
+  /* Backgrounds */
+  --color-sb-surface: var(--sb-surface);
+  --color-sb-surface-raised: var(--sb-surface-raised);
+  --color-sb-canvas: var(--sb-canvas);
+
+  /* Text / Foreground */
+  --color-sb-fg: var(--sb-fg);
+  --color-sb-fg-subtle: var(--sb-fg-subtle);
+  --color-sb-fg-title: var(--sb-fg-title);
+
+  /* Borders */
+  --color-sb-divider: var(--sb-divider);
+
+  /* UI Elements */
+  --color-sb-accent: var(--sb-accent);
+  --color-sb-accent-active: var(--sb-accent-active);
+  --color-sb-link: var(--sb-link);
+  --color-sb-link-active: var(--sb-link-active);
+
+  /* Shadows */
+  --shadow-card: var(--sb-shadow-card);
+}
