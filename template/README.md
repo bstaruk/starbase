@@ -1,73 +1,55 @@
-# React + TypeScript + Vite
+# Starbase
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**A Claude-first front-end launchpad.**
 
-Currently, two official plugins are available:
+Welcome aboard. Here's everything you need to fly.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Liftoff
 
-## React Compiler
+| Command           | Description                          |
+| ----------------- | ------------------------------------ |
+| `npm run dev`     | Start the Vite dev server            |
+| `npm run build`   | Type-check and build for production  |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint`    | Run ESLint                           |
+| `npm run format`  | Run Prettier                         |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Open [http://localhost:3000](http://localhost:3000) and start building.
 
-## Expanding the ESLint configuration
+## Star Chart
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```
+src/
+  lib/
+    queries/    # React Query options, organized by API domain
+    theme/      # Tailwind CSS and theme config
+    utils/      # Utility functions (cn, darkMode, etc.)
+  ui/
+    atoms/      # Smallest building blocks (Button, Link, Code)
+    molecules/  # Functional groups of atoms (DarkModeToggle, PageHeader)
+    organisms/  # Larger composed sections
+    templates/  # Page-level layout structures
+  routes/       # TanStack Router file-based routes
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Components follow [Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/). Imports use path aliases and barrel files (`from 'atoms'`, not relative paths). See `CLAUDE.md` for the full convention guide.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+## Mission Control
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+`CLAUDE.md` is the source of truth for all conventions, patterns, and architectural decisions. It's also what makes this a Claude-first project: [Claude Code](https://docs.anthropic.com/en/docs/claude-code) reads it, learns your preferences, and generates code that matches your style.
+
+Start here. Read it. Build on it. Evolve it.
+
+## Comms
+
+Starbase ships with custom [Claude Code skills](https://docs.anthropic.com/en/docs/claude-code/tutorials#create-custom-slash-commands):
+
+- **`/audit`**: Scan the codebase for drift against CLAUDE.md conventions
+- **`/review`**: Review current branch changes against CLAUDE.md
+- **`/update-deps`**: Update dependencies safely with Vite-alignment awareness
+
+## Learn More
+
+- [Starbase on GitHub](https://github.com/bstaruk/starbase): full docs, architecture, and mission briefing
+- [Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/): the component methodology
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code): your AI co-pilot
