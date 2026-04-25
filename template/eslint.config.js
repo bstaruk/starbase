@@ -78,4 +78,14 @@ export default defineConfig([
       ],
     },
   },
+  {
+    // TanStack Router file-based routes co-locate the `Route` config with
+    // a locally-declared component. The Fast Refresh rule has no
+    // escape-hatch for that combo, and routes don't benefit from Fast
+    // Refresh anyway (the route plugin handles route invalidation).
+    files: ['src/routes/**/*.tsx'],
+    rules: {
+      'react-refresh/only-export-components': 'off',
+    },
+  },
 ]);
