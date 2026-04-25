@@ -1,6 +1,6 @@
 {
   "name": "create-starbase",
-  "version": "5.2.1",
+  "version": "5.3.0",
   "type": "module",
   "author": "Brian Staruk <brian@staruk.net>",
   "contributors": [
@@ -40,13 +40,13 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.4.2",
+    "@commitlint/cli": "^20.5.2",
     "@commitlint/config-conventional": "^20.4.2",
-    "@types/node": "^24.10.13",
+    "@types/node": "^24.12.2",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
-    "prettier": "^3.8.1",
-    "typescript": "^5.3.0"
+    "prettier": "^3.8.3",
+    "typescript": "^6.0.3"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css,md,json}": "prettier --write"
@@ -55,6 +55,6 @@
     "node": ">=24"
   },
   "dependencies": {
-    "@clack/prompts": "^1.0.1"
+    "@clack/prompts": "^1.2.0"
   }
 }

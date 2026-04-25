@@ -1,8 +1,7 @@
 import js from '@eslint/js';
 import tanstackQuery from '@tanstack/eslint-plugin-query';
 import tanstackRouter from '@tanstack/eslint-plugin-router';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
-import importPlugin from 'eslint-plugin-import';
+import importX from 'eslint-plugin-import-x';
 import reactDom from 'eslint-plugin-react-dom';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
@@ -24,23 +23,22 @@ export default defineConfig([
       reactRefresh.configs.vite,
       tanstackQuery.configs['flat/recommended'],
       tanstackRouter.configs['flat/recommended'],
-      jsxA11y.flatConfigs.recommended,
     ],
     plugins: {
-      import: importPlugin,
+      'import-x': importX,
     },
     languageOptions: {
       ecmaVersion: 2024,
       globals: globals.browser,
     },
     settings: {
-      'import/resolver': {
+      'import-x/resolver': {
         node: true,
       },
     },
     rules: {
-      'import/no-duplicates': 'warn',
-      'import/order': [
+      'import-x/no-duplicates': 'warn',
+      'import-x/order': [
         'warn',
         {
           groups: [
@@ -76,6 +74,16 @@ export default defineConfig([
           },
         },
       ],
+    },
+  },
+  {
+    // TanStack Router file-based routes co-locate the `Route` config with
+    // a locally-declared component. The Fast Refresh rule has no
+    // escape-hatch for that combo, and routes don't benefit from Fast
+    // Refresh anyway (the route plugin handles route invalidation).
+    files: ['src/routes/**/*.tsx'],
+    rules: {
+      'react-refresh/only-export-components': 'off',
     },
   },
 ]);

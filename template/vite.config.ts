@@ -13,12 +13,12 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      queries: path.resolve(__dirname, 'src/lib/queries'),
-      utils: path.resolve(__dirname, 'src/lib/utils'),
-      atoms: path.resolve(__dirname, 'src/ui/atoms'),
-      molecules: path.resolve(__dirname, 'src/ui/molecules'),
-      organisms: path.resolve(__dirname, 'src/ui/organisms'),
-      templates: path.resolve(__dirname, 'src/ui/templates'),
+      queries: path.resolve(import.meta.dirname, 'src/lib/queries'),
+      utils: path.resolve(import.meta.dirname, 'src/lib/utils'),
+      atoms: path.resolve(import.meta.dirname, 'src/ui/atoms'),
+      molecules: path.resolve(import.meta.dirname, 'src/ui/molecules'),
+      organisms: path.resolve(import.meta.dirname, 'src/ui/organisms'),
+      templates: path.resolve(import.meta.dirname, 'src/ui/templates'),
     },
   },
   server: {
